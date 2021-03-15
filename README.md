@@ -1,8 +1,9 @@
 # WiSoy
 
 ## Projeto acadêmico semestral.
-* Instituição: BandTec Digital School;
-* Turma: ADS1B;
-* Grupo: 11;
-* Membros: André Guimarães, Jorge Leão, Kaio Zaniboni, Kennedy Florentino, Lucas Castrillo, Luiz Ekstein;
-* RAs: 01211004, 01211070, 01211076, 01211078, 01211083, 01211088.
+Instituição: BandTec Digital School;
+Turma: ADS1B;
+Grupo: 11;
+Membros: Amanda Fruteiro de Lima, Fernanda Chimenez, Jonas Florêncio Silva, Kaio Raphael Zaniboni, Matheus Vieck Das Dores, Luiz Ekstein.
+RA: 01211002, 01211039, 01211069, 01211076, 01211101, 01211088.
+
