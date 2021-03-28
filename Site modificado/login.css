@@ -1,0 +1,211 @@
+
+/* CSS Geral */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-y:hidden;
+}
+
+.body_img {
+    background-image: url(background.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-y:hidden;
+
+}
+
+.cabecalho {
+    padding-top: 0;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: fixed;
+    top: 0;
+}
+
+.rodape {
+    position: fixed;
+    bottom: 0;
+    padding-top: 0px;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 3%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.caixa {
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.logo a img {
+    width: 30%;
+}
+
+.logo a span {
+    letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 200%;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    color: white;
+    display: inline;
+    margin-left: 30px;
+    font-size: larger;
+
+}
+
+/* .li_sobre {
+    position: relative;
+}
+
+.li_sobre:hover .dropdown_sobre {
+    display: block !important;   
+    top: 60px;
+    position: absolute;
+}
+
+.dropdown_sobre {
+    display: none;
+} */
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 3px;
+}
+
+ul li a:hover {
+    font-size: 25px;
+    color: green;
+}
+
+.cabecalho span {
+    color: white;
+    display: inline;
+    margin-left: 5px;
+    font-size: xx-large;
+}
+
+
+/* CSS Log In */
+
+.caixa_log_in {
+    background-color: rgba(0, 0, 0, .6);
+    height: 80%;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -18%;
+    margin-left: -18%;
+    border-radius: 30px;
+    color: white;
+    padding: 0 30px;
+    font-size: 1vw;
+  
+    
+}
+
+.caixa_log_in img {
+    margin-top: 9%;
+    height: 50%;
+}
+
+.img_login {
+    text-align: center;
+    height: 35%;
+    margin: 0;
+}
+
+.caixa_log_in input:not([type="checkbox"]) {
+    background-color: rgba(0, 0, 0, .2);
+    color: white;
+    height: 6%;
+    width: -webkit-fill-available;
+    border-radius: 15px;
+    margin-bottom: 4%;
+}
+
+.caixa_log_in button {
+    width: 50%;
+    height: 2.4em;
+    background-color: green;
+    color: white;
+    font-size: 100%;
+    border-radius: 15px;
+    margin-left: 25%;
+  
+}
+
+/*@media(max-height:50%) {
+    .caixa_log_in button{height: 100%;
+    } */
+
+}
+
+.button_login_conteiner {
+    text-align: center;
+}
+
+.caixa_log_in p {
+    font-size: 0.90em;
+}
+
+.button_login:hover {
+    background-color: rgb(2, 43, 2);
+    cursor: pointer;
+    font-size: 150%;
+    transition: 0.5s;
+}
+
+.rodape_caixa {
+    text-align: center;
+}
+
+.lembrar_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    font-size: 1em;
+}
+
+.desing_p {
+    color: white;
+    text-decoration: none;
+}
+
