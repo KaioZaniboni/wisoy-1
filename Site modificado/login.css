@@ -31,6 +31,8 @@ html {
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
+    
+   
 }
 
 .rodape {
@@ -44,7 +46,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 100%;
+    font-size: 1vw;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -60,30 +62,34 @@ html {
 .logo a {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 3%;
     text-decoration: none;
     transition: 0.5s;
 }
 
 .logo a img {
     width: 30%;
+    font-size: 1vw;
 }
 
 .logo a span {
     letter-spacing: 3px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 200%;
+    font-size: 2.5vw;
 }
 
 ul {
     list-style: none;
+    
+    
 }
 
 ul li {
     color: white;
     display: inline;
     margin-left: 30px;
-    font-size: larger;
+    font-size: 1.5vw;
+  
 
 }
 
@@ -109,7 +115,7 @@ ul li a {
 }
 
 ul li a:hover {
-    font-size: 25px;
+    font-size: 120%;
     color: green;
 }
 
@@ -167,7 +173,7 @@ ul li a:hover {
     color: white;
     font-size: 100%;
     border-radius: 15px;
-    margin-left: 25%;
+    margin-left: 3%;
   
 }
 
@@ -175,7 +181,7 @@ ul li a:hover {
     .caixa_log_in button{height: 100%;
     } */
 
-}
+
 
 .button_login_conteiner {
     text-align: center;
@@ -194,6 +200,8 @@ ul li a:hover {
 
 .rodape_caixa {
     text-align: center;
+    font-size: 100%;    
+
 }
 
 .lembrar_login {
