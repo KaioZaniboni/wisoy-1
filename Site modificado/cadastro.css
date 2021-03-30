@@ -1,28 +1,38 @@
+
 /* CSS Geral */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body,
 html {
     width: 100%;
     height: 100%;
     margin: 0;
+    
 }
 
 .body_img {
     background-image: url(background.png);
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+
 }
 
 .cabecalho {
-    padding-top: 0px;
+    padding-top: 0;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 80px;
+    height: 10%;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
+    
+   
 }
 
 .rodape {
@@ -31,15 +41,17 @@ html {
     padding-top: 0px;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 30px;
+    height: 3%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .caixa {
-    max-width: 1400px;
+    max-width: 90%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -50,28 +62,34 @@ html {
 .logo a {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 3%;
     text-decoration: none;
     transition: 0.5s;
 }
 
 .logo a img {
-    width: 80px;
+    width: 30%;
+    font-size: 1vw;
 }
 
 .logo a span {
     letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vw;
 }
 
 ul {
     list-style: none;
+    
+    
 }
 
 ul li {
     color: white;
     display: inline;
     margin-left: 30px;
-    font-size: larger;
+    font-size: 1.5vw;
+  
 
 }
 
@@ -97,7 +115,7 @@ ul li a {
 }
 
 ul li a:hover {
-    font-size: 25px;
+    font-size: 120%;
     color: green;
 }
 
@@ -109,70 +127,72 @@ ul li a:hover {
 }
 
 
+
 /* CSS Cadastro */
 
 .corpo_cadastro {
     color: white;
-    margin: 95px;
+    margin: 8%;
     text-align: center;
-    margin-left: 120px;
+    font-size: 1.3vw;
+    
     
 }
 
 .caixa_cadastro {
     background-color: rgba(0, 0, 0, .2);
-    height: 480px;
-    width: 450px;
-   position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -205px;
-    margin-left: -750px;
+    height: 48%;
+    width: 45%;
     border-radius: 30px;
     color: white;
-    padding: 30px 30px;
-    margin-left: -230px;
-    padding: 20px;
-    font-size: 17px;
+    padding: 10% 10%;
+    padding: 5%;
+    font-size: 1.3vw;
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+    text-align: center;
+    margin-left: 23%;
 }
 
 .conteudo_cadastro input:not([type="checkbox"]) {
     background-color: rgba(139, 139, 139, 0.1);
     color: white;
-    height: 20px;
+    height: 5%;
     width: 65%;
     border-radius: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 4%;
+    font-size: 1vw;
 }
 
 .checkbox_termo {
-    margin-top: 30px;
+    margin-top: 7%;
+    font-size: 1vw;
 }
 
 .checkbox_termo input[type="checkbox"] {
     cursor: pointer;
+    font-size: 1vw;
 }
 
 .checkbox_termo a {
     text-decoration: none;
     cursor: pointer;
+    font-size: 1vw;
 }
 
 .button_cadastro {
     border-radius: 15px; 
-    height: 50px;
-    width: 170px;
+    height: 100%;
+    width: 40%;
     color: white;
     background-color: rgba(139, 139, 139, 0.6);
-    font-size: x-large;
+    font-size: 2vw;
     border: none;
-    margin-top: 30px;
+    margin-top: 7%;
 }
 
 .button_cadastro:hover {
     background-color: green;
-    font-size: 22px;
+    font-size: 2.5vw;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -180,22 +200,27 @@ ul li a:hover {
 .design_input {
     display: flex;
     justify-content: space-between;
+    font-size: 1vw;
    
 }
 
 .design_input:not([type="input"]) {
     font-weight: 700;
+    font-size: 1.0vw;
+    height: 25%;
 }
 
 .design_input2 {
     align-items: center;
+    font-size: 1vw;
 }
 
 .sex_input {
     width: 66%;
-    margin: 10px 0 20px;
-    height: 25px;
+    margin: 5% 0 5%;
+    height: 25%;
     border-radius: 15px; 
+    font-size: 1vw;
 }
 
 .aniversario_input {
@@ -209,27 +234,27 @@ ul li a:hover {
 
 
 .aniversario_input div:first-child {
-    margin-left: 25px;
+    margin-left: 250px;
 }
 
 
 #data {
 
-  margin-left: 65px;
-  height: 25px;
+  margin-left: 15%;
+  height: 15%;
+  font-size: 1vw;
 
 }
 
 #resetar {
 
     background-color: green;
-    font-size: 22px;
+    font-size: 1.4vw;
     transition: 0.5s;
     cursor: pointer;
-    float: right;
     margin-right: 200px;
     border-radius: 15px;
     border: 0;
     color: white;
-
+    
 }
