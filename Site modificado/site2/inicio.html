@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_inicio.css">
+    <title>Minha Plantação</title>
+</head>
+
+<body class="fundo">
+    <div class="cabecalho">
+        <div class="caixa_cabecalho">
+            
+            <div class="conteudo"><span>Minha Plantação</span></div>
+            <img src="wisoy.png">
+    
+        </div>
+        
+    </div>
+    <div class="menu">
+        <img id="menu-hamb" class="logo_menu" src="menu_bar.png" onclick="toggleMenu()">
+        <div class="caixa_menu">
+            <nav>
+                <ul>
+                    <li>Minha conta</li>
+                    <li>Minha Plantação</li>
+                    <li>Histórico</li>
+                    <li>Notificações</li>
+                    <li>Ajuda</li>
+                    <li>Sair</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>  
+    var menuHambuguer = document.getElementById('menu_hamb');
+    var caixa_menu = document.getElementById('caxa_menu');
+    var encolher = document.getElementById('encolher');
+
+    changeMenuImage=function() {
+       menuHambuguer.setAttribute('src','expande_menu.png');
+    }
+
+    undoMenuImage=function() {
+       menuHambuguer.setAttribute('src','menu_bar.png');
+    }
+
+    toggleMenu=function() {
+       caixa_menu.style = 'left: 0;'; 
+       menuHambuguer.style = 'display: none';
+       encolher.style = 'display: block';
+    }
+
+    closeMenuImage=function() {
+        encolher.style = 'display: none';
+        menuHambuguer.style = 'display: block';
+        menuSticky.style = 'left: -150;'; 
+    }
+</script>
