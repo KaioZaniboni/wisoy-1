@@ -4,6 +4,7 @@
 CREATE DATABASE wisoy;
 USE wisoy;
 
+DROP database WISOY;
 -- -----------------------------------------------------
 -- A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.
 -- -----------------------------------------------------
@@ -11,14 +12,12 @@ CREATE TABLE LEADS (
   ID_LEAD INT NOT NULL AUTO_INCREMENT,
   NOME VARCHAR(60),
   SEXO CHAR(1),
-  DATA_NASCIMENTO DATE,
   EMAIL VARCHAR(60),
   TELEFONE VARCHAR(11),
-  RG CHAR(9),
   CPF_CNPJ VARCHAR(23),
   PRIMARY KEY (ID_LEAD));
 
-
+DESC LEADS;
 -- -----------------------------------------------------
 -- A tabela CLIENTES será responsável por armazenar todos os dados referentes ao cadastro de cada cliente.
 -- -----------------------------------------------------
@@ -37,37 +36,42 @@ CREATE TABLE CLIENTES (
   ENDERECO_CLIENTE VARCHAR(100),
   DADOS_BANCARIOS CHAR(27),
   DATA_CONTRATO DATE,
-  PRIMARY KEY (ID_CLIENTE));
+  PRIMARY KEY (ID_CLIENTE),
+  FK_LEAD INT,
+  FOREIGN KEY (FK_LEAD) REFERENCES LEADS (ID_LEAD),
+  FK_FUNCIONARIOS INT,
+  FOREIGN KEY (FK_FUNCIONARIOS) REFERENCES FUNCIONARIOS(ID_FUNCIONARIO)
+);
 
-
+DESC CLIENTES;
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
 -- -----------------------------------------------------
 CREATE TABLE FAZENDAS(
   ID_FAZENDA INT NOT NULL AUTO_INCREMENT,
-  ID_CLIENTE INT NOT NULL,
+  FK_CLIENTE INT NOT NULL,
   HECTARES INT,
   NUMERO_SENSORES INT,
   ENDERECO_FAZENDA VARCHAR(100),
   PRIMARY KEY (ID_FAZENDA),
   CONSTRAINT FK_FAZENDAS_CLIENTES
-  FOREIGN KEY (ID_CLIENTE)
+  FOREIGN KEY (FK_CLIENTE)
   REFERENCES CLIENTES (ID_CLIENTE));
 
-
+DESC FAZENDAS;
 -- -----------------------------------------------------
 -- A tabela SENSORES irá conter todos os sensores que a wisoy já implantou, data de instalação e em qual fazenda se encontram.
 -- -----------------------------------------------------
 CREATE TABLE SENSORES (
   ID_SENSOR INT NOT NULL AUTO_INCREMENT,
-  ID_FAZENDA INT NOT NULL,
+  FK_FAZENDA INT NOT NULL,
   DATA_INSTALACAO DATE,
   PRIMARY KEY (ID_SENSOR),
   CONSTRAINT FK_SENSORES_FAZENDAS
-  FOREIGN KEY (ID_FAZENDA)
+  FOREIGN KEY (FK_FAZENDA)
   REFERENCES FAZENDAS (ID_FAZENDA));
 
-
+DESC SENSORES;
 -- -----------------------------------------------------
 -- A tabela FUNCIONARIOS contera dados de todo quadro de funcionários WiSoy.
 -- -----------------------------------------------------
@@ -87,39 +91,41 @@ CREATE TABLE FUNCIONARIOS (
   DATA_CONTRATO DATE,
   PRIMARY KEY (ID_FUNCIONARIO));
 
-
+DESC FUNCIONARIOS;
 -- -----------------------------------------------------
 -- A tabela OCORRENCIAS tem o propósito de armazenar todas as ocorrências relacionadas ao serviços WiSoy relatadas por clientes.
 -- -----------------------------------------------------
 CREATE TABLE OCORRENCIAS (
   ID_OCORRENCIA INT NOT NULL AUTO_INCREMENT,
-  ID_CLIENTE INT NOT NULL,
-  ID_FUNCIONARIO INT NOT NULL,
+  FK_CLIENTE INT NOT NULL,
+  FK_FUNCIONARIO INT NOT NULL,
   RELATO VARCHAR(280),
   DATA_OCORRENCIA DATE,
   DATA_RELATO DATE,
   PRIMARY KEY (ID_OCORRENCIA),
   CONSTRAINT FK_OCORRENCIAS_CLIENTES
-  FOREIGN KEY (ID_CLIENTE)
+  FOREIGN KEY (FK_CLIENTE)
   REFERENCES CLIENTES (ID_CLIENTE),
   CONSTRAINT FK_OCORRENCIAS_FUNCIONARIOS
-  FOREIGN KEY (ID_FUNCIONARIO)
+  FOREIGN KEY (FK_FUNCIONARIO)
   REFERENCES FUNCIONARIOS (ID_FUNCIONARIO));
 
-
+DESC OCORRENCIAS;
 -- -----------------------------------------------------
 -- A tabela DADOS tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
 -- -----------------------------------------------------
 CREATE TABLE DADOS (
-  ID_SENSOR INT NOT NULL AUTO_INCREMENT,
+  ID_DADOS INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  FK_SENSOR INT NOT NULL,
   SENSOR_XY CHAR(17),
   ESTADO_SENSOR VARCHAR(9),
   LEITURA_UMIDADE CHAR(6),
   LEITURA_DATA_HORA CHAR(16),
   CONSTRAINT FK_DADOS_SENSORES
-  FOREIGN KEY (ID_SENSOR)
+  FOREIGN KEY (FK_SENSOR)
   REFERENCES SENSORES (ID_SENSOR));
-
+  
+  DESC DADOS;
 -- -----------------------------------------------------
 -- Inserts para testes
 -- -----------------------------------------------------
