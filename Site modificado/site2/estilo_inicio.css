@@ -56,7 +56,11 @@ ul{
 }
 
 li{
+<<<<<<< HEAD
     margin-top: 1em;
+=======
+    margin-top:0.74em;
+>>>>>>> 544c25781f4a8fed34a31fe9fcfd19f01ff31fc7
     font-size: 2.5em;
     text-align: left;
 }
@@ -68,4 +72,11 @@ li{
     position: absolute;
     left: -300px; 
     transition: 0.3s;
+<<<<<<< HEAD
+=======
+}
+
+ul img{
+    height: 8em;
+>>>>>>> 544c25781f4a8fed34a31fe9fcfd19f01ff31fc7
 }
