@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body_img" id="body">
+
+        <img onclick="toggleMenu()" class="img_sensor imgs" src="sensor.png" alt="">
+        <img onclick="toggleMenu()" class="img_arduino imgs" src="arduino.png" alt="">
+        <img onclick="toggleMenu()" class="img_wifi imgs" src="wi-fi.png" alt="">
+        <img onclick="toggleMenu()" class="img_roteador imgs" src="roteador.png" alt="">
+        <img onclick="toggleMenu()" class="img_roteador2 imgs" src="roteador.png" alt="">
+        <img onclick="toggleMenu()" class="img_server imgs" src="cloud-server.png" alt="">
+        <img onclick="toggleMenu()" class="img_azure imgs" src="azure.png" alt="">
+        <img onclick="toggleMenu()" class="mysql imgs" src="mysql.png" alt="">
+        <img onclick="toggleMenu()" class="http imgs" src="http.png" alt="">
+        <img onclick="toggleMenu()" class="trio imgs" src="trio.png" alt="">
+        <img onclick="toggleMenu()" class="node imgs" src="node.png" alt=""> 
+        <img onclick="toggleMenu()" class="seta_baixo1" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="seta_baixo2" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="seta_sudeste_120_1" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="duplo_sentido" src="seta-dupla.png" alt="">
+        <img onclick="toggleMenu()" class="seta_nordeste_15_1" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="seta_nordeste_15_2" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="seta_nordeste_15_3" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="seta_sudeste_120_2" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="seta_nordeste_15_4" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="img_wifi2 imgs" src="wi-fi.png" alt="">
+        <img onclick="toggleMenu()" class="seta_nordeste_15_5" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="pc imgs" src="pc.png" alt="">
+        <img onclick="toggleMenu()" class="seta_nordeste_15_6" src="seta.png" alt="">
+        <img onclick="toggleMenu()" class="cliente imgs" src="cliente.png" alt="">
+
+    <div class="menu">
+        <div class="caixa_menu" id="box_menu">
+            <nav>
+                <ul>
+                    <li onclick="closeMenu()">Especificação</li>
+                    <li onclick="closeMenu()">Especificação</li>
+                    <li onclick="closeMenu()">Especificação</li>
+                    <li onclick="closeMenu()">Especificação</li>
+                    <li onclick="closeMenu()">Especificação</li>
+                    <li onclick="closeMenu()">Especificação</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>  
+    var caixa_menu = document.getElementById('box_menu');
+    var body_img = document.getElementById('body');
+
+    toggleMenu=function() {
+       caixa_menu.style = 'left: 0; opacity: 1';
+       body_img.style = 'opacity: 0.5; transform: scale(0.8);';
+    }
+
+    closeMenu=function() {
+        caixa_menu.style = 'left: -300px;';
+        body_img.style = 'opacity: 1';
+    }
+</script>

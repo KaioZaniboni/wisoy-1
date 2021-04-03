@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.body_img {
+    background-image: url(luigi.gif);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+img {
+    width: 75px;
+}
+
+.img_sensor {
+    margin: 150px 0px 0px 400px;
+}
+
+.img_arduino {
+    margin: 0px 0px -150px -75px;
+}
+
+.seta_baixo1 {
+    transform: rotate(180deg);
+    margin: 0px 0px -80px -415px;
+}
+
+.seta_baixo2 {
+    transform: rotate(180deg);
+    margin: 0px 0px -225px -80px;
+}
+
+.img_wifi {
+    margin: 0px 0px -285px -75px;
+}
+
+.seta_sudeste_120_1 {
+    margin: 0px 0px -335px -20px;
+    transform: rotate(120deg);
+}
+
+.img_roteador {
+    margin: 0px 0px -340px 51px;
+}
+
+.duplo_sentido {
+    margin: 0px 0px -420px 110px;
+    width: 200px;
+}
+
+.img_roteador2 {
+    margin: 0px 0px -340px 270px;
+}
+
+.img_server {
+    margin: 0px 0px -205px -360px;
+}
+
+.seta_nordeste_15_1 {
+    transform: rotate(15deg);
+    margin: 0px 0px -285px -300px
+}
+
+.seta_nordeste_15_2 {
+    transform: rotate(15deg);
+    margin: 0px 0px -130px -15px;
+}
+
+.img_azure {
+    width: 35px;
+    margin: 0px 0px -170px 0px;
+}
+
+.mysql {
+    margin: 0px 0px -65px -65px;
+}
+
+.http {
+    margin: 0px 0px 50px -25px
+}
+
+.seta_nordeste_15_3 {
+    transform: rotate(15deg);
+    margin: 0px 0px -5px -15px;
+}
+
+.trio {
+    width: 35px;
+    margin: 0px 0px 80px -120px;
+}
+
+.node {
+    width: 35px;
+    margin: 0px 0px 70px 70px;
+}
+
+.seta_sudeste_120_2 {
+    width: 250px;
+    transform: rotate(162deg);
+    margin: 0px 0px -240px -30px;
+}
+
+.seta_nordeste_15_4 {
+    transform: rotate(60deg);
+    margin: 0px 0px -330px -25px;
+}
+
+.img_wifi2 {
+    margin: 0px 0px -260px -35px;
+}
+
+.seta_nordeste_15_5 {
+    transform: rotate(15deg);
+    margin: 0px 0px -215px -55px;
+}
+
+.pc {
+    margin: 0px 0px -145px -65px;
+}
+
+.seta_nordeste_15_6 {
+    transform: rotate(15deg);
+    margin: 0px 0px -80px -65px;
+}
+
+.cliente {
+    margin: 0px 0px -5px -70px;
+}
+
+.imgs:hover {
+    transition: 0.3s;
+    transform: scale(1.5);
+}
+
+
+
+
+
+
+
+.logo_menu{
+    height: 5em;
+    margin: 10px;
+    z-index: 1;
+}
+
+.menu{
+    position: absolute;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin-top: 1em;
+    font-size: 2.5em;
+    text-align: left;
+}
+
+.caixa_menu{
+    top: -150px;
+    width: 250%;
+    position: absolute;
+    left: -300px; 
+    transition: 0.3s;
+}
