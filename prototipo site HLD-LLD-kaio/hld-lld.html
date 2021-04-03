@@ -10,7 +10,7 @@
 </head>
 
 <body class="body_img" id="body">
-
+<span id="imagens">
         <img onclick="toggleMenu()" class="img_sensor imgs" src="sensor.png" alt="">
         <img onclick="toggleMenu()" class="img_arduino imgs" src="arduino.png" alt="">
         <img onclick="toggleMenu()" class="img_wifi imgs" src="wi-fi.png" alt="">
@@ -36,7 +36,7 @@
         <img onclick="toggleMenu()" class="pc imgs" src="pc.png" alt="">
         <img onclick="toggleMenu()" class="seta_nordeste_15_6" src="seta.png" alt="">
         <img onclick="toggleMenu()" class="cliente imgs" src="cliente.png" alt="">
-
+</span>
     <div class="menu">
         <div class="caixa_menu" id="box_menu">
             <nav>
@@ -56,15 +56,18 @@
 </html>
 <script>  
     var caixa_menu = document.getElementById('box_menu');
-    var body_img = document.getElementById('body');
+    var imgs = document.getElementById('imagens');
+    var body = document.getElementById('body');
 
     toggleMenu=function() {
-       caixa_menu.style = 'left: 0; opacity: 1';
-       body_img.style = 'opacity: 0.5; transform: scale(0.8);';
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.5; transition: 0.3s;';
+       body.style = 'transform: scale(0.8); transition: 0.3s;';
     }
 
     closeMenu=function() {
         caixa_menu.style = 'left: -300px;';
-        body_img.style = 'opacity: 1';
+        imgs.style = 'opacity: 1; transition: 0.3s;';
+        body.style = 'transform: scale(1.0); transition: 0.3s;';
     }
 </script>
