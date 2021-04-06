@@ -10,7 +10,7 @@
 </head>
 
 <body class="fundo">
-    <div class="cabecalho">
+    <div class="cabecalho" onclick ="closeMenu()" >
         <div class="caixa_cabecalho">
             
             <div class="conteudo"><span>Minha Plantação</span></div>
@@ -24,16 +24,14 @@
         <div class="caixa_menu" id="box_menu">
             <nav>
                 <ul>
-<!-- <<<<<<< HEAD
-======= -->
-                    <img src="icone perfil.png">
-<!-- >>>>>>> 544c25781f4a8fed34a31fe9fcfd19f01ff31fc7 -->
-                    <li onclick="closeMenu()">Minha conta</li>
-                    <li onclick="closeMenu()">Minha Plantação</li>
-                    <li onclick="closeMenu()">Histórico</li>
-                    <li onclick="closeMenu()">Notificações</li>
-                    <li onclick="closeMenu()">Ajuda</li>
-                    <li onclick="closeMenu()">Sair</li>
+
+                    <div class="itens_hamburguer" id="imagem_itens"><img src="icone perfil.png">
+                    <li onclick="closeMenu()">Minha conta</li> </div>
+                    <div  class="itens_hamburguer"><li onclick="closeMenu()">Minha Plantação</li></div>
+                    <div  class="itens_hamburguer"><li onclick="closeMenu()">Histórico</li></div>
+                    <div class="itens_hamburguer"><li onclick="closeMenu()">Notificações</li></div>
+                    <div  class="itens_hamburguer"><li onclick="closeMenu()">Ajuda</li></div>
+                    <div  class="itens_hamburguer"><li onclick="closeMenu()">Sair</li></div>
                 </ul>
             </nav>
         </div>
@@ -41,9 +39,8 @@
 </body>
 
 </html>
-<!-- <<<<<<< HEAD -->
 <script>
-// >>>>>>> 544c25781f4a8fed34a31fe9fcfd19f01ff31fc7
+
   var caixa_menu = document.getElementById('box_menu');
 
     toggleMenu=function() {

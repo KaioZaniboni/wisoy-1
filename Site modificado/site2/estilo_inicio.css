@@ -16,7 +16,7 @@ body, html{
 .cabecalho{
     width: 100%;
     max-height: 100px;
-    background-color: rgb(24, 23, 23, .6);
+    background-color: rgba(71, 70, 65, 0.466);
     display: flex;
     justify-content: flex-end;
     position: absolute;
@@ -36,6 +36,7 @@ body, html{
 }
 .conteudo span{
     font-size: 3.5em;
+    color: white;
 }
 /* Final do Cabeçalho */
 
@@ -45,6 +46,7 @@ body, html{
     height: 5em;
     margin: 10px;
     z-index: 1;
+    cursor: pointer;
 }
 
 .menu{
@@ -53,30 +55,45 @@ body, html{
 
 ul{
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 li{
-/* <<<<<<< HEAD */
-    margin-top: 1em;
-/* ======= */
+
+
     margin-top:0.74em;
-/* >>>>>>> 544c25781f4a8fed34a31fe9fcfd19f01ff31fc7 */
     font-size: 2.5em;
     text-align: left;
+    margin: 0;
 }
 
 .caixa_menu{
     top: 0;
     width: 250%;
-    background-color: gray;
+    background-color: rgba(29, 29, 29, 0.651);
     position: absolute;
     left: -300px; 
     transition: 0.3s;
-/* <<<<<<< HEAD */
-/* ======= */
+    
 }
 
 ul img{
     height: 8em;
-/* >>>>>>> 544c25781f4a8fed34a31fe9fcfd19f01ff31fc7 */
+}
+
+.itens_hamburguer {
+
+    background-color: rgb(175, 172, 149);
+    margin: 3% 5%;
+    max-width: 100%;
+    padding: 4.63%;
+    color: white;
+    cursor: pointer;
+}
+
+#imagem_itens {
+
+    text-align: center;
+
 }
