@@ -10,45 +10,50 @@
 </head>
 
 <body class="body_img" id="body">
+
+
+      <div class="caixa_logo">
+         <img class="logo" src="wisoy.png" alt="">
+         <span>WiSoy</span>
+      </div>
+
 <span id="imagens">
-        <img onclick="toggleMenu()" class="img_sensor imgs" src="sensor.png" alt="">
-        <img onclick="toggleMenu()" class="img_arduino imgs" src="arduino.png" alt="">
-        <img onclick="toggleMenu()" class="img_wifi imgs" src="wi-fi.png" alt="">
-        <img onclick="toggleMenu()" class="img_roteador imgs" src="roteador.png" alt="">
-        <img onclick="toggleMenu()" class="img_roteador2 imgs" src="roteador.png" alt="">
-        <img onclick="toggleMenu()" class="img_server imgs" src="cloud-server.png" alt="">
-        <img onclick="toggleMenu()" class="img_azure imgs" src="azure.png" alt="">
-        <img onclick="toggleMenu()" class="mysql imgs" src="mysql.png" alt="">
-        <img onclick="toggleMenu()" class="http imgs" src="http.png" alt="">
-        <img onclick="toggleMenu()" class="trio imgs" src="trio.png" alt="">
-        <img onclick="toggleMenu()" class="node imgs" src="node.png" alt=""> 
-        <img onclick="toggleMenu()" class="seta_baixo1" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="seta_baixo2" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="seta_sudeste_120_1" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="duplo_sentido" src="seta-dupla.png" alt="">
-        <img onclick="toggleMenu()" class="seta_nordeste_15_1" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="seta_nordeste_15_2" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="seta_nordeste_15_3" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="seta_sudeste_120_2" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="seta_nordeste_15_4" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="img_wifi2 imgs" src="wi-fi.png" alt="">
-        <img onclick="toggleMenu()" class="seta_nordeste_15_5" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="pc imgs" src="pc.png" alt="">
-        <img onclick="toggleMenu()" class="seta_nordeste_15_6" src="seta.png" alt="">
-        <img onclick="toggleMenu()" class="cliente imgs" src="cliente.png" alt="">
+        <img onclick="toggleMenu1()" id="sensor" class="img_sensor imgs" src="sensor.png" alt="">
+        <img onclick="toggleMenu2()" id="arduino" class="img_arduino imgs" src="arduino.png" alt="">
+        <img onclick="toggleMenu3()" id="wifi1" class="img_wifi_1 imgs" src="wi-fi.png" alt="">
+        <img onclick="toggleMenu4()" id="roteador1" class="img_roteador_1 imgs" src="roteador.png" alt="">
+        <img onclick="toggleMenu5()" id="roteador2" class="img_roteador_2 imgs" src="roteador.png" alt="">
+        <img onclick="toggleMenu6()" id="server" class="img_server imgs" src="cloud-server.png" alt="">
+        <img onclick="toggleMenu7()" id="azure" class="img_azure imgs" src="azure.png" alt="">
+        <img onclick="toggleMenu8()" id="mysql" class="mysql imgs" src="mysql.png" alt="">
+        <img onclick="toggleMenu9()" id="http" class="http imgs" src="http.png" alt="">
+        <img onclick="toggleMenu10()" id="trio" class="trio imgs" src="trio.png" alt="">
+        <img onclick="toggleMenu11()" id="node" class="node imgs" src="node.png" alt=""> 
+        <img onclick="toggleMenu12()" id="seta_baixo1" class="seta_baixo_1" src="seta.png" alt="">
+        <img onclick="toggleMenu13()" id="seta_baixo2" class="seta_baixo_2" src="seta.png" alt="">
+        <img onclick="toggleMenu14()" id="seta_sudeste120_1" class="seta_sudeste_120_1" src="seta.png" alt="">
+        <img onclick="toggleMenu15()" id="seta_nordeste15_1" class="seta_nordeste_15_1" src="seta.png" alt="">
+        <img onclick="toggleMenu16()" id="seta_nordeste15_2" class="seta_nordeste_15_2" src="seta.png" alt="">
+        <img onclick="toggleMenu17()" id="seta_nordeste15_3" class="seta_nordeste_15_3" src="seta.png" alt="">
+        <img onclick="toggleMenu18()" id="seta_sudeste162" class="seta_sudeste_162" src="seta.png" alt="">
+        <img onclick="toggleMenu19()" id="seta_nordeste15_4" class="seta_nordeste_15_4" src="seta.png" alt="">
+        <img onclick="toggleMenu20()" id="img_wifi2" class="img_wifi_2 imgs" src="wi-fi.png" alt="">
+        <img onclick="toggleMenu21()" id="seta_nordeste15_5" class="seta_nordeste_15_5" src="seta.png" alt="">
+        <img onclick="toggleMenu22()" id="pc" class="pc imgs" src="pc.png" alt="">
+        <img onclick="toggleMenu23()" id="seta_nordeste15_6" class="seta_nordeste_15_6" src="seta.png" alt="">
+        <img onclick="toggleMenu24()" id="cliente" class="cliente imgs" src="cliente.png" alt="">
 </span>
     <div class="menu">
         <div class="caixa_menu" id="box_menu">
             <nav>
                 <ul>
-                    <li onclick="closeMenu()">Especificação</li>
-                    <li onclick="closeMenu()">Especificação</li>
-                    <li onclick="closeMenu()">Especificação</li>
-                    <li onclick="closeMenu()">Especificação</li>
-                    <li onclick="closeMenu()">Especificação</li>
-                    <li onclick="closeMenu()">Especificação</li>
+                    <li id="msg" onclick="closeMenu()">Especificação</li>
                 </ul>
             </nav>
+            <div class="esquerda_direita">
+            <img class="imgs2" src="esquerda.png" alt="">
+            <img class="imgs2" src="direita.png" alt="">
+            </div>
         </div>
     </div>
 </body>
@@ -58,11 +63,226 @@
     var caixa_menu = document.getElementById('box_menu');
     var imgs = document.getElementById('imagens');
     var body = document.getElementById('body');
+    var img_sensor = document.getElementById('sensor');
+    var img_arduino = document.getElementById('arduino');
+    var img_wifi_1 = document.getElementById('wifi1');
+    var img_roteador1 = document.getElementById('roteador1');
+    var img_roteador2 = document.getElementById('roteador2');
+    var img_server = document.getElementById('server');
+    var img_azure = document.getElementById('azure');
+    var img_mysql = document.getElementById('mysql');
+    var img_http = document.getElementById('http');
+    var img_trio = document.getElementById('trio');
+    var img_node = document.getElementById('node');
+    var img_seta_baixo1 = document.getElementById('seta_baixo1');
+    var img_seta_baixo2 = document.getElementById('seta_baixo2');
+    var img_seta_sudeste120_1 = document.getElementById('seta_sudeste120_1');
+    var img_seta_nordeste15_1 = document.getElementById('seta_nordeste15_1');
+    var img_seta_nordeste15_2 = document.getElementById('seta_nordeste15_2');
+    var img_seta_nordeste15_3 = document.getElementById('seta_nordeste15_3');
+    var img_seta_sudeste162 = document.getElementById('seta_sudeste162');
+    var img_seta_nordeste15_4 = document.getElementById('seta_nordeste15_4');
+    var img_img_wifi2 = document.getElementById('img_wifi2');
+    var img_seta_nordeste15_5 = document.getElementById('seta_nordeste15_5');
+    var img_pc = document.getElementById('pc');
+    var img_seta_nordeste15_6 = document.getElementById('seta_nordeste15_6');
+    var img_cliente = document.getElementById('cliente');
+
+    toggleMenu1=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = `- Sensor Higrometro`;
+    }
 
     toggleMenu=function() {
        caixa_menu.style = 'left: 0';
        imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       img_sensor.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_arduino.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_wifi_1.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_roteador1.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_roteador2.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_server.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_azure.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_mysql.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_http.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_trio.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_node.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_baixo1.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_baixo2.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_sudeste120_1.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_nordeste15_1.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_nordeste15_2.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_nordeste15_3.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_sudeste162.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_nordeste15_4.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_wifi_2.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_nordeste15_5.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_pc.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_seta_nordeste15_6.style = 'transform: scale(0.85); transition: 0.3s;';
+       img_cliente.style = 'transform: scale(0.85); transition: 0.3s;';
+    }
+
+    toggleMenu2=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
        body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = `- Arduino Uno R3 <br> - USB 2.0`;
+    }
+
+    toggleMenu3=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = `- Conexão minima de 30 MB`;
+    }
+
+    toggleMenu4=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = `- Compatível com IPv6 <br> - Wireless 300 Mbps <br> - 2.4Ghz`;
+    }
+
+    toggleMenu5=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = `- Compatível com IPv6 <br> - Wireless 300 Mbps <br> - 2.4Ghz`;
+    }
+
+    toggleMenu6=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu7=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu8=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu9=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu10=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu11=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu12=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu13=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu14=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu15=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu16=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu17=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu18=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu19=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu20=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu21=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu22=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu23=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
+    }
+
+    toggleMenu24=function() {
+       caixa_menu.style = 'left: 0';
+       imgs.style = 'opacity: 0.3; transition: 0.3s;';
+       body.style = 'transform: scale(0.85); transition: 0.3s;';
+       msg.innerHTML = ``;
     }
 
     closeMenu=function() {
