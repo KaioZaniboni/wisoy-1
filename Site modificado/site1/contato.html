@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
     <link rel="stylesheet" href="contato.css">
-    
+
 </head>
+
+<!--Inicio cabeçalho-->
 
 <body class="body_img">
     <div class="cabecalho">
         <div class="caixa">
             <div class="logo">
-               <a href="home.html"><img src="./wisoy.png" alt="logo WiSoy">
-                <span>WiSoy</span></a>
+                <a href="home.html"><img src="./wisoy.png" alt="logo WiSoy">
+                    <span>WiSoy</span></a>
             </div>
             <nav>
                 <ul>
@@ -29,18 +31,102 @@
         </div>
     </div>
 
+    <!--Fim cabeçalho-->
+
+    <!--Inicio Contato-->
+
     <div class="corpo_contato">
         <div class="caixa_contato">
-            <p>
-                Nec augue congue urna vehicula dictumst dui suscipit tempor sem, inceptos euismod urna quisque pretium velit felis nisl morbi, massa lobortis vitae urna in erat tempor aptent. 
-                mauris imperdiet habitasse congue dolor ullamcorper nisl molestie hac viverra purus, felis convallis dapibus accumsan felis iaculis ultricies euismod. 
-                torquent phasellus non eleifend leo semper inceptos conubia, litora lorem augue gravida primis litora vivamus, commodo pretium arcu eleifend vel semper, cras diam sagittis vitae torquent diam. 
-                nulla sit egestas auctor massa semper per fames nisl quis habitasse, congue netus aenean adipiscing inceptos quisque vestibulum pellentesque. 
-                </p> <br><br>
-                <h2>Telefone para contato: (xx) xxxx-xxxx</h2>
-                <h2>Email: wisoy@wisoy.com.br</h2>
+
+            <h1>Fale conosco</h1>
+            <h3 class="h3_contato">
+                Entre em contato conosco, para questões de duvidas, suporte técnico, negociação, consultas e demais
+                atendimentos
+            </h3>
+
+            <h3 class="h3_redes_sociais">Acompanhe a gente também nas nossas redes sociais, sua interação nos faz
+                crescer ainda mais
+            </h3>
+
+            <div class="h4_contato">
+                <h4>
+                    WhatsApp: (xx) xxxx-xxxx</h4>
+                <h4>Email: contato@wisoy.com.br</h4>
+            </div>
+
+            <div class="social">
+
+                <section>
+                    <div class="rede" id="facebook">
+                        <img class="icone" src="facebook.png" alt="Facebook">
+                    </div>
+
+                    <div class="rede" id="instagram">
+                        <img class="icone" src="instagram.png" alt="Instagram">
+                    </div>
+                    <div class="rede" id="youtube">
+                        <img class="icone" src="youtube.png" alt="Youtube">
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
+
+    <!--Fim contato-->
+
+    <!--Inicio Cadastro Lead-->
+
+    <div class="inferior">
+
+        <h1>Seja um Lead e tenha uma demonstração antes de virar um cliente</h1>
+        <br><br>
+        <h4>Deixe seus dados que entraremos em contato</h4>
+        <br><br>
+
+        <div class="caixa_inferior">
+
+
+            <div> Nome <b class="item_colorido">*</b>
+            <input class="inp_padrao" placeholder="Exemplo: Felipe"></div>
+            <br><br>
+
+            <div>Sexo <b class="item_colorido">*</b>
+            <select id="sexo">
+                <option value="1">Masculino</option>
+                <option value="2">Feminino</option>
+            </select>
+        </div>
+        <br><br>
+
+            <div>Email <b class="item_colorido">*</b>
+            <input class="inp_padrao" placeholder="Exemplo: exemplo@email.com">
+        </div> 
+            <br><br>
+
+            <div> Telefone <b class="item_colorido">*</b>
+            <input class="inp_padrao" placeholder="Exemplo: 11999998888">
+        </div>
+            <br><br>
+
+            <div> CPF <b class="item_colorido">*</b>
+            <input class="inp_padrao" placeholder="Exemplo: 12345678912">
+        </div>
+            <br><br>
+
+            <h6> <input type="checkbox">
+                Eu concordo em receber outras comunicações da Wisoy <b class="item_colorido">*</b></h6>
+            
+            <br><br>
+            <button onclick="tornar_lead()">Tornar Lead</button>
+
+
+        </div>
+
+    </div>
+
+    <!--Fim Cadastro Lead-->
+
+
 
     <div class="rodape">2021 - Todos os direitos reservados - WiSoy</div>
 </body>

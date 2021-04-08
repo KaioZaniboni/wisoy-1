@@ -15,7 +15,7 @@ CREATE TABLE LEADS (
   EMAIL VARCHAR(60),
   TELEFONE VARCHAR(11),
   CPF_CNPJ VARCHAR(23),
-  PRIMARY KEY (ID_LEAD));
+  PRIMARY KEY (ID_LEAD))auto_increment = 1;
 
 DESC LEADS;
 -- -----------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE CLIENTES (
   FOREIGN KEY (FK_LEAD) REFERENCES LEADS (ID_LEAD),
   FK_FUNCIONARIOS INT,
   FOREIGN KEY (FK_FUNCIONARIOS) REFERENCES FUNCIONARIOS(ID_FUNCIONARIO)
-);
+)auto_increment = 15000;
 
 DESC CLIENTES;
 -- -----------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE FAZENDAS(
   PRIMARY KEY (ID_FAZENDA),
   CONSTRAINT FK_FAZENDAS_CLIENTES
   FOREIGN KEY (FK_CLIENTE)
-  REFERENCES CLIENTES (ID_CLIENTE));
+  REFERENCES CLIENTES (ID_CLIENTE))auto_increment = 1;
 
 DESC FAZENDAS;
 -- -----------------------------------------------------
@@ -69,7 +69,7 @@ CREATE TABLE SENSORES (
   PRIMARY KEY (ID_SENSOR),
   CONSTRAINT FK_SENSORES_FAZENDAS
   FOREIGN KEY (FK_FAZENDA)
-  REFERENCES FAZENDAS (ID_FAZENDA));
+  REFERENCES FAZENDAS (ID_FAZENDA))auto_increment = 1;
 
 DESC SENSORES;
 -- -----------------------------------------------------
@@ -89,7 +89,7 @@ CREATE TABLE FUNCIONARIOS (
   ENDERECO VARCHAR(100) ,
   CARTEIRA_TRABALHO CHAR(8),
   DATA_CONTRATO DATE,
-  PRIMARY KEY (ID_FUNCIONARIO));
+  PRIMARY KEY (ID_FUNCIONARIO))auto_increment = 10000;
 
 DESC FUNCIONARIOS;
 -- -----------------------------------------------------
@@ -108,7 +108,7 @@ CREATE TABLE OCORRENCIAS (
   REFERENCES CLIENTES (ID_CLIENTE),
   CONSTRAINT FK_OCORRENCIAS_FUNCIONARIOS
   FOREIGN KEY (FK_FUNCIONARIO)
-  REFERENCES FUNCIONARIOS (ID_FUNCIONARIO));
+  REFERENCES FUNCIONARIOS (ID_FUNCIONARIO))auto_increment = 1;
 
 DESC OCORRENCIAS;
 -- -----------------------------------------------------
@@ -123,20 +123,42 @@ CREATE TABLE DADOS (
   LEITURA_DATA_HORA CHAR(16),
   CONSTRAINT FK_DADOS_SENSORES
   FOREIGN KEY (FK_SENSOR)
-  REFERENCES SENSORES (ID_SENSOR));
+  REFERENCES SENSORES (ID_SENSOR))auto_increment = 1;
   
   DESC DADOS;
 -- -----------------------------------------------------
 -- Inserts para testes
 -- -----------------------------------------------------
 
-INSERT INTO LEADS VALUES (NULL, 'nome lead01', 'F', '1999-12-31', 'emai_lead01@teste.com', '11987654321', '000000000', '00000000000');
-INSERT INTO LEADS VALUES (NULL, 'nome lead02', 'M', '2000-01-01', 'emai_lead02@teste.com', '11912345678', '111111111', '11111111111');
+select * from leads;
+desc leads;
+
+INSERT INTO LEADS VALUES (NULL, 'Felipe Silva', 'M', 'felipe_silva@gmail.com', '11987654321', '45433595534'),
+(NULL, 'Gabriel Pereira', 'M', 'gabriel_pereira@hotmail.com', '11912345678', '55345678000145'),
+ (NULL, 'Vanessa Almeida', 'F', 'vanessa.almeida@outlook.com.br', '11987774571', '98765432105'),
+(NULL, 'Camila Nascimento', 'F', 'camila.nasc@gmail.com', '11995154321', '45433984534'),
+(NULL, 'Andre Andrade', 'M', 'andre_andrade@gmail.com', '11955774205', '12345678000164');
+
+
 SELECT * FROM LEADS;
 
-INSERT INTO CLIENTES VALUES (NULL, 'nome cliente01', 'M', '1980-08-19', 'email_cliente01@teste.com', 'usuario_cliente01', 'senha_cliente01', '11999999999', '012345678', '00011100011', NULL, 'Endereço Cliente01', 'Dados Bancários Cliente01', '2021-03-08');
-INSERT INTO CLIENTES VALUES (NULL, 'nome cliente02', 'M', '1990-02-28', 'email_cliente02@teste.com', 'usuario_cliente02', 'senha_cliente02', '11988888888', '876543210', '11100011100', NULL, 'Endereço Cliente02', 'Dados Bancários Cliente02', '2020-03-09');
+DESC CLIENTES;
+
+INSERT INTO CLIENTES VALUES 
+(NULL, 'Felipe Silva', 'M', '1980-08-19', 'felipe_silva@gmail.com', 'felipe_soja1', 
+'A34zt7@3', '11987654321', '590053339', '45433595534', 'Project Plant', 'Rua Engenheiro Marcelo Torres', '7582-000254', '2021-03-08', 1, 10000),
+(NULL, 'Leandro Santos', 'M', '1977-02-23', 'leandro.santos@gmail.com', 'leandro_sssoja', 
+'Z58tv9#1', '11987645678', '597755439', '43404695987', 'Soja Company', 'Rua Capitão Felipe Smith', '4872-025271', '2021-04-07', null, 10001),
+(NULL, 'Vanessa Almeida', 'F', '1990-01-15', 'vanessa.almeida@outlook.com.br', 'vanessa_topo', 'T@@z7f41', '11987774571', 
+'435994729', '98765432105', 'Topo Soja Plant', 'Rua Professora Amelia Nascimento', '3540-000759', '2021-02-13', 3, 10002),
+(NULL, 'Andre Andrade', 'M', '1982-07-26', 'andre_andrade@gmail.com', 'andre07_world', 'W07#45ab#26', '11955774205', 
+'756348167', '12345678000164', 'World Soja', 'Rua Encomendador Cornelius', '4000-305789', '2021-04-03', 5, 10002),
+(NULL, 'Marco Oliveira', 'M', '1979-06-06', 'marco.oliveira@hotmail.com.br', 'marco_agro', 'Ma@552f37#', '11950427731', 
+'675424719', '54816789000135', 'Soja Mais', 'Avenida Gomes Mendes', '7570-124994', '2021-01-03', null, 10000);
+
+
 SELECT * FROM CLIENTES;
+DESC CLIENTES;
 
 INSERT INTO FAZENDAS VALUES(NULL, 1, 1250, 42, 'endereço fazenda01');
 INSERT INTO FAZENDAS VALUES(NULL, 1, 625, 21, 'endereço fazenda02');
@@ -154,12 +176,30 @@ INSERT INTO DADOS VALUES (2, 'X: 32.03 Y: 50.90', 'LIGADO', '13.47%', '2022-28-0
 INSERT INTO DADOS VALUES (2, 'X: 32.03 Y: 50.90', 'LIGADO', '16.35%', '2022-28-03 19:03');
 SELECT * FROM DADOS;
 
-INSERT INTO FUNCIONARIOS VALUES(NULL, 'nome funcionario01', 'F', '2002-02-20', 'email_funcionario01@teste.com', 'user_funcionario01', 'senha_funcionario01', '2199998888', '503032217', '33299400574', 'Endeço Funcionário01', '88833397', '2021-01-01');
-INSERT INTO FUNCIONARIOS VALUES(NULL, 'nome funcionario02', 'M', '2000-05-20', 'email_funcionario02@teste.com', 'user_funcionario02', 'senha_funcionario02', '2133334444', '000333222', '03123578787', 'Endeço Funcionário02', '12344321', '2021-03-11');
+INSERT INTO FUNCIONARIOS VALUES(NULL, 'Jonas Florencio', 'M', '2002-03-30', 'jonas_florencio@wisoy.com.br', 'jonas_wisoy', 
+'Jo54@p12', '11955250037', '503032217', '33299400574', 'Rua Professor Otavio Fernandes', '88833397', '2021-02-01'),
+(NULL, 'Amanda Fruteiro', 'F', '2002-01-07', 'amanda_fruteiro@wisoy.com.br', 'amanda_wisoy', 
+'Am01#dsC', '11944064307', '243555719', '46955749916', 'Rua Enfermeira Luiza Alegreti', '88833397', '2021-02-01'),
+(NULL, 'Matheus Vieck', 'M', '1998-02-13', 'matheus_vieck@wisoy.com.br', 'matheus_wisoy', 
+'Ma37#f13', '11955250037', '503032217', '33299400574', 'Rua Soldado Peixoto', '88833397', '2021-02-01');
+
 SELECT * FROM FUNCIONARIOS;
+DESC FUNCIONARIOS;
+
 
 INSERT INTO OCORRENCIAS VALUES(NULL, 2, 1, 'Sensores ativando e desativando o sistema de irrigação sem parar.', '2022-02-28','2022-02-28');
 INSERT INTO OCORRENCIAS VALUES(NULL, 1, 1, 'Sensores desligando sozinhos.', '2022-02-28','2022-02-28');
 INSERT INTO OCORRENCIAS VALUES(NULL, 1, 2, 'Sensores pegaram fogo', '2022-02-28','2022-02-28');
 INSERT INTO OCORRENCIAS VALUES(NULL, 2, 2, 'Sensores desligando sozinhos.', '2022-02-28','2022-02-28');
 SELECT * FROM OCORRENCIAS;
+
+
+select * from clientes;
+select * from funcionarios;
+SELECT * FROM LEADS;
+
+--                         A LINHA DE BAIXO MOSTRA
+-- RELAÇÃO ENTRE OS FUNCIONARIOS QUE ATENDEM OS CLIENTES QUE FECHARAM CONTRATO COM A WISOY
+--
+
+select CLIENTES.*, FUNCIONARIOS.NOME FROM CLIENTES JOIN FUNCIONARIOS ON ID_FUNCIONARIO = FK_FUNCIONARIOS; 
