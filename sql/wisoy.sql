@@ -4,7 +4,6 @@
 CREATE DATABASE wisoy;
 USE wisoy;
 
-DROP database WISOY;
 -- -----------------------------------------------------
 -- A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.
 -- -----------------------------------------------------
@@ -135,7 +134,7 @@ desc leads;
 
 INSERT INTO LEADS VALUES (NULL, 'Felipe Silva', 'M', 'felipe_silva@gmail.com', '11987654321', '45433595534'),
 (NULL, 'Gabriel Pereira', 'M', 'gabriel_pereira@hotmail.com', '11912345678', '55345678000145'),
- (NULL, 'Vanessa Almeida', 'F', 'vanessa.almeida@outlook.com.br', '11987774571', '98765432105'),
+(NULL, 'Vanessa Almeida', 'F', 'vanessa.almeida@outlook.com.br', '11987774571', '98765432105'),
 (NULL, 'Camila Nascimento', 'F', 'camila.nasc@gmail.com', '11995154321', '45433984534'),
 (NULL, 'Andre Andrade', 'M', 'andre_andrade@gmail.com', '11955774205', '12345678000164');
 
