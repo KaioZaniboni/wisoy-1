@@ -130,14 +130,13 @@ ul li a:hover {
 /* CSS Contato */
 
 .caixa_contato {
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-top: 200px;
-    font-size: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    font-size: 1.5vw;
     color: white;
-    
-    
-   
+    float: left;
+      
 }
 
 h1{
@@ -146,7 +145,7 @@ h1{
 
 .h3_contato{
   
-    width: 300px;
+    width: 30%;
     float: left;
  
 
@@ -155,32 +154,33 @@ h1{
 .h3_redes_sociais{
    
     float: right;
-    width: 300px;
+    width: 30%;
    
 }
 
 .h4_contato{
-    width: 300px;
+    width: 30%;
     bottom: -200px;
-    position: relative;
+    position: relative;}
   
   
     
-}
 
 
 .social{
-    width: 300px;
-     bottom: 180px;
-     position: relative;
-     left: 1100px;
+    width: 25%;
+     left: 80%;
+     float: right;
+     
+   
     
 }
 
 section{
-    margin: 250px auto;
-    width: 500px; 
+    margin: 200px auto;
+    width: 400px; 
     float: right;
+    
     
 }
 
@@ -209,10 +209,12 @@ section{
 }
 
 .icone{
-    margin: 0px auto;
+    margin: 0 auto;
     padding: 15px;
     width: 60px;
 }
+
+
 
 /*
 Cadastro Lead
@@ -240,4 +242,32 @@ Cadastro Lead
 
 .item_colorido{
     color: red;
+}
+
+
+.inp_padrao {
+    
+   
+    font-size: 1vw;
+   
+}
+
+
+#sexo{
+    
+   
+    font-size: 1vw;
+   
+}
+
+.but_lead {
+
+    font-size: 1vw;
+
+}
+
+.inferior h1 {
+
+    font-size: 2vw;
+    
 }
