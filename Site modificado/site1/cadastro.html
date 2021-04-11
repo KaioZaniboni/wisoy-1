@@ -39,26 +39,17 @@
 
             <div class="conteudo_cadastro">
                 <form action="reset">
-                    <div class="design_input">Primeiro nome <input class="input_cadastro" type="text"></div>
+                    <div class="design_input">Nome Fantasia:<input class="input_cadastro" type="text"></div>
 
-                    <div class="design_input">Sobrenome <input class="input_cadastro" type="text"></div>
+                    <div class="design_input">Razão Social:<input class="input_cadastro" type="text"></div>
 
-                    <div class="aniversario_input">Aniversário
-                        <input id="data" type="date">
-                    </div>
+                    <div class="design_input">CNPJ:<input class="input_cadastro" type="text"></div>
 
-
-                    <div class="design_input design_input2">Sexo
-                        <select class="sex_input" id="sexo" onchange="mostrar()">
-                            <option value="">-- Selecione --</option>
-                            <option value="">Feminino</option>
-                            <option value="">Masculino</option>
-                            <option value="">Outro</option>
-                        </select>
-                    </div>
+                    <div class="design_input">Telefone:<input class="input_cadastro" type="text"></div>
 
                     <div class="design_input">E-mail<input class="input_cadastro" type="email" name="" id=""
                             placeholder="nome@example.com"></div>
+
 
                     <div class="design_input">Usuário <input class="input_cadastro" type="text"></div>
 
@@ -72,7 +63,7 @@
 
 
 
-                    <button class="button_cadastro" onclick="cadastrar()">Criar Conta</button>
+                    <button id="but_cadastro" class="button_cadastro" onclick="cadastrar()">Criar Conta</button>
             </div>
         </div>
     </div>
@@ -95,8 +86,8 @@
 
         alert("Cadastro realizado com sucesso!")
 
-
     }
+
 
 
 </script>
