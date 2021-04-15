@@ -147,19 +147,21 @@ ul li a:hover {
     color: white;
     font-size: 18px;
     padding: 0 100px;
+    
 }
 
 .caixa_portfolio p {
-    margin-top: -200px;
+    margin-top: 1%;
+    font-size: 1.5vw;
 }
 
 .button_simulador {
     border-radius: 20px;
     background-color: transparent;
-    width: 350px;
+    width: 32%;
     transition: 1s;
-    font-size: 28px;
-    padding: 20px;
+    font-size: 2vw;
+    padding: 2%;
     background-color: rgb(24, 23, 23, .3);
     border: none;
 }
@@ -170,6 +172,6 @@ ul li a:hover {
 }
 
 .button_simulador:hover {
-    font-size: 24px;
+    font-size: 2.4vw;
     cursor: pointer;
 }

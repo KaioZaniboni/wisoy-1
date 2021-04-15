@@ -130,17 +130,17 @@ ul li a:hover {
 
 .caixa_menu {
     position: fixed;
-    top: 250px;
+    top: 35%;
 }
 
 .menu_sticky {  
     background: rgb(24, 23, 23, .6);
-    width: 70px;
-    height: 300px;
-    padding-right: 80px;
+    width: 5%;
+    height: 50%;
+    padding-right: 6%;
     position: fixed;
-    top: 250px;
-    left: -150px;
+    top: 35%;
+    left: -15%; /*Pode dar algum erro no futuro*/
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
     display: flex;
@@ -152,7 +152,7 @@ ul li a:hover {
 .sticky {
     width: 80%;
     height: 80%;
-    margin-bottom: -30px;
+    margin-bottom: -15%;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -160,7 +160,7 @@ ul li a:hover {
 
 
 .li_nav_lateral {
-    font-size: 24px;
+    font-size: 2vw;
     background: rgb(24, 23, 23, .2);
     align-items: center;
     justify-content: center;
@@ -181,51 +181,52 @@ ul li a:hover {
 .caixa_missão {
     display: flex;
     align-items: center;
-    margin-left: 200px;
-    margin-right: 100px;
-    margin-top: 200px;
-    font-size: 18px;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
     color: white;
 }
 
 .caixa_valores {
     display: flex;
     align-items: center;
-    margin-left: 200px;
-    margin-right: 100px;
-    margin-top: 200px;
-    font-size: 18px;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
     color: white;
 }
 
 .caixa_visao {
     display: flex;
     align-items: center;
-    margin-left: 200px;
-    margin-right: 100px;
-    margin-top: 200px;
-    font-size: 18px;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
     color: white;
 }
 
 .caixa_equipe {
     display: flex;
     align-items: center;
-    margin-left: 200px;
-    margin-right: 100px;
-    margin-top: 200px;
-    font-size: 18px;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
     color: white;
 }
 
 .imgs_caixa {
-    width: 250px;
-    height: 250px;
+    width: 25%;
+    height: 15%;
 }
 
+
 .menu_bars {
-    width: 100px;
-    height: 100px;
+     width: 25%;
+    height: 15%;
 }
 
 .botao_menu {
