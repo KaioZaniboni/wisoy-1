@@ -34,17 +34,23 @@
                 <img src="wisoy.png" alt="Logo WiSoy">
             </div>
             <span>E-mail</span>
-            <input  type="text">
+            <input id="inpt_email"  type="email" onkeyup="analisar_email()" >
+            <br>
+            <div id="mensagem_email"></div>
+            <br>
             <span>Senha</span>
-            <input type="text">
+            <input type="" id="inpt_senha" onkeyup="analisar_senha()">
+            <br>
+            <div id="mensagem_senha"></div>
+            <br>
             <div class="lembrar_login">
                 <input type="checkbox">
                 <span>Lembrar meu login</span>
             </div>
-            <div class="button_login_conteiner"><button class="button_login">Entrar</button></div>
+            <div id="login" class="button_login_conteiner"><button class="button_login">Entrar</button></div>
             <br>
             <div class="rodape_caixa">
-                <p><a class="desing_p" href="alterar senha.html">Esqueceu a sua senha?</a></p>
+                <p><a class="desing_p" href="Senha.html">Esqueceu a sua senha?</a></p>
                 <p><a class="desing_p" href="cadastro.html">Não possui uma conta? Cadastre-se!</a></p>
             </div>
         </div>
@@ -54,3 +60,48 @@
 </body>
 
 </html>
+
+<script>
+
+function  analisar_email() {
+
+var email = inpt_email.value;
+var arroba = email.indexOf('@');
+var ponto = email.indexOf('.');
+var char = email.length;
+
+
+if(arroba>=0 && ponto>=0 && char>15){
+
+mensagem_email.innerHTML = 'Email válido'
+
+}
+
+else {
+    mensagem_email.innerHTML = 'Email inválido!'
+
+}
+}
+
+function analisar_senha(){
+
+var senha = inpt_senha.value;
+var char_minus = senha.match(/[a-z]+/);
+var char_maius = senha.match(/[A-Z]+/);
+var char_esp = senha.match(/[!-@]+/)
+
+if(char_maius && char_minus && char_esp){
+
+    mensagem_senha.innerHTML = "Senha válida"
+}
+
+else{
+
+    mensagem_senha.innerHTML = "Senha inválida"
+
+}
+
+
+}
+
+</script>

@@ -1,11 +1,19 @@
+
 /* CSS Geral */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body,
 html {
     width: 100%;
     height: 100%;
     margin: 0;
+<<<<<<< HEAD:Site modificado/site1/HOME/style.css
     font-family: 'Arial';
+=======
+    
+>>>>>>> 287e2083bd8008cb2c046ed2bf685f37eec17159:Site modificado/site1/home.css
 }
 
 .body_img {
@@ -14,18 +22,24 @@ html {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+<<<<<<< HEAD:Site modificado/site1/HOME/style.css
+=======
+    
+>>>>>>> 287e2083bd8008cb2c046ed2bf685f37eec17159:Site modificado/site1/home.css
 
 }
 
 .cabecalho {
-    padding-top: 0px;
+    padding-top: 0;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 80px;
+    height: 10%;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
+    
+   
 }
 
 .rodape {
@@ -34,20 +48,25 @@ html {
     padding-top: 0px;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 30px;
+    height: 3%;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD:Site modificado/site1/HOME/style.css
 }
 
 .rodape .grey {
     color: grey;
     margin-left: 45em;
+=======
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+>>>>>>> 287e2083bd8008cb2c046ed2bf685f37eec17159:Site modificado/site1/home.css
 }
 
 .caixa {
-    max-width: 1400px;
+    max-width: 90%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -55,46 +74,57 @@ html {
     align-items: center;
 }
 
+<<<<<<< HEAD:Site modificado/site1/HOME/style.css
 .caixa nav {
     margin: 1.00em;
 }
 
+=======
+>>>>>>> 287e2083bd8008cb2c046ed2bf685f37eec17159:Site modificado/site1/home.css
 .logo a {
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 3%;
     text-decoration: none;
     transition: 0.5s;
 }
 
 .logo a img {
-    width: 80px;
+    width: 30%;
+    font-size: 1vw;
 }
 
 .logo a span {
     letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vw;
 }
 
 ul {
     list-style: none;
+    
+    
 }
 
 ul li {
     color: white;
     display: inline;
     margin-left: 30px;
-    font-size: larger;
+    font-size: 1.5vw;
+  
 
 }
 
 /* .li_sobre {
     position: relative;
 }
+
 .li_sobre:hover .dropdown_sobre {
     display: block !important;   
     top: 60px;
     position: absolute;
 }
+
 .dropdown_sobre {
     display: none;
 } */
@@ -107,7 +137,7 @@ ul li a {
 }
 
 ul li a:hover {
-    font-size: 25px;
+    font-size: 120%;
     color: green;
 }
 
@@ -117,6 +147,7 @@ ul li a:hover {
     margin-left: 5px;
     font-size: xx-large;
 }
+
 
 
 /* CSS Home */
