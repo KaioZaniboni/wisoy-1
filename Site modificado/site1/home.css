@@ -134,12 +134,12 @@ ul li a:hover {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 115px 0px 10px 0px;
+    padding: 7% 0 5% 0;
 }
 
 .caixa_home {
-    width: 650px;
-    height: 430px;
+    width: 50%;
+    height: 40%;
 }
 
 .textocentral {
@@ -147,18 +147,23 @@ ul li a:hover {
     color: white;
 }
 
+.caixa_home h2{
+    font-size: 2vw;
+
+}
+
 .caixa_home h4 {
-    font-size: 0.83em;
+    font-size: 1.3vw;
 }
 
 .desing_button {
     border-radius: 20px;
-    width: 350px;
-    font-size: 28px;
-    padding: 20px;
+    width: 50%;
+    font-size: 2vw;
+    padding: 2%;
     background-color: rgb(24, 23, 23, .3);
     border: none;
-    margin: 35px;
+    margin: 4%;
     transition: 0.8s;
 }
 
@@ -168,15 +173,31 @@ ul li a:hover {
 }
 
 .desing_button:hover {
-    font-size: 24px;
-    transform: scale(0.95);
+    font-size: 2.5vw;
+    transform: 30%;
     transition: 0.8s;
     cursor: pointer;
 
 }
 
+.newsletter input {
+    font-size: 1vw;
+
+}
+
+.newsletter button {
+    font-size: 1vw;
+
+}
+
+
+.containernews {
+
+    font-size: 1.2vw;
+}
+
 .corpo_home2 {
-    height: 140px;
+    height: 22%;
     width: 100%;
     text-align: center;
     color: white;
@@ -190,16 +211,19 @@ ul li a:hover {
 }
 
 .caixas_coluna {
-    width: 300px;
+    width: 20%;
 }
 
+
 .caixa_coluna_news {
-    width: 360px;
-    margin: 0px 0px 0px 200px;
+    width: 23%;
+    margin: 0 0 0 15%;
+    font-size: 1.2vw;
 }
 
 .container {
-    height: 100px;
+    height: 15%;
+    font-size: 1.2vw;
 }
 
 .containernews {
@@ -212,11 +236,11 @@ ul li a:hover {
     background-color: black;
     color: white;
     cursor: pointer;
-    border: 0px;
+    border: 0;
 }
 
 p {
-height: 35px;
+height: 15%;
 margin: 0;
 }
 
