@@ -5,14 +5,16 @@ html {
     width: 100%;
     height: 100%;
     margin: 0;
+    font-family: 'Arial';
 }
 
 .body_img {
     background-image: url(background.png);
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+
 }
 
 .cabecalho {
@@ -40,8 +42,8 @@ html {
 }
 
 .rodape .grey {
-color: grey;
-margin-left: 45em;
+    color: grey;
+    margin-left: 45em;
 }
 
 .caixa {
@@ -54,7 +56,7 @@ margin-left: 45em;
 }
 
 .caixa nav {
-margin: 1.00em;
+    margin: 1.00em;
 }
 
 .logo a {
@@ -119,31 +121,21 @@ ul li a:hover {
 
 /* CSS Home */
 
-* {
-font-family: 'Arial';
-}
-
-.textocentral {
-align-items: center;
-margin-left: 27%;
-color: white;
-margin-top: 0em;
-}
-
 .corpo_home {
-    width: 100%;
-    height: 100%;
-    margin: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    text-align: center;
+    padding: 115px 0px 10px 0px;
 }
 
 .caixa_home {
-    display: flex;
+    width: 650px;
+    height: 430px;
+}
+
+.textocentral {
     align-items: center;
-    justify-content: space-between;
-    width: 750px;
+    color: white;
 }
 
 .caixa_home h4 {
@@ -152,15 +144,13 @@ margin-top: 0em;
 
 .desing_button {
     border-radius: 20px;
-    background-color: transparent;
     width: 350px;
-    transition: 1s;
     font-size: 28px;
     padding: 20px;
     background-color: rgb(24, 23, 23, .3);
     border: none;
-    margin-left: 1.00em;
-    margin: 1.20em;
+    margin: 35px;
+    transition: 0.8s;
 }
 
 .desing_button a {
@@ -170,30 +160,57 @@ margin-top: 0em;
 
 .desing_button:hover {
     font-size: 24px;
+    transform: scale(0.95);
+    transition: 0.8s;
     cursor: pointer;
 
 }
 
-.containernews {
-    margin: 0 auto;
-    margin-top: -9.50em;
+.corpo_home2 {
+    height: 140px;
+    width: 100%;
+    text-align: center;
     color: white;
-    margin-left: 65em;
+}
+
+.caixa_home2 {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.caixas_coluna {
+    width: 300px;
+}
+
+.caixa_coluna_news {
+    width: 360px;
+    margin: 0px 0px 0px 200px;
+}
+
+.container {
+    height: 100px;
+}
+
+.containernews {
     background-color: rgb(24, 23, 23, .3);
-    padding: 10px;
     border-radius: 10px;
-    width: 19em;
-  }
+}
 
-  .containernews input {
-width: 15em;
-  }
 
-.containernews .btn-orange{
+.containernews .btn-orange {
     background-color: black;
     color: white;
-    width: 6em;
-  }
+    cursor: pointer;
+    border: 0px;
+}
+
+p {
+height: 35px;
+margin: 0;
+}
+
 
 /*.busca {
     margin: 0 auto;
@@ -206,36 +223,6 @@ width: 15em;
     width: 10em;
 }*/
 
-.colunapay {
-    color: white;
-    width: 15em;
-    margin-top: -5.00em;
-    margin-left: 2.00em;
-}
-
-.colunapay img {
-width: 4em;
-margin-top: -2.00em;}
-
-.pagamento {
-    width: 15em;  
-    margin: 0 auto;
-}
-
-.suporte {
-    color: white;
-    width: 15em;
-    margin-top: -6.60em;
-    margin-left: 18.00em;
-}
-
-.client {
-    color: white;
-    width: 15em;
-    margin-top: -6.60em;
-    margin-left: 33.00em;
-}
-
-.client img {
+.coluna_img {
     width: 4em;
-    margin-top: -2.00em;}
+}

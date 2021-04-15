@@ -140,7 +140,6 @@ ul li a:hover {
 }
 
 .caixa_cadastro {
-    background-color: rgba(0, 0, 0, .2);
     height: 48%;
     width: 45%;
     border-radius: 30px;
@@ -148,6 +147,7 @@ ul li a:hover {
     padding: 10% 10%;
     padding: 5%;
     font-size: 1.3vw;
+    background-color: rgba(0, 0, 0, .2);
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
     text-align: center;
     margin-left: 23%;
