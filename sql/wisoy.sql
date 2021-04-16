@@ -45,7 +45,7 @@ ID_USUARIOS_CLIENTES INT PRIMARY KEY AUTO_INCREMENT,
 LOGIN VARCHAR (35),
 SENHA VARCHAR (20),
 FK_CLIENTES INT,
-FOREIGN KEY (FK_CLIENTES) REFERENCES CLIENTES (ID_CLIENTE));
+FOREIGN KEY (FK_CLIENTES) REFERENCES CLIENTES (ID_CLIENTE))auto_increment= 500;
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
 -- -----------------------------------------------------
@@ -70,7 +70,7 @@ CREATE TABLE SENSORES (
   SENSOR_XY VARCHAR (45),
   PRIMARY KEY (ID_SENSOR),
   FOREIGN KEY (FK_FAZENDA)
-  REFERENCES FAZENDAS (ID_FAZENDA))auto_increment = 1;
+  REFERENCES FAZENDAS (ID_FAZENDA))auto_increment = 1000;
 
 DESC SENSORES;
 -- -----------------------------------------------------
@@ -90,7 +90,7 @@ CREATE TABLE COLABORADORES (
   ENDERECO VARCHAR(100) ,
   CARTEIRA_TRABALHO CHAR(8),
   DATA_ADMISSAO DATE,
-  PRIMARY KEY (ID_COLABORADORES))auto_increment = 1000;
+  PRIMARY KEY (ID_COLABORADORES))auto_increment = 5000;
 
 DESC FUNCIONARIOS;
 -- -----------------------------------------------------
@@ -106,14 +106,14 @@ CREATE TABLE OCORRENCIAS (
   FOREIGN KEY (FK_CLIENTE)
   REFERENCES CLIENTES (ID_CLIENTE),
   FOREIGN KEY (FK_COLABORADORES)
-  REFERENCES COLABORADORES (ID_COLABORADORES))auto_increment = 1;
+  REFERENCES COLABORADORES (ID_COLABORADORES))auto_increment = 7000;
 
 DESC OCORRENCIAS;
 -- -----------------------------------------------------
 -- A tabela DADOS tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
 -- -----------------------------------------------------
-CREATE TABLE DADOS (
-  ID_DADOS INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE HIST_SENSOR (
+  ID_HISTORICO INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   FK_SENSOR INT NOT NULL,
   LEITURA_UMIDADE CHAR(6),
   LEITURA_DATA_HORA CHAR(16),
@@ -133,6 +133,7 @@ INSERT INTO LEADS VALUES (NULL, 'Project Plant', 'contato@projectplant.com', '11
 
 
 SELECT * FROM LEADS;
+DESC LEADS;
 
 DESC CLIENTES;
 
@@ -180,9 +181,12 @@ INSERT INTO SENSORES VALUES
 
 SELECT * FROM SENSORES;
 
-INSERT INTO DADOS VALUES (1, 'X: 77.77 Y: 33.33', 'LIGADO', '13.47%', '2022-28-03 14:55');
+INSERT INTO HIST_SENSOR VALUES (null, 1000, '13.47%', '2021-03-11 14:55'),
+(null, 1001, '13.39%', '2021-03-17'), (null, 1002, '14.98%', '2021-01-27'),
+(null, 1003, '13.09%', '2021-03-14'), (null, 1004, '14.01%', '2021-03-30'),
+(null, 1005, '13.57%', '2021-02-28'), (null, 1006, '13.08%', '2021-01-07');
 
-SELECT * FROM DADOS;
+SELECT * FROM HIST_SENSOR;
 
 INSERT INTO COLABORADORES VALUES(NULL, 'Jonas Florencio', 'M', '2002-03-30', 'jonas_florencio@wisoy.com.br', 'jonas_wisoy', 
 'Jo54@p12', '11955250037', '503032217', '33299400574', 'Rua Professor Otavio Fernandes', '88833397', '2021-02-01'),
@@ -213,11 +217,31 @@ ON CLIENTES.ID_CLIENTE = FK_CLIENTES;
 
 SELECT FAZENDAS.*, CLIENTES.NOME_FANTASIA FROM FAZENDAS JOIN CLIENTES ON CLIENTES.ID_CLIENTE = FK_CLIENTE;
 
+-----------------------------------------------------------------------------
+-- RELAÇÃO ENTRE AS TABELAS SENSORES, FAZENDAS E CLIENTE
+-- ONDE IRÁ MOSTRAR OS CLIENTES COM SUAS FAZENDAS E MOSTRANDO O SENSOR
+-----------------------------------------------------------------------------
 
+SELECT SENSORES.*, FAZENDAS.FK_CLIENTE, FAZENDAS.HECTARES, FAZENDAS.NUMERO_SENSORES, FAZENDAS.ENDERECO_FAZENDA, CLIENTES.NOME_FANTASIA 
+ FROM SENSORES JOIN FAZENDAS ON FAZENDAS.ID_FAZENDA = FK_FAZENDA JOIN CLIENTES ON CLIENTES.ID_CLIENTE = FK_CLIENTE;
+ 
+ -----------------------------------------------------------------------------
+ -- RELAÇÃO ENTRE DUAS TABELAS HIST_SENSOR E SENSORES
+ -- NESSA RELAÇÃO IRÁ MOSTRAR OS DADOS DAS FAZENDAS 
+ -----------------------------------------------------------------------------
 
+SELECT  HIST_SENSOR.*, SENSORES.FK_FAZENDA, SENSORES.DATA_INSTALACAO, SENSORES.SENSOR_XY 
+FROM HIST_SENSOR JOIN SENSORES ON SENSORES.ID_SENSOR = FK_SENSOR;
 
+--------------------------------------------------------------------
+-- RELAÇÃO COM AS TABELAS OCORRENCIAS, CLIENTES E COLABORADORES
+-- ABAIXO MOSTRA AS OCORRENCIAS DE CADA CLIENTE E O FUNCIONARIO WISOY
+-- QUE ESTÁ ATENDENDO A OCORRENCIA
+--------------------------------------------------------------------
 
-
+SELECT OCORRENCIAS.*, CLIENTES.NOME_FANTASIA, COLABORADORES.NOME 
+FROM OCORRENCIAS JOIN CLIENTES ON CLIENTES.ID_CLIENTE = FK_CLIENTE 
+JOIN COLABORADORES ON COLABORADORES.ID_COLABORADORES = FK_COLABORADORES; 
 
 
 
