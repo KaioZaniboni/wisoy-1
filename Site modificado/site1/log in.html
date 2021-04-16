@@ -66,6 +66,8 @@
     function analisar_email() {
 
         var email = inpt_email.value;
+        email = email.trimStart();
+        email = email.trimEnd();
         var amanda = email.indexOf('amanda.fruteiro@wisoy.com.br');
         var jonas = email.indexOf('jonas.florencio@wisoy.com.br');
         var fernanda = email.indexOf('fernanda.chimenez@wisoy.com.br');
@@ -75,6 +77,7 @@
         var fernando = email.indexOf('fernando.brandao@wisoy.com.br');
         var jesus = email.indexOf('guilherme.jesus@wisoy.com.br');
         var leonardo = email.indexOf('leonardo.marques@wisoy.com.br');
+        
 
 
         if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
