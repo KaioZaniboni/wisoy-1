@@ -1,0 +1,75 @@
+
+
+
+<script>
+    function calculo(){
+        // Recebe o valor que o usuário insere em inpt_area(hectares).
+        var area = Number(inpt_area.value);
+        
+        // Recebe o valor que o usuário insere em inpt_colhe.
+        var safras = Number(inpt_colhe.value); 
+
+        // O valor da saca de soja 
+        var valor_da_saca = Number(sel_estado.value); 
+    
+        /*Este sel_estado está no select de cada estado com seu respectivo preço da saca*/
+
+        // Recebe o número de sensores necessários para o tamanho do plantio descrito, sendo 1 sensor para cada 30 hectares.
+        var sensores = area / 30;
+        sensores = Math.ceil(sensores);/*Arredonda o número de sensores para cima independendo do valor depois da ','*/
+
+        // Recebe o custo cobrado pela mão de obra WiSoy para implementar a solução por sensor.
+        const implantacao = 500;
+
+        // Recebe o valor do investimento inicial, sendo o número de sensores multiplicados por valor da mão de obra.
+        var investimento_inicial = implantacao * sensores;
+
+        // Valor da assinatura para 1 sensor
+        const assinatura = 300;
+
+        /* Recebe o custo mensal da assinatura que cobre manutenções futuras e quaisquer tipos de ocorrência relacionadas aos serviços WiSoy. Sendo o custo baseado na
+        quantidade de sensores que o cliente possui em seu plantio */
+
+        var custo_mensal = sensores * assinatura;
+               
+        // Tempo para a colheita da safra em meses
+        const ciclo_safra = 4;
+        
+        // Uma safra é igual a 55 sacas por hectar
+        const safra_sacas = 55;
+
+        // Logo o valor de uma safra valor inserido de sacas x valor inserido da saca;
+        var ganho_hectare_safra = Number(sel_estado.value) * safra_sacas;
+
+        /* Portanto, o rendimento do cliente sem o uso de sensores será o número número de safras multiplicado pelo valor de cada safra multiplicado pelo número de
+        hectares */
+        var rendimento_comum = safras * ganho_hectare_safra * area;
+
+      
+        /* Rendimento com serviços WiSoy */
+
+        //R$495 Reais em cada safra por hectare é o que a WiSoy estima em ganhos para o cliente.
+        // Segundo o "Institute of Agriculture and Natural Resources" na universidade de Nebraska-Lincoln, otimizar a umidade do solo no
+        // cultivo de soja pode levar a um aumento de até 5,43% no rendimento. A linha abaixo subtrai do rendimento total wisoy os custos 
+        // considerando uma safra = 120 dias = 4 meses 
+        var rendimento_wisoy = (safras * ganho_hectare_safra * 1.0543 * area)-
+        (investimento_inicial+(custo_mensal*(safras*ciclo_safra)));
+
+        rendimento_wisoy = rendimento_wisoy.toFixed(2); 
+        
+
+        /* Diferença de rendimento comum e Wisoy*/
+        var diferenca_rendimento = rendimento_wisoy - rendimento_comum;
+        diferenca_rendimento = diferenca_rendimento.toFixed(2); 
+        /*Número que irá aparecer no quadrado do simulador*/
+
+
+        div_msg.innerHTML =  `<span style="color: white;">Você tem <span style="color: yellow;"><b><u>${area}</u></b></span> hectares, logo serão necessários <span style="color: yellow;"><b><u>${sensores}</u></b></span> sensores. <br> (1 sensor a cada 30 hectares). <br><br>
+
+                                
+                            Rendimento estimado em <span style="color: lime;"><b><u>R$ ${rendimento_wisoy}</u></b></span> (R$ ${rendimento_comum} sem a WiSoy), ganho de  <span style="color: lime;"><b><u>R$ ${diferenca_rendimento}</u></b></span> em <span style="color: yellow;"><b><u>${safra}</u></b></span> safras com a WiSoy !!! <br><br>
+
+
+                            Valor do investimento para implantar a WiSoy <span style="color: lime;"><b><u>R$ ${investimento_inicial}</u></b></span>. <br>Valor mensal da manutenção <span style="color: lime;"><b><u>R$ ${custo_mensal}</u></b></span>. (R$ 400,00 por sensor). <br><br>`;                         
+    }
+</script>

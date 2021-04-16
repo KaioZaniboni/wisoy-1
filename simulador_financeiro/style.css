@@ -1,74 +1,16 @@
-/* Imagem mantém suas proporções no body */
-body,html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-/* Define a imagem que será utilizada como backgroud e garante que estará centralizada e cubrirá a página inteira */
-.bg_img {
-    background-image: url(background.png);
-    background-size: cover;
-    background-position: center;
-}
+
+
+
 /* Absolute: Utilizando a propriedade left: 0 junto com absolute a div assume o ponto 0 da página (lado superior esquerdo) */
-.container-caixa {   
+/*.container-caixa {   
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-}
-/*Damos uma altura e largura, position absolute top e left 50% para tornar a div com seu primeiro ponto centralizado na página para a div ser totalmente centralizada na página, usamos margin top e left com metade dos valores da altura e largura da div (negativos) */
-.div-simulador {
-    background-color: rgba(0, 0, 0, .6);
-    height: 650px;
-    width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -300px;
-    margin-left: -250px;
-    border-radius: 15px;
-}
-/*Uso do elemento filho para atribuir propriedades ao nosso logo sem a necessidade de uma classe */
-.div-simulador img{
-    height: 140px;
-    margin-left: 180px;
-    margin-top: 5px;
-}
+}*/
 
-.div-simulador input{
-    border-color: white;
-    background-color: transparent;
-    color: white;       
-    height: 40px;
-    margin-left: 160px;
-    margin-top: 20px;
-    text-align: center;
-    border-radius: 15px;
-}
+/*NÃO VAMOS USAR*/
 
-.div-simulador button{
-    background-color:green;
-    color: white;
-    height: 60px;
-    width: 177px;
-    margin-left: 160px;
-    margin-top: 20px;
-    text-align: center;
-    border-radius: 15px;
-}
 
-.div-msg{
-    margin-left: 20px;
-    margin-top: 20px;
-    font-size: 18px;
-}
 
-button:hover{
-    background-color: rgb(2, 43, 2);   
-}
-
-::placeholder{
-    color: white;
-}
