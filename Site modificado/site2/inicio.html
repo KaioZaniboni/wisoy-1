@@ -47,15 +47,16 @@
             </nav>
         </div>
     </div>
-    <div>
-        <button class="button_detalhes">Detalhes</button>
-    </div>
-
+    
     <div style="width: 500px; padding: 150px 0px 0px 300px;">
         <canvas style="display: none;" id="chart"></canvas>
     </div>
 
-    <div style="width: 500px; float: right; margin: 250px 0px 0px 100px;" onclick="grafico2()">
+    <div id="button_detalhe" class="button_detalhes">
+        <button onclick="button()">Detalhes</button>
+    </div>
+
+    <div style="width: 500px; float: right; margin: 250px 0px 0px 50px;" onclick="grafico2()">
         <canvas style="display: none;" id="chart2">]</canvas>
     </div>
 
@@ -76,10 +77,10 @@
     }
     grafico1 = function () {
         chart.style = 'display: block; width: 500px';
-        chart2.style = 'display: block; width: 500px';
+        button_detalhe.style = 'display: block';
     }
-    grafico2 = function () {
-
+    button = function () {
+        chart2.style = 'display: block; width: 500px';
     }
 
     // Cria o contexto do CANVAS

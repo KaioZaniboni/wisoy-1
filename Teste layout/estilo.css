@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 35px;
+}
+
+.corpo_colunas {
+    display: flex;
+    justify-content: center;
+}
+
+.colunas {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;  /* essa propriedade permite que as classes filhas possam quebrar de linha */
+    padding: 70px 0px;
+    text-align: center;
+}
+
+.coluna_esquerda {
+    width: 40%;
+    background-color:#aaa;
+    float: left;
+    height: 500px;
+}
+
+.coluna_direita {
+    width: 60%;
+    display: none;
+    background-color:#bbb;
+    float: left;
+    height: 500px;
+}
+
+/* Clear floats after the columns */
+.colunas:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+
+    .coluna_esquerda,
+    .coluna_direita {
+        width: 100%;
+    }
+}
