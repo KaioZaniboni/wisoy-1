@@ -14,7 +14,7 @@
         <div class="caixa">
             <div class="logo">
                 <a href="home.html"><img src="./wisoy.png" alt="logo WiSoy">
-                    <span >WiSoy</span></a>
+                    <span>WiSoy</span></a>
             </div>
             <nav>
                 <ul>
@@ -34,12 +34,12 @@
                 <img src="wisoy.png" alt="Logo WiSoy">
             </div>
             <span>E-mail</span>
-            <input id="inpt_email"  type="email" onkeyup="analisar_email()" >
+            <input id="inpt_email" type="email" onkeyup="analisar_email()">
             <br>
             <div id="mensagem_email"></div>
             <br>
             <span>Senha</span>
-            <input type="" id="inpt_senha" onkeyup="analisar_senha()">
+            <input type="password" id="inpt_senha" onkeyup="analisar_senha()">
             <br>
             <div id="mensagem_senha"></div>
             <br>
@@ -63,45 +63,51 @@
 
 <script>
 
-function  analisar_email() {
+    function analisar_email() {
 
-var email = inpt_email.value;
-var arroba = email.indexOf('@');
-var ponto = email.indexOf('.');
-var char = email.length;
-
-
-if(arroba>=0 && ponto>=0 && char>15){
-
-mensagem_email.innerHTML = 'Email válido'
-
-}
-
-else {
-    mensagem_email.innerHTML = 'Email inválido!'
-
-}
-}
-
-function analisar_senha(){
-
-var senha = inpt_senha.value;
-var char_minus = senha.match(/[a-z]+/);
-var char_maius = senha.match(/[A-Z]+/);
-var char_esp = senha.match(/[!-@]+/)
-
-if(char_maius && char_minus && char_esp){
-
-    mensagem_senha.innerHTML = "Senha válida"
-}
-
-else{
-
-    mensagem_senha.innerHTML = "Senha inválida"
-
-}
+        var email = inpt_email.value;
+        var amanda = email.indexOf('amanda.fruteiro@wisoy.com.br');
+        var jonas = email.indexOf('jonas.florencio@wisoy.com.br');
+        var fernanda = email.indexOf('fernanda.chimenez@wisoy.com.br');
+        var kaio = email.indexOf('kaio.zaniboni@wisoy.com.br');
+        var luiz = email.indexOf('luiz.ekstein@wisoy.com.br');
+        var matheus = email.indexOf('matheus.vieck@wisoy.com.br');
+        var fernando = email.indexOf('fernando.brandao@wisoy.com.br');
+        var jesus = email.indexOf('guilherme.jesus@wisoy.com.br');
+        var leonardo = email.indexOf('leonardo.marques@wisoy.com.br');
 
 
-}
+        if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
+
+            mensagem_email.innerHTML = 'Email válido'
+
+        }
+
+        else {
+            mensagem_email.innerHTML = 'Email inválido!'
+
+        }
+    }
+
+    function analisar_senha() {
+
+        var senha = inpt_senha.value;
+        var char_minus = senha.match(/[a-z]+/);
+        var char_maius = senha.match(/[A-Z]+/);
+        var char_esp = senha.match(/[!-@]+/)
+
+        if (char_maius && char_minus && char_esp) {
+
+            mensagem_senha.innerHTML = "Senha válida"
+        }
+
+        else {
+
+            mensagem_senha.innerHTML = "Senha inválida!"
+
+        }
+
+
+    }
 
 </script>
