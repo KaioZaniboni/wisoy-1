@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
+        integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="geral.css">
+    <link rel="stylesheet" href="">
+    <title>Minha Plantação</title>
+</head>
+
+<!--INÍCIO DO CABECALHO-->
+
+<body>
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <span>WiSoy</span>
+                <img src="./wisoy.png" alt="logo WiSoy">
+            </div>
+        </div>
+    </div>
+
+    <!--FIM DO CABECALHO-->
+
+    <!--INÍCIO HAMBURGUER-->
+
+
+
+    <div class="menu">
+        <div><img id="menu-hamb" class="logo_menu" src="menu_bar.png" onclick="toggleMenu()"></div>
+        <div class="caixa_menu" id="box_menu">
+            <nav id="menu-hamb">
+                <ul>
+                    <div class="itens_hamburguer" id="imagem_itens"><img src="icone perfil.png">
+                        <li onclick="closeMenu()">Minha conta</li>
+                    </div>
+                    <div class="itens_hamburguer">
+                        <li onclick="closeMenu()">Minha Plantação</li>
+                    </div>
+                    <div class="itens_hamburguer">
+                        <li onclick="closeMenu()">Histórico</li>
+                    </div>
+                    <div class="itens_hamburguer">
+                        <li onclick="closeMenu()">Notificações</li>
+                    </div>
+
+                    <div class="itens_hamburguer" id="but_sair">
+                        <li onclick="closeMenu()">Sair</li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!--FIM DO HAMBURGUER-->
+    <!--INÍCIO BOTÕES-->
+
+    <div class="corpo_dashboard">
+        <div class="colunas">
+            <div class="caixa_but">
+
+                <div class="but_display_digital" id="but_1">Sensor 1</div>
+
+                <div class="but_display_digital" id="but_2">Sensor 2</div>
+
+                <div class="but_display_digital" id="but_3">Sensor 3</div>
+
+                <div class="but_display_digital" id="but_4">Sensor 4</div>
+
+
+            </div> 
+
+            <!--FIM BOTÕES-->
+
+            <!--INÍCIO MENSAGEM(GRÁFICO)-->
+
+            <!-- <div id="mensagem" class="caixa_graficos"></div> 
+        </div> -->
+    </div> 
+    <!--FIM MENSAGEM(GRÁFICO)-->
+
+
+
+    <!--INÍCIO DO CANVAS CHART.JS-->
+
+
+    <div style="width: 500px; padding: 150px 0px 0px 300px;">
+        <canvas style="display: none;" id="chart"></canvas>
+    </div>
+
+    <div id="button_detalhe" class="button_detalhes">
+        <button onclick="button()">Detalhes</button>
+    </div>
+
+    <div style="width: 500px; float: right; margin: 250px 0px 0px 50px;" onclick="grafico2()">
+        <canvas style="display: none;" id="chart2"></canvas>
+    </div>
+
+    <!--FIM DO CANVAS CHART.JS-->
+
+    <!--INÍCIO RODAPÉ-->
+
+    <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
+
+    <!--FIM RODAPÉ-->
+
+</body>
+
+</html>
+
+<!--INÍCIO SCRIPT-->
+
+<script>
+    var caixa_menu = document.getElementById('box_menu');
+
+    toggleMenu = function () {
+        caixa_menu.style = 'left: 0;';
+    }
+
+    closeMenu = function () {
+        caixa_menu.style = 'left: -300px;';
+
+    }
+
+    //  FIM DA ANIMAÇÃO HAMBURGUER 
+
+    //  INÍCIO FUNÇÕES GRÁFICOS
+</script>

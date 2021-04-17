@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
+        integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
+        crossorigin="anonymous"></script>
+    <title>Gráfico 2</title>
+</head>
+
+<body>
+    <div style="width: 600px;">
+        <canvas id="chart"></canvas>
+    </div>
+</body>
+
+</html>
+<script>
+    // Cria o contexto do CANVAS
+    var ctx = chart.getContext("2d");
+
+    // Configuracao do grafico
+    var config = {
+        type: "polarArea", // Aqui falo qual modelo de grafico vou querer
+        data: {
+            labels: ["setor 1", "setor 2", "setor 3", "setor 4", "setor 5", "setor 6", "setor 7"], // Aqui são as legendas do grafico
+            datasets: [{
+                label: "% Umidade", // Titulo do grafico
+                data: [30, 48, 20, 15, 7, 9, 70], // Dados do grafico
+                backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                    "rgba(75, 192, 192, 0.2)",
+                    "rgba(153, 102, 255, 0.2)",
+                    "rgba(255, 159, 64, 0.2)",
+                    "rgba(0, 0, 0, 0.2)",
+                ],
+                borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 206, 86, 1)",
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(153, 102, 255, 1)",
+                    "rgba(255, 159, 64, 1)",
+                    "rgba(0, 0, 0, 1)",
+                ],
+                borderWidth: 1,
+            }, ],
+        },
+        options: { 
+            scales: {
+                y: {
+                    beginAtZero: true, // Especifico para o grafico comecar a partir do valor 0 no eixo Y
+                },
+            },
+        },
+    };
+
+    new Chart(ctx, config); // Aqui chamo a funcao Chart que foi inserida no meu projeto na linha 7
+</script>
