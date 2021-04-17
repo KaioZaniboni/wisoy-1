@@ -8,17 +8,16 @@ html {
     width: 100%;
     height: 100%;
     margin: 0;
-    overflow-y:hidden;
+    /* overflow-y:hidden; */
 }
 
-/*'https://images.wallpapersden.com/image/download/minimalistic-wind-farm_a2hoZmeUmZqaraWkpJRqZmdlrWdtbWU.jpg'*/
 body {
     background-image: url(https://www.10wallpaper.com/wallpaper/1366x768/1807/Green_Gradient_Abstract_Design_Background_1366x768.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    overflow-y:hidden;
+    /* overflow-y:hidden; */
 
 }
 
@@ -154,17 +153,31 @@ ul img{
 
 /*FIM HAMBURGUER */
 
+/* Inicio Caixa Dashboard (Engloba tudo) */
+
+.corpo_dashboard{
+   display: flex;
+   justify-content: center;
+   background-color: cadetblue;
+}
+
+.colunas{
+    width: 90%;
+    padding: 120px;
+}
+/* Fim Caixa Dashboard (Engloba tudo) */
+
 /*INÍCIO BOTÕES*/
 
 
 .caixa_but {
 
-
-margin-left: 20%;
+margin-left: 10%;
 margin-top: 17%;    
 width: 400px;
 height: 200px ;
 position: absolute;
+background-color: burlywood;
 
 }
 
@@ -177,8 +190,6 @@ width: 45%;
 display: flex;
 align-items: center;
 justify-content: center;
-
-
 
 
 }
@@ -215,9 +226,6 @@ justify-content: center;
     bottom: 0;
     right: 0;
     position: absolute;
-
-    
-
     
 }
 
@@ -233,9 +241,11 @@ justify-content: center;
 /*INÍCIO GRÁFICOS*/
 
 .caixa_graficos {
-
-background-color: brown;
-
+    width: 50%;
+    float: right;
+    height: 99%;
+    background-color: brown;
+    
 }
 
 /*FIM GRÁFICOS*/

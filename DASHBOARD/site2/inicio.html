@@ -40,7 +40,7 @@
                         <li onclick="closeMenu()">Minha conta</li>
                     </div>
                     <div class="itens_hamburguer">
-                        <li onclick="closeMenu(), grafico1()">Minha Plantação</li>
+                        <li onclick="closeMenu()">Minha Plantação</li>
                     </div>
                     <div class="itens_hamburguer">
                         <li onclick="closeMenu()">Histórico</li>
@@ -60,28 +60,31 @@
     <!--FIM DO HAMBURGUER-->
     <!--INÍCIO BOTÕES-->
 
-    
-    <div class="caixa_but">
+    <div class="corpo_dashboard">
+        <div class="colunas">
+            <div class="caixa_but">
 
-        <div class="but_display_digital" id="but_1">Sensor 1</div>
+                <div class="but_display_digital" id="but_1">Sensor 1</div>
 
-        <div class="but_display_digital" id="but_2">Sensor 2</div>
+                <div class="but_display_digital" id="but_2">Sensor 2</div>
 
-        <div class="but_display_digital" id="but_3">Sensor 3</div>
+                <div class="but_display_digital" id="but_3">Sensor 3</div>
 
-        <div class="but_display_digital" id="but_4">Sensor 4</div>
+                <div class="but_display_digital" id="but_4">Sensor 4</div>
 
-    </div>
 
-    <!--FIM BOTÕES-->
+            </div> 
 
-    <!--INÍCIO MENSAGEM(GRÁFICO)-->
+            <!--FIM BOTÕES-->
 
-    <div id="mensagem" class="caixa_graficos"></div>
+            <!--INÍCIO MENSAGEM(GRÁFICO)-->
 
+            <!-- <div id="mensagem" class="caixa_graficos"></div> 
+        </div> -->
+    </div> 
     <!--FIM MENSAGEM(GRÁFICO)-->
 
-    
+
 
     <!--INÍCIO DO CANVAS CHART.JS-->
 
@@ -126,105 +129,5 @@
 
     //  FIM DA ANIMAÇÃO HAMBURGUER 
 
-    //INÍCIO FUNÇÕES GRÁFICOS
-
-    grafico1 = function () {
-        chart.style = 'display: block; width: 500px';
-        button_detalhe.style = 'display: block';
-    }
-    button = function () {
-        chart2.style = 'display: block; width: 500px';
-    }
-
-
-    // Cria o contexto do CANVAS
-    var ctx = chart.getContext("2d");
-
-    // Configuracao do grafico
-    var config = {
-        type: "polarArea", // Aqui falo qual modelo de grafico vou querer
-        data: {
-            labels: ["setor 1", "setor 2", "setor 3", "setor 4", "setor 5", "setor 6",
-                "setor 7"], // Aqui são as legendas do grafico
-            datasets: [{
-                label: "% Umidade", // Titulo do grafico
-                data: [30, 48, 20, 15, 7, 9, 70], // Dados do grafico
-                backgroundColor: [
-                    "rgba(255, 99, 132, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                    "rgba(255, 206, 86, 0.2)",
-                    "rgba(75, 192, 192, 0.2)",
-                    "rgba(153, 102, 255, 0.2)",
-                    "rgba(255, 159, 64, 0.2)",
-                    "rgba(0, 0, 0, 0.2)",
-                ],
-                borderColor: [
-                    "rgba(255, 99, 132, 1)",
-                    "rgba(54, 162, 235, 1)",
-                    "rgba(255, 206, 86, 1)",
-                    "rgba(75, 192, 192, 1)",
-                    "rgba(153, 102, 255, 1)",
-                    "rgba(255, 159, 64, 1)",
-                    "rgba(0, 0, 0, 1)",
-                ],
-                borderWidth: 1,
-            },],
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true, // Especifico para o grafico comecar a partir do valor 0 no eixo Y
-                },
-            },
-        },
-    };
-
-    new Chart(ctx, config); // Aqui chamo a funcao Chart que foi inserida no meu projeto na linha 7
-
-    var ctx = chart2.getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['setor 1', 'setor 2', 'setor 3', 'setor 4', 'setor 5', 'setor 6', 'setor 7', 'setor 8',
-                'setor 9', 'setor 10',
-            ],
-            datasets: [{
-                label: '% Umidade',
-                data: [12, 19, 3, 5, 2, 3, 7, 13, 24, 8],
-
-                backgroundColor: [
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    //  INÍCIO FUNÇÕES GRÁFICOS
 </script>
