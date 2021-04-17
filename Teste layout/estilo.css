@@ -1,16 +1,104 @@
-body {
+/* CSS Geral */
+
+* {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Imagem mantém suas proporções no body */
+body,
+html {
+    width: 100%;
+    height: 100%;
     margin: 0;
-    border: 0;
-    padding: 0;
+    
+}
+
+/* Define a imagem que será utilizada como backgroud e garante que estará centralizada e cubrirá a página inteira */
+.imagem_fundo {
+    background-image: url(..//simulador_financeiro/background.png); 
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* Style the header */
-.header {
-    background-color: #f1f1f1;
-    text-align: center;
-    font-size: 35px;
+.cabecalho {
+    padding-top: 0;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: fixed;
+    top: 0;   
 }
+
+.caixa {
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.logo a img {
+    width: 30%;
+    font-size: 1vw;
+}
+
+.logo a span {
+    letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vw;
+}
+
+
+ul {
+    list-style: none;
+    
+    
+}
+
+ul li {
+    color: white;
+    text-decoration: none;
+    display: inline;
+    margin-left: 30px;
+    font-size: 1.5vw;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 3px;
+}
+
+ul li a:hover {
+    font-size: 120%;
+    color: green;
+}
+
+.cabecalho span {
+    color: white;
+    display: inline;
+    margin-left: 5px;
+    font-size: xx-large;
+}
+
+/*  */
 
 .corpo_colunas {
     display: flex;
@@ -22,23 +110,25 @@ body {
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;  /* essa propriedade permite que as classes filhas possam quebrar de linha */
-    padding: 70px 0px;
+    padding: 125px 0px;
     text-align: center;
 }
 
 .coluna_esquerda {
+    display: flex;
+    justify-content: center;
     width: 40%;
     background-color:#aaa;
     float: left;
-    height: 500px;
+    height: 650px;
 }
 
 .coluna_direita {
     width: 60%;
     display: none;
-    background-color:#bbb;
+    background-color: transparent;
     float: left;
-    height: 500px;
+    height: 700px;
 }
 
 /* Clear floats after the columns */
@@ -48,12 +138,6 @@ body {
     clear: both;
 }
 
-.footer {
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-}
-
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
 
@@ -61,4 +145,29 @@ body {
     .coluna_direita {
         width: 100%;
     }
+}
+
+.div-simulador {
+    background-color: rgba(0, 0, 0, .6);
+    height: 650px;
+    width: 500px;
+    border-radius: 15px;
+}
+
+
+
+/*  */
+
+.rodape {
+    bottom: 0;
+    padding-top: 0px;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 3%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif; 
 }

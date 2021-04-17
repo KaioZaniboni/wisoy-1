@@ -103,7 +103,6 @@ ul li a:hover {
 }
 
 .rodape {
-    position: fixed;
     bottom: 0;
     padding-top: 0px;
     background: rgb(24, 23, 23, .6);
@@ -133,24 +132,47 @@ ul li a:hover {
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;  /* essa propriedade permite que as classes filhas possam quebrar de linha */
-    padding: 125px 0px;
+    padding: 150px 0px 100px 0px;
     text-align: center;
 }
 
 .coluna_esquerda {
     width: 40%;
-    background: rgb(24, 23, 23, .6);
     float: left;
-    height: 500px;
+    height: 650px;
 }
 
 .coluna_direita {
     width: 60%;
     display: none;
-    background-color:#bbb;
     float: left;
-    height: 500px;
+    height: 650px;
 }
+
+.caixa_direita {
+    height: 100%;
+}
+
+.caixa_superior {
+    margin: 0px 0px 0px 50px;
+    height: 25%;
+    border: 3px solid red;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    padding: 6% 5%;
+}
+
+.caixa_inferior {
+    display: flex;
+    justify-content: center;
+    height: 65%;
+    border: 3px solid green;
+    margin: 50px 0px 0px 50px;
+}
+
+
 
 /* Clear floats after the columns */
 .colunas:after {
@@ -168,57 +190,50 @@ ul li a:hover {
     }
 }
 
-/*Damos uma altura e largura, position absolute top e left 50% para tornar a div com seu primeiro ponto centralizado na página para a div ser totalmente centralizada na página, usamos margin top e left com metade dos valores da altura e largura da div (negativos) */
 
-.div-simulador {
-    background-color: rgba(0, 0, 0, .6);
-    height: 650px;
-    width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -300px;
-    margin-left: -250px;
+.corpo_simulador {
+    background: rgb(24, 23, 23, .6);
+    height: 100%;
     border-radius: 15px;
+}
+
+.corpo_simulador img {
+    height: 140px;
+    margin-top: 5px;
+}
+
+.formulario {
+    margin: auto 40px;
+    font-weight: 600;
+    color: white;  
+}
+
+.inputs {
+    padding: 30px 0px;
 }
 
 
 .div_select {
     border-color: white;
-    background-color: transparent;
-    color: white;       
-    height: 40px;
-    margin-left: 160px;
-    margin-top: 20px;
-    text-align: center;
+    background-color: transparent;      
     border-radius: 15px;
 }
 
-/*Uso do elemento filho para atribuir propriedades ao nosso logo sem a necessidade de uma classe */
-.div-simulador img{
-    height: 140px;
-    margin-left: 180px;
-    margin-top: 5px;
-}
-
-.div-simulador button{
+.corpo_simulador button{
     background-color:green;
     color: white;
     height: 60px;
-    width: 177px;
-    margin-left: 160px;
-    margin-top: 20px;
+    width: 180px;
     text-align: center;
     border-radius: 15px;
+    margin: 40px;
 }
 
-.div-simulador input{
+.corpo_simulador input{
     border-color: white;
     background-color: rgba(255, 255, 255, 0.123);
     color: black;       
     height: 40px;
-    margin-left: 160px;
-    margin-top: 20px;
     text-align: center;
     border-radius: 15px;
 }
@@ -229,17 +244,8 @@ ul li a:hover {
     font-size: 18px;
 }
 
-.div_select {
-padding: 10px;
-border-left: 10px;
-}
-
 button:hover{
     background-color: rgb(2, 43, 2);   
 }
 
-/*fazem com que todos os placeholders fiquem em branco*/
-::placeholder{
-    color: white;
-}
 

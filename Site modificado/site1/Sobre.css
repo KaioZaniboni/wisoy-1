@@ -7,7 +7,6 @@
 body,
 html {
     width: 100%;
-    height: 100%;
     margin: 0;
     
 }
@@ -126,14 +125,30 @@ ul li a:hover {
     font-size: xx-large;
 }
 
+
+
+
+
 /* CSS Sobre */
 
 .caixa_menu {
-    position: fixed;
+    position: sticky;
     top: 35%;
 }
 
-.menu_sticky {  
+.botao_menu {
+    background: rgb(24, 23, 23, .1);
+    width: 5vw;
+    margin-left: 30px;
+    border-radius: 50px;
+}
+
+.botao_menu:hover {
+    background: rgb(24, 23, 23, .2);
+    transition: 0.4s; 
+}
+
+.menu_lateral {  
     background: rgb(24, 23, 23, .6);
     width: 5%;
     height: 50%;
@@ -147,17 +162,28 @@ ul li a:hover {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-} 
+}
 
-.sticky {
+.encolher {
+    position: absolute;
+    top: 2px;
+    left: 44px;
+    width: 5vw;
+    border-radius: 50px;
+}
+
+.encolher:hover {
+    background: rgb(24, 23, 23, .2);
+    transition: 0.3s;
+}
+
+/* .sticky {
     width: 80%;
-    height: 80%;
     margin-bottom: -15%;
     display: grid;
     align-items: center;
     justify-content: center;
 }
-
 
 .li_nav_lateral {
     font-size: 2vw;
@@ -166,17 +192,13 @@ ul li a:hover {
     justify-content: center;
 }
 
-.li_nav_lateral:hover {
-
-}
-
 #nav_lateral {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .caixa_missão {
     display: flex;
@@ -219,40 +241,5 @@ ul li a:hover {
 }
 
 .imgs_caixa {
-    width: 25%;
-    height: 15%;
-}
-
-
-.menu_bars {
-     width: 25%;
-    height: 15%;
-}
-
-.botao_menu {
-    background: rgb(24, 23, 23, .1);
-    width: 80px;
-    height: 80px;
-    margin-left: 30px;
-    border-radius: 50px;
-}
-
-.botao_menu:hover {
-    background: rgb(24, 23, 23, .2);
-    transition: 0.4s; 
-}
-
-.encolher {
-    position: absolute;
-    display: none;
-    top: 6px;
-    left: 85px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-}
-
-.encolher:hover {
-    background: rgb(24, 23, 23, .2);
-    transition: 0.3s;
+    width: 300px;
 }
