@@ -2,25 +2,29 @@
 background-color: rgba(0, 0, 0, .2);
 box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
 text-align: center;
-padding: 1em 2em;
-margin-top: 12em;
-margin-left: 30em;
-width: 30em;
+margin-top: 13%;
+margin-left: 30%;
+width: 39%;
 border-radius: 70px;
 }
 
 .box-login {
 display: inline-block;
 padding: 2.00em 2.00em 2.00em 1.20em;
-border-radius: 20px;
-width: 25em;
+width: 75%;
 height: 15em;
 }
+
+
 
 .pag-login .input-padrao {
 width: 50%;
 display: inline-block;
 margin-top: 1.00em;
+padding-right: 9%;
+background-color:  rgba(139, 139, 139, 0.1);
+border-radius: 30px;
+
 }
 
 .btn-green {
@@ -42,7 +46,7 @@ margin-top: 2em;
 width: 9.00em;
 }
 
-.box-login .item_colorido {
+span {
 color: white;
 }
 
@@ -51,4 +55,12 @@ margin-left: 1.00em;
 
 }
 
+.form_senha{
+    width: 100%;
+    text-align: end;
+}
 
+.rodape{
+    text-align: center;
+    width: 100%;
+}
