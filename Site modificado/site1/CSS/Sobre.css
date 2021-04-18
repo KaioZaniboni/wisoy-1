@@ -13,7 +13,7 @@ html {
 }
 
 .body_img {
-    background-image: url(background.png);
+    background-image: url(..//IMG/background.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -126,52 +126,133 @@ ul li a:hover {
     font-size: xx-large;
 }
 
-/* CSS Senha */
+/* CSS Sobre */
 
-* {
-font-family: 'Arial';
+.caixa_menu {
+    position: fixed;
+    top: 35%;
 }
 
-.corpo_home {
+.menu_sticky {  
+    background: rgb(24, 23, 23, .6);
+    width: 5%;
+    height: 50%;
+    padding-right: 6%;
+    position: fixed;
+    top: 35%;
+    left: -15%; /*Pode dar algum erro no futuro*/
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+} 
+
+.sticky {
+    width: 80%;
+    height: 80%;
+    margin-bottom: -15%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.li_nav_lateral {
+    font-size: 2vw;
+    background: rgb(24, 23, 23, .2);
+    align-items: center;
+    justify-content: center;
+}
+
+/*.li_nav_lateral:hover {
+
+}*/
+
+#nav_lateral {
     width: 100%;
     height: 100%;
-    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.caixa_home {
+.caixa_missão {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.caixa_home h4 {
-    font-size: 0.83em;
-}
-
-/*.desing_button {
-    border-radius: 20px;
-    background-color: transparent;
-    width: 350px;
-    transition: 1s;
-    font-size: 2vw;
-    padding: 5%;
-    background-color: rgb(24, 23, 23, .3);
-    border: none;
-    margin-left: 1.00em;
-    margin: 1.20em;
-}
-
-.desing_button a {
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
     color: white;
-    text-decoration: none;
 }
 
-.desing_button:hover {
-    font-size: 24px;
-    cursor: pointer;
+.caixa_valores {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
+    color: white;
+}
 
-}*/
+.caixa_visao {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
+    color: white;
+}
+
+.caixa_equipe {
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 10%;
+    margin-top: 10%;
+    font-size: 1.2vw;
+    color: white;
+}
+
+.imgs_caixa {
+    width: 25%;
+    height: 15%;
+}
+
+
+.menu_bars {
+     width: 25%;
+    height: 15%;
+}
+
+.botao_menu {
+    background: rgb(24, 23, 23, .1);
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
+    border-radius: 50px;
+}
+
+.botao_menu:hover {
+    background: rgb(24, 23, 23, .2);
+    transition: 0.4s; 
+}
+
+.encolher {
+    position: absolute;
+    display: none;
+    top: 6px;
+    left: 85px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
+
+.encolher:hover {
+    background: rgb(24, 23, 23, .2);
+    transition: 0.3s;
+}

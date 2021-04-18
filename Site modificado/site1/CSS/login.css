@@ -1,3 +1,5 @@
+
+
 /* CSS Geral */
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -8,16 +10,16 @@ html {
     width: 100%;
     height: 100%;
     margin: 0;
-    
+    overflow-y:hidden;
 }
 
 .body_img {
-    background-image: url(background.png);
+    background-image: url(..//IMG/background.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
+    overflow-y:hidden;
 
 }
 
@@ -126,52 +128,95 @@ ul li a:hover {
 }
 
 
+/* CSS Log In */
 
-
-/* CSS Portfolio */
-
-.corpo_portfolio {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.caixa_portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.caixa_log_in {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+    height: 82%;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -18%;
+    margin-left: -18%;
+    border-radius: 30px;
     color: white;
-    font-size: 18px;
-    padding: 0 100px;
+    padding: 0 30px;
+    font-size: 1vw;
+  
     
 }
 
-.caixa_portfolio p {
-    margin-top: 1%;
-    font-size: 1.5vw;
+.caixa_log_in img {
+    margin-top: 9%;
+    height: 50%;
 }
 
-.button_simulador {
-    border-radius: 20px;
-    background-color: transparent;
-    width: 32%;
-    transition: 1s;
-    font-size: 2vw;
-    padding: 2%;
-    background-color: rgb(24, 23, 23, .3);
-    border: none;
+.img_login {
+    text-align: center;
+    height: 35%;
+    margin: 0;
 }
 
-.button_simulador a {
+.caixa_log_in input:not([type="checkbox"]) {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    height: 6%;
+    width: -webkit-fill-available;
+    border-radius: 15px;
+    margin-bottom: 4%;
+}
+
+.caixa_log_in button {
+    width: 50%;
+    height: 2.4em;
+    background-color: green;
+    color: white;
+    font-size: 100%;
+    border-radius: 15px;
+    margin-left: 3%;
+    border: 0;
+  
+}
+
+/*@media(max-height:50%) {
+    .caixa_log_in button{height: 100%;
+    } */
+
+
+
+.button_login_conteiner {
+    text-align: center;
+}
+
+.caixa_log_in p {
+    font-size: 0.90em;
+}
+
+.button_login:hover {
+    background-color: rgb(2, 43, 2);
+    cursor: pointer;
+    font-size: 150%;
+    transition: 0.5s;
+}
+
+.rodape_caixa {
+    text-align: center;
+    font-size: 100%;    
+
+}
+
+.lembrar_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    font-size: 1em;
+}
+
+.desing_p {
     color: white;
     text-decoration: none;
 }
 
-.button_simulador:hover {
-    font-size: 2.4vw;
-    cursor: pointer;
-}
