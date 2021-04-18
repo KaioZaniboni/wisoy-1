@@ -12,7 +12,7 @@ html {
 }
 
 
-.imagem_fundo {
+body {
     background-image: url(..//simulador_financeiro/background.png);
     background-position: center;
     background-size: cover;
