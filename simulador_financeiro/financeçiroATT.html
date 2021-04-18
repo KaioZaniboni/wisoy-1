@@ -16,6 +16,7 @@
 <body class="imagem_fundo">
 
     <!-- INICÍO DO HEADER -->
+
     <div class="cabecalho">
         <div class="caixa">
             <div class="logo">
@@ -26,10 +27,7 @@
             <nav>
                 <ul>
                     <li><a href="home.html">Home</a></li>
-                    <li class="li_sobre">
-                        <a href="sobre.html">Sobre</a>
-
-                    </li>
+                    <li class="li_sobre"><a href="sobre.html">Sobre</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contato.html">Contato</a></li>
                     <li><a href="log in.html">Log In</a></li>
@@ -39,6 +37,9 @@
     </div>
     <!-- FIM DO HEADER -->
 
+
+    <!-- INICÍO DO SIMULADOR -->
+
     <div class="corpo_colunas">
         <div class="colunas">
             <div class="coluna_esquerda">
@@ -46,62 +47,61 @@
                     <img onclick="abrirGrafico2()" id="imgWiSoy" src="wisoy.png" alt="Logo WiSoy">
                     <form class="formulario">
                         <div class="inputs">
-                            <span>Área de cultivo em hectares:</span>
+                            Área de cultivo em hectares: <br>
                             <input type="text" id="inp_area" placeholder="Área de cultivo em hectares">
                         </div>
                         <div class="inputs">
-                            Quantidade de safras:
-                            <input type="text" id="inp_colheitas" placeholder="Número de colheitas">
+                            Quantidade de safras: <br>
+                            <input type="text" id="inp_colheitas" oninput="filterDiasLength()"
+                                placeholder="Número de colheitas">
                         </div>
 
                         <div class="div_select inputs">Selecione abaixo o estado da safra:
 
-                            <select name="" id="sel_estado">
+                            <select id="sel_estado" onchange="selecionar()">
                                 <option value="0">-- Selecione o seu estado (UF): --</option>
-                                <option value="161">AC</option>
-                                <option value="158">AL</option>
-                                <option value="159">AP</option>
-                                <option value="174">AM</option>
-                                <option value="162">BA</option>
-                                <option value="172">CE</option>
-                                <option value="164">DF</option>
-                                <option value="175">ES</option>
-                                <option value="161">GO</option>
-                                <option value="168">MA</option>
-                                <option value="165.50">MT</option>
-                                <option value="159">MS</option>
-                                <option value="162">MG</option>
-                                <option value="172">PA</option>
-                                <option value="166">PB</option>
-                                <option value="173">PR</option>
-                                <option value="174">PE</option>
-                                <option value="164">PI</option>
-                                <option value="166">RJ</option>
-                                <option value="175">RN</option>
-                                <option value="165">RS</option>
-                                <option value="173">RO</option>
-                                <option value="170">RR</option>
-                                <option value="162">SC</option>
-                                <option value="160">SP</option>
-                                <option value="165">SE</option>
-                                <option value="167">TO</option>
+                                <option value="1">AC</option>
+                                <option value="2">AL</option>
+                                <option value="3">AP</option>
+                                <option value="4">AM</option>
+                                <option value="5">BA</option>
+                                <option value="6">CE</option>
+                                <option value="7">DF</option>
+                                <option value="8">ES</option>
+                                <option value="9">GO</option>
+                                <option value="10">MA</option>
+                                <option value="11">MT</option>
+                                <option value="12">MS</option>
+                                <option value="13">MG</option>
+                                <option value="14">PA</option>
+                                <option value="15">PB</option>
+                                <option value="16">PR</option>
+                                <option value="17">PE</option>
+                                <option value="18">PI</option>
+                                <option value="19">RJ</option>
+                                <option value="20">RN</option>
+                                <option value="21">RS</option>
+                                <option value="22">RO</option>
+                                <option value="23">RR</option>
+                                <option value="24">SC</option>
+                                <option value="25">SP</option>
+                                <option value="26">SE</option>
+                                <option value="27">TO</option>
                             </select>
                         </div>
-                        <div class="div_select" id="mensagem_valor_safra"> Saca atual: R$</div>
-                        <button onclick="calculo()">Simular Rendimento</button>
+                        <div class="div_select" id="mensagem_valor_safra"></div>
+                        <button onclick="calculo();">Simular Rendimento</button>
                 </div>
             </div>
             </form>
 
-
-
             <div class="coluna_direita" id="coluna_direita">
                 <div class="caixa_direita">
                     <div class="caixa_superior">
-                        <Div id="div_msg" class="titulo">Ganho estimado em R$</Div>
+                        <Div id="div_resultado" class="resultado"></Div>
                     </div>
                     <div class="caixa_inferior">
-                        <div style="width: 80%;">
+                        <div class="grafico">
                             <canvas id="chart"></canvas>
                         </div>
                     </div>
@@ -110,8 +110,8 @@
         </div>
     </div>
 
-
     <!-- FIM DO SIMULADOR -->
+
 
     <!-- INICÍO DO RODAPÉ -->
     <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
@@ -127,54 +127,121 @@
         coluna_direita.style = 'display: block; float: left;';
     }
 
-    var ctx = chart.getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['setor 1', 'setor 2', 'setor 3', 'setor 4', 'setor 5', 'setor 6', 'setor 7', 'setor 8',
-                'setor 9', 'setor 10',
-            ],
-            datasets: [{
-                label: '% Umidade',
-                data: [12, 19, 3, 5, 2, 3, 7, 13, 24, 8],
+    function filterDiasLength() {
 
-                backgroundColor: [
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderColor: [
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
+        setTimeout(() => {
+            const monthValue = document.getElementById('inp_colheitas').value;
+
+            SAFRAS.length = monthValue;
+
+            myChart.destroy();
+            myChart = new Chart(
+                document.getElementById('chart'),
+                config
+            );
+        }, 500);
+    }
+
+    SAFRAS = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+        '8',
+        '9',
+        '10'
+    ];
+
+    const data = {
+        labels: SAFRAS,
+        datasets: [{
+            label: 'Histórico de safras realizadas',
+            data: [5, 11, 17, 24, 29, 35, 43, 51, 62, 75],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1,
+            backgroundColor: 'rgba(255, 159, 64, 1)',
+        }]
+
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+    };
+
+    var myChart = new Chart(
+        document.getElementById('chart'),
+        config
+    );
+
+
+    function selecionar() {
+
+        var valorSaca = sel_estado.value;
+
+        if (valorSaca == 1) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 161,00`;
+        } else if (valorSaca == 2) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 158,00`;
+        } else if (valorSaca == 3) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 159,00`;
+        } else if (valorSaca == 4) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 174,00`;
+        } else if (valorSaca == 5) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 162,00`;
+        } else if (valorSaca == 6) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 172,00`;
+        } else if (valorSaca == 7) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 164,00`;
+        } else if (valorSaca == 8) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 175,00`;
+        } else if (valorSaca == 9) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 161,00`;
+        } else if (valorSaca == 10) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 168,00`;
+        } else if (valorSaca == 11) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,50`;
+        } else if (valorSaca == 12) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 159,00`;
+        } else if (valorSaca == 13) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 162,00`;
+        } else if (valorSaca == 14) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 172,00`;
+        } else if (valorSaca == 15) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 166,00`;
+        } else if (valorSaca == 16) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 173,00`;
+        } else if (valorSaca == 17) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 174,00`;
+        } else if (valorSaca == 18) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 164,00`;
+        } else if (valorSaca == 19) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 166,00`;
+        } else if (valorSaca == 20) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 175,00`;
+        } else if (valorSaca == 21) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,00`;
+        } else if (valorSaca == 22) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 173,00`;
+        } else if (valorSaca == 23) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 170,00`;
+        } else if (valorSaca == 24) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 162,00`;
+        } else if (valorSaca == 25) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 160,00`;
+        } else if (valorSaca == 26) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,00`;
+        } else {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 167,00`;
         }
-    });
+    }
 
     function calculo() {
+
         // Recebe o valor que o usuário insere em inp_area.
         var area = Number(inp_area.value);
 
@@ -182,7 +249,7 @@
         var safra = Number(inp_colhe.value);
 
         // O valor da saca de soja 
-        var valorDaSaca = Number(inp_valor.value);
+        var valorSaca = Number(sel_estado.value);
 
         // Recebe o número de sensores necessários para o tamanho do plantio descrito, sendo 1 sensor para cada 30 hectares.
         var sensores = area / 30;
@@ -224,12 +291,11 @@
             cicloSafra);
         rendimentoWisoy = rendimentoWisoy.toFixed(2);
 
-
         /* Diferença de rendimento comum e Wisoy*/
         var diferencaRendimento = rendimentoWisoy - rendimentoComum;
         diferencaRendimento = diferencaRendimento.toFixed(2);
 
 
-        div_msg.innerHTML = `Ganho estimado em R$ ${rendimentoWisoy}`;
+        div_resultado.innerHTML = `Ganho estimado em R$ ${rendimentoWisoy}`;
     }
 </script>

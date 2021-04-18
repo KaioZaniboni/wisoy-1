@@ -1,12 +1,8 @@
 /* CSS Geral */
-
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-/* Imagem mantém suas proporções no body */
 body,
 html {
     width: 100%;
@@ -15,8 +11,6 @@ html {
     
 }
 
-
-/* Define a imagem que será utilizada como backgroud e garante que estará centralizada e cubrirá a página inteira,além disso não ocorrerá repetições */
 
 .imagem_fundo {
     background-image: url(..//simulador_financeiro/background.png);
@@ -130,7 +124,7 @@ ul li a:hover {
 .colunas {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 95%;
     flex-wrap: wrap;  /* essa propriedade permite que as classes filhas possam quebrar de linha */
     padding: 150px 0px 100px 0px;
     text-align: center;
@@ -154,12 +148,13 @@ ul li a:hover {
 }
 
 .caixa_superior {
-    margin: 0px 0px 0px 50px;
+    margin: 25px 0px 0px 25px;
     height: 25%;
-    border: 3px solid red;
+    background-color: antiquewhite;
+    border-radius: 15px;
 }
 
-.titulo {
+.resultado {
     font-size: 2.5rem;
     padding: 6% 5%;
 }
@@ -167,12 +162,15 @@ ul li a:hover {
 .caixa_inferior {
     display: flex;
     justify-content: center;
-    height: 65%;
-    border: 3px solid green;
-    margin: 50px 0px 0px 50px;
+    height: 60%;
+    margin: 50px 0px 0px 25px;
+    background-color: antiquewhite;
+    border-radius: 15px;
 }
 
-
+.grafico {
+    width: 90%;
+}
 
 /* Clear floats after the columns */
 .colunas:after {
@@ -182,7 +180,7 @@ ul li a:hover {
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     .coluna_esquerda,
     .coluna_direita {
@@ -199,17 +197,18 @@ ul li a:hover {
 
 .corpo_simulador img {
     height: 140px;
-    margin-top: 5px;
+    padding: 10px 0px 15px;
 }
 
 .formulario {
     margin: auto 40px;
     font-weight: 600;
     color: white;  
+    font-size: 20px;
 }
 
 .inputs {
-    padding: 30px 0px;
+    padding: 20px 0px;
 }
 
 
@@ -226,16 +225,19 @@ ul li a:hover {
     width: 180px;
     text-align: center;
     border-radius: 15px;
-    margin: 40px;
+    margin: 40px 0px;
+    border: 0;
+    cursor: pointer;
 }
 
 .corpo_simulador input{
     border-color: white;
     background-color: rgba(255, 255, 255, 0.123);
-    color: black;       
+    color:white;       
     height: 40px;
     text-align: center;
     border-radius: 15px;
+    font-size: 17px;
 }
 
 .div-msg{

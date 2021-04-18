@@ -134,9 +134,7 @@ ul li a:hover {
     color: white;
     margin: 8%;
     text-align: center;
-    font-size: 1.3vw;
-    
-    
+    font-size: 1.3vw;   
 }
 
 .caixa_cadastro {
@@ -208,42 +206,6 @@ ul li a:hover {
     font-weight: 700;
     font-size: 1.0vw;
     height: 25%;
-}
-
-.design_input2 {
-    align-items: center;
-    font-size: 1vw;
-}
-
-.sex_input {
-    width: 66%;
-    margin: 5% 0 5%;
-    height: 25%;
-    border-radius: 15px; 
-    font-size: 1vw;
-}
-
-.aniversario_input {
-    display: flex;
-    margin: 10px 0;    
-}
-
-.aniversario_input:not([select]) {
-    font-weight: 700;
-}
-
-
-.aniversario_input div:first-child {
-    margin-left: 250px;
-}
-
-
-#data {
-
-  margin-left: 15%;
-  height: 15%;
-  font-size: 1vw;
-
 }
 
 #resetar {
