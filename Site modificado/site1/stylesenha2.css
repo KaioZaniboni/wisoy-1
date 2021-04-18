@@ -2,7 +2,7 @@
 background:  rgb(24, 23, 23, .6);
 text-align: center;
 padding: 1% 2%;
-margin-top: 20%;
+margin-top: 10%;
 margin-left: 30%;
 width: 35%;
 border-radius: 70px;
@@ -23,7 +23,8 @@ font-size: 1.1vw;
     width: 50%;
     display: inline-block;
     margin-top: 5%;
-    font-size: 1.0vw;    
+    font-size: 1.0vw;
+    
     }
 
 .btn-green {
@@ -56,5 +57,3 @@ color: white;
 margin-left: 5%;
 
 }
-
-

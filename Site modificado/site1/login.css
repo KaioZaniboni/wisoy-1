@@ -131,7 +131,8 @@ ul li a:hover {
 /* CSS Log In */
 
 .caixa_log_in {
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
     height: 82%;
     width: 30%;
     position: absolute;
@@ -159,7 +160,7 @@ ul li a:hover {
 }
 
 .caixa_log_in input:not([type="checkbox"]) {
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, 0.2);
     color: white;
     height: 6%;
     width: -webkit-fill-available;
@@ -175,6 +176,7 @@ ul li a:hover {
     font-size: 100%;
     border-radius: 15px;
     margin-left: 3%;
+    border: 0;
   
 }
 
