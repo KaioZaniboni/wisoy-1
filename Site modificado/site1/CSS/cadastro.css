@@ -1,5 +1,4 @@
 
-
 /* CSS Geral */
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -10,16 +9,16 @@ html {
     width: 100%;
     height: 100%;
     margin: 0;
-    overflow-y:hidden;
+    
 }
 
 .body_img {
-    background-image: url(background.png);
+    background-image: url(..//IMG/background.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    overflow-y:hidden;
+    
 
 }
 
@@ -128,95 +127,96 @@ ul li a:hover {
 }
 
 
-/* CSS Log In */
 
-.caixa_log_in {
-    background-color: rgba(0, 0, 0, .2);
-    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
-    height: 82%;
-    width: 30%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -18%;
-    margin-left: -18%;
+/* CSS Cadastro */
+
+.corpo_cadastro {
+    color: white;
+    margin: 8%;
+    text-align: center;
+    font-size: 1.3vw;   
+}
+
+.caixa_cadastro {
+    height: 48%;
+    width: 45%;
     border-radius: 30px;
     color: white;
-    padding: 0 30px;
-    font-size: 1vw;
-  
-    
-}
-
-.caixa_log_in img {
-    margin-top: 9%;
-    height: 50%;
-}
-
-.img_login {
+    padding: 10% 10%;
+    padding: 5%;
+    font-size: 1.3vw;
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
     text-align: center;
-    height: 35%;
-    margin: 0;
+    margin-left: 23%;
 }
 
-.caixa_log_in input:not([type="checkbox"]) {
-    background-color: rgba(0, 0, 0, 0.2);
+.conteudo_cadastro input:not([type="checkbox"]) {
+    background-color: rgba(139, 139, 139, 0.1);
     color: white;
-    height: 6%;
-    width: -webkit-fill-available;
+    height: 5%;
+    width: 65%;
     border-radius: 15px;
     margin-bottom: 4%;
+    font-size: 1vw;
 }
 
-.caixa_log_in button {
-    width: 50%;
-    height: 2.4em;
-    background-color: green;
-    color: white;
-    font-size: 100%;
-    border-radius: 15px;
-    margin-left: 3%;
-    border: 0;
-  
+.checkbox_termo {
+    margin-top: 7%;
+    font-size: 1vw;
 }
 
-/*@media(max-height:50%) {
-    .caixa_log_in button{height: 100%;
-    } */
-
-
-
-.button_login_conteiner {
-    text-align: center;
-}
-
-.caixa_log_in p {
-    font-size: 0.90em;
-}
-
-.button_login:hover {
-    background-color: rgb(2, 43, 2);
+.checkbox_termo input[type="checkbox"] {
     cursor: pointer;
-    font-size: 150%;
-    transition: 0.5s;
+    font-size: 1vw;
 }
 
-.rodape_caixa {
-    text-align: center;
-    font-size: 100%;    
-
-}
-
-.lembrar_login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5% 0;
-    font-size: 1em;
-}
-
-.desing_p {
-    color: white;
+.checkbox_termo a {
     text-decoration: none;
+    cursor: pointer;
+    font-size: 1vw;
 }
 
+.button_cadastro {
+    border-radius: 15px; 
+    height: 100%;
+    width: 40%;
+    color: white;
+    background-color: rgba(139, 139, 139, 0.6);
+    font-size: 2vw;
+    border: none;
+    margin-top: 7%;
+}
+
+.button_cadastro:hover {
+    background-color: green;
+    font-size: 2.5vw;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.design_input {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+   
+}
+
+.design_input:not([type="input"]) {
+    font-weight: 700;
+    font-size: 1.0vw;
+    height: 25%;
+}
+
+#resetar {
+
+    background-color: green;
+    font-size: 1.4vw;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-right: 200px;
+    border-radius: 15px;
+    border: 0;
+    color: white;
+    
+}

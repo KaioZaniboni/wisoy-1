@@ -1,38 +1,29 @@
-
 /* CSS Geral */
-* {
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 body,
 html {
     width: 100%;
     height: 100%;
     margin: 0;
-    
 }
 
 .body_img {
-    background-image: url(background.png);
+    background-image: url(../IMG/background.png);
     background-position: center;
-    background-size: cover;
+    background-size: 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
-
 }
 
 .cabecalho {
-    padding-top: 0;
+    padding-top: 0px;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 10%;
+    height: 80px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
-    
-   
 }
 
 .rodape {
@@ -41,17 +32,20 @@ html {
     padding-top: 0px;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 3%;
+    height: 30px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1vw;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rodape .grey {
+color: grey;
+margin-left: 45em;
 }
 
 .caixa {
-    max-width: 90%;
+    max-width: 1400px;
     height: 100%;
     margin: auto;
     display: flex;
@@ -59,50 +53,46 @@ html {
     align-items: center;
 }
 
+.caixa nav {
+margin: 1.00em;
+}
+
 .logo a {
     display: flex;
     align-items: center;
-    margin-left: 3%;
+    margin-left: 10px;
     text-decoration: none;
     transition: 0.5s;
 }
 
 .logo a img {
-    width: 30%;
-    font-size: 1vw;
+    width: 80px;
 }
 
 .logo a span {
     letter-spacing: 3px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 2.5vw;
 }
 
 ul {
     list-style: none;
-    
-    
 }
 
 ul li {
     color: white;
     display: inline;
     margin-left: 30px;
-    font-size: 1.5vw;
-  
+    font-size: larger;
 
 }
 
 /* .li_sobre {
     position: relative;
 }
-
 .li_sobre:hover .dropdown_sobre {
     display: block !important;   
     top: 60px;
     position: absolute;
 }
-
 .dropdown_sobre {
     display: none;
 } */
@@ -115,7 +105,7 @@ ul li a {
 }
 
 ul li a:hover {
-    font-size: 120%;
+    font-size: 25px;
     color: green;
 }
 
@@ -127,44 +117,43 @@ ul li a:hover {
 }
 
 
-
 /* CSS Home */
 
+* {
+font-family: 'Arial';
+}
+
 .corpo_home {
+    width: 100%;
+    height: 100%;
+    margin: 0;
     display: flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 7% 0 5% 0;
 }
 
 .caixa_home {
-    width: 50%;
-    height: 40%;
-}
-
-.textocentral {
+    display: flex;
     align-items: center;
-    color: white;
-}
-
-.caixa_home h2{
-    font-size: 2vw;
-
+    justify-content: space-between;
+    width: 750px;
 }
 
 .caixa_home h4 {
-    font-size: 1.3vw;
+    font-size: 0.83em;
 }
 
 .desing_button {
     border-radius: 20px;
-    width: 50%;
-    font-size: 2vw;
-    padding: 2%;
+    background-color: transparent;
+    width: 350px;
+    transition: 1s;
+    font-size: 28px;
+    padding: 20px;
     background-color: rgb(24, 23, 23, .3);
     border: none;
-    margin: 4%;
-    transition: 0.8s;
+    margin-left: 1.00em;
+    margin: 1.20em;
 }
 
 .desing_button a {
@@ -173,89 +162,7 @@ ul li a:hover {
 }
 
 .desing_button:hover {
-    font-size: 2.5vw;
-    transform: 30%;
-    transition: 0.8s;
+    font-size: 24px;
     cursor: pointer;
 
-}
-
-.newsletter input {
-    font-size: 1vw;
-
-}
-
-.newsletter button {
-    font-size: 1vw;
-
-}
-
-
-.containernews {
-
-    font-size: 1.2vw;
-}
-
-.corpo_home2 {
-    height: 22%;
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-
-.caixa_home2 {
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.caixas_coluna {
-    width: 20%;
-}
-
-
-.caixa_coluna_news {
-    width: 23%;
-    margin: 0 0 0 15%;
-    font-size: 1.2vw;
-}
-
-.container {
-    height: 15%;
-    font-size: 1.2vw;
-}
-
-.containernews {
-    background-color: rgb(24, 23, 23, .3);
-    border-radius: 10px;
-}
-
-
-.containernews .btn-orange {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    border: 0;
-}
-
-p {
-height: 15%;
-margin: 0;
-}
-
-
-/*.busca {
-    margin: 0 auto;
-    margin-top: -08.50em;
-    color: white;
-    margin-left: 44.00em;
-    background-color: rgb(24, 23, 23, .3);
-    padding: 10px;
-    border-radius: 10px;
-    width: 10em;
-}*/
-
-.coluna_img {
-    width: 4em;
 }

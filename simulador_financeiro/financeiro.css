@@ -190,7 +190,8 @@ ul li a:hover {
 
 
 .corpo_simulador {
-    background: rgb(24, 23, 23, .6);
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
     height: 100%;
     border-radius: 15px;
 }
@@ -232,7 +233,7 @@ ul li a:hover {
 
 .corpo_simulador input{
     border-color: white;
-    background-color: rgba(255, 255, 255, 0.123);
+    background-color: rgba(255, 255, 255, 0.1);
     color:white;       
     height: 40px;
     text-align: center;

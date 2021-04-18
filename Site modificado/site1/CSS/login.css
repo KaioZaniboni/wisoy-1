@@ -1,3 +1,5 @@
+
+
 /* CSS Geral */
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -8,16 +10,16 @@ html {
     width: 100%;
     height: 100%;
     margin: 0;
-    
+    overflow-y:hidden;
 }
 
 .body_img {
-    background-image: url(background.png);
+    background-image: url(..//IMG/background.png);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
+    overflow-y:hidden;
 
 }
 
@@ -126,166 +128,95 @@ ul li a:hover {
 }
 
 
+/* CSS Log In */
 
-/* CSS Contato */
-
-.caixa_contato {
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 0%;
-    font-size: 1.5vw;
-    color: white;
-    float: left;
-      
-}
-
-h1{
-    text-align: center;
-}
-
-.h3_contato{
-    width: 30%;
-    float: left;
-    
-}
-
-.h3_redes_sociais{
-    float: right;
-    width: 30%;
-
-}
-
-.h4_contato{
-    width: 30%;
-    bottom: -200px;
-    position: relative;
-    z-index: -15;
-}
-
-.social{
-    width: 10%;
-    
-    float: right;    
-}
-
-.sec_sociais{
-    padding: 0% 0% 100% 10%;
-}
-
-
-.rede{
-    
-    transition: all 0.4s ease-out;
-    
-   
-}
-
-.rede:hover{
-    cursor: pointer;
-    transform: translateY(-20px);
-}
-
-
-
-.icone{
-    margin: 6%;
-    width: 45%;
-    
-}
-
-
-
-/*
-Cadastro Lead
-*/
-
-.inferior{
-  
-    text-align: center;
-    color: white;
-    padding: 30px 50px 50px 30px;
-    margin: 8%;
-    width: 60%;
-    margin-left: 18%;
-
-}
-
-
-
-.caixa_inferior{
-
-    background-color: rgb(0, 0, 0, .2);
-    font-size: 1.3vw;
+.caixa_log_in {
+    background-color: rgba(0, 0, 0, .2);
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+    height: 82%;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -18%;
+    margin-left: -18%;
     border-radius: 30px;
-    text-align: right;
-    width: 94%;
-    padding-top: 8%;
-    margin-left: 4%;
-   
+    color: white;
+    padding: 0 30px;
+    font-size: 1vw;
+  
+    
 }
 
-.caixa_inferior input:not([type="checkbox"]){
+.caixa_log_in img {
+    margin-top: 9%;
+    height: 50%;
+}
 
-    background-color: rgba(139, 139, 139, 0.1);
-    width: 63%;
+.img_login {
+    text-align: center;
+    height: 35%;
+    margin: 0;
+}
+
+.caixa_log_in input:not([type="checkbox"]) {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    height: 6%;
+    width: -webkit-fill-available;
     border-radius: 15px;
-    font-size: 1vw;
-    
-
+    margin-bottom: 4%;
 }
 
-
-
-.design_inp{
-    justify-content: space-between;
-    font-size: 1vw;
-}
-
- 
-
-
-.item_colorido{
-    color: red;
-}
-
-
-.inp_padrao {
-    
-   margin-right: 15%;
-    font-size: 1vw;
-   
-}
-
-
-#sexo{
-    
-   
-    font-size: 1vw;
-   
-}
-
-.but_lead {
-    margin-right: 45%;
-    font-size: 1vw;
-    margin-bottom: 40px;
+.caixa_log_in button {
+    width: 50%;
+    height: 2.4em;
     background-color: green;
     color: white;
-    padding: 1% 3% ;
+    font-size: 100%;
+    border-radius: 15px;
+    margin-left: 3%;
+    border: 0;
+  
+}
+
+/*@media(max-height:50%) {
+    .caixa_log_in button{height: 100%;
+    } */
+
+
+
+.button_login_conteiner {
+    text-align: center;
+}
+
+.caixa_log_in p {
+    font-size: 0.90em;
+}
+
+.button_login:hover {
+    background-color: rgb(2, 43, 2);
+    cursor: pointer;
+    font-size: 150%;
+    transition: 0.5s;
+}
+
+.rodape_caixa {
+    text-align: center;
+    font-size: 100%;    
 
 }
 
-.inferior h1 {
-    font-size: 2vw;
-    
+.lembrar_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    font-size: 1em;
 }
 
-.inferior h4 {
-    font-size: 1.5vw;
-    
+.desing_p {
+    color: white;
+    text-decoration: none;
 }
 
-.inferior h6{
-    margin-right: 30%;
-
-}
