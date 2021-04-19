@@ -158,7 +158,8 @@ ul img{
 .corpo_dashboard{
    display: flex;
    justify-content: center;
-   background-color: cadetblue;
+
+   height: 100%;
 }
 
 .colunas{
@@ -177,7 +178,7 @@ margin-top: 17%;
 width: 400px;
 height: 200px ;
 position: absolute;
-background-color: burlywood;
+
 
 }
 
@@ -243,7 +244,7 @@ justify-content: center;
 .caixa_graficos {
     width: 50%;
     float: right;
-    height: 99%;
+    height: 100%;
     background-color: brown;
     
 }
