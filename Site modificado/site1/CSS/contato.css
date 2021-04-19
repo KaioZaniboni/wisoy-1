@@ -3,12 +3,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body,
-html {
+body, html {
     width: 100%;
     height: 100%;
     margin: 0;
-    
 }
 
 .body_img {
@@ -17,8 +15,6 @@ html {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    
-
 }
 
 .cabecalho {
@@ -30,8 +26,6 @@ html {
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
-    
-   
 }
 
 .rodape {
@@ -79,8 +73,6 @@ html {
 
 ul {
     list-style: none;
-    
-    
 }
 
 ul li {
@@ -88,23 +80,7 @@ ul li {
     display: inline;
     margin-left: 30px;
     font-size: 1.5vw;
-  
-
 }
-
-/* .li_sobre {
-    position: relative;
-}
-
-.li_sobre:hover .dropdown_sobre {
-    display: block !important;   
-    top: 60px;
-    position: absolute;
-}
-
-.dropdown_sobre {
-    display: none;
-} */
 
 ul li a {
     color: white;
@@ -125,8 +101,6 @@ ul li a:hover {
     font-size: xx-large;
 }
 
-
-
 /* CSS Contato */
 
 .caixa_contato {
@@ -136,84 +110,64 @@ ul li a:hover {
     font-size: 1.5vw;
     color: white;
     float: left;
-      
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-.h3_contato{
+.h3_contato {
     width: 30%;
     float: left;
-    
 }
 
-.h3_redes_sociais{
+.h3_redes_sociais {
     float: right;
     width: 30%;
-
 }
 
-.h4_contato{
+.h4_contato {
     width: 30%;
     bottom: -200px;
     position: relative;
     z-index: -15;
 }
 
-.social{
+.social {
     width: 10%;
-    
     float: right;    
 }
 
-.sec_sociais{
+.sec_sociais {
     padding: 0% 0% 100% 10%;
 }
 
-
-.rede{
-    
+.rede {
     transition: all 0.4s ease-out;
-    
-   
 }
 
-.rede:hover{
+.rede:hover {
     cursor: pointer;
     transform: translateY(-20px);
 }
 
-
-
 .icone{
     margin: 6%;
     width: 45%;
-    
 }
 
+/* Cadastro Lead */
 
-
-/*
-Cadastro Lead
-*/
-
-.inferior{
-  
+.inferior {
     text-align: center;
     color: white;
     padding: 30px 50px 50px 30px;
     margin: 8%;
     width: 60%;
     margin-left: 18%;
-
 }
 
-
-
-.caixa_inferior{
-
+.caixa_inferior {
     background-color: rgb(0, 0, 0, .2);
     font-size: 1.3vw;
     box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
@@ -222,47 +176,32 @@ Cadastro Lead
     width: 94%;
     padding-top: 8%;
     margin-left: 4%;
-   
 }
 
-.caixa_inferior input:not([type="checkbox"]){
-
+.caixa_inferior input:not([type="checkbox"]) {
     background-color: rgba(139, 139, 139, 0.1);
     width: 63%;
     border-radius: 15px;
     font-size: 1vw;
-    
-
 }
 
-
-
-.design_inp{
+.design_inp {
     justify-content: space-between;
     font-size: 1vw;
 }
 
- 
-
-
-.item_colorido{
+.item_colorido {
     color: red;
 }
 
-
 .inp_padrao {
-    
-   margin-right: 15%;
+    margin-right: 15%;
     font-size: 1vw;
-   
+    color: white;
 }
 
-
-#sexo{
-    
-   
+#sexo {
     font-size: 1vw;
-   
 }
 
 .but_lead {
@@ -271,21 +210,27 @@ Cadastro Lead
     margin-bottom: 40px;
     background-color: green;
     color: white;
-    padding: 1% 3% ;
-
+    padding: 1% 3%;
+    cursor: pointer;
 }
 
 .inferior h1 {
-    font-size: 2vw;
-    
+    font-size: 4vw;
 }
 
 .inferior h4 {
     font-size: 1.5vw;
-    
 }
 
-.inferior h6{
+.inferior h6 {
     margin-right: 30%;
+}
 
+.cor_contato {
+    color: rgb(58, 150, 58);
+    font-size: 5.5vw;
+}
+
+.cor_demonstração {
+    color: rgb(58, 150, 58);
 }
