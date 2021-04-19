@@ -146,8 +146,12 @@ ul li a:hover {
 
 .caixa_portfolio2 img{
     margin-top: 20px;
-
     width: 200px;
+}
+
+.item_colorido .tamanho_item_colorido{
+    color: green;
+    font-size: medium;
 }
 
 .caixa_portfolio1  {
@@ -184,6 +188,18 @@ ul li a:hover {
     background-color: rgb(228, 228, 228);
     border: 5px solid rgb(58, 150, 58);
     border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.caixa_portifolio3{
+    margin-left: 25%;
+    margin-top: 100px;
+}
+.hld {
+    border-radius: 25px;
+    height: 600px;
+    margin-bottom: 70px;
+    
 }
 
 .button_simulador {
@@ -193,9 +209,9 @@ ul li a:hover {
     transition: 1s;
     font-size: 2vw;
     padding: 2%;
-    background-color: rgb(24, 23, 23, .3);
-    border: none;
-    margin-left: 33%;
+    background-color: rgb(58, 150, 58);;
+    border: 5px solid rgb(228, 228, 228);
+    margin-left: 34%;
     margin-top: 5%;
 
 }
@@ -212,8 +228,4 @@ ul li a:hover {
 .conteudo b{
     font-size: 30px;
     color: green;
-}
-.item_colorido .tamanho_item_colorido{
-    color: green;
-    font-size: medium;
 }
