@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="./CSS/cadastro.css">
-    
+
 </head>
 
 <body class="body_img">
     <div class="cabecalho">
         <div class="caixa">
             <div class="logo">
-                <a href="home.html"><img src="./IMG/wisoy.png" alt="logo WiSoy">
+                <a href="home.html"><img src="./IMG/wisoy.png" alt="Logo da WiSoy">
                     <span>WiSoy</span></a>
             </div>
             <nav>
@@ -32,43 +32,57 @@
     <div class="corpo_cadastro">
         <h2>Crie sua conta na WiSoy.com!</h2>
         <p>Criando sua conta na WiSoy.com você terá acesso a conteúdo exclusivo.</p>
-        <br>
-        <br>
+        <br> <br>
 
-        <div class="caixa_cadastro">
+            <div class="caixa_cadastro">
+                <div class="conteudo_cadastro">
+                    <form action="reset">
+                        <div class="design_input">Nome Empresarial:
+                            <input type="text" placeholder="Digite aqui o nome empresarial" autofocus>
+                        </div>
 
-            <div class="conteudo_cadastro">
-                <form action="reset">
-                    <div class="design_input">Nome Fantasia:<input type="text" autofocus></div>
+                        <div class="design_input">Razão Social:
+                            <input type="text" placeholder="Digite aqui a razão social">
+                        </div>
 
-                    <div class="design_input">Razão Social:<input type="text"></div>
+                        <div class="design_input">CNPJ:
+                            <input type="text" placeholder="xx.xxx.xxx/xxxx-xx">
+                        </div>
 
-                    <div class="design_input">CNPJ:<input type="text" placeholder="xx.xxx.xxx/xxxx-xx"></div>
+                        <div class="design_input">Telefone:
+                            <input type="text" placeholder="(099) 99999-9999">
+                        </div>
 
-                    <div class="design_input">Telefone:<input type="text"></div>
+                        <div class="design_input">E-mail
+                            <input type="email" placeholder="nome@example.com">
+                        </div>
 
-                    <div class="design_input">E-mail<input type="email" name="" id=""
-                            placeholder="nome@example.com"></div>
+                        <div class="design_input">Usuário:
+                            <input type="text" placeholder="Digite aqui o usuário">
+                        </div>
 
+                        <div class="design_input">Senha:
+                            <input type="password" placeholder="********">
+                        </div>
 
-                    <div class="design_input">Usuário:<input type="text"></div>
+                        <div class="design_input">Confirme a senha:
+                            <input type="password" placeholder="********">
+                        </div>
+                        
+                        <div class="checkbox_termo">
+                            <input type="checkbox"> Concordo com os
+                            <a href="termos.html">termos de serviço</a>
+                            do WiSoy.com
+                        </div>
 
-                    <div class="design_input">Senha:<input type="password" name="" id=""></div>
-
-                    <div class="design_input">Confirme a senha:<input type="password" name=""
-                            id="">
-                    </div>
-                    <div class="checkbox_termo"><input type="checkbox"> Concordo com os <a href="termos.html">termos de
-                            serviço</a> do WiSoy.com</div>
-
-
-
-                    <button id="but_cadastro" class="button_cadastro" onclick="cadastrar()">Criar Conta</button>
+                    <button id="but_cadastro" class="button_cadastro" onclick="cadastrar()">
+                        Criar Conta
+                    </button>
             </div>
         </div>
     </div>
 
-    <input id="resetar"  type="reset">
+    <input id="resetar" type="reset">
 
     </form>
 
@@ -81,13 +95,7 @@
 </html>
 
 <script>
-
     function cadastrar() {
-
         alert("Cadastro realizado com sucesso!")
-
     }
-
-
-
 </script>
