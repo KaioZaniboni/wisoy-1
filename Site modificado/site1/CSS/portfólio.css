@@ -134,25 +134,56 @@ ul li a:hover {
     width: 100%;
     height: 100%;
     margin: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.caixa_portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 18px;
-    padding: 0 100px;
+.caixa_portfolio1 img{
+    margin-top: 20px;
+    width: 145px;
     
 }
 
-.caixa_portfolio p {
-    margin-top: 1%;
-    font-size: 1.5vw;
+.caixa_portfolio2 img{
+    margin-top: 20px;
+
+    width: 200px;
+}
+
+.caixa_portfolio1  {
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; */
+    color:black;
+    font-size: 18px;
+    padding: 0 100px;
+    float: left;
+    background-color: rgb(228, 228, 228);
+    border: 5px solid rgb(58, 150, 58);
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 12%;
+    width: 300px;
+    text-align: center;     
+}
+
+.caixa_portfolio2 {
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; */
+    color: black;
+    font-size: 18px;
+    padding: 0 100px;
+    float: left;
+    margin-top: 12%;
+    margin-left: 5%;
+    width: 300px;
+    text-align: center;     
+    background-color: rgb(228, 228, 228);
+    border: 5px solid rgb(58, 150, 58);
+    border-radius: 10px;
 }
 
 .button_simulador {
@@ -164,6 +195,9 @@ ul li a:hover {
     padding: 2%;
     background-color: rgb(24, 23, 23, .3);
     border: none;
+    margin-left: 33%;
+    margin-top: 5%;
+
 }
 
 .button_simulador a {
@@ -174,4 +208,12 @@ ul li a:hover {
 .button_simulador:hover {
     font-size: 2.4vw;
     cursor: pointer;
+}
+.conteudo b{
+    font-size: 30px;
+    color: green;
+}
+.item_colorido .tamanho_item_colorido{
+    color: green;
+    font-size: medium;
 }
