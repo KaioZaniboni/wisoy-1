@@ -241,6 +241,7 @@ cursor: pointer;
     justify-content: center;
     position: relative;
     float: right;
+    margin-bottom: 0;
     margin-top: 10%;
     margin-right:2% ;
    cursor: pointer;
@@ -248,9 +249,20 @@ cursor: pointer;
 
 #botao_1 {
     margin-right: 10%;
+    height: 30px;
+    
 }
 
+#botao_2{
+    height: 30px;
+    
+}
 
+#botao_3{
+    height: 30px;
+   
+
+}
 
 /*FIM BOTÕES*/
 
@@ -272,3 +284,18 @@ cursor: pointer;
 }
 
 /*FIM GRÁFICOS*/
+
+
+/**/
+
+.retrato_graficos {
+background-color: blueviolet;
+width: 200px;
+height: 100px;
+float: right;
+margin-top: 400px;
+position: relative;
+
+}
+
+/**/
