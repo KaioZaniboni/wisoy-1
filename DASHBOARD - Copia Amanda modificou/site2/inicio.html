@@ -69,6 +69,23 @@
 
     <!--FIM DO HAMBURGUER-->
 
+
+
+    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px;">
+        <canvas id="chart_umidade_semana" width="300px" height="200px"></canvas>
+    </div>
+
+
+    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px;">
+        <canvas id="chart_umidade_hora" width="300px" height="200px"></canvas>
+    </div>
+
+    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px;">
+        <canvas id="chart_umidade_mes" width="300px" height="200px"></canvas>
+    </div>
+
+
+
     <!-- INÍCIO API-->
     <div style="display: none;">
         <h1>Sensor LM35 - Temperatura</h1>
@@ -121,7 +138,6 @@
         <div class="but_graficos" id="botao_2">semana</div>
 
         <div class="but_graficos" id="botao_3">mês</div>
-
 
     </div>
 
@@ -185,6 +201,162 @@
 <!--INÍCIO SCRIPT-->
 
 <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*INÍCIO GRÁFICO UMIDADExSEMANA*/
+ const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']; 
+
+const data = {
+
+labels: labels,
+    datasets : [
+    {
+            label: 'WiSoy',
+            data: [90, 85, 95, 87, 90, 89],
+            borderColor: 'rgb(224, 187, 228)',
+            backgroundColor: 'rgb(149, 125, 173)',},
+            {
+            }
+    ]
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+        responsive: false,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Umidade do solo na plantação'
+            }
+        }
+    },
+};
+
+var umidade_semana = document.getElementById('chart_umidade_semana').getContext('2d');
+var myChart = new Chart(umidade_semana, config); 
+
+
+/*FIM GRÁFICO UMIDADExSEMANA*/
+
+
+
+ /*INÍCIO GRÁFICO UMIDADExMÊS*/
+ const labels_2 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']; 
+
+const data_2 = {
+
+labels: labels_2,
+    datasets : [
+    {
+            label: 'WiSoy',
+            data: [90, 85, 95, 87, 90, 89],
+            borderColor: 'rgb(224, 187, 228)',
+            backgroundColor: 'rgb(149, 125, 173)',},
+            {
+            }
+    ]
+};
+
+const config_2 = {
+    type: 'line',
+    data: data_2,
+    options: {
+        responsive: false,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Umidade do solo na plantação'
+            }
+        }
+    },
+};
+
+var umidade_mes = document.getElementById('chart_umidade_mes').getContext('2d');
+var myChart = new Chart(umidade_mes, config_2); 
+
+
+/*FIM GRÁFICO UMIDADExMÊS*/
+
+
+
+
+ /*INÍCIO GRÁFICO UMIDADExHORA*/
+ const labels_3 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']; 
+
+const data_3 = {
+
+labels: labels_3,
+    datasets : [
+    {
+            label: 'WiSoy',
+            data: [90, 85, 95, 87, 90, 89],
+            borderColor: 'rgb(224, 187, 228)',
+            backgroundColor: 'rgb(149, 125, 173)',},
+            {
+            }
+    ]
+};
+
+const config_3 = {
+    type: 'line',
+    data: data_3,
+    options: {
+        responsive: false,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Umidade do solo na plantação'
+            }
+        }
+    },
+};
+
+var umidade_hora = document.getElementById('chart_umidade_hora').getContext('2d');
+var myChart = new Chart(umidade_hora, config_3); 
+
+
+/*FIM GRÁFICO UMIDADExHORA*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     var context = document.getElementById("chart").getContext("2d");
