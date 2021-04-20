@@ -108,7 +108,7 @@ ul li a:hover {
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 7% 0 5% 0;
+    padding: 7% 0 0 0;
 }
 
 .caixa_home {
@@ -166,7 +166,6 @@ ul li a:hover {
 }
 
 .corpo_home2 {
-    height: 22%;
     width: 100%;
     text-align: center;
     color: white;

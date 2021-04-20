@@ -30,8 +30,7 @@ html {
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
-    
-   
+    z-index: 1; 
 }
 
 .rodape {
@@ -141,7 +140,6 @@ ul li a:hover {
 .caixa_portfolio1 img{
     margin-top: 20px;
     width: 145px;
-    
 }
 
 .caixa_portfolio2 img{
@@ -155,12 +153,8 @@ ul li a:hover {
 }
 
 .caixa_portfolio1  {
-    /* display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; */
     color:black;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 100px;
     float: left;
     background-color: rgb(228, 228, 228);
@@ -173,10 +167,6 @@ ul li a:hover {
 }
 
 .caixa_portfolio2 {
-    /* display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; */
     color: black;
     font-size: 18px;
     padding: 0 100px;
