@@ -1,0 +1,231 @@
+/* CSS Geral */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+
+.body_img {
+    background-image: url(..//IMG/background.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+
+}
+
+.cabecalho {
+    padding-top: 0;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: fixed;
+    top: 0;
+    
+   
+}
+
+.rodape {
+    position: fixed;
+    bottom: 0;
+    padding-top: 0px;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 3%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.caixa {
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.logo a img {
+    width: 30%;
+    font-size: 1vw;
+}
+
+.logo a span {
+    letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vw;
+}
+
+ul {
+    list-style: none;
+    
+    
+}
+
+ul li {
+    color: white;
+    display: inline;
+    margin-left: 30px;
+    font-size: 1.5vw;
+  
+
+}
+
+/* .li_sobre {
+    position: relative;
+}
+
+.li_sobre:hover .dropdown_sobre {
+    display: block !important;   
+    top: 60px;
+    position: absolute;
+}
+
+.dropdown_sobre {
+    display: none;
+} */
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 3px;
+}
+
+ul li a:hover {
+    font-size: 120%;
+    color: green;
+}
+
+.cabecalho span {
+    color: white;
+    display: inline;
+    margin-left: 5px;
+    font-size: xx-large;
+}
+
+
+
+
+/* CSS Portfolio */
+
+.corpo_portfolio {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa_portfolio1 img{
+    margin-top: 20px;
+    width: 145px;
+    
+}
+
+.caixa_portfolio2 img{
+    margin-top: 20px;
+    width: 200px;
+}
+
+.item_colorido .tamanho_item_colorido{
+    color: green;
+    font-size: medium;
+}
+
+.caixa_portfolio1  {
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; */
+    color:black;
+    font-size: 18px;
+    padding: 0 100px;
+    float: left;
+    background-color: rgb(228, 228, 228);
+    border: 5px solid rgb(58, 150, 58);
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 12%;
+    width: 300px;
+    text-align: center;     
+}
+
+.caixa_portfolio2 {
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; */
+    color: black;
+    font-size: 18px;
+    padding: 0 100px;
+    float: left;
+    margin-top: 12%;
+    margin-left: 5%;
+    width: 300px;
+    text-align: center;     
+    background-color: rgb(228, 228, 228);
+    border: 5px solid rgb(58, 150, 58);
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+
+.caixa_portifolio3{
+    margin-left: 25%;
+    margin-top: 100px;
+}
+.hld {
+    border-radius: 25px;
+    height: 600px;
+    margin-bottom: 70px;
+    
+}
+
+.button_simulador {
+    border-radius: 20px;
+    background-color: transparent;
+    width: 32%;
+    transition: 1s;
+    font-size: 2vw;
+    padding: 2%;
+    background-color: rgb(58, 150, 58);;
+    border: 5px solid rgb(228, 228, 228);
+    margin-left: 34%;
+    margin-top: 5%;
+
+}
+
+.button_simulador a {
+    color: white;
+    text-decoration: none;
+}
+
+.button_simulador:hover {
+    font-size: 2.4vw;
+    cursor: pointer;
+}
+.conteudo b{
+    font-size: 30px;
+    color: green;
+}
