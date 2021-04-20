@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
         integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
         crossorigin="anonymous">
-    </script>
+        </script>
     <link rel="stylesheet" href="./financeiro.css">
     <title>Financeiro</title>
 </head>
@@ -26,11 +26,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li class="li_sobre"><a href="sobre.html">Sobre</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="log in.html">Log In</a></li>
+                    <li><a href="../Site modificado/site1/home.html">Home</a></li>
+                    <li class="li_sobre"><a href="../Site modificado/site1/sobre.html">Sobre</a></li>
+                    <li><a href="../Site modificado/site1/portfolio.html">Portfolio</a></li>
+                    <li><a href="../Site modificado/site1/contato.html">Contato</a></li>
+                    <li><a href="../Site modificado/site1/login.html">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -126,10 +126,29 @@
 
 <script>
     function calculo() {
+        
+        /*Função do alerta*/
+        var area_inpt = inpt_area.value;
+        var safras_inpt = inpt_colheita.value;
+        var select_est = sel_estado.value;
+
+        if (area_inpt.length <= 0 && safras_inpt.length <= 0 && select_est <= 0 || area_inpt.length <= 0 && safras_inpt.length <= 0 || area_inpt.length <= 0 && select_est <= 0 || safras_inpt.length <= 0 && select_est <= 0) {
+            alert('Preencha todos os campos!')
+        }
+        else if (area_inpt.length <= 0) {
+            alert('Preencha o campo da área!')
+        }
+        else if (safras_inpt.length <= 0) {
+            alert('Preencha o campo da quantidade de safras!')
+        }
+        else if (select_est <= 0) {
+            alert('Selecione seu estado!')
+        } 
+        else {
 
         let safrasRelatorio = [];
 
-        coluna_direita_id.style.display = ' block'
+        coluna_direita_id.style.display = 'block'
         coluna_direita_id.style.float = 'left'
 
         // Recebe o valor que o usuário insere em inpt_area(hectares).
@@ -189,7 +208,6 @@
 
         var rendimento_wisoy = (safras * ganho_hectare_safra * 1.0543 * area) -
             (investimento_inicial + (custo_mensal * (safras * ciclo_safra)));
-        rendimento_wisoy = (rendimento_wisoy).toFixed(2);
 
         var rendimento_wisoy_safra_fixo = (1 * ganho_hectare_safra * 1.0543 * area) -
             (investimento_inicial + (custo_mensal * (1 * ciclo_safra)));
@@ -199,8 +217,8 @@
 
 
         /* Diferença de rendimento comum e Wisoy*/
-        var diferenca_rendimento = rendimento_wisoy - rendimento_comum;
-        diferenca_rendimento = (diferenca_rendimento).toFixed(2);
+
+        var diferenca_rendimento = (Number(rendimento_wisoy) - Number(rendimento_comum));
 
         var diferenca_rendimento_safra_fixo = rendimento_wisoy_safra_fixo - rendimento_comum_fixo;
 
@@ -217,13 +235,12 @@
         var diferenca9 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 8)) - Number(rendimento_comum_fixo);
         var diferenca10 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 9)) - Number(rendimento_comum_fixo);
 
-
-
-
         /*Número que irá aparecer no quadrado do simulador*/
-        div_resultado.innerHTML = `Ganho estimado de R$ ${diferenca_rendimento} em ${safras} safras.`;
 
+        var valorFormatado = diferenca_rendimento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
+        div_resultado.innerHTML = `Ganho estimado de ${valorFormatado} em ${safras} safras.`;
+    
         /*INÍCIO GRÁFICOS*/
 
         setTimeout(() => {
@@ -241,7 +258,7 @@
             datasets: [{
                 label: 'Histórico de safras realizadas',
                 data: [0, diferenca_rendimento_safra_fixo, diferenca2, diferenca3, diferenca4, diferenca5, diferenca6,
-                diferenca7, diferenca8, diferenca9, diferenca10],
+                    diferenca7, diferenca8, diferenca9, diferenca10],
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1,
@@ -259,8 +276,7 @@
             document.getElementById('chart'),
             config
         );
-
-        /*FIM GRÁFICOS*/
+    }
     }
 
 
@@ -289,7 +305,7 @@
         } else if (valor_saca == 168) {
             mensagem_valor_safra.innerHTML = `Valor da saca: R$ 168,00`;
         } else if (valor_saca == 165) {
-            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,50`;
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,00`;
         } else if (valor_saca == 159) {
             mensagem_valor_safra.innerHTML = `Valor da saca: R$ 159,00`;
         } else if (valor_saca == 162) {

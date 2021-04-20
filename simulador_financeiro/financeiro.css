@@ -126,7 +126,7 @@ ul li a:hover {
     justify-content: center;
     width: 95%;
     flex-wrap: wrap;  /* essa propriedade permite que as classes filhas possam quebrar de linha */
-    padding: 150px 0px 100px 0px;
+    padding: 90px 0px 100px 0px;
     text-align: center;
 }
 
