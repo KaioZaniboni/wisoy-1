@@ -191,124 +191,16 @@ ul li a:hover {
     padding-bottom: 5px;
 }
 
-.corpo_hld {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 50px 0px 50px 0px;
-    text-align: center;
+.caixa_portifolio3{
+    margin-left: 25%;
+    margin-top: 100px;
+}
+.hld {
+    border-radius: 25px;
     height: 600px;
+    margin-bottom: 70px;
+    
 }
-
-.caixa_hld {
-    position: relative;
-    width: 40%;
-    height: 100%;
-    background-color: rgb(37, 49, 73);
-    border-radius: 20px;
-}
-
-.div_hld {
-    color: white;
-    font-size: 2.5vw;
-    font-weight: 900;
-}
-
-.sub_caixa1_hld {
-    position: absolute;
-    height: 180px;
-    width: 250px;
-    background-color: white;
-    border: 10px solid rgb(120, 120, 120);
-    border-radius: 30px;
-    left: 6%;
-    top: 22%;
-}
-
-.sub_caixa2_hld {
-    position: absolute;
-    height: 180px;
-    width: 250px;
-    background-color: white;
-    border: 10px solid rgb(120, 120, 120);
-    border-radius: 30px;
-    left: 6%;
-    bottom: 0;
-}
-
-.sub_caixa3_hld {
-    position: absolute;
-    height: 460px;
-    width: 130px;
-    border: 7px solid rgb(255, 255, 255);
-    border-radius: 20px;
-    bottom: 0;
-    right: 0;
-    background-color: rgb(130, 130, 130);
-}
-
-.img1 {
-    position: absolute;
-    width: 80px;
-    top: -20%;
-    left: -15%;
-}
-.img2 {
-    position: absolute;
-    width: 55px;
-    left: 18%;
-    top: 28%;
-}
-.img3 {
-    position: absolute;
-    width: 55px;
-    bottom: 3%;
-    right: 36%;
-}
-.img4 {
-    position: absolute;
-    width: 55px;
-    top: 28%;
-    right: 13%;
-}
-.img5 {
-    position: absolute;
-    width: 80px;
-    top: -20%;
-    left: -15%;
-}
-.img6 {
-    position: absolute;
-    width: 55px;
-    left: 18%;
-    top: 28%;
-}
-.img7 {
-    position: absolute;
-    width: 55px;
-    bottom: 3%;
-    right: 36%;
-}
-.img8 {
-    position: absolute;
-    width: 55px;
-    top: 28%;
-    right: 13%;
-}
-.img9 {
-    position: absolute;
-    width: 90px;
-    right: 15%;
-    top: 10%;
-}
-.img10 {
-    position: absolute;
-    width: 90px;
-    bottom: 10%;
-    right: 15%;
-}
-
-
 
 .button_simulador {
     border-radius: 20px;

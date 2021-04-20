@@ -1,13 +1,16 @@
-/* CSS Geral */
 
+
+/* CSS Geral */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
     margin: 0;
+    overflow-y:hidden;
 }
 
 .body_img {
@@ -15,7 +18,9 @@ body, html {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
+    overflow-y:hidden;
+
 }
 
 .cabecalho {
@@ -27,6 +32,8 @@ body, html {
     border-bottom-right-radius: 50px;
     position: fixed;
     top: 0;
+    
+   
 }
 
 .rodape {
@@ -74,6 +81,8 @@ body, html {
 
 ul {
     list-style: none;
+    
+    
 }
 
 ul li {
@@ -81,7 +90,23 @@ ul li {
     display: inline;
     margin-left: 30px;
     font-size: 1.5vw;
+  
+
 }
+
+/* .li_sobre {
+    position: relative;
+}
+
+.li_sobre:hover .dropdown_sobre {
+    display: block !important;   
+    top: 60px;
+    position: absolute;
+}
+
+.dropdown_sobre {
+    display: none;
+} */
 
 ul li a {
     color: white;
@@ -102,120 +127,96 @@ ul li a:hover {
     font-size: xx-large;
 }
 
-/* CSS Home */
 
-.corpo_home {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 7% 0 5% 0;
-}
+/* CSS Log In */
 
-.caixa_home {
-    width: 50%;
-    height: 40%;
-}
-
-.textocentral {
-    align-items: center;
+.caixa_log_in {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+    height: 82%;
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -18%;
+    margin-left: -18%;
+    border-radius: 30px;
     color: white;
+    padding: 0 30px;
+    font-size: 1vw;
+  
+    
 }
 
-.caixa_home h2{
-    font-size: 2vw;
-
+.caixa_log_in img {
+    margin-top: 9%;
+    height: 50%;
 }
 
-.caixa_home h4 {
-    font-size: 1.3vw;
+.img_login {
+    text-align: center;
+    height: 35%;
+    margin: 0;
 }
 
-.desing_button {
-    border-radius: 20px;
+.caixa_log_in input:not([type="checkbox"]) {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    height: 6%;
+    width: -webkit-fill-available;
+    border-radius: 15px;
+    margin-bottom: 4%;
+}
+
+.caixa_log_in button {
     width: 50%;
-    font-size: 2vw;
-    padding: 2%;
-    background-color: rgb(24, 23, 23, .3);
-    border: none;
-    margin: 4%;
-    transition: 0.8s;
+    height: 2.4em;
+    background-color: green;
+    color: white;
+    font-size: 100%;
+    border-radius: 15px;
+    margin-left: 3%;
+    border: 0;
+  
 }
 
-.desing_button a {
+/*@media(max-height:50%) {
+    .caixa_log_in button{height: 100%;
+    } */
+
+
+
+.button_login_conteiner {
+    text-align: center;
+}
+
+.caixa_log_in p {
+    font-size: 0.90em;
+}
+
+.button_login:hover {
+    background-color: rgb(2, 43, 2);
+    cursor: pointer;
+    font-size: 150%;
+    transition: 0.5s;
+}
+
+.rodape_caixa {
+    text-align: center;
+    font-size: 100%;    
+
+}
+
+.lembrar_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+    font-size: 1em;
+}
+
+.desing_p {
     color: white;
     text-decoration: none;
 }
 
-.desing_button:hover {
-    font-size: 2.5vw;
-    transform: 30%;
-    transition: 0.8s;
-    cursor: pointer;
-}
-
-.newsletter input {
-    font-size: 1vw;
-}
-
-.newsletter button {
-    font-size: 1vw;
-}
-
-.containernews {
-    font-size: 1.2vw;
-}
-
-.corpo_home2 {
-    height: 22%;
-    width: 100%;
-    text-align: center;
-    color: white;
-}
-
-.caixa_home2 {
-    display: inline-flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-}
-
-.caixas_coluna {
-    width: 20%;
-}
-
-
-.caixa_coluna_news {
-    width: 23%;
-    margin: 0 0 0 15%;
-    font-size: 1.2vw;
-}
-
-.container {
-    height: 15%;
-    font-size: 1.2vw;
-}
-
-.containernews {
-    background-color: rgb(24, 23, 23, .3);
-    border-radius: 10px;
-}
-
-.containernews .btn-orange {
-    background-color: green;
-    color: white;
-    cursor: pointer;
-    border: 0;
-}
-
-p {
-height: 15%;
-margin: 0;
-}
-
-.coluna_img {
-    width: 4em;
-}
-
-.cor_texto_home {
-    color: rgb(0, 197, 0);
-}
