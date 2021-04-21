@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+
+<body class="body_img">
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <a href="home.html"><img src="../IMG/wisoy.png" alt="logo WiSoy">
+                    <span>WiSoy</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="portfólio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="corpo_log_in">
+        <div class="caixa_log_in">
+            <div class="img_login">
+                <img src="../IMG/wisoy.png" alt="Logo WiSoy">
+            </div>
+            
+            <span>E-mail</span>
+            
+            <input id="inpt_email" type="email" 
+            placeholder="Digite aqui seu e-mail"
+            onkeyup="analisar_email()"
+            autofocus>
+            
+            <br>
+            
+            <div id="mensagem_email"></div>
+            
+            <br>
+            
+            <span>Senha</span>
+            
+            <input type="password" id="inpt_senha"
+            placeholder="********" 
+            onkeyup="analisar_senha()">
+            <input type="checkbox" onclick="mostrarOcultarSenha()">Mostrar/Esconder
+            
+            <br>
+            
+            <div id="mensagem_senha"></div>
+            
+            <br>
+            
+            <div class="lembrar_login">
+                <input type="checkbox">
+                    <span>
+                        Lembrar meu login
+                    </span>
+            </div>
+            
+            <div id="login" class="button_login_conteiner">
+                <button class="button_login">Entrar</button>
+            </div>
+            
+            <br>
+
+            <div class="rodape_caixa">
+                <p><a class="desing_p" href="Senha.html">Esqueceu a sua senha?</a></p>
+                <p><a class="desing_p" href="cadastro.html">Não possui uma conta? Cadastre-se!</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rodape">
+        Copyright &copy 2021 - Todos os direitos reservados - WiSoy
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function analisar_email() {
+
+        var email = inpt_email.value;
+        email = email.trimStart();
+        email = email.trimEnd();
+        var amanda = email.indexOf('amanda.fruteiro@wisoy.com.br');
+        var jonas = email.indexOf('jonas.florencio@wisoy.com.br');
+        var fernanda = email.indexOf('fernanda.chimenez@wisoy.com.br');
+        var kaio = email.indexOf('kaio.zaniboni@wisoy.com.br');
+        var luiz = email.indexOf('luiz.ekstein@wisoy.com.br');
+        var matheus = email.indexOf('matheus.vieck@wisoy.com.br');
+        var fernando = email.indexOf('fernando.brandao@wisoy.com.br');
+        var jesus = email.indexOf('guilherme.jesus@wisoy.com.br');
+        var leonardo = email.indexOf('leonardo.marques@wisoy.com.br');
+
+        if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
+            mensagem_email.innerHTML = 'Email válido'
+        }
+        else {
+            mensagem_email.innerHTML = 'Email inválido!'
+        }
+    }
+
+    function analisar_senha() {
+
+        var senha = inpt_senha.value;
+        var char_minus = senha.match(/[a-z]+/);
+        var char_maius = senha.match(/[A-Z]+/);
+        var char_esp = senha.match(/[!-@]+/)
+
+        if (char_maius && char_minus && char_esp) {
+            mensagem_senha.innerHTML = "Senha válida"
+        }
+        else {
+            mensagem_senha.innerHTML = "Senha inválida!"
+        }
+    }
+
+    function mostrarOcultarSenha() {
+        var senha_2 = document.getElementById("inpt_senha")
+        if (senha_2.type == "password") {
+            senha_2.type = "text";
+        } else {
+            senha_2.type = "password";
+        }
+    }
+</script>
