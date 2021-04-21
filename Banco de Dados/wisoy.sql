@@ -92,7 +92,7 @@ CREATE TABLE COLABORADORES (
   DATA_ADMISSAO DATE,
   PRIMARY KEY (ID_COLABORADORES))auto_increment = 5000;
 
-DESC FUNCIONARIOS;
+DESC COLABORADORES;
 -- -----------------------------------------------------
 -- A tabela OCORRENCIAS tem o propósito de armazenar todas as ocorrências relacionadas ao serviços WiSoy relatadas por clientes.
 -- -----------------------------------------------------
@@ -107,10 +107,10 @@ CREATE TABLE OCORRENCIAS (
   REFERENCES CLIENTES (ID_CLIENTE),
   FOREIGN KEY (FK_COLABORADORES)
   REFERENCES COLABORADORES (ID_COLABORADORES))auto_increment = 7000;
-
+  
 DESC OCORRENCIAS;
 -- -----------------------------------------------------
--- A tabela DADOS tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
+-- A tabela HISTÓRICO tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
 -- -----------------------------------------------------
 CREATE TABLE HIST_SENSOR (
   ID_HISTORICO INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -120,7 +120,7 @@ CREATE TABLE HIST_SENSOR (
   FOREIGN KEY (FK_SENSOR)
   REFERENCES SENSORES (ID_SENSOR))auto_increment = 1;
   
-  DESC DADOS;
+  DESC HIST_SENSOR;
 -- -----------------------------------------------------
 -- Inserts para testes
 -- -----------------------------------------------------
@@ -133,6 +133,7 @@ INSERT INTO LEADS VALUES (NULL, 'Project Plant', 'contato@projectplant.com', '11
 
 
 SELECT * FROM LEADS;
+
 DESC LEADS;
 
 DESC CLIENTES;
@@ -198,9 +199,9 @@ INSERT INTO COLABORADORES VALUES(NULL, 'Jonas Florencio', 'M', '2002-03-30', 'jo
 SELECT * FROM COLABORADORES;
 
 INSERT INTO OCORRENCIAS VALUES
-(NULL, 15000, 1000, 'Fazenda da Rua Andrade Lopes problema no sensor.', '2021-03-27'),
-(NULL, 15000, 1000, 'Fazenda da Rua Padre André precisa trocar sensor 86.1638, -80.4437', '2021-03-28'),
-(NULL, 15001, 1001, 'Fazenda da Rua Cornelius Frederick precisa de mais 2 sensores', '2021-04-10');
+(NULL, 15000, 5000, 'Fazenda da Rua Andrade Lopes problema no sensor.', '2021-03-27'),
+(NULL, 15000, 5000, 'Fazenda da Rua Padre André precisa trocar sensor 86.1638, -80.4437', '2021-03-28'),
+(NULL, 15001, 5001, 'Fazenda da Rua Cornelius Frederick precisa de mais 2 sensores', '2021-04-10');
 
 SELECT * FROM OCORRENCIAS;
 

@@ -41,7 +41,7 @@ body {
     margin: auto;
 }
    
-    
+
 
 .logo {
     
@@ -51,6 +51,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;}
+
 
 .logo img {
     height: 100%;
@@ -155,30 +156,22 @@ ul img{
 
 /* Inicio Caixa Dashboard (Engloba tudo) */
 
-.corpo_dashboard{
-   display: flex;
-   justify-content: center;
 
-   height: 100%;
-}
-
-.colunas{
-    width: 90%;
-    padding: 120px;
-}
 /* Fim Caixa Dashboard (Engloba tudo) */
+
+
 
 /*INÍCIO BOTÕES*/
 
 
 .caixa_but {
 
-margin-left: 10%;
+float: right;
 margin-top: 17%;    
 width: 400px;
 height: 200px ;
 position: absolute;
-
+margin-right: 45%;
 
 }
 
@@ -193,75 +186,60 @@ align-items: center;
 justify-content: center;
 cursor: pointer;
 
-
 }
 
-#but_1{
-
+#but_sensor_1{
     border-bottom: 3px solid blueviolet;
     position: absolute;
-
-
- 
 }
 
-#but_2{
+#but_sensor_2{
 
     border-bottom: 3px solid rgb(226, 43, 195);
     right: 0;
     position: absolute;
-
-
 }
 
-#but_3{
+#but_sensor_3{
 
     border-bottom: 3px solid rgb(43, 153, 226);
     bottom: 0;
     position: absolute;
-
 }
 
-#but_4{
+#but_sensor_4{
 
     border-bottom: 3px solid rgb(226, 70, 43);
     bottom: 0;
     right: 0;
     position: absolute;
-    
 }
+
+
+/*BOTÕES TROCAR GRÁFICO*/
 
 .but_graficos{
     background-color: rgba(24, 23, 23, 0.76);
-    width: 5%;
     color: white;
-    height: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    cursor: pointer;
+    height: 5%;
+  margin: 0;
+    width: 5%;
     float: right;
-    margin-bottom: 0;
-    margin-top: 10%;
-    margin-right:2% ;
-   cursor: pointer;
+    
+ 
 }
 
-#botao_1 {
-    margin-right: 10%;
-    height: 30px;
+#botao_hora {
+  
+}
+
+#botao_semanal{
     
 }
 
-#botao_2{
-    height: 30px;
-    
-}
-
-#botao_3{
-    height: 30px;
-   
-
+#botao_mensal{
+  
 }
 
 /*FIM BOTÕES*/
@@ -271,16 +249,15 @@ cursor: pointer;
     display: none;
     height: 100px;
     border-radius: 10px;
+    background-color: magenta;
 }
 
 /*INÍCIO GRÁFICOS*/
 
 .caixa_graficos {
     width: 50%;
-    float: right;
     height: 100%;
-    background-color: brown;
-    
+    background-color: magenta;
 }
 
 /*FIM GRÁFICOS*/
@@ -289,13 +266,12 @@ cursor: pointer;
 /**/
 
 .retrato_graficos {
-background-color: blueviolet;
-width: 200px;
-height: 100px;
-float: right;
-margin-top: 400px;
-position: relative;
+margin-right: 0;   
+margin-top: 20%;
+width: 600px;
+height: 400px;
 
+background-color: magenta;
 }
 
 /**/

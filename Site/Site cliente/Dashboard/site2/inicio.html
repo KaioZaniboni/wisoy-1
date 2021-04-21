@@ -8,12 +8,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
         integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="geral.css">
-    <link rel="stylesheet" href="">
-    <title>Minha Plantação</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <link rel="stylesheet" href="geral.css">
+
+    <title>Minha Plantação</title>
+
+
+    <!--Este style refere-se a API-->
+
     <style>
         canvas {
             -moz-user-select: none;
@@ -21,6 +25,10 @@
             -ms-user-select: none;
         }
     </style>
+
+
+    <!--Este style refere-se a API-->
+
 </head>
 
 <!--INÍCIO DO CABECALHO-->
@@ -71,298 +79,287 @@
 
 
 
-    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
-        <canvas id="chart_umidade_semana" width="300px" height="200px"></canvas>
-    </div>
-
-
-    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
-        <canvas id="chart_umidade_hora" width="300px" height="200px"></canvas>
-    </div>
-
-    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
-        <canvas id="chart_umidade_mes" width="300px" height="200px"></canvas>
-    </div>
 
 
 
-    <!-- INÍCIO API-->
-    <div style="display: none;">
-        <h1>Sensor LM35 - Temperatura</h1>
-        <section>
-            <h2>Média: <label id='average'>0.00</label></h2>
-            <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
-        </section>
-        <section style="width:100%">
-            <canvas id="chart"></canvas>
-            <section>
-    </div>
-    <div id="grafico_bunitu" style="display: none;">
-        <section>
-            <h1>Sensor DHT11 - Umidade</h1>
-            <h2>Média: <label id='averageHumidity'>0.00</label></h2>
-            <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
-        </section>
-        <section style="width:100%">
-            <canvas id="chart-humidity"></canvas>
-            <section>
-    </div>
-    <div style="display: none;">
-        <section>
-            <h1>Sensor TRC5000 - Switch</h1>
-        </section>
-        <section style="width:100%">
-            <canvas id="chart-switch"></canvas>
-            <section>
-    </div>
-    <div style="display: none;">
-        <section>
-            <h1>Sensor LDR - Luminosidade</h1>
-            <h2>Média: <label id='averageLumi'>0.00</label></h2>
-            <h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
-        </section>
-        <section style="width:100%">
-            <canvas id="chart-lumi"></canvas>
-            <section>
-    </div>
+    <!--INÍCIO BOTÕES SENSORES-->
 
 
-    <!--FIM API -->
+    
+        <div class="caixa_but">
+
+            <div class="but_display_digital" onclick='trocar_api()' id="but_sensor_1">Sensor 1</div>
+
+            <div class="but_display_digital" id="but_sensor_2">Sensor 2</div>
+
+            <div class="but_display_digital" id="but_sensor_3">Sensor 3</div>
+
+            <div class="but_display_digital" id="but_sensor_4">Sensor 4</div>
+
+        </div>
+   
+
+    <!--FIM BOTÕES SENSORES-->
 
 
     <!--INÍCIO BOTÕES MUDAR GRÁFICO-->
-   
 
-        <div class="but_graficos" id="botao_1">hora</div>
+    <div>
 
-        <div class="but_graficos" id="botao_2">semana</div>
 
-        <div class="but_graficos" id="botao_3">mês</div>
+        <div class="but_graficos" id="botao_hora" onclick="trocar_hora()">hora</div>
 
-    
+      
+        <div class="but_graficos" id="botao_semanal" onclick="trocar_semanal()">semanal</div>
+
+
+        <div class="but_graficos" id="botao_mensal" onclick="trocar_mensal()">mensal</div>
+
+    </div>
 
     <!--FIM BOTÕES MUDAR GRÁFICO-->
 
+
+
     <!--INÍCIO RETRATO GRÁFICO-->
 
-    <div class="retrato_graficos">aloooooooooooooo</div>
+    <div class="retrato_graficos">
 
-    <!--FIM RETRATO GRÁFICO-->
+        <!-- INÍCIO API-->
 
-    <!--INÍCIO BOTÕES-->
-
-    <div class="corpo_dashboard">
-        <div class="colunas">
-            <div class="caixa_but">
-
-                <div class="but_display_digital" onclick="calcular()" id="but_1">Sensor 1</div>
-
-                <div class="but_display_digital" id="but_2">Sensor 2</div>
-
-                <div class="but_display_digital" id="but_3">Sensor 3</div>
-
-                <div class="but_display_digital" id="but_4">Sensor 4</div>
+        <div style="display: none;">
+            <h1>Sensor LM35 - Temperatura</h1>
+            <section>
+                <h2>Média: <label id='average'>0.00</label></h2>
+                <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+            </section>
+            <section style="width:100%">
+                <canvas id="chart"></canvas>
+                <section>
+        </div>
 
 
+        <div id="grafico_api" style="height: 500px; width: 600px;  margin-right: 150px; display: none;">
+            <div style="display: none;">
+                <section>
+                    <h1>Sensor DHT11 - Umidade</h1>
+                    <h2>Média: <label id='averageHumidity'>0.00</label></h2>
+                    <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
+                </section>
             </div>
-
-            <!--FIM BOTÕES-->
-
-            <!--INÍCIO MENSAGEM(GRÁFICO)-->
-
-            <!-- <div id="mensagem" class="caixa_graficos"></div> 
-        </div> -->
-        </div>
-        <!--FIM MENSAGEM(GRÁFICO)-->
-
-
-
-        <!--INÍCIO DO CANVAS CHART.JS-->
-
-
-        <div style="width: 500px; padding: 150px 0px 0px 300px;">
-            <canvas style="display: none;" id="chart"></canvas>
+            </section>
+            <section style="width:100%">
+                <canvas id="chart-humidity"></canvas>
+                <section>
         </div>
 
-        <div id="button_detalhe" class="button_detalhes">
-            <button onclick="button()">Detalhes</button>
+
+        <div style="display: none;">
+            <section>
+                <h1>Sensor TRC5000 - Switch</h1>
+            </section>
+            <section style="width:100%">
+                <canvas id="chart-switch"></canvas>
+                <section>
+        </div>
+        <div style="display: none;">
+            <section>
+                <h1>Sensor LDR - Luminosidade</h1>
+                <h2>Média: <label id='averageLumi'>0.00</label></h2>
+                <h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
+            </section>
+            <section style="width:100%">
+                <canvas id="chart-lumi"></canvas>
+                <section>
         </div>
 
-        <div style="width: 500px; float: right; margin: 250px 0px 0px 50px;" onclick="grafico2()">
-            <canvas style="display: none;" id="chart2"></canvas>
+
+        <!--FIM API -->
+
+
+        <!--INICIO GRÁFICO UMIDADE HORA -->
+
+
+        <div id="grafico_umidade_hora" style="height: 500px; width: 600px;   margin-right: 150px; display: none;">
+            <canvas id="chart_umidade_mes" width="500px" height="300px"></canvas>
         </div>
 
-        <!--FIM DO CANVAS CHART.JS-->
+        <!--FIM GRÁFICO UMIDADE HORA -->
 
-        <!--INÍCIO RODAPÉ-->
+        <!--INICIO GRÁFICO UMIDADE SEMANAL -->
 
-        <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
 
-        <!--FIM RODAPÉ-->
+        <div id="grafico_umidade_semanal" style="height: 500px; width: 600px;   margin-right: 150px; display: none;">
+            <canvas id="chart_umidade_semana" width="500px" height="300px"></canvas>
+        </div>
+
+        <!--FIM GRÁFICO UMIDADE SEMANAL -->
+
+        <!--INCIO GRÁFICO UMIDADE MENSAL -->
+
+
+        <div id="grafico_umidade_mensal" style="height: 500px; width: 600px;   margin-right: 150px; display: none;">
+            <canvas id="chart_umidade_hora" width="500px" height="300px"></canvas>
+        </div>
+
+
+        <!--FIM GRÁFICO UMIDADE MENSAL -->
+
+
+        <!--FIM RETRATO GRÁFICO-->
+
+    </div>
+
+
+
+    <!--INÍCIO RODAPÉ-->
+
+    <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
+
+    <!--FIM RODAPÉ-->
 
 </body>
 
 </html>
+
+
 
 <!--INÍCIO SCRIPT-->
 
 <script>
 
 
+    /*INÍCIO GRÁFICO UMIDADE HORA*/
 
+    const labels_3 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
 
+    const data_3 = {
 
-
-
-
-
-
-
-
-
- /*INÍCIO GRÁFICO UMIDADExSEMANA*/
- const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']; 
-
-const data = {
-
-labels: labels,
-    datasets : [
-    {
-            label: 'WiSoy',
-            data: [90, 85, 95, 87, 90, 89],
-            borderColor: 'rgb(224, 187, 228)',
-            backgroundColor: 'rgb(149, 125, 173)',},
+        labels: labels_3,
+        datasets: [
+            {
+                label: 'WiSoy',
+                data: [90, 85, 95, 87, 90, 89],
+                borderColor: 'rgb(224, 187, 228)',
+                backgroundColor: 'rgb(149, 125, 173)',
+            },
             {
             }
-    ]
-};
+        ]
+    };
 
-const config = {
-    type: 'line',
-    data: data,
-    options: {
-        responsive: false,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Umidade do solo na plantação'
+    const config_3 = {
+        type: 'line',
+        data: data_3,
+        options: {
+            responsive: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Umidade do solo na plantação'
+                }
             }
-        }
-    },
-};
+        },
+    };
 
-var umidade_semana = document.getElementById('chart_umidade_semana').getContext('2d');
-var myChart = new Chart(umidade_semana, config); 
-
-
-/*FIM GRÁFICO UMIDADExSEMANA*/
+    var umidade_hora = document.getElementById('chart_umidade_hora').getContext('2d');
+    var myChart = new Chart(umidade_hora, config_3);
 
 
+    /*FIM GRÁFICO UMIDADE HORA*/
 
- /*INÍCIO GRÁFICO UMIDADExMÊS*/
- const labels_2 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']; 
 
-const data_2 = {
 
-labels: labels_2,
-    datasets : [
-    {
-            label: 'WiSoy',
-            data: [90, 85, 95, 87, 90, 89],
-            borderColor: 'rgb(224, 187, 228)',
-            backgroundColor: 'rgb(149, 125, 173)',},
+    /*INÍCIO GRÁFICO SEMANAL*/
+
+    const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
+
+    const data = {
+
+        labels: labels,
+        datasets: [
+            {
+                label: 'WiSoy',
+                data: [90, 85, 95, 87, 90, 89],
+                borderColor: 'rgb(224, 187, 228)',
+                backgroundColor: 'red',
+            },
             {
             }
-    ]
-};
+        ]
+    };
 
-const config_2 = {
-    type: 'line',
-    data: data_2,
-    options: {
-        responsive: false,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Umidade do solo na plantação'
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Umidade do solo na plantação'
+                }
             }
-        }
-    },
-};
+        },
+    };
 
-var umidade_mes = document.getElementById('chart_umidade_mes').getContext('2d');
-var myChart = new Chart(umidade_mes, config_2); 
+    var umidade_semana = document.getElementById('chart_umidade_semana').getContext('2d');
+    var myChart = new Chart(umidade_semana, config);
 
 
-/*FIM GRÁFICO UMIDADExMÊS*/
-
+    /*FIM GRÁFICO SEMANAL*/
 
 
 
- /*INÍCIO GRÁFICO UMIDADExHORA*/
- const labels_3 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']; 
+    /*INÍCIO GRÁFICO MENSAL*/
+    const labels_2 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
 
-const data_3 = {
+    const data_2 = {
 
-labels: labels_3,
-    datasets : [
-    {
-            label: 'WiSoy',
-            data: [90, 85, 95, 87, 90, 89],
-            borderColor: 'rgb(224, 187, 228)',
-            backgroundColor: 'rgb(149, 125, 173)',},
+        labels: labels_2,
+        datasets: [
+            {
+                label: 'WiSoy',
+                data: [90, 85, 95, 87, 90, 89],
+                borderColor: 'rgb(224, 187, 228)',
+                backgroundColor: 'yellow',
+            },
             {
             }
-    ]
-};
+        ]
+    };
 
-const config_3 = {
-    type: 'line',
-    data: data_3,
-    options: {
-        responsive: false,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Umidade do solo na plantação'
+    const config_2 = {
+        type: 'line',
+        data: data_2,
+        options: {
+            responsive: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Umidade do solo na plantação'
+                }
             }
-        }
-    },
-};
+        },
+    };
 
-var umidade_hora = document.getElementById('chart_umidade_hora').getContext('2d');
-var myChart = new Chart(umidade_hora, config_3); 
-
-
-/*FIM GRÁFICO UMIDADExHORA*/
+    var umidade_mes = document.getElementById('chart_umidade_mes').getContext('2d');
+    var myChart = new Chart(umidade_mes, config_2);
 
 
+    /*FIM GRÁFICO MENSAL*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /*INÍCIO GRÁFICO API*/
 
 
     var context = document.getElementById("chart").getContext("2d");
@@ -528,10 +525,10 @@ var myChart = new Chart(umidade_hora, config_3);
 
         var media = document.getElementById('averageHumidity');
         text = (media.innerText || media.textContent);
-        but_1.innerHTML = `Sensor 1 xosé<br>${text}`;
-        but_2.innerHTML = `${text}`;
-        but_3.innerHTML = `${text}`;
-        but_4.innerHTML = `${text}`;
+        but_sensor_1.innerHTML = `Sensor 1 xosé<br>${text}`;
+        but_sensor_2.innerHTML = `${text}`;
+        but_sensor_3.innerHTML = `${text}`;
+        but_sensor_4.innerHTML = `${text}`;
     }
 
     get_dataHumidity();
@@ -713,7 +710,20 @@ var myChart = new Chart(umidade_hora, config_3);
     }, 1000);
 
 
-    //codigo autoral
+    /*FIM GRÁFICO API*/
+
+    //  INICIO DA ANIMAÇÃO HAMBURGUER
+
+
+    function calcular() {
+
+        grafico_api.style.display = 'block';
+        grafico_api.style.width = '500px';
+    }
+
+
+
+    //  INICIO DA ANIMAÇÃO HAMBURGUER
 
     var caixa_menu = document.getElementById('box_menu');
 
@@ -726,14 +736,48 @@ var myChart = new Chart(umidade_hora, config_3);
 
     }
 
-    function calcular() {
-       
-        grafico_bunitu.style.display ='block';
-        grafico_bunitu.style.width = '500px';
-    }
-
-    
     //  FIM DA ANIMAÇÃO HAMBURGUER
 
-    //  INÍCIO FUNÇÕES GRÁFICOS
+
+    /* INÍCIO FUNCTIONS QUE FAZEM A TROCA DOS GRÁFICOS*/
+
+    function trocar_hora() {
+        grafico_umidade_hora.style.display = 'block'
+        grafico_umidade_semanal.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        grafico_api.style.display = 'none'
+
+    }
+
+    function trocar_semanal() {
+
+        grafico_umidade_semanal.style.display = 'block'
+        grafico_umidade_hora.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        grafico_api.style.display = 'none'
+
+    }
+
+    function trocar_mensal() {
+
+        grafico_umidade_mensal.style.display = 'block'
+        grafico_umidade_hora.style.display = 'none'
+        grafico_umidade_semanal.style.display = 'none'
+        grafico_api.style.display = 'none'
+
+    }
+
+    function trocar_api() {
+        grafico_api.style.display = 'block'
+        grafico_umidade_hora.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+
+    }
+
+
+    /* INÍCIO FUNCTIONS QUE FAZEM A TROCA DOS GRÁFICOS*/
+
+
+
 </script>
