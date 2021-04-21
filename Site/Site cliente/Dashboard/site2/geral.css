@@ -289,12 +289,11 @@ cursor: pointer;
 /**/
 
 .retrato_graficos {
-background-color: blueviolet;
+
 width: 200px;
-height: 100px;
+height: 400px;
 float: right;
-margin-top: 400px;
-position: relative;
+
 
 }
 
