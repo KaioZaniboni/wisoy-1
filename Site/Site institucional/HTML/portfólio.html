@@ -45,44 +45,63 @@
 
         <div class="caixa_portfolio2">
             <img src="../IMG/agilidade.png">
-        <br><br>
+            <br><br>
 
-        <span class="conteudo">
-            <b>Agilidade</b>
-        <br><br>
+            <span class="conteudo">
+                <b>Agilidade</b>
+                <br><br>
                 A WiSoy irá <span class="item_colorido"> <b class="tamanho_item_colorido"> aprimorar o tempo de
-                cultivo em todas as fases</b></span>, principalmente nas fases em que necessitam de um
+                        cultivo em todas as fases</b></span>, principalmente nas fases em que necessitam de um
                 abundante sistema de irrigação,<span class="item_colorido"> <b class="tamanho_item_colorido">
-                diminuindo o tempo até a colheita através da irrigação correta do
-                solo.</b></span>
+                        diminuindo o tempo até a colheita através da irrigação correta do
+                        solo.</b></span>
                 <br><br>
         </div>
-       
+
         <button class="button_simulador"><a href="../HTML/financeiro.html">Simular Rendimento</a></button>
 
         <div class="corpo_hld">
+            <div onclick="closeMenu()" class="caixa_menu" id="box_menu">
+                <div id="msg">Algo</div>
+            </div>
             <div class="caixa_hld">
+                <div class="opac_caixa" id="opacidade"></div>
+                <img class="img16" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
+                <img class="img17" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
                 <div class="div_hld">Saiba como funciona a nossa solução</div>
                 <div class="sub_caixa1_hld">
                     <img class="img1" src="../IMG/HLD e LLD (+ icons)/fazenda.png" alt="">
-                    <img class="img2" src="../IMG/HLD e LLD (+ icons)/fazenda-inteligente.png" alt="">
-                    <img class="img12" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
-                    <img class="img3" src="../IMG/HLD e LLD (+ icons)/sinal-wifi.png" alt="">
-                    <img class="img13" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
-                    <img class="img4" src="../IMG/HLD e LLD (+ icons)/roteador-wi-fi.png" alt="">
+                    <img id="img_fazenda_inteligente" onclick="toggleMenu1()" class="img2 hover"
+                        src="../IMG/HLD e LLD (+ icons)/fazenda-inteligente.png" alt="">
+                    <img class="img12" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png"
+                        alt="">
+                    <img id="img_sinal_wifi1" onclick="toggleMenu2()" class="img3 hover"
+                        src="../IMG/HLD e LLD (+ icons)/sinal-wifi.png" alt="">
+                    <img class="img13" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png"
+                        alt="">
+                    <img id="img_roteador1" onclick="toggleMenu3()" class="img4 hover"
+                        src="../IMG/HLD e LLD (+ icons)/roteador-wi-fi.png" alt="">
                 </div>
                 <div class="sub_caixa2_hld">
                     <img class="img5" src="..//IMG/HLD e LLD (+ icons)/escritorio-domestico.png" alt="">
-                    <img class="img6" src="../IMG/HLD e LLD (+ icons)/computador.png" alt="">
-                    <img class="img14" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
-                    <img class="img7" src="../IMG/HLD e LLD (+ icons)/sinal-wifi.png" alt="">
-                    <img class="img15" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
-                    <img class="img8" src="../IMG/HLD e LLD (+ icons)/roteador-wi-fi.png" alt="">
+                    <img id="img_computador" onclick="toggleMenu8()" class="img6 hover"
+                        src="../IMG/HLD e LLD (+ icons)/computador.png" alt="">
+                    <img class="img14" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png"
+                        alt="">
+                    <img id="img_sinal_wifi2" onclick="toggleMenu7()" class="img7 hover"
+                        src="../IMG/HLD e LLD (+ icons)/sinal-wifi.png" alt="">
+                    <img class="img15" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png"
+                        alt="">
+                    <img id="img_roteador2" onclick="toggleMenu6()" class="img8 hover"
+                        src="../IMG/HLD e LLD (+ icons)/roteador-wi-fi.png" alt="">
                 </div>
                 <div class="sub_caixa3_hld">
-                    <img class="img9" src="../IMG/HLD e LLD (+ icons)/banco-de-dados-em-nuvem.png" alt="">
-                    <img class="img10" src="../IMG/HLD e LLD (+ icons)/www.png" alt="">
-                    <img class="img11" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png" alt="">
+                    <img id="img_banco" onclick="toggleMenu4()" class="img9 hover"
+                        src="../IMG/HLD e LLD (+ icons)/banco-de-dados-em-nuvem.png" alt="">
+                    <img id="img_www" onclick="toggleMenu5()" class="img10 hover"
+                        src="../IMG/HLD e LLD (+ icons)/www.png" alt="">
+                    <img class="img11" src="../IMG/HLD e LLD (+ icons)/—Pngtree—black arrow clip art_5575743.png"
+                        alt="">
                 </div>
             </div>
         </div>
@@ -93,3 +112,142 @@
 </body>
 
 </html>
+<script>
+    var menu = document.getElementById('box_menu');
+    var menu = document.getElementById('box_menu');
+    var opacidade = document.getElementById('opacidade');
+    var fazendaInteligente = document.getElementById('img_fazenda_inteligente');
+    var sinalWifi1 = document.getElementById('img_sinal_wifi1');
+    var roteador1 = document.getElementById('img_roteador1');
+    var computador = document.getElementById('img_computador');
+    var sinalWifi2 = document.getElementById('img_sinal_wifi2');
+    var roteador2 = document.getElementById('img_roteador2');
+    var banco = document.getElementById('img_banco');
+    var www = document.getElementById('img_www');
+
+    function toggleMenu1() {
+        menu.style = 'left: -28%; transition: 0.3s;';
+        msg.innerHTML = `- Sensor Higrometro`;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+        
+    }
+
+    function toggleMenu2() {
+        menu.style = 'left: -28%; transition: 0.3s;';
+        msg.innerHTML = `- Arduino Uno R3 <br> - USB 2.0`;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function toggleMenu3() {
+        menu.style = 'left: -28%; transition: 0.3s;';
+        msg.innerHTML = `- Conexão minima de 30 MB`;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function toggleMenu4() {
+        menu.style = 'left: 28%; transition: 0.3s;';
+        msg.innerHTML = `- Compatível com IPv6 <br> - Wireless 300 Mbps <br> - 2.4Ghz`;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        banco.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function toggleMenu5() {
+        menu.style = 'left: 28%; transition: 0.3s;';
+        msg.innerHTML = `- Compatível com IPv6 <br> - Wireless 300 Mbps <br> - 2.4Ghz`;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        www.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function toggleMenu6() {
+        menu.style = 'left: -28%; transition: 0.3s;';
+        msg.innerHTML = ``;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function toggleMenu7() {
+        menu.style = 'left: -28%; transition: 0.3s;';
+        msg.innerHTML = ``;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function toggleMenu8() {
+        menu.style = 'left: -28%; transition: 0.3s;';
+        msg.innerHTML = ``;
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.3;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 0.6;';
+        computador.style = 'transition: 0.3s; transform: scale(1.5); z-index: 1; opacity: 1;';
+        opacidade.style = 'transition: 0.1s; z-index: 1; opacity: 0.5;';
+    }
+
+    function closeMenu() {
+        menu.style = 'left: 0%; transition: 0.3s;';
+        fazendaInteligente.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        sinalWifi1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        roteador1.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        computador.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        banco.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        www.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        sinalWifi2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        roteador2.style = 'transition: 0.3s; transform: scale(1); z-index: 1; opacity: 1;';
+        opacidade.style = 'transition: 0.1s; z-index: -1; opacity: 1;';
+    }
+</script>
