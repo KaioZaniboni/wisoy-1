@@ -31,7 +31,7 @@
 
 </head>
 
-<!--INÍCIO DO CABECALHO-->
+
 
 <body>
     <div class="cabecalho">
@@ -43,18 +43,15 @@
         </div>
     </div>
 
-    <!--FIM DO CABECALHO-->
 
-    <!--INÍCIO HAMBURGUER-->
+    <div class="geral">
 
-
-
-    <div class="menu">
-        <div><img id="menu-hamb" class="logo_menu" src="menu_bar.png" onclick="toggleMenu()"></div>
+        <div class="menu"> 
+        <div><img id="menu-hamb" class="logo_hamb" src="menu_bar.png" onclick="toggleMenu()"></div>
         <div class="caixa_menu" id="box_menu">
-            <nav id="menu-hamb">
+            <nav>
                 <ul>
-                    <div class="itens_hamburguer" id="imagem_itens"><img src="icone perfil.png">
+                    <div class="itens_hamburguer" id="imagem_itens"><img onclick="closeMenu()" src="icone perfil.png">
                         <li onclick="closeMenu()">Minha Conta</li>
                     </div>
                     <div class="itens_hamburguer">
@@ -66,157 +63,118 @@
                     <div class="itens_hamburguer">
                         <li onclick="closeMenu()">Notificações</li>
                     </div>
-
                     <div class="itens_hamburguer" id="but_sair">
                         <li onclick="closeMenu()">Sair</li>
                     </div>
                 </ul>
             </nav>
         </div>
-    </div>
-
-    <!--FIM DO HAMBURGUER-->
+    </div> 
 
 
 
 
 
-
-    <!--INÍCIO BOTÕES SENSORES-->
-
-
-    
         <div class="caixa_but">
-
             <div class="but_display_digital" onclick='trocar_api()' id="but_sensor_1">Sensor 1</div>
-
             <div class="but_display_digital" id="but_sensor_2">Sensor 2</div>
-
-            <div class="but_display_digital" id="but_sensor_3">Sensor 3</div>
-
-            <div class="but_display_digital" id="but_sensor_4">Sensor 4</div>
-
-        </div>
-   
-
-    <!--FIM BOTÕES SENSORES-->
-
-
-    <!--INÍCIO BOTÕES MUDAR GRÁFICO-->
-
-    <div>
-
-
-        <div class="but_graficos" id="botao_hora" onclick="trocar_hora()">hora</div>
-
-      
-        <div class="but_graficos" id="botao_semanal" onclick="trocar_semanal()">semanal</div>
-
-
-        <div class="but_graficos" id="botao_mensal" onclick="trocar_mensal()">mensal</div>
-
-    </div>
-
-    <!--FIM BOTÕES MUDAR GRÁFICO-->
-
-
-
-    <!--INÍCIO RETRATO GRÁFICO-->
-
-    <div class="retrato_graficos">
-
-        <!-- INÍCIO API-->
-
-        <div style="display: none;">
-            <h1>Sensor LM35 - Temperatura</h1>
-            <section>
-                <h2>Média: <label id='average'>0.00</label></h2>
-                <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
-            </section>
-            <section style="width:100%">
-                <canvas id="chart"></canvas>
-                <section>
+            <div class="but_display_digital"  id="but_sensor_3">Sensor 3</div>
+            <div class="but_display_digital"  id="but_sensor_4">Sensor 4</div>
         </div>
 
 
-        <div id="grafico_api" style="height: 500px; width: 600px;  margin-right: 150px; display: none;">
-            <div style="display: none;">
-                <section>
-                    <h1>Sensor DHT11 - Umidade</h1>
-                    <h2>Média: <label id='averageHumidity'>0.00</label></h2>
-                    <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
-                </section>
+
+
+            <div class="retrato_graficos" id="retrato_graficos_id">
+
+                <div class="caixa_superior">
+
+                    <div class="but_graficos" id="botao_hora" onclick="trocar_hora()">hora</div>
+                    <div class="but_graficos" id="botao_semanal" onclick="trocar_semanal()">semanal</div>
+                    <div class="but_graficos" id="botao_mensal" onclick="trocar_mensal()">mensal</div>
+                    </div>
+
+
+
+                <div class="caixa_inferior">
+                    <div style="display: none;">
+                        <h1>Sensor LM35 - Temperatura</h1>
+                        <section>
+                            <h2>Média: <label id='average'>0.00</label></h2>
+                            <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+                        </section>
+                        <section style="width:100%">
+                            <canvas id="chart"></canvas>
+                            <section>
+                    </div>
+
+
+                    <div id="grafico_api">
+                       
+                            <section >
+                                
+                                <h1>Sensor DHT11 - Umidade</h1>
+                                <h2>Média: <label id='averageHumidity'>0.00</label></h2>
+                                <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
+                            
+                            </section>
+                       
+                        </section>
+                        <section style="width:100%">
+                            <canvas id="chart-humidity"></canvas>
+                            <section>
+                    </div>
+
+
+                    <div style="display: none;">
+                        <section>
+                            <h1>Sensor TRC5000 - Switch</h1>
+                        </section>
+                        <section style="width:100%">
+                            <canvas id="chart-switch"></canvas>
+                            <section>
+                    </div>
+                    <div style="display: none;">
+                        <section>
+                            <h1>Sensor LDR - Luminosidade</h1>
+                            <h2>Média: <label id='averageLumi'>0.00</label></h2>
+                            <h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
+                        </section>
+                        <section style="width:100%">
+                            <canvas id="chart-lumi"></canvas>
+                            <section>
+                    </div>
+
+
+
+                    <div id="grafico_umidade_hora">
+                        <canvas id="chart_umidade_hora"></canvas>
+                    </div>
+
+
+
+
+                    <div id="grafico_umidade_semanal">
+                        <canvas id="chart_umidade_semanal" ></canvas>
+                    </div>
+
+
+
+
+                    <div id="grafico_umidade_mensal">
+                        <canvas id="chart_umidade_mensal" ></canvas>
+                    </div>
+                </div>
             </div>
-            </section>
-            <section style="width:100%">
-                <canvas id="chart-humidity"></canvas>
-                <section>
         </div>
-
-
-        <div style="display: none;">
-            <section>
-                <h1>Sensor TRC5000 - Switch</h1>
-            </section>
-            <section style="width:100%">
-                <canvas id="chart-switch"></canvas>
-                <section>
-        </div>
-        <div style="display: none;">
-            <section>
-                <h1>Sensor LDR - Luminosidade</h1>
-                <h2>Média: <label id='averageLumi'>0.00</label></h2>
-                <h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
-            </section>
-            <section style="width:100%">
-                <canvas id="chart-lumi"></canvas>
-                <section>
-        </div>
-
-
-        <!--FIM API -->
-
-
-        <!--INICIO GRÁFICO UMIDADE HORA -->
-
-
-        <div id="grafico_umidade_hora" style="height: 500px; width: 600px;   margin-right: 150px; display: none;">
-            <canvas id="chart_umidade_mes" width="500px" height="300px"></canvas>
-        </div>
-
-        <!--FIM GRÁFICO UMIDADE HORA -->
-
-        <!--INICIO GRÁFICO UMIDADE SEMANAL -->
-
-
-        <div id="grafico_umidade_semanal" style="height: 500px; width: 600px;   margin-right: 150px; display: none;">
-            <canvas id="chart_umidade_semana" width="500px" height="300px"></canvas>
-        </div>
-
-        <!--FIM GRÁFICO UMIDADE SEMANAL -->
-
-        <!--INCIO GRÁFICO UMIDADE MENSAL -->
-
-
-        <div id="grafico_umidade_mensal" style="height: 500px; width: 600px;   margin-right: 150px; display: none;">
-            <canvas id="chart_umidade_hora" width="500px" height="300px"></canvas>
-        </div>
-
-
-        <!--FIM GRÁFICO UMIDADE MENSAL -->
-
-
-        <!--FIM RETRATO GRÁFICO-->
 
     </div>
 
-
-
-    <!--INÍCIO RODAPÉ-->
 
     <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
 
-    <!--FIM RODAPÉ-->
+
+
 
 </body>
 
@@ -309,7 +267,7 @@
         },
     };
 
-    var umidade_semana = document.getElementById('chart_umidade_semana').getContext('2d');
+    var umidade_semana = document.getElementById('chart_umidade_semanal').getContext('2d');
     var myChart = new Chart(umidade_semana, config);
 
 
@@ -352,7 +310,7 @@
         },
     };
 
-    var umidade_mes = document.getElementById('chart_umidade_mes').getContext('2d');
+    var umidade_mes = document.getElementById('chart_umidade_mensal').getContext('2d');
     var myChart = new Chart(umidade_mes, config_2);
 
 
@@ -715,26 +673,21 @@
     //  INICIO DA ANIMAÇÃO HAMBURGUER
 
 
-    function calcular() {
-
-        grafico_api.style.display = 'block';
-        grafico_api.style.width = '500px';
-    }
-
-
 
     //  INICIO DA ANIMAÇÃO HAMBURGUER
 
-    
 
- function toggleMenu() {
-    document.getElementById('box_menu').style = 'left: 0;';
-}
 
- function closeMenu() {
-    document.getElementById('box_menu').style = 'left: -300px;';
+    function toggleMenu() {
+        document.getElementById('box_menu').style = 'left: 0%;';
+        document.getElementById('menu-hamb').style = 'display: none';
+    }
 
-}
+    function closeMenu() {
+        document.getElementById('box_menu').style = 'left: -100%;';
+        document.getElementById('menu-hamb').style = 'display: block';
+
+    }
 
     //  FIM DA ANIMAÇÃO HAMBURGUER
 
@@ -768,12 +721,16 @@
     }
 
     function trocar_api() {
+
+        retrato_graficos_id.style.display = 'block'
         grafico_api.style.display = 'block'
         grafico_umidade_hora.style.display = 'none'
         grafico_umidade_mensal.style.display = 'none'
         grafico_umidade_mensal.style.display = 'none'
 
     }
+
+  
 
 
     /* INÍCIO FUNCTIONS QUE FAZEM A TROCA DOS GRÁFICOS*/

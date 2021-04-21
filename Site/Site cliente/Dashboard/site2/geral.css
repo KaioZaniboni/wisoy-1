@@ -21,61 +21,266 @@ body {
 
 }
 
+
+
+
+/* INICIO CABEÇALHO */
+
 .cabecalho {
     padding-top: 0;
     background: rgb(24, 23, 23, .6);
     width: 100%;
-    height: 10%;
+    height: 12%;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    position: fixed;
+    position: relative;
     top: 0;
 }
-
-
-
 .caixa {
     width: 100%;
     height: 100%;
     float: right;
     margin: auto;
 }
-   
-
-
 .logo {
-    
     height: 100%;
     margin: auto 40px;
     float: right;
     display: flex;
     align-items: center;
-    text-decoration: none;}
-
-
+    text-decoration: none;
+}
 .logo img {
     height: 100%;
 }
-
 .logo span {
     letter-spacing: 3px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2.5vw;
     float: left;
 }
-
-
 .cabecalho span {
     color: white;
     display: inline;
     margin-left: 5px;
     font-size: xx-large;
 }
+/* FIM CABEÇALHO */
 
-.rodape {
-    position: fixed;
+
+
+
+
+/* INICIO BODY */
+.geral {
+    position: relative;
+    ;
+    width: 100%;
+    height: 85%;
+}
+
+
+/* INICIO MENU */
+.menu {
+    position: relative;
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+/* INICIO MENU HAMB */
+.logo_hamb {
+    top: -12%;
+    left: 13%;
+    height: 55px;
+    cursor: pointer;
+    float: left;
+    position: absolute;
+}
+/* FIM MENU HAMB */
+
+/* INICIO MENU */
+.caixa_menu {
+    top: -13%;
+    width: 80%;
+    background-color: rgba(24, 23, 23, 0.76);
+    position: relative;
+    transition: 0.3s;
+    height: 77%;
+    left: -100%;
+}
+.itens_hamburguer {
+    background-color: rgba(177, 177, 177, 0.507);
+    margin: 3% 5%;
+    max-width: 100%;
+    padding: 4.63%;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 1%;
+}
+li {
+    margin-top: 0.74em;
+    font-size: 1.5em;
+    text-align: left;
+    margin: 0;
+}
+ul img {
+    height: 7em;
+}
+#imagem_itens {
+    text-align: center;
+}
+/* FIM MENU */
+/* FIM MENU */
+
+
+/* INICIO BOTÕES */
+.caixa_but {
+    width: 30%;
+    height: 30%;
+    position: relative;
+    float:left;
+    top: 38%;
+}
+.but_display_digital {
+    background-color: rgba(24, 23, 23, 0.76);
+    color: white;
+    height: 40%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#but_sensor_1 {
+    border-bottom: 3px solid blueviolet;
+    position: absolute;
+}
+#but_sensor_2 {
+    border-bottom: 3px solid rgb(226, 43, 195);
+    right: 0;
+    position: absolute;
+}
+#but_sensor_3 {
+    border-bottom: 3px solid rgb(43, 153, 226);
     bottom: 0;
-    padding-top: 0px;
+    position: absolute;
+}
+#but_sensor_4 {
+    border-bottom: 3px solid rgb(226, 70, 43);
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+/* FIM BOTÕES */
+
+
+/* INICIO GRÀfiCOS */
+.retrato_graficos {
+    width: 50%;
+    height: 100%;
+    position: relative;  
+    float: right; 
+}
+
+#retrato_graficos_id{
+    display: none;
+}
+/* INICIO CAIXA SUPERIOR */
+.caixa_superior {
+    position: relative;
+    margin: 25px 0px 0px 25px;
+    height: 25%;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.but_graficos {
+    background-color: rgba(24, 23, 23, 0.76);
+    color: white;
+    height: 40%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#botao_hora {
+    border-bottom: 3px solid blueviolet;
+    left: 3%;
+    position: absolute;
+}
+#botao_semanal {
+    border-bottom: 3px solid rgb(226, 43, 195);
+    left: 37%;
+    position: absolute;
+}
+#botao_mensal {
+    border-bottom: 3px solid rgb(226, 70, 43);
+    right: 3%;
+    position: absolute;
+}
+/* FIM CAIXA SUPERIOR */
+
+/* INICIO CAIXA INFERIOR */
+.caixa_inferior {
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    margin: 50px 0px 0px 25px;
+    background-color: antiquewhite;
+    border-radius: 15px;
+}
+#chart-humidity {
+    width: 100%;
+    height: 100%;   
+    display: none;
+
+}
+#chart_umidade_hora {
+    width: 90%;   
+    display: none;
+}
+
+#chart_umidade_semanal {
+    width: 90%;   
+    display: none;
+
+}
+
+#chart_umidade_mensal {
+    width: 90%;   
+    display: none;
+}
+
+#grafico_umidade_hora{
+    display: none;
+}
+
+#grafico_umidade_semanal{
+    display: none;
+}
+
+#grafico_umidade_mensal{
+    display: none;
+}
+
+#grafico_api{display: none;}
+/* FIM CAIXA INFERIOR */
+
+
+
+
+/* INICIO RODAPE */
+.rodape {
+    position: relative;
+    bottom: 0;
     background: rgb(24, 23, 23, .6);
     width: 100%;
     height: 3%;
@@ -86,192 +291,17 @@ body {
     font-size: 1vw;
     font-family: Arial, Helvetica, sans-serif;
 }
-/*FIM GERAL*/
-
-
-/* COMEÇO HAMBURGUER */
-
-.logo_menu{
-    height: 2.5em;
-    margin-left: 100% ;
-    margin-top: 20%;
-    z-index: 1;/*É um indice de prioridade*/
-    cursor: pointer;
-    float: left;
-}
-
-.menu{
-    position: absolute;
-    height: 100%;
-}
-
-ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-li{
-    margin-top:0.74em;
-    font-size: 1.5em;
-    text-align: left;
-    margin: 0;
-}
-
-.caixa_menu{
-    top: 0;
-    width: 500%;
-    background-color: rgba(24, 23, 23, 0.76);/*cor fundo*/
-    position: absolute;
-    left: -300px; 
-    transition: 0.3s;
-    height: 100%;
-    
-}
-
-ul img{
-    height: 7em;
-}
-
-.itens_hamburguer {
-
-    background-color: rgba(177, 177, 177, 0.507);/*cor itens*/
-    margin: 3% 5%;
-    max-width: 100%;
-    padding: 4.63%;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#imagem_itens {
-
-    text-align: center;
-
-}
+/* FIM RODAPE */
 
 
 
-/*FIM HAMBURGUER */
-
-/* Inicio Caixa Dashboard (Engloba tudo) */
-
-
-/* Fim Caixa Dashboard (Engloba tudo) */
 
 
 
-/*INÍCIO BOTÕES*/
 
 
-.caixa_but {
-
-float: right;
-margin-top: 17%;    
-width: 400px;
-height: 200px ;
-position: absolute;
-margin-right: 45%;
-
-}
-
-.but_display_digital{
-
-background-color: rgba(24, 23, 23, 0.76) ;
-color: white;
-height: 40%;
-width: 45%;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-
-}
-
-#but_sensor_1{
-    border-bottom: 3px solid blueviolet;
-    position: absolute;
-}
-
-#but_sensor_2{
-
-    border-bottom: 3px solid rgb(226, 43, 195);
-    right: 0;
-    position: absolute;
-}
-
-#but_sensor_3{
-
-    border-bottom: 3px solid rgb(43, 153, 226);
-    bottom: 0;
-    position: absolute;
-}
-
-#but_sensor_4{
-
-    border-bottom: 3px solid rgb(226, 70, 43);
-    bottom: 0;
-    right: 0;
-    position: absolute;
-}
 
 
-/*BOTÕES TROCAR GRÁFICO*/
-
-.but_graficos{
-    background-color: rgba(24, 23, 23, 0.76);
-    color: white;
-    cursor: pointer;
-    height: 5%;
-  margin: 0;
-    width: 5%;
-    float: right;
-    
- 
-}
-
-#botao_hora {
-  
-}
-
-#botao_semanal{
-    
-}
-
-#botao_mensal{
-  
-}
-
-/*FIM BOTÕES*/
-
-.button_detalhes {
-    padding: 300px 0px 0px 50px;
-    display: none;
-    height: 100px;
-    border-radius: 10px;
-    background-color: magenta;
-}
-
-/*INÍCIO GRÁFICOS*/
-
-.caixa_graficos {
-    width: 50%;
-    height: 100%;
-    background-color: magenta;
-}
-
-/*FIM GRÁFICOS*/
 
 
-/**/
 
-.retrato_graficos {
-margin-right: 0;   
-margin-top: 20%;
-width: 600px;
-height: 400px;
-
-background-color: magenta;
-}
-
-/**/
