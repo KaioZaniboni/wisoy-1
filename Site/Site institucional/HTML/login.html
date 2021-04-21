@@ -35,10 +35,10 @@
             </div>
 
             <span>E-mail</span>
-
-            <input id="inpt_email" type="email" placeholder="Digite aqui seu e-mail" onkeyup="analisar_email()"
-                autofocus>
-
+            <div >
+                <input id="inpt_email" class="inp_padrao" type="email" placeholder="Digite aqui seu e-mail"
+                    onkeyup="analisar_email()" autofocus>
+            </div>
             <br>
 
             <div id="mensagem_email"></div>
@@ -46,10 +46,10 @@
             <br>
 
             <span>Senha</span>
-
-            <input type="password" id="inpt_senha" placeholder="********" onkeyup="analisar_senha()">
-            <input type="checkbox" onclick="mostrarOcultarSenha()">Mostrar Senha
-
+            <div>
+                <input type="password" id="inpt_senha" placeholder="********" onkeyup="analisar_senha()">
+                <input type="checkbox" onclick="mostrarOcultarSenha()">Mostrar Senha
+            </div>
             <br>
 
             <div id="mensagem_senha"></div>
@@ -156,18 +156,18 @@
             alert("Email inválido!");
 
         }
-           else if (char_maius < 0 &&  char_minus < 0 && char_esp < 0) {
+        else if (char_maius < 0 && char_minus < 0 && char_esp < 0) {
             alert("senha inválida!");
-               
-           } 
-            // if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
-            //     alert("ta certo1")
-            // }
-            // if (char_maius && char_minus  && char_esp) {
-            //     alert("ta certo2")
-            // }
 
-        
+        }
+        // if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
+        //     alert("ta certo1")
+        // }
+        // if (char_maius && char_minus  && char_esp) {
+        //     alert("ta certo2")
+        // }
+
+
         else {
             document.getElementById("to_dashboard").href = "";
         }

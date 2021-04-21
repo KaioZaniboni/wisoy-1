@@ -61,7 +61,7 @@ body, html {
 }
 
 .logo a img {
-    width: 30%;
+    width: 25%;
     font-size: 1vw;
 }
 
@@ -181,13 +181,13 @@ h1 {
 .caixa_inferior input:not([type="checkbox"]) {
     background-color: rgba(139, 139, 139, 0.1);
     width: 63%;
-    border-radius: 15px;
-    font-size: 1vw;
+    border-radius: 15px;  
 }
 
 .design_inp {
     justify-content: space-between;
-    font-size: 1vw;
+     font-size: 1vw;
+
 }
 
 .item_colorido {
