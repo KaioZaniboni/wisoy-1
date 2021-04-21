@@ -71,22 +71,29 @@
 
 
 
-    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
-        <canvas id="chart_umidade_semana" width="300px" height="200px"></canvas>
-    </div>
-
-
-    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
-        <canvas id="chart_umidade_hora" width="300px" height="200px"></canvas>
-    </div>
-
-    <div style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
-        <canvas id="chart_umidade_mes" width="300px" height="200px"></canvas>
-    </div>
 
 
 
-    <!-- INÍCIO API-->
+   
+
+    <!--INÍCIO BOTÕES MUDAR GRÁFICO-->
+   
+
+        <div class="but_graficos" id="botao_1" onclick="trocar_3()">hora</div>
+
+        <div class="but_graficos" id="botao_2" onclick="trocar_2()">semana</div>
+
+        <div class="but_graficos" id="botao_3" onclick="trocar()">mês</div>
+
+    
+
+    <!--FIM BOTÕES MUDAR GRÁFICO-->
+
+    <!--INÍCIO RETRATO GRÁFICO-->
+
+    <div class="retrato_graficos">  
+
+         <!-- INÍCIO API-->
     <div style="display: none;">
         <h1>Sensor LM35 - Temperatura</h1>
         <section>
@@ -97,7 +104,9 @@
             <canvas id="chart"></canvas>
             <section>
     </div>
-    <div id="grafico_bunitu" style="display: none;">
+
+    
+    <div  id="grafico_bunitu" style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
         <section>
             <h1>Sensor DHT11 - Umidade</h1>
             <h2>Média: <label id='averageHumidity'>0.00</label></h2>
@@ -107,6 +116,8 @@
             <canvas id="chart-humidity"></canvas>
             <section>
     </div>
+    
+   
     <div style="display: none;">
         <section>
             <h1>Sensor TRC5000 - Switch</h1>
@@ -129,23 +140,20 @@
 
     <!--FIM API -->
 
+        <div id="grafico_1" style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
+        <canvas id="chart_umidade_semana" width="300px" height="200px"></canvas>
+    </div>
 
-    <!--INÍCIO BOTÕES MUDAR GRÁFICO-->
-   
 
-        <div class="but_graficos" id="botao_1">hora</div>
+    <div id="grafico_2" style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
+        <canvas id="chart_umidade_hora" width="300px" height="200px"></canvas>
+    </div>
 
-        <div class="but_graficos" id="botao_2">semana</div>
-
-        <div class="but_graficos" id="botao_3">mês</div>
-
+    <div id="grafico_3" style="height: 500px; width: 600px; float: right;  margin-right: 150px; display: none;">
+        <canvas id="chart_umidade_mes" width="300px" height="200px"></canvas>
+    </div>
     
 
-    <!--FIM BOTÕES MUDAR GRÁFICO-->
-
-    <!--INÍCIO RETRATO GRÁFICO-->
-
-    <div class="retrato_graficos">aloooooooooooooo</div>
 
     <!--FIM RETRATO GRÁFICO-->
 
@@ -155,7 +163,7 @@
         <div class="colunas">
             <div class="caixa_but">
 
-                <div class="but_display_digital" onclick="calcular()" id="but_1">Sensor 1</div>
+                <div class="but_display_digital" onclick= 'trocar_4()'  id="but_1">Sensor 1</div>
 
                 <div class="but_display_digital" id="but_2">Sensor 2</div>
 
@@ -231,7 +239,7 @@ labels: labels,
             label: 'WiSoy',
             data: [90, 85, 95, 87, 90, 89],
             borderColor: 'rgb(224, 187, 228)',
-            backgroundColor: 'rgb(149, 125, 173)',},
+            backgroundColor: 'red',},
             {
             }
     ]
@@ -273,7 +281,7 @@ labels: labels_2,
             label: 'WiSoy',
             data: [90, 85, 95, 87, 90, 89],
             borderColor: 'rgb(224, 187, 228)',
-            backgroundColor: 'rgb(149, 125, 173)',},
+            backgroundColor: 'yellow',},
             {
             }
     ]
@@ -732,6 +740,39 @@ var myChart = new Chart(umidade_hora, config_3);
         grafico_bunitu.style.width = '500px';
     }
 
+   function trocar() {
+    grafico_1.style.display = 'block'
+    grafico_2.style.display = 'none'
+    grafico_3.style.display = 'none'
+    grafico_bunitu.style.display = 'none'
+
+   }
+
+   function trocar_2() {
+
+       grafico_2.style.display = 'block'
+       grafico_1.style.display = 'none'
+       grafico_3.style.display = 'none'
+       grafico_bunitu.style.display = 'none'
+
+   }
+
+   function trocar_3() {
+
+grafico_3.style.display = 'block'
+grafico_1.style.display = 'none'
+grafico_2.style.display = 'none'
+grafico_bunitu.style.display = 'none'
+
+   }
+
+   function trocar_4() {
+    grafico_bunitu.style.display = 'block'
+    grafico_1.style.display = 'none'
+grafico_2.style.display = 'none'
+grafico_3.style.display = 'none'
+
+   }
     
     //  FIM DA ANIMAÇÃO HAMBURGUER
 

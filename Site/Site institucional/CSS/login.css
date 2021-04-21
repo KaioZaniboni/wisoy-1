@@ -65,7 +65,7 @@ html {
 }
 
 .logo a img {
-    width: 30%;
+    width: 25%;
     font-size: 1vw;
 }
 
@@ -114,9 +114,8 @@ ul li a:hover {
     height: 82%;
     width: 30%;
     position: absolute;
-    top: 50%;
+    top: 14%;
     left: 50%;
-    margin-top: -17%;
     margin-left: -18%;
     border-radius: 30px;
     color: white;
@@ -142,6 +141,7 @@ ul li a:hover {
     width: -webkit-fill-available;
     border-radius: 15px;
     margin-bottom: 4%;
+    font-size: 1vw;
 }
 
 .caixa_log_in button {
@@ -154,6 +154,9 @@ ul li a:hover {
     border: 0;
 }
 
+.inp_padrao{
+    width: 100%;
+}
 
 .button_login_conteiner {
     text-align: center;
@@ -177,8 +180,7 @@ ul li a:hover {
 
 .rodape_caixa {
     text-align: center;
-    font-size: 100%;
-    margin-top: -25px;    
+    margin-top: -18px;    
 }
 
 .lembrar_login {
