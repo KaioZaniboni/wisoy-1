@@ -35,7 +35,7 @@
             </div>
 
             <span>E-mail</span>
-            <div >
+            <div>
                 <input id="inpt_email" class="inp_padrao" type="email" placeholder="Digite aqui seu e-mail"
                     onkeyup="analisar_email()" autofocus>
             </div>
@@ -131,8 +131,8 @@
             senha_2.type = "password";
         }
     }
-
     function entrar() {
+
         var email = inpt_email.value;
         email = email.trimStart();
         email = email.trimEnd();
@@ -152,22 +152,11 @@
         var char_maius = senha.match(/[A-Z]+/);
         var char_esp = senha.match(/[!-@]+/);
 
-        if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
-            alert("Email inválido!");
+        if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0
+            && char_maius && char_minus && char_esp) {
+            document.getElementById("to_dashboard").href = "../../Site cliente/Dashboard/site2/inicio.html";
 
         }
-        else if (char_maius < 0 && char_minus < 0 && char_esp < 0) {
-            alert("senha inválida!");
-
-        }
-        // if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0) {
-        //     alert("ta certo1")
-        // }
-        // if (char_maius && char_minus  && char_esp) {
-        //     alert("ta certo2")
-        // }
-
-
         else {
             document.getElementById("to_dashboard").href = "";
         }
