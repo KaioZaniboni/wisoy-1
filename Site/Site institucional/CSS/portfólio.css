@@ -297,6 +297,14 @@ ul li a:hover {
     bottom: 10%;
     right: 15%;
 }
+.img11 {
+    height: 70px;
+    width: 150px;
+    position: absolute;
+    top: 45%;
+    left: -5%;
+    transform: rotate(90deg);
+}
 
 
 
