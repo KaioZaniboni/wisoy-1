@@ -132,7 +132,7 @@ ul li a:hover {
 
 .coluna_esquerda {
     width: 40%;
-    float: left;
+    
     height: 650px;
 }
 
@@ -184,7 +184,7 @@ ul li a:hover {
 
     .coluna_esquerda,
     .coluna_direita {
-        width: 100%;
+        width: 80%;
     }
 }
 

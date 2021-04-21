@@ -243,18 +243,13 @@ ul li a:hover {
 }
 
 .caixa_equipe {
-    display: flex;
-    align-items: center;
     margin-left: 15%;
     margin-right: 10%;
     margin-top: 10%;
-    font-size: 1.2vw;
-    color: white;
 }
 
 .imgs_caixa {
     width: 80%;
-    height: 15%;
     padding: 20px 100px;
     margin-bottom: 50px;
 }
