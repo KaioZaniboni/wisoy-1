@@ -38,45 +38,45 @@
                 <div class="conteudo_cadastro">
                     <form action="reset">
                         <div class="design_input">Nome Fantasia:
-                            <input type="text" placeholder="Digite aqui o nome empresarial" autofocus>
+                            <input id="inpt_nome" type="text" placeholder="Digite aqui o nome empresarial" autofocus>
                         </div>
 
                         <div class="design_input">Razão Social:
-                            <input type="text" placeholder="Digite aqui a razão social">
+                            <input id="inpt_razao_social" type="text" placeholder="Digite aqui a razão social">
                         </div>
 
                         <div class="design_input">CNPJ:
-                            <input type="text" placeholder="xx.xxx.xxx/xxxx-xx">
+                            <input id="inpt_cnpj" type="text" placeholder="xx.xxx.xxx/xxxx-xx">
                         </div>
 
                         <div class="design_input">Telefone:
-                            <input type="text" placeholder="(099) 99999-9999">
+                            <input id="inpt_telefone" type="text" placeholder="(099) 99999-9999">
                         </div>
 
                         <div class="design_input">E-mail
-                            <input type="email" placeholder="nome@example.com">
+                            <input id="inpt_email" type="email" placeholder="nome@example.com">
                         </div>
 
                         <div class="design_input">Usuário:
-                            <input type="text" placeholder="Digite aqui o usuário">
+                            <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário">
                         </div>
 
                         <div class="design_input">Senha:
-                            <input type="password" placeholder="********">
+                            <input id="inpt_senha" type="password" placeholder="********">
                         </div>
 
                         <div class="design_input">Confirme a senha:
-                            <input type="password" placeholder="********">
+                            <input id="inpt_conf_senha" type="password" placeholder="********">
                         </div>
                         
                         <div class="checkbox_termo">
                             <input type="checkbox"> Concordo com os
-                            <a href="termos.html">termos de serviço</a>
+                            <a  href="termos.html">termos de serviço</a>
                             do WiSoy.com
                         </div>
 
                     <button id="but_cadastro" class="button_cadastro" onclick="cadastrar()">
-                        <a class="link_login" href="login.html"> Criar Conta</a>
+                        <a id="to_cadastro" class="link_login" href=""> Criar Conta</a>
                     </button>
             </div>
         </div>
@@ -95,7 +95,30 @@
 </html>
 
 <script>
+
+
     function cadastrar() {
-        alert("Cadastro realizado com sucesso!")
+
+var nome = inpt_nome.value;
+var razao = inpt_razao_social.value;
+var cnpj = inpt_cnpj.value;
+var telefone = inpt_telefone.value;
+var email = inpt_email.value;
+var usuario = inpt_usuario.value;
+var senha = inpt_senha.value;
+var conf_senha = inpt_conf_senha.value;
+
+
+
+        if(nome.length>=0 && razao.length >=0 && cnpj.length >= 0 && telefone.length >= 0 && email.length >=0 && usuario.length >=0 && senha.length>=0 && conf_senha.length >=0)
+        {
+        alert("Cadastro realizado com sucesso!");
+        document.getElementById("to_cadastro").href= "login.html";}
+        
+        else{
+            alert("Insira dados em todos os campos");
+            document.getElementById("to_cadastro").href= "";
+         
+        }
     }
 </script>

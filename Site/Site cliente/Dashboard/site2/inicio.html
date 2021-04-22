@@ -77,9 +77,9 @@
 
         <div class="caixa_but">
             <div class="but_display_digital" onclick='trocar_api()' id="but_sensor_1">Sensor 1</div>
-            <div class="but_display_digital" id="but_sensor_2">Sensor 2</div>
-            <div class="but_display_digital"  id="but_sensor_3">Sensor 3</div>
-            <div class="but_display_digital"  id="but_sensor_4">Sensor 4</div>
+            <div class="but_display_digital" onclick="trocar_api_2()" id="but_sensor_2">Sensor 2</div>
+            <div class="but_display_digital"  onclick="trocar_api_3()"  id="but_sensor_3">Sensor 3</div>
+            <div class="but_display_digital"  onclick="trocar_api_4()" id="but_sensor_4">Sensor 4</div>
         </div>
 
 
@@ -189,7 +189,7 @@
 
     /*INÍCIO GRÁFICO UMIDADE HORA*/
 
-    const labels_3 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
+    const labels_3 = ['13h', '14h', '15h', '16h', '17h', '18h'];
 
     const data_3 = {
 
@@ -201,8 +201,7 @@
                 borderColor: 'rgb(224, 187, 228)',
                 backgroundColor: 'rgb(149, 125, 173)',
             },
-            {
-            }
+            
         ]
     };
 
@@ -233,7 +232,7 @@
 
     /*INÍCIO GRÁFICO SEMANAL*/
 
-    const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
+    const labels = ['1', '2', '3', '4', '5', '6'];
 
     const data = {
 
@@ -245,8 +244,7 @@
                 borderColor: 'rgb(224, 187, 228)',
                 backgroundColor: 'red',
             },
-            {
-            }
+            
         ]
     };
 
@@ -288,8 +286,8 @@
                 borderColor: 'rgb(224, 187, 228)',
                 backgroundColor: 'yellow',
             },
-            {
-            }
+            
+            
         ]
     };
 
@@ -729,6 +727,37 @@
         grafico_umidade_mensal.style.display = 'none'
 
     }
+
+    function trocar_api_2() {
+
+retrato_graficos_id.style.display = 'block'
+grafico_api.style.display = 'block'
+grafico_umidade_hora.style.display = 'none'
+grafico_umidade_mensal.style.display = 'none'
+grafico_umidade_mensal.style.display = 'none'
+
+}
+
+function trocar_api_3() {
+
+retrato_graficos_id.style.display = 'block'
+grafico_api.style.display = 'block'
+grafico_umidade_hora.style.display = 'none'
+grafico_umidade_mensal.style.display = 'none'
+grafico_umidade_mensal.style.display = 'none'
+
+}
+
+function trocar_api_4() {
+
+retrato_graficos_id.style.display = 'block'
+grafico_api.style.display = 'block'
+grafico_umidade_hora.style.display = 'none'
+grafico_umidade_mensal.style.display = 'none'
+grafico_umidade_mensal.style.display = 'none'
+
+}
+
 
   
 
