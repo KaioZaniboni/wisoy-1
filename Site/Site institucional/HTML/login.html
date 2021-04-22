@@ -152,12 +152,13 @@
         var char_maius = senha.match(/[A-Z]+/);
         var char_esp = senha.match(/[!-@]+/);
 
-        if (amanda >= 0 || jonas >= 0 || fernanda >= 0 || kaio >= 0 || luiz >= 0 || matheus >= 0 || fernando >= 0 || jesus >= 0 || leonardo >= 0
-            && char_maius && char_minus && char_esp) {
-            document.getElementById("to_dashboard").href = "../../Site cliente/Dashboard/site2/inicio.html";
+        if (amanda >= 0 && char_maius && char_minus && char_esp ||  jonas >= 0 && char_maius && char_minus && char_esp || fernanda >= 0 && char_maius && char_minus && char_esp || kaio >= 0 && char_maius && char_minus && char_esp || luiz >= 0 && char_maius && char_minus && char_esp || matheus >= 0 && char_maius && char_minus && char_esp || fernando >= 0 && char_maius && char_minus && char_esp || jesus >=0  && char_maius && char_minus && char_esp || leonardo >= 0 && char_maius && char_minus && char_esp) {
+
+        document.getElementById("to_dashboard").href = "../../Site cliente/Dashboard/site2/inicio.html";
 
         }
         else {
+            alert("Dados inválidos")
             document.getElementById("to_dashboard").href = "";
         }
 
