@@ -105,13 +105,14 @@
     var senha = inpt_senha.value;
     var conf_senha = inpt_conf_senha.value;
 
-    if(nome.length == 0 && razao.length == 0 && cnpj.length == 0 && telefone.length == 0 && email.length == 0 && usuario.length == 0 && senha.length == 0 && conf_senha.length == 0){
-        alert("Insira dados em todos os campos");
-        document.getElementById("to_cadastro").href= "";
+    if(nome.length > 0 && razao.length > 0 && cnpj.length > 0 && telefone.length > 0 && email.length > 0 && usuario.length > 0 && senha.length > 0 && conf_senha.length > 0){
+        
+        alert('Cadastro realizado com sucesso!');
+        document.getElementById("to_cadastro").href= "login.html";
     }   
     else{
-        alert("Cadastro realizado com sucesso!");
-        document.getElementById("to_cadastro").href= "login.html";
+        alert("Insira dados em todos os campos");
+        document.getElementById("to_cadastro").href= "";
     }
 }
 </script>
