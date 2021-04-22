@@ -63,7 +63,7 @@
                                 <li onclick="closeMenu()">Notificações</li>
                             </div>
                             <div class="itens_hamburguer" id="but_sair">
-                                <li onclick="closeMenu()">Sair</li>
+                                <li onclick="closeMenu()"><a class="li_sair" href="../../../Site institucional/HTML/home.html">Sair</a></li>
                             </div>
                         </ul>
                     </nav>
@@ -262,7 +262,7 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',],
             datasets: [{
                 label: '% Umidade',
                 data: [12, 9, 3, 5, 2, 3, 7, 13, 24, 8],

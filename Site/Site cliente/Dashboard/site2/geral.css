@@ -127,6 +127,10 @@ li {
     text-align: left;
     margin: 0;
 }
+.li_sair {
+    text-decoration: none;
+    color: white;
+}
 ul img {
     height: 7em;
 }
