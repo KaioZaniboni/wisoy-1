@@ -90,23 +90,8 @@ ul li {
     display: inline;
     margin-left: 30px;
     font-size: 1.5vw;
-  
-
 }
 
-/* .li_sobre {
-    position: relative;
-}
-
-.li_sobre:hover .dropdown_sobre {
-    display: block !important;   
-    top: 60px;
-    position: absolute;
-}
-
-.dropdown_sobre {
-    display: none;
-} */
 
 ul li a {
     color: white;
@@ -159,16 +144,12 @@ background-color: rgba(139, 139, 139, 0.1);
 border-radius: 15px;
 font-size: 1vw;
 color: white;
-
-
 }
 
 .containerlogin .span_padrao{
     width: 50%;
     font-size: 1vw;
 }
-
-
 
 .btn-green {
 color: white;
@@ -178,6 +159,7 @@ padding: 10px 20px;
 border-radius: 5px;
 cursor: pointer;
 margin-right: 100%;
+text-decoration: none;
 
 }
 
@@ -191,4 +173,8 @@ font-size: 1vw;
 
 .containerlogin .item_colorido {
 color: white;
+}
+
+#to_login {
+    text-decoration: none;
 }

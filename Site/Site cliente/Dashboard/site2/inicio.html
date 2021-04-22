@@ -43,130 +43,137 @@
         </div>
     </div>
 
-
     <div class="geral">
+            <div class="menu">
+                <div><img id="menu-hamb" class="logo_hamb" src="menu_bar.png" onclick="toggleMenu()"></div>
+                <div class="caixa_menu" id="box_menu">
+                    <nav>
+                        <ul>
+                            <div class="itens_hamburguer" id="imagem_itens"><img onclick="closeMenu()"
+                                    src="icone perfil.png">
+                                <li onclick="closeMenu()">Minha Conta</li>
+                            </div>
+                            <div class="itens_hamburguer">
+                                <li onclick="closeMenu()">Minha Plantação</li>
+                            </div>
+                            <div class="itens_hamburguer">
+                                <li onclick="closeMenu()">Histórico</li>
+                            </div>
+                            <div class="itens_hamburguer">
+                                <li onclick="closeMenu()">Notificações</li>
+                            </div>
+                            <div class="itens_hamburguer" id="but_sair">
+                                <li onclick="closeMenu()">Sair</li>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
 
-        <div class="menu"> 
-        <div><img id="menu-hamb" class="logo_hamb" src="menu_bar.png" onclick="toggleMenu()"></div>
-        <div class="caixa_menu" id="box_menu">
-            <nav>
-                <ul>
-                    <div class="itens_hamburguer" id="imagem_itens"><img onclick="closeMenu()" src="icone perfil.png">
-                        <li onclick="closeMenu()">Minha Conta</li>
-                    </div>
-                    <div class="itens_hamburguer">
-                        <li onclick="closeMenu()">Minha Plantação</li>
-                    </div>
-                    <div class="itens_hamburguer">
-                        <li onclick="closeMenu()">Histórico</li>
-                    </div>
-                    <div class="itens_hamburguer">
-                        <li onclick="closeMenu()">Notificações</li>
-                    </div>
-                    <div class="itens_hamburguer" id="but_sair">
-                        <li onclick="closeMenu()">Sair</li>
-                    </div>
-                </ul>
-            </nav>
+
+        <div class="corpo_but">
+            <div class="caixa_titulo">
+                <div class="titulo">
+                    Sensores
+                </div>
+            </div>
+            <div class="caixa_but">
+                <div class="but_display_digital" onclick='trocar_api()' id="but_sensor_1">Sensor 1</div>
+                <div class="but_display_digital" onclick="trocar_api_2()" id="but_sensor_2">Sensor 2</div>
+                <div class="but_display_digital" onclick="trocar_api_3()" id="but_sensor_3">Sensor 3</div>
+                <div class="but_display_digital" onclick="trocar_api_4()" id="but_sensor_4">Sensor 4</div>
+            </div>
+            <div>
+                <img class="tofu_guia" id="img_tofu_guia" src="Tofu-WiSoy.png">
+                <p id="fala" class="fala_tofu">Clique em uma das imagens ao lado para ver mais informações.</p>
+            </div>
         </div>
-    </div> 
 
 
 
+        <div class="retrato_graficos" id="retrato_graficos_id">
 
+            <div class="caixa_superior">
 
-        <div class="caixa_but">
-            <div class="but_display_digital" onclick='trocar_api()' id="but_sensor_1">Sensor 1</div>
-            <div class="but_display_digital" onclick="trocar_api_2()" id="but_sensor_2">Sensor 2</div>
-            <div class="but_display_digital"  onclick="trocar_api_3()"  id="but_sensor_3">Sensor 3</div>
-            <div class="but_display_digital"  onclick="trocar_api_4()" id="but_sensor_4">Sensor 4</div>
-        </div>
-
-
-
-
-            <div class="retrato_graficos" id="retrato_graficos_id">
-
-                <div class="caixa_superior">
-
-                    <div class="but_graficos" id="botao_hora" onclick="trocar_hora()">hora</div>
-                    <div class="but_graficos" id="botao_semanal" onclick="trocar_semanal()">semanal</div>
-                    <div class="but_graficos" id="botao_mensal" onclick="trocar_mensal()">mensal</div>
-                    </div>
+                <div class="but_graficos" id="botao_hora" onclick="trocar_hora()">horario</div>
+                <div class="but_graficos" id="botao_semanal" onclick="trocar_semanal()">semanal</div>
+                <div class="but_graficos" id="botao_mensal" onclick="trocar_mensal()">mensal</div>
+            </div>
 
 
 
-                <div class="caixa_inferior">
-                    <div style="display: none;">
-                        <h1>Sensor LM35 - Temperatura</h1>
+            <div class="caixa_inferior">
+                <div style="display: none;">
+                    <h1>Sensor LM35 - Temperatura</h1>
+                    <section>
+                        <h2>Média: <label id='average'>0.00</label></h2>
+                        <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+                    </section>
+                    <section style="width:100%">
+                        <canvas id="chart"></canvas>
                         <section>
-                            <h2>Média: <label id='average'>0.00</label></h2>
-                            <h2>Média Hora: <label id='averageHour'>0.00</label></h2>
+                </div>
+
+
+                <div id="grafico_api">
+
+                    <section">
+
+                        <h1>Sensor DHT11 - Umidade</h1>
+                        <h2>Média: <label id='averageHumidity'>0.00</label></h2>
+                        <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
+
                         </section>
-                        <section style="width:100%">
-                            <canvas id="chart"></canvas>
-                            <section>
-                    </div>
 
-
-                    <div id="grafico_api">
-                       
-                            <section >
-                                
-                                <h1>Sensor DHT11 - Umidade</h1>
-                                <h2>Média: <label id='averageHumidity'>0.00</label></h2>
-                                <h2>Média Hora: <label id='averageHourHumidity'>0.00</label></h2>
-                            
-                            </section>
-                       
                         </section>
                         <section style="width:100%">
                             <canvas id="chart-humidity"></canvas>
                             <section>
-                    </div>
+                </div>
 
 
-                    <div style="display: none;">
+                <div style="display: none;">
+                    <section>
+                        <h1>Sensor TRC5000 - Switch</h1>
+                    </section>
+                    <section style="width:100%">
+                        <canvas id="chart-switch"></canvas>
                         <section>
-                            <h1>Sensor TRC5000 - Switch</h1>
-                        </section>
-                        <section style="width:100%">
-                            <canvas id="chart-switch"></canvas>
-                            <section>
-                    </div>
-                    <div style="display: none;">
+                </div>
+                <div style="display: none;">
+                    <section>
+                        <h1>Sensor LDR - Luminosidade</h1>
+                        <h2>Média: <label id='averageLumi'>0.00</label></h2>
+                        <h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
+                    </section>
+                    <section style="width:100%">
+                        <canvas id="chart-lumi"></canvas>
                         <section>
-                            <h1>Sensor LDR - Luminosidade</h1>
-                            <h2>Média: <label id='averageLumi'>0.00</label></h2>
-                            <h2>Média Hora: <label id='averageHourLumi'>0.00</label></h2>
-                        </section>
-                        <section style="width:100%">
-                            <canvas id="chart-lumi"></canvas>
-                            <section>
-                    </div>
+                </div>
 
 
 
-                    <div id="grafico_umidade_hora">
-                        <canvas id="chart_umidade_hora"></canvas>
-                    </div>
+                <div id="grafico_umidade_hora">
+                    <canvas id="chart_umidade_hora"></canvas>
+                </div>
 
 
 
 
-                    <div id="grafico_umidade_semanal">
-                        <canvas id="chart_umidade_semanal" ></canvas>
-                    </div>
+                <div id="grafico_umidade_semanal">
+                    <canvas id="chart_umidade_semanal"></canvas>
+                </div>
 
 
 
 
-                    <div id="grafico_umidade_mensal">
-                        <canvas id="chart_umidade_mensal" ></canvas>
-                    </div>
+                <div id="grafico_umidade_mensal">
+                    <canvas id="chart_umidade_mensal"></canvas>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
     </div>
 
@@ -185,46 +192,51 @@
 <!--INÍCIO SCRIPT-->
 
 <script>
-
-
     /*INÍCIO GRÁFICO UMIDADE HORA*/
 
-    const labels_3 = ['13h', '14h', '15h', '16h', '17h', '18h'];
-
-    const data_3 = {
-
-        labels: labels_3,
-        datasets: [
-            {
-                label: 'WiSoy',
-                data: [90, 85, 95, 87, 90, 89],
-                borderColor: 'rgb(224, 187, 228)',
-                backgroundColor: 'rgb(149, 125, 173)',
-            },
-            
-        ]
-    };
-
-    const config_3 = {
+    var ctx = chart_umidade_hora.getContext('2d');
+    var myChart = new Chart(ctx, {
         type: 'line',
-        data: data_3,
+        data: {
+            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
+            datasets: [{
+                label: '% Umidade',
+                data: [12, 9, 3, 5, 2, 3, 7, 13, 2, 8],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
         options: {
-            responsive: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Umidade do solo na plantação'
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        },
-    };
-
-    var umidade_hora = document.getElementById('chart_umidade_hora').getContext('2d');
-    var myChart = new Chart(umidade_hora, config_3);
-
+        }
+    });
 
     /*FIM GRÁFICO UMIDADE HORA*/
 
@@ -232,91 +244,104 @@
 
     /*INÍCIO GRÁFICO SEMANAL*/
 
-    const labels = ['1', '2', '3', '4', '5', '6'];
-
-    const data = {
-
-        labels: labels,
-        datasets: [
-            {
-                label: 'WiSoy',
-                data: [90, 85, 95, 87, 90, 89],
-                borderColor: 'rgb(224, 187, 228)',
-                backgroundColor: 'red',
-            },
-            
-        ]
-    };
-
-    const config = {
+    var ctx = chart_umidade_semanal.getContext('2d');
+    var myChart = new Chart(ctx, {
         type: 'line',
-        data: data,
+        data: {
+            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
+            datasets: [{
+                label: '% Umidade',
+                data: [12, 19, 3, 5, 2, 3, 7, 13, 4, 8],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
         options: {
-            responsive: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Umidade do solo na plantação'
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        },
-    };
-
-    var umidade_semana = document.getElementById('chart_umidade_semanal').getContext('2d');
-    var myChart = new Chart(umidade_semana, config);
-
+        }
+    });
 
     /*FIM GRÁFICO SEMANAL*/
 
 
 
     /*INÍCIO GRÁFICO MENSAL*/
-    const labels_2 = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
 
-    const data_2 = {
-
-        labels: labels_2,
-        datasets: [
-            {
-                label: 'WiSoy',
-                data: [90, 85, 95, 87, 90, 89],
-                borderColor: 'rgb(224, 187, 228)',
-                backgroundColor: 'yellow',
-            },
-            
-            
-        ]
-    };
-
-    const config_2 = {
+    var ctx = chart_umidade_mensal.getContext('2d');
+    var myChart = new Chart(ctx, {
         type: 'line',
-        data: data_2,
+        data: {
+            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
+            datasets: [{
+                label: '% Umidade',
+                data: [12, 9, 3, 5, 2, 3, 7, 13, 24, 8],
+                backgroundColor: [
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
         options: {
-            responsive: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Umidade do solo na plantação'
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        },
-    };
-
-    var umidade_mes = document.getElementById('chart_umidade_mensal').getContext('2d');
-    var myChart = new Chart(umidade_mes, config_2);
-
+        }
+    });
 
     /*FIM GRÁFICO MENSAL*/
 
 
     /*INÍCIO GRÁFICO API*/
-
 
     var context = document.getElementById("chart").getContext("2d");
     context.canvas.width = 1000;
@@ -481,10 +506,10 @@
 
         var media = document.getElementById('averageHumidity');
         text = (media.innerText || media.textContent);
-        but_sensor_1.innerHTML = `Sensor 1 xosé<br>${text}`;
-        but_sensor_2.innerHTML = `${text}`;
-        but_sensor_3.innerHTML = `${text}`;
-        but_sensor_4.innerHTML = `${text}`;
+        but_sensor_1.innerHTML = `${text} <br><br> Sensor 1`;
+        but_sensor_2.innerHTML = `${text} <br><br> Sensor 2`;
+        but_sensor_3.innerHTML = `${text} <br><br> Sensor 3`;
+        but_sensor_4.innerHTML = `${text} <br><br> Sensor 4`;
     }
 
     get_dataHumidity();
@@ -703,6 +728,7 @@
     function trocar_semanal() {
 
         grafico_umidade_semanal.style.display = 'block'
+        grafico_umidade_semanal.style.width = '100%'
         grafico_umidade_hora.style.display = 'none'
         grafico_umidade_mensal.style.display = 'none'
         grafico_api.style.display = 'none'
@@ -725,45 +751,50 @@
         grafico_umidade_hora.style.display = 'none'
         grafico_umidade_mensal.style.display = 'none'
         grafico_umidade_mensal.style.display = 'none'
+        img_tofu_guia.style.display = 'none'
+        fala_tofu.style.display = 'none'
 
     }
 
     function trocar_api_2() {
 
-retrato_graficos_id.style.display = 'block'
-grafico_api.style.display = 'block'
-grafico_umidade_hora.style.display = 'none'
-grafico_umidade_mensal.style.display = 'none'
-grafico_umidade_mensal.style.display = 'none'
+        retrato_graficos_id.style.display = 'block'
+        grafico_api.style.display = 'block'
+        grafico_umidade_hora.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        img_tofu_guia.style.display = 'none'
+        fala_tofu.style.display = 'none'
 
-}
+    }
 
-function trocar_api_3() {
+    function trocar_api_3() {
 
-retrato_graficos_id.style.display = 'block'
-grafico_api.style.display = 'block'
-grafico_umidade_hora.style.display = 'none'
-grafico_umidade_mensal.style.display = 'none'
-grafico_umidade_mensal.style.display = 'none'
+        retrato_graficos_id.style.display = 'block'
+        grafico_api.style.display = 'block'
+        grafico_umidade_hora.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        img_tofu_guia.style.display = 'none'
+        fala_tofu.style.display = 'none'
 
-}
+    }
 
-function trocar_api_4() {
+    function trocar_api_4() {
 
-retrato_graficos_id.style.display = 'block'
-grafico_api.style.display = 'block'
-grafico_umidade_hora.style.display = 'none'
-grafico_umidade_mensal.style.display = 'none'
-grafico_umidade_mensal.style.display = 'none'
+        retrato_graficos_id.style.display = 'block'
+        grafico_api.style.display = 'block'
+        grafico_umidade_hora.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        grafico_umidade_mensal.style.display = 'none'
+        img_tofu_guia.style.display = 'none'
+        fala_tofu.style.display = 'none'
 
-}
+    }
 
 
-  
+
 
 
     /* INÍCIO FUNCTIONS QUE FAZEM A TROCA DOS GRÁFICOS*/
-
-
-
 </script>
