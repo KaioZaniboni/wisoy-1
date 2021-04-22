@@ -97,6 +97,7 @@
 <script>
     function cadastrar() {
 
+<<<<<<< HEAD
     var nome = inpt_nome.value;
     var razao = inpt_razao_social.value;
     var cnpj = inpt_cnpj.value;
@@ -111,6 +112,21 @@
         document.getElementById("to_cadastro").href= "";
     }   
     else{
+=======
+var nome = inpt_nome.value;
+var razao = inpt_razao_social.value;
+var cnpj = inpt_cnpj.value;
+var telefone = inpt_telefone.value;
+var email = inpt_email.value;
+var usuario = inpt_usuario.value;
+var senha = inpt_senha.value;
+var conf_senha = inpt_conf_senha.value;
+
+
+
+        if(nome.length> 0 && razao.length > 0 && cnpj.length > 0 && telefone.length > 0 && email.length >0 && usuario.length >0 && senha.length>0 && conf_senha.length >0)
+        {
+>>>>>>> fd16a7451d3e24f245cada41962a5ecd7cee3371
         alert("Cadastro realizado com sucesso!");
         document.getElementById("to_cadastro").href= "login.html";
     }

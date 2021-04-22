@@ -74,8 +74,7 @@ body {
 /* INICIO BODY */
 .geral {
     position: relative;
-    ;
-    width: 100%;
+    width: 97%;
     height: 85%;
 }
 
@@ -105,7 +104,7 @@ body {
     background-color: rgba(24, 23, 23, 0.76);
     position: relative;
     transition: 0.3s;
-    height: 77%;
+    height: 80%;
     left: -100%;
 }
 .itens_hamburguer {
@@ -139,11 +138,29 @@ ul img {
 
 
 /* INICIO BOTÕES */
-.caixa_but {
+.corpo_but {
+    height: 100%;
     width: 30%;
-    height: 30%;
     position: relative;
     float:left;
+    text-align: center;
+}
+.caixa_titulo {
+    width: 100%;
+    height: 10%;
+    top: 10%;
+    position: relative;
+}
+.titulo {
+    border-radius: 20px;
+    background-color: antiquewhite;
+    font-weight: 900;
+    font-size: 4vw;
+}
+.caixa_but {
+    position: absolute;
+    width: 100%;
+    height: 30%;
     top: 38%;
 }
 .but_display_digital {
@@ -175,6 +192,19 @@ ul img {
     bottom: 0;
     right: 0;
     position: absolute;
+}
+.tofu_guia {
+    right: -66%;
+    bottom: 20%;
+    width: 25%;
+    position: absolute;
+}
+.fala_tofu {
+    position: absolute;
+    bottom: 32%;
+    width: 40%;
+    color: antiquewhite;
+    right: -45%;
 }
 /* FIM BOTÕES */
 
@@ -230,32 +260,24 @@ ul img {
 
 /* INICIO CAIXA INFERIOR */
 .caixa_inferior {
-    display: flex;
-    justify-content: center;
     height: 60%;
     margin: 50px 0px 0px 25px;
     background-color: antiquewhite;
     border-radius: 15px;
 }
-#chart-humidity {
-    width: 100%;
-    height: 100%;   
+#chart-humidity { 
     display: none;
-
 }
-#chart_umidade_hora {
-    width: 90%;   
+#chart_umidade_hora {  
     display: none;
 }
 
-#chart_umidade_semanal {
-    width: 90%;   
+#chart_umidade_semanal {  
     display: none;
 
 }
 
-#chart_umidade_mensal {
-    width: 90%;   
+#chart_umidade_mensal { 
     display: none;
 }
 

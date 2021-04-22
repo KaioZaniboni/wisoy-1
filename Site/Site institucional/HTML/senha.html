@@ -44,10 +44,10 @@
                         autofocus /></span>
                 <br><br>
                 <span class="span_padrao">Nova Senha:
-                    <input id="senha1" type="text" class="input-padrao" placeholder="********" /></span>
+                    <input id="senha1" type="password" class="input-padrao" placeholder="********" /></span>
                 <br><br>
                 <span class="span_padrao">Confirme a Senha:
-                    <input id="senha2" type="text" class="input-padrao" placeholder="********" /></span>
+                    <input id="senha2" type="password" class="input-padrao" placeholder="********" /></span>
                 <br><br>
                 <a id="to_login" href=""><button class="btn-green" onclick="avancar()">Alterar
                         senha</button></a>
@@ -83,7 +83,7 @@
 
         if (char_maius && char_minus && char_esp && cnpj1 >=0) {
 
-            alert("Email enviado com sucesso para a empresa");
+            alert("Solicitação enviada com sucesso, uma validação foi enviada para o seu e-mail.");
             document.getElementById("to_login").href = "login.html";
 
         }
