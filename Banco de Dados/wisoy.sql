@@ -18,6 +18,12 @@ CREATE TABLE LEADS (
   PRIMARY KEY (ID_LEAD))auto_increment = 100;
 
 DESC LEADS;
+
+ CREATE TABLE CHECK_LEAD(
+  IDCHECK int primary key auto_increment,
+  FK_LEAD int,
+  foreign key (FK_LEAD) references LEADS(ID_LEAD)
+  );
 -- -----------------------------------------------------
 -- A tabela CLIENTES será responsável por armazenar todos os dados referentes ao cadastro de cada cliente.
 -- -----------------------------------------------------
@@ -36,6 +42,12 @@ CREATE TABLE CLIENTES (
 
 DESC CLIENTES;
 
+CREATE TABLE CHECK_CADASTRO(
+  IDCHECK int primary key auto_increment,
+  FK_CLIENTE int,
+  foreign key (FK_CLIENTE) references CLIENTES(ID_CLIENTE)
+  )auto_increment = 1;
+  
 --------------------------------------------------------
 -- A tabela USUARIOS_CLIENTES é responsável pelos login no sistema para demais verificações
 --------------------------------------------------------
@@ -46,6 +58,13 @@ LOGIN VARCHAR (35),
 SENHA VARCHAR (20),
 FK_CLIENTES INT,
 FOREIGN KEY (FK_CLIENTES) REFERENCES CLIENTES (ID_CLIENTE))auto_increment= 500;
+
+CREATE TABLE CHECK_LOGIN(
+  IDCHECK int primary key auto_increment,
+  FK_LOGIN int,
+  foreign key (FK_LOGIN) references USUARIOS_CLIENTES(ID_USUARIOS_CLIENTES)
+  )auto_increment = 1;
+  
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
 -- -----------------------------------------------------
@@ -107,10 +126,10 @@ CREATE TABLE OCORRENCIAS (
   REFERENCES CLIENTES (ID_CLIENTE),
   FOREIGN KEY (FK_COLABORADORES)
   REFERENCES COLABORADORES (ID_COLABORADORES))auto_increment = 7000;
-  
+
 DESC OCORRENCIAS;
 -- -----------------------------------------------------
--- A tabela HISTÓRICO tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
+-- A tabela HIST_SENSOR tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
 -- -----------------------------------------------------
 CREATE TABLE HIST_SENSOR (
   ID_HISTORICO INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -121,6 +140,8 @@ CREATE TABLE HIST_SENSOR (
   REFERENCES SENSORES (ID_SENSOR))auto_increment = 1;
   
   DESC HIST_SENSOR;
+  
+ 
 -- -----------------------------------------------------
 -- Inserts para testes
 -- -----------------------------------------------------
@@ -133,7 +154,6 @@ INSERT INTO LEADS VALUES (NULL, 'Project Plant', 'contato@projectplant.com', '11
 
 
 SELECT * FROM LEADS;
-
 DESC LEADS;
 
 DESC CLIENTES;
@@ -150,6 +170,13 @@ INSERT INTO CLIENTES VALUES
 SELECT * FROM CLIENTES;
 DESC CLIENTES;
 
+SELECT * FROM CHECK_CADASTRO;
+
+INSERT INTO CHECK_CADASTRO VALUES (NULL, 15000), (NULL, 15001), (NULL, 15002), (NULL, 15003), (NULL, 15004);
+
+SELECT * FROM CHECK_CADASTRO;
+
+
 SELECT * FROM USUARIOS_CLIENTES;
 
 INSERT INTO USUARIOS_CLIENTES VALUES 
@@ -161,7 +188,10 @@ INSERT INTO USUARIOS_CLIENTES VALUES
 
 SELECT * FROM USUARIOS_CLIENTES;
 
-SELECT * FROM CLIENTES;
+INSERT INTO CHECK_LOGIN VALUES (NULL, 500), (NULL, 501), (NULL, 502), (NULL, 503),
+(NULL, 504), (NULL, 505), (NULL, 506), (NULL, 507), (NULL, 508), (NULL, 509), (NULL, 510), (NULL, 511), (NULL, 512);
+
+SELECT * FROM CHECK_LOGIN;
 
 INSERT INTO FAZENDAS VALUES
 (NULL, 15000, 1000, 34, 'Rua Padre André'), (NULL, 15000, 90, 3, 'Rua Andrade Lopes'),
@@ -205,6 +235,24 @@ INSERT INTO OCORRENCIAS VALUES
 
 SELECT * FROM OCORRENCIAS;
 
+INSERT INTO COLABORADORES VALUES (NULL, 'Kaio Zaniboni', 'M', '1992-03-28', 'kaio_zaniboni@wisoy.com.br', 'kaio_wisoy', 
+'Ka54@z92', '11950890317', '735407817', '45639877754', 'Rua Professor José Armandoi', '77733344', '2021-02-01', null);
+
+alter table COLABORADORES add column FK_CHEFE INT;
+
+alter table COLABORADORES add foreign key (FK_CHEFE) references COLABORADORES(ID_COLABORADORES);
+
+desc COLABORADORES;
+
+update COLABORADORES set FK_CHEFE = 5003 where ID_COLABORADORES in (5000, 5001, 5002);
+update COLABORADORES set FK_CHEFE = null where ID_COLABORADORES = 5003;
+
+SELECT * FROM LEADS;
+
+INSERT INTO CHECK_LEAD VALUES(NULL, 100), (NULL, 101), (NULL, 102),
+(NULL, 103), (NULL, 104);
+
+SELECT * FROM CHECK_LEAD;
 ------------------------------------------------------------
 -- JOIN ABAIXO MOSTRA A RELAÇÃO DE LOGIN'S COM OS CLIENTES
 ------------------------------------------------------------
@@ -244,7 +292,12 @@ SELECT OCORRENCIAS.*, CLIENTES.NOME_FANTASIA, COLABORADORES.NOME
 FROM OCORRENCIAS JOIN CLIENTES ON CLIENTES.ID_CLIENTE = FK_CLIENTE 
 JOIN COLABORADORES ON COLABORADORES.ID_COLABORADORES = FK_COLABORADORES; 
 
+----------------------------------------------------------------------------
 
+SELECT FUNCIONARIOS.NOME AS CHEFE, CHEFE.NOME AS FUNCIONARIO 
+FROM COLABORADORES AS FUNCIONARIOS 
+JOIN COLABORADORES AS CHEFE 
+ON FUNCIONARIOS.ID_COLABORADORES = (CHEFE.FK_CHEFE);
 
 
 
