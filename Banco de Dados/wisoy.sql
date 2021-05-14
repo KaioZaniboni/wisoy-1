@@ -2,9 +2,10 @@
 -- Cria e usa o banco de dados "wisoy".
 -- -----------------------------------------------------
 CREATE DATABASE wisoy;
+
 USE wisoy;
 
-drop database wisoy;
+DROP DATABASE wisoy;
 
 -- -----------------------------------------------------
 -- A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.
@@ -18,12 +19,6 @@ CREATE TABLE LEADS (
   PRIMARY KEY (ID_LEAD))auto_increment = 100;
 
 DESC LEADS;
-
- CREATE TABLE CHECK_LEAD(
-  IDCHECK int primary key auto_increment,
-  FK_LEAD int,
-  foreign key (FK_LEAD) references LEADS(ID_LEAD)
-  );
 -- -----------------------------------------------------
 -- A tabela CLIENTES será responsável por armazenar todos os dados referentes ao cadastro de cada cliente.
 -- -----------------------------------------------------
@@ -35,18 +30,13 @@ CREATE TABLE CLIENTES (
   CPNJ VARCHAR(23),
   RAZAO_SOCIAL VARCHAR(50),
   DATA_CONTRATO DATE,
+  CHECK_TERMOS TINYINT,
   PRIMARY KEY (ID_CLIENTE),
   FK_LEAD INT,
   FOREIGN KEY (FK_LEAD) REFERENCES LEADS (ID_LEAD)
 )auto_increment = 15000;
 
 DESC CLIENTES;
-
-CREATE TABLE CHECK_CADASTRO(
-  IDCHECK int primary key auto_increment,
-  FK_CLIENTE int,
-  foreign key (FK_CLIENTE) references CLIENTES(ID_CLIENTE)
-  )auto_increment = 1;
   
 --------------------------------------------------------
 -- A tabela USUARIOS_CLIENTES é responsável pelos login no sistema para demais verificações
@@ -59,12 +49,6 @@ SENHA VARCHAR (20),
 FK_CLIENTES INT,
 FOREIGN KEY (FK_CLIENTES) REFERENCES CLIENTES (ID_CLIENTE))auto_increment= 500;
 
-CREATE TABLE CHECK_LOGIN(
-  IDCHECK int primary key auto_increment,
-  FK_LOGIN int,
-  foreign key (FK_LOGIN) references USUARIOS_CLIENTES(ID_USUARIOS_CLIENTES)
-  )auto_increment = 1;
-  
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
 -- -----------------------------------------------------
@@ -139,19 +123,18 @@ CREATE TABLE HIST_SENSOR (
   FOREIGN KEY (FK_SENSOR)
   REFERENCES SENSORES (ID_SENSOR))auto_increment = 1;
   
-  DESC HIST_SENSOR;
-  
+  DESC HIST_SENSOR;  
  
 -- -----------------------------------------------------
 -- Inserts para testes
 -- -----------------------------------------------------
 
-INSERT INTO LEADS VALUES (NULL, 'Project Plant', 'contato@projectplant.com', '11987654321', '45433595000134'),
+INSERT INTO LEADS VALUES 
+(NULL, 'Project Plant', 'contato@projectplant.com', '11987654321', '45433595000134'),
 (NULL, 'Soja Mais', 'soja_mais@hotmail.com', '11912345678', '55345678000145'),
 (NULL, 'Edinaldo Soja', 'edinal.soja@outlook.com.br', '11987774571', '98765432100015'),
 (NULL, 'Agro Soja', 'contato@agrosoja.com.br', '11995154321', '45433984534143'),
 (NULL, 'Agro Farm', 'agro_farm@gmail.com.br', '11955774205', '12345678000164');
-
 
 SELECT * FROM LEADS;
 DESC LEADS;
@@ -161,21 +144,14 @@ DESC CLIENTES;
 SELECT * FROM CLIENTES;
 
 INSERT INTO CLIENTES VALUES 
-(NULL, 'Project Plant', '11987654321', 'contato@projectplant.com', '45433595000134', 'João Plantação Agro', '2021-03-08',  100),
-(NULL, 'Unilever', '11987880572', 'contato@projectplant.com', '61068276000104', 'Unilever LTDA', '2021-01-15',  null),
-(NULL, 'Agro Farm', '11955774205', 'agro_farm@gmail.com.br', '12345678000164', 'Agro Farms Comercio de Graos Eireli', '2021-04-08',  104),
-(NULL, 'Soja Hoje', '11966196606', 'soja_hoje@hotmail.com.br', '45455595000144', 'Soja Hoje LTDA', '2021-02-18',  null),
-(NULL, 'Coca Cola', '11954320706', 'contato@cocacola.com.br', '45997418000153', 'COCA COLA INDUSTRIAS LTDA', '2020-12-23',  null);
+(NULL, 'Project Plant', '11987654321', 'contato@projectplant.com', '45433595000134', 'João Plantação Agro', '2021-03-08', 1, 100),
+(NULL, 'Unilever', '11987880572', 'contato@projectplant.com', '61068276000104', 'Unilever LTDA', '2021-01-15', 1, null),
+(NULL, 'Agro Farm', '11955774205', 'agro_farm@gmail.com.br', '12345678000164', 'Agro Farms Comercio de Graos Eireli', '2021-04-08', 1, 104),
+(NULL, 'Soja Hoje', '11966196606', 'soja_hoje@hotmail.com.br', '45455595000144', 'Soja Hoje LTDA', '2021-02-18', 1, null),
+(NULL, 'Coca Cola', '11954320706', 'contato@cocacola.com.br', '45997418000153', 'COCA COLA INDUSTRIAS LTDA', '2020-12-23', 1, null);
 
 SELECT * FROM CLIENTES;
 DESC CLIENTES;
-
-SELECT * FROM CHECK_CADASTRO;
-
-INSERT INTO CHECK_CADASTRO VALUES (NULL, 15000), (NULL, 15001), (NULL, 15002), (NULL, 15003), (NULL, 15004);
-
-SELECT * FROM CHECK_CADASTRO;
-
 
 SELECT * FROM USUARIOS_CLIENTES;
 
@@ -188,11 +164,6 @@ INSERT INTO USUARIOS_CLIENTES VALUES
 
 SELECT * FROM USUARIOS_CLIENTES;
 
-INSERT INTO CHECK_LOGIN VALUES (NULL, 500), (NULL, 501), (NULL, 502), (NULL, 503),
-(NULL, 504), (NULL, 505), (NULL, 506), (NULL, 507), (NULL, 508), (NULL, 509), (NULL, 510), (NULL, 511), (NULL, 512);
-
-SELECT * FROM CHECK_LOGIN;
-
 INSERT INTO FAZENDAS VALUES
 (NULL, 15000, 1000, 34, 'Rua Padre André'), (NULL, 15000, 90, 3, 'Rua Andrade Lopes'),
 (NULL, 15001, 1500, 50 , 'Rua Fernando Moreira'),
@@ -204,18 +175,25 @@ SELECT * FROM FAZENDAS;
 SELECT * FROM CLIENTES;
 
 INSERT INTO SENSORES VALUES 
-(NULL, 1, '2021-03-11', '86.1638, -80.4437'), (NULL, 2, '2021-03-16', '-57.0430, -157.2459'),
-(NULL, 3, '2021-01-25', '42.1108, 7.6416'), (NULL, 4, '2021-03-11', '70.2003, -165.4415'),
-(NULL, 5, '2021-03-11', '-75.3722, -176.6609'), (NULL, 6, '2021-02-28', '-34.8391, 157.6925'),
+(NULL, 1, '2021-03-11', '86.1638, -80.4437'), 
+(NULL, 2, '2021-03-16', '-57.0430, -157.2459'),
+(NULL, 3, '2021-01-25', '42.1108, 7.6416'), 
+(NULL, 4, '2021-03-11', '70.2003, -165.4415'),
+(NULL, 5, '2021-03-11', '-75.3722, -176.6609'), 
+(NULL, 6, '2021-02-28', '-34.8391, 157.6925'),
 (NULL, 7, '2021-01-02', '22.5029, 136.9261');
 
 
 SELECT * FROM SENSORES;
 
-INSERT INTO HIST_SENSOR VALUES (null, 1000, '13.47%', '2021-03-11 14:55'),
-(null, 1001, '13.39%', '2021-03-17'), (null, 1002, '14.98%', '2021-01-27'),
-(null, 1003, '13.09%', '2021-03-14'), (null, 1004, '14.01%', '2021-03-30'),
-(null, 1005, '13.57%', '2021-02-28'), (null, 1006, '13.08%', '2021-01-07');
+INSERT INTO HIST_SENSOR VALUES
+  (null, 1000, '13.47%', '2021-03-11 14:55'),
+  (null, 1001, '13.39%', '2021-03-17'), 
+  (null, 1002, '14.98%', '2021-01-27'),
+  (null, 1003, '13.09%', '2021-03-14'), 
+  (null, 1004, '14.01%', '2021-03-30'),
+  (null, 1005, '13.57%', '2021-02-28'), 
+  (null, 1006, '13.08%', '2021-01-07');
 
 SELECT * FROM HIST_SENSOR;
 
@@ -238,21 +216,18 @@ SELECT * FROM OCORRENCIAS;
 INSERT INTO COLABORADORES VALUES (NULL, 'Kaio Zaniboni', 'M', '1992-03-28', 'kaio_zaniboni@wisoy.com.br', 'kaio_wisoy', 
 'Ka54@z92', '11950890317', '735407817', '45639877754', 'Rua Professor José Armandoi', '77733344', '2021-02-01', null);
 
-alter table COLABORADORES add column FK_CHEFE INT;
+ALTER TABLE COLABORADORES ADD COLUMN FK_CHEFE INT;
 
-alter table COLABORADORES add foreign key (FK_CHEFE) references COLABORADORES(ID_COLABORADORES);
+ALTER TABLE COLABORADORES ADD FOREIGN KEY (FK_CHEFE) REFERENCES COLABORADORES(ID_COLABORADORES);
 
-desc COLABORADORES;
+DESC COLABORADORES;
 
-update COLABORADORES set FK_CHEFE = 5003 where ID_COLABORADORES in (5000, 5001, 5002);
-update COLABORADORES set FK_CHEFE = null where ID_COLABORADORES = 5003;
+UPDATE COLABORADORES SET FK_CHEFE = 5003 WHERE ID_COLABORADORES IN (5000, 5001, 5002);
+
+UPDATE COLABORADORES SET FK_CHEFE = NULL WHERE ID_COLABORADORES = 5003;
 
 SELECT * FROM LEADS;
 
-INSERT INTO CHECK_LEAD VALUES(NULL, 100), (NULL, 101), (NULL, 102),
-(NULL, 103), (NULL, 104);
-
-SELECT * FROM CHECK_LEAD;
 ------------------------------------------------------------
 -- JOIN ABAIXO MOSTRA A RELAÇÃO DE LOGIN'S COM OS CLIENTES
 ------------------------------------------------------------
@@ -272,7 +247,7 @@ SELECT FAZENDAS.*, CLIENTES.NOME_FANTASIA FROM FAZENDAS JOIN CLIENTES ON CLIENTE
 -----------------------------------------------------------------------------
 
 SELECT SENSORES.*, FAZENDAS.FK_CLIENTE, FAZENDAS.HECTARES, FAZENDAS.NUMERO_SENSORES, FAZENDAS.ENDERECO_FAZENDA, CLIENTES.NOME_FANTASIA 
- FROM SENSORES JOIN FAZENDAS ON FAZENDAS.ID_FAZENDA = FK_FAZENDA JOIN CLIENTES ON CLIENTES.ID_CLIENTE = FK_CLIENTE;
+FROM SENSORES JOIN FAZENDAS ON FAZENDAS.ID_FAZENDA = FK_FAZENDA JOIN CLIENTES ON CLIENTES.ID_CLIENTE = FK_CLIENTE;
  
  -----------------------------------------------------------------------------
  -- RELAÇÃO ENTRE DUAS TABELAS HIST_SENSOR E SENSORES
@@ -298,14 +273,3 @@ SELECT FUNCIONARIOS.NOME AS CHEFE, CHEFE.NOME AS FUNCIONARIO
 FROM COLABORADORES AS FUNCIONARIOS 
 JOIN COLABORADORES AS CHEFE 
 ON FUNCIONARIOS.ID_COLABORADORES = (CHEFE.FK_CHEFE);
-
-
-
-
-
-
-
-
-
-
- 
