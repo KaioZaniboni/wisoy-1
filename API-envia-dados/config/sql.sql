@@ -8,66 +8,65 @@
 /*A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.*/
 
 CREATE TABLE  LEADS (
-	ID_LEAD INT PRIMARY KEY IDENTITY,
+	ID_LEAD INT PRIMARY KEY IDENTITY (100, 1),
 	NOME_FANTASIA VARCHAR(60),
 	EMAIL VARCHAR(60),
 	TELEFONE VARCHAR(11),
 	CNPJ VARCHAR(23),	
-) IDENTITY = 100;
+) ;
 
 /*A tabela CLIENTES será responsável por armazenar todos os dados referentes ao cadastro de cada cliente.*/
 
 CREATE TABLE CLIENTES (
-	ID_CLIENTE INT PRIMARY KEY IDENTITY, /*IDENTITY é o auto_increment do MYSQL SERVER*/
+	ID_CLIENTE INT PRIMARY KEY IDENTITY (15000, 1), /*IDENTITY é o auto_increment do MYSQL SERVER*/
 	NOME_FANTASIA VARCHAR(60),
 	TELEFONE VARCHAR(11),
 	EMAIL VARCHAR (50),
 	CPNJ VARCHAR(23),
 	RAZAO_SOCIAL VARCHAR(50),
 	DATA_CONTRATO DATE,
-  CHECK_TERMOS BIGINT,
+  CHECK_TERMOS BIT (0, 1),
 	FK_LEAD INT,
 	FOREIGN KEY (FK_LEAD) REFERENCES LEADS (ID_LEAD)	
-
-) IDENTITY = 15000;
+);
 
 /*A tabela USUARIOS_CLIENTES é responsável pelos login no sistema para demais verificações*/
 
 CREATE TABLE USUARIOS_CLIENTES (
-	ID_USUARIOS_CLIENTES INT PRIMARY KEY IDENTITY,
+	ID_USUARIOS_CLIENTES INT PRIMARY KEY IDENTITY (500, 1),
 	LOGIN VARCHAR (35),
 	SENHA VARCHAR (20),
 	FK_CLIENTES INT,
 	FOREIGN KEY (FK_CLIENTES) REFERENCES CLIENTES (ID_CLIENTE)
-	) IDENTITY= 500;
+	);
 
 /*A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.*/
 
 CREATE TABLE FAZENDAS (
-	ID_FAZENDA INT PRIMARY KEY IDENTITY,
+	ID_FAZENDA INT PRIMARY KEY IDENTITY (1, 1),
 	FK_CLIENTE INT NOT NULL,
 	HECTARES INT,
 	NUMERO_SENSORES INT,
   ENDERECO_FAZENDA VARCHAR(100),
 	FOREIGN KEY (FK_CLIENTE) REFERENCES CLIENTES (ID_CLIENTE)
-	) IDENTITY= 1;
+	) ;
 
 /*A tabela SENSORES irá conter todos os sensores que a wisoy já implantou, data de instalação e em qual fazenda se encontram.*/
 
 CREATE TABLE SENSORES (
-  ID_SENSOR INT PRIMARY KEY IDENTITY,
+  ID_SENSOR INT PRIMARY KEY IDENTITY (1000, 1),
   FK_FAZENDA INT NOT NULL,
   DATA_INSTALACAO DATE,
   SENSOR_XY VARCHAR (45),
   FOREIGN KEY (FK_FAZENDA)
   REFERENCES FAZENDAS (ID_FAZENDA)
-  )IDENTITY = 1000;
+  );
 
 
 /*A tabela FUNCIONARIOS contera dados de todo quadro de funcionários WiSoy.*/
 
 CREATE TABLE COLABORADORES (
-  ID_COLABORADORES INT PRIMARY KEY IDENTITY,
+  ID_COLABORADORES INT PRIMARY KEY IDENTITY (5000, 1),
   NOME VARCHAR(60),
   SEXO CHAR(1),
   DATA_NASCIMENTO DATE,
@@ -82,12 +81,12 @@ CREATE TABLE COLABORADORES (
   DATA_ADMISSAO DATE,
   FK_CHEFE INT,
   FOREIGN KEY (FK_CHEFE) REFERENCES COLABORADORES(ID_COLABORADORES)
-  )IDENTITY = 5000;
+  );
 
 /*A tabela OCORRENCIAS tem o propósito de armazenar todas as ocorrências relacionadas ao serviços WiSoy relatadas por clientes.*/
 
-CREATE TABLE OCORRENCIAS (
-  ID_OCORRENCIA INT PRIMARY KEY IDENTITY,
+/*CREATE TABLE OCORRENCIAS (
+  ID_OCORRENCIA INT PRIMARY KEY IDENTITY (7000, 1),
   FK_CLIENTE INT NOT NULL,
   FK_COLABORADORES INT NOT NULL,
   RELATO VARCHAR(280),
@@ -96,18 +95,18 @@ CREATE TABLE OCORRENCIAS (
   REFERENCES CLIENTES (ID_CLIENTE),
   FOREIGN KEY (FK_COLABORADORES)
   REFERENCES COLABORADORES (ID_COLABORADORES)
-  )IDENTITY = 7000;
+  );*/
 
   /*A tabela HISTÓRICO tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.*/
 
   CREATE TABLE HIST_SENSOR (
-  ID_HISTORICO INT PRIMARY KEY IDENTITY,
+  ID_HISTORICO INT PRIMARY KEY IDENTITY (1, 1),
   FK_SENSOR INT NOT NULL,
   LEITURA_UMIDADE CHAR(6),
   LEITURA_DATA_HORA CHAR(16),
   FOREIGN KEY (FK_SENSOR)
   REFERENCES SENSORES (ID_SENSOR)
-  )IDENTITY = 1;
+  );
 
 
 /*=====================================================================================================================*/
