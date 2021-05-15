@@ -5,8 +5,8 @@ module.exports = {
     // altere APENAS username, password, database e host.
     username: 'grupo11', /*Nome usuário*/ 
     password: 'GPO011@#', /*Senha*/ 
-    database: 'database-demo', /*nome BD*/ 
-    host: 'server-demo-grupo11.database.windows.net', /*Visão geral; nome do servidor*/ 
+    database: 'WiSoy', /*nome BD*/ 
+    host: 'wisoy3.database.windows.net', /*Visão geral; nome do servidor*/ 
     dialect: 'mssql',/*MysSql server da microsoft */
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {

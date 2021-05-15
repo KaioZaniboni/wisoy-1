@@ -156,18 +156,28 @@ DESC CLIENTES;
 SELECT * FROM USUARIOS_CLIENTES;
 
 INSERT INTO USUARIOS_CLIENTES VALUES 
-(null, 'user1_plant', 'P@3507A', 15000), (null, 'user2_plant', 'P@5700A', 15000), (null, 'user3_plant', 'P#5503A', 15000),
-(null, 'user1_lever', 'U@4433S', 15001), (null, 'user2_lever', 'U#3211S', 15001), (null, 'user3_lever', 'U@6671S', 15001),
-(null, 'user1_farm', 'F@3257A', 15002), (null, 'user2_farm', 'F#7707A', 15002),
-(null, 'user1_shoje', 'S@4302H', 15003), (null, 'user2_shoje', 'S#2002H', 15003), (null, 'user2_shoje', 'S@5552H', 15003),
-(null, 'user1_cola', 'C@5504C', 15004), (null, 'user2_cola', 'C!2505C', 15004);
+(null, 'user1_plant', 'P@3507A', 15000),
+(null, 'user2_plant', 'P@5700A', 15000),
+(null, 'user3_plant', 'P#5503A', 15000),
+(null, 'user1_lever', 'U@4433S', 15001),
+(null, 'user2_lever', 'U#3211S', 15001),
+(null, 'user3_lever', 'U@6671S', 15001),
+(null, 'user1_farm', 'F@3257A', 15002),
+(null, 'user2_farm', 'F#7707A', 15002),
+(null, 'user1_shoje', 'S@4302H', 15003), 
+(null, 'user2_shoje', 'S#2002H', 15003), 
+(null, 'user2_shoje', 'S@5552H', 15003),
+(null, 'user1_cola', 'C@5504C', 15004),
+(null, 'user2_cola', 'C!2505C', 15004);
 
 SELECT * FROM USUARIOS_CLIENTES;
 
 INSERT INTO FAZENDAS VALUES
-(NULL, 15000, 1000, 34, 'Rua Padre André'), (NULL, 15000, 90, 3, 'Rua Andrade Lopes'),
+(NULL, 15000, 1000, 34, 'Rua Padre André'),
+(NULL, 15000, 90, 3, 'Rua Andrade Lopes'),
 (NULL, 15001, 1500, 50 , 'Rua Fernando Moreira'),
-(NULL, 15002, 400, 14, 'Rua Cornelius Frederick'), (NULL, 15002, 700, 24, 'Avenida Sapopemba'),
+(NULL, 15002, 400, 14, 'Rua Cornelius Frederick'),
+(NULL, 15002, 700, 24, 'Avenida Sapopemba'),
 (NULL, 15003, 630, 21, 'Rua Engenheiro Alberto Nilman'),
 (NULL, 15004, 10000, 334, 'Rua Coronel Armando');
 
@@ -197,12 +207,10 @@ INSERT INTO HIST_SENSOR VALUES
 
 SELECT * FROM HIST_SENSOR;
 
-INSERT INTO COLABORADORES VALUES(NULL, 'Jonas Florencio', 'M', '2002-03-30', 'jonas_florencio@wisoy.com.br', 'jonas_wisoy', 
-'Jo54@p12', '11955250037', '503032217', '33299400574', 'Rua Professor Otavio Fernandes', '88833397', '2021-02-01'),
-(NULL, 'Amanda Fruteiro', 'F', '2002-01-07', 'amanda_fruteiro@wisoy.com.br', 'amanda_wisoy', 
-'Am01#dsC', '11944064307', '243555719', '46955749916', 'Rua Enfermeira Luiza Alegreti', '77433397', '2021-02-01'),
-(NULL, 'Matheus Vieck', 'M', '1998-02-13', 'matheus_vieck@wisoy.com.br', 'matheus_wisoy', 
-'Ma37#f13', '11955250037', '530075995', '46933797734', 'Rua Soldado Peixoto', '74421388', '2021-02-01');
+INSERT INTO COLABORADORES VALUES
+(NULL, 'Jonas Florencio', 'M', '2002-03-30', 'jonas_florencio@wisoy.com.br', 'jonas_wisoy', 'Jo54@p12', '11955250037', '503032217', '33299400574', 'Rua Professor Otavio Fernandes', '88833397', '2021-02-01'),
+(NULL, 'Amanda Fruteiro', 'F', '2002-01-07', 'amanda_fruteiro@wisoy.com.br', 'amanda_wisoy', 'Am01#dsC', '11944064307', '243555719', '46955749916', 'Rua Enfermeira Luiza Alegreti', '77433397', '2021-02-01'),
+(NULL, 'Matheus Vieck', 'M', '1998-02-13', 'matheus_vieck@wisoy.com.br', 'matheus_wisoy','Ma37#f13', '11955250037', '530075995', '46933797734', 'Rua Soldado Peixoto', '74421388', '2021-02-01');
 
 SELECT * FROM COLABORADORES;
 
