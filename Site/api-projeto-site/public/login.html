@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+
+<body class="body_img">
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <a href="home.html"><img src="../IMG/wisoy.png" alt="logo WiSoy">
+                    <span>WiSoy</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="portfólio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <form id="form_login" method="post" onsubmit="return entrar()">
+    <div class="corpo_log_in">
+        <div class="caixa_log_in">
+            <div class="img_login">
+                <img src="../IMG/wisoy.png" alt="Logo WiSoy">
+            </div>
+
+            <span>E-mail</span>
+            <div>
+                <input id="inpt_email" class="inp_padrao" type="email" placeholder="Digite aqui seu e-mail"
+                autofocus name="login">
+            </div>
+            <br>
+
+            <div id="mensagem_email"></div>
+
+            <br>
+
+            <span>Senha</span>
+            <div>
+                <input type="password" id="inpt_senha" placeholder="********" name="senha">
+                <input type="checkbox">Mostrar Senha
+            </div>
+            <br>
+
+            <div id="mensagem_senha"></div>
+
+            <br>
+
+            <div class="lembrar_login">
+                <input type="checkbox">
+                <span>
+                    Lembrar meu login
+                </span>
+            </div>
+
+            <div id="login" class="button_login_conteiner">
+            <button class="button_login">Entrar</button>
+            </div>
+
+            <br>
+
+            <div class="rodape_caixa">
+                <p><a class="desing_p" href="Senha.html">Esqueceu a sua senha?</a></p>
+                <p><a class="desing_p" href="cadastro.html">Não possui uma conta? Cadastre-se!</a></p>
+            </div>
+        </div>
+    </div>
+    </form>
+
+    <div class="rodape">
+        Copyright &copy 2021 - Todos os direitos reservados - WiSoy
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = '../../Dashboard/site2/inicio.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+</script>

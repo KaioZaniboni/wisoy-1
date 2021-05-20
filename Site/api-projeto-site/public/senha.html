@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Senha/Login</title>
+
+    <link rel="stylesheet" href="../CSS/senha.css">
+</head>
+
+<body class="body_img">
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <a href="home.html"><img src="../IMG/wisoy.png" alt="logo WiSoy">
+                    <span>WiSoy</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+
+                    <li class="li_sobre"><a href="sobre.html">Sobre</a></li>
+
+                    <li><a href="portfólio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- INICIO SENHA -->
+    <div class="pag-login">
+        <div class="containerlogin">
+            <div>
+                <span class="span_padrao">
+                    <h1>Esqueci minha senha:</h1>
+                </span>
+
+                <span class="span_padrao">CNPJ:
+                    <input id="empresa" type="text" class="input-padrao" placeholder="xx.xxx.xxx/xxxx-xx"
+                        autofocus /></span>
+                <br><br>
+                <span class="span_padrao">Nova Senha:
+                    <input id="senha1" type="password" class="input-padrao" placeholder="********" /></span>
+                <br><br>
+                <span class="span_padrao">Confirme a Senha:
+                    <input id="senha2" type="password" class="input-padrao" placeholder="********" /></span>
+                <br><br>
+                <a id="to_login" href=""><button class="btn-green" onclick="avancar()">Alterar
+                        senha</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- FIM SENHA -->
+
+    <!--INICIO RODAPE-->
+
+    <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
+
+    <!--FIM DO RODAPE-->
+
+</body>
+
+</html>
+
+<script>
+    function avancar() {
+
+        var cnpj = empresa.value;
+        var senha = senha1.value;
+        var confirma = senha2.value;
+
+        var char_minus = senha.match(/[a-z]+/);
+        var char_maius = senha.match(/[A-Z]+/);
+        var char_esp = senha.match(/[!-@]+/);
+        
+        var cnpj1 = cnpj.indexOf('12345678912345');
+
+
+
+        if (char_maius && char_minus && char_esp && cnpj1 >=0) {
+
+            alert("Solicitação enviada com sucesso, uma validação foi enviada para o seu e-mail.");
+            document.getElementById("to_login").href = "login.html";
+
+        }
+        else {
+            alert("Dados Inválidos")
+            document.getElementById("to_login").href = "";
+        }
+    }
+</script>

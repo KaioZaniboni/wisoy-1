@@ -1,0 +1,227 @@
+
+/* CSS Geral */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+
+.body_img {
+    background-image: url(..//IMG/background.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+
+}
+
+.cabecalho {
+    padding-top: 0;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 10%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    position: fixed;
+    top: 0;
+    
+   
+}
+
+.rodape {
+    position: fixed;
+    bottom: 0;
+    padding-top: 0px;
+    background: rgb(24, 23, 23, .6);
+    width: 100%;
+    height: 3%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.caixa {
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.logo a img {
+    width: 25%;
+    font-size: 1vw;
+}
+
+.logo a span {
+    letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5vw;
+}
+
+ul {
+    list-style: none;
+    
+    
+}
+
+ul li {
+    color: white;
+    display: inline;
+    margin-left: 30px;
+    font-size: 1.5vw;
+  
+
+}
+
+/* .li_sobre {
+    position: relative;
+}
+
+.li_sobre:hover .dropdown_sobre {
+    display: block !important;   
+    top: 60px;
+    position: absolute;
+}
+
+.dropdown_sobre {
+    display: none;
+} */
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    letter-spacing: 3px;
+}
+
+ul li a:hover {
+    font-size: 120%;
+    color: green;
+}
+
+.cabecalho span {
+    color: white;
+    display: inline;
+    margin-left: 5px;
+    font-size: xx-large;
+}
+
+
+
+/* CSS Cadastro */
+
+.corpo_cadastro {
+    color: white;
+    margin: 8%;
+    text-align: center;
+    font-size: 1.3vw;   
+}
+
+.caixa_cadastro {
+    height: 48%;
+    width: 45%;
+    border-radius: 30px;
+    color: white;
+    padding: 10% 10%;
+    padding: 5%;
+    font-size: 1.3vw;
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: 0 0 4px 4px rgb(0 0 0 / 35%);
+    text-align: center;
+    margin-left: 23%;
+}
+
+.conteudo_cadastro input:not([type="checkbox"]) {
+    background-color: rgba(139, 139, 139, 0.1);
+    color: white;
+    height: 5%;
+    width: 65%;
+    border-radius: 15px;
+    margin-bottom: 4%;
+    font-size: 1vw;
+}
+
+.checkbox_termo {
+    margin-top: 7%;
+    font-size: 1vw;
+}
+
+.checkbox_termo input[type="checkbox"] {
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.checkbox_termo a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+.button_cadastro {
+    border-radius: 15px; 
+    height: 100%;
+    width: 40%;
+    color: white;
+    background-color: rgba(139, 139, 139, 0.6);
+    font-size: 2vw;
+    border: none;
+    margin-top: 7%;
+}
+
+.button_cadastro:hover {
+    background-color: green;
+    font-size: 2.5vw;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.design_input {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1vw;
+   
+}
+
+.design_input:not([type="input"]) {
+    font-weight: 700;
+    font-size: 1.0vw;
+    height: 25%;
+}
+
+#resetar {
+
+    background-color: green;
+    font-size: 1.4vw;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-right: 200px;
+    border-radius: 15px;
+    border: 0;
+    color: white;
+    
+}
+
+.link_login{
+    color: white;
+    text-decoration: none;
+}
