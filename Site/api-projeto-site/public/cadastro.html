@@ -35,51 +35,49 @@
         <br> <br>
 
         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-        <div class="caixa_cadastro">
-            <div class="conteudo_cadastro">
-                <div class="design_input">Nome Fantasia:
-                    <input id="inpt_nome" type="text" placeholder="Digite aqui o nome empresarial" autofocus>
-                </div>
+            <div class="caixa_cadastro">
+                <div class="conteudo_cadastro">
 
-                <div class="design_input">Razão Social:
-                    <input id="inpt_razao_social" type="text" placeholder="Digite aqui a razão social">
-                </div>
+                    <div class="design_input">Nome:
+                        <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário" name="nome">
+                    </div>
 
-                <div class="design_input">CNPJ:
-                    <input id="inpt_cnpj" type="text" placeholder="xx.xxx.xxx/xxxx-xx" value="">
-                </div>
+                    <div class="design_input">E-mail
+                        <input id="inpt_email" type="email" placeholder="nome@example.com" name="login">
+                    </div>
 
-                <div class="design_input">Telefone:
-                    <input id="inpt_telefone" type="text" placeholder="(099) 99999-9999" name="telefone">
-                </div>
+                    <div class="design_input">Senha:
+                        <input id="inpt_senha" type="password" placeholder="********" name="senha">
+                    </div>
 
-                <div class="design_input">E-mail
-                    <input id="inpt_email" type="email" placeholder="nome@example.com" name="login">
-                </div>
+                    <div class="design_input">Confirme a senha:
+                        <input id="inpt_conf_senha" type="password" placeholder="********">
+                    </div>
 
-                <div class="design_input">Usuário:
-                    <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário" name="nome">
-                </div>
+                    <div class="desing_empresa">Empresa:
+                        <select id="empresa" name="fk_empresa">
+                            <option value="">Selecione uma empresa</option>
+                            <option value="15000">Project Plant</option>
+                            <option value="15001">Unilever</option>
+                            <option value="15002">Agro Farm</option>
+                            <option value="15003">Soja Hoje</option>
+                            <option value="15004">Coca Cola</option>
+                            <option value="15005">Sojão Brandão</option>
+                            <option value="15006">Leo Sojas</option>
+                        </select>
+                    </div>
 
-                <div class="design_input">Senha:
-                    <input id="inpt_senha" type="password" placeholder="********" name="senha">
-                </div>
+                    <div class="checkbox_termo">
+                        <input type="checkbox" name="check_termos"> Concordo com os
+                        <a href="termos.html">termos de serviço</a>
+                        do WiSoy.com
+                    </div>
 
-                <div class="design_input">Confirme a senha:
-                    <input id="inpt_conf_senha" type="password" placeholder="********">
+                    <button id="but_cadastro" class="button_cadastro">
+                        Criar Conta
+                    </button>
                 </div>
-
-                <div class="checkbox_termo">
-                    <input type="checkbox"> Concordo com os
-                    <a href="termos.html">termos de serviço</a>
-                    do WiSoy.com
-                </div>
-
-                <button id="but_cadastro" class="button_cadastro">
-                Criar Conta
-                </button>
             </div>
-        </div>
     </div>
 
     <input id="resetar" type="reset">

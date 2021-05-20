@@ -30,7 +30,6 @@ CREATE TABLE EMPRESA (
   CPNJ VARCHAR(23),
   RAZAO_SOCIAL VARCHAR(50),
   DATA_CONTRATO DATE,
-  CHECK_TERMOS TINYINT,
   PRIMARY KEY (ID_CLIENTE),
   FK_LEAD INT,
   FOREIGN KEY (FK_LEAD) REFERENCES LEADS (ID_LEAD)
@@ -44,8 +43,10 @@ DESC CLIENTES;
 
 CREATE TABLE USUARIOS(
 ID_USUARIOS INT PRIMARY KEY AUTO_INCREMENT,
+NOME VARCHAR(45),
 LOGIN VARCHAR (35),
 SENHA VARCHAR (20),
+CHECK_TERMOS TINYINT,
 FK_EMPRESA INT,
 FOREIGN KEY (FK_EMPRESA) REFERENCES EMPRESA (ID_EMPRESA))auto_increment= 500;
 
@@ -148,7 +149,10 @@ INSERT INTO EMPRESA VALUES
 (NULL, 'Unilever', '11987880572', 'contato@projectplant.com', '61068276000104', 'Unilever LTDA', '2021-01-15', 1, null),
 (NULL, 'Agro Farm', '11955774205', 'agro_farm@gmail.com.br', '12345678000164', 'Agro Farms Comercio de Graos Eireli', '2021-04-08', 1, 104),
 (NULL, 'Soja Hoje', '11966196606', 'soja_hoje@hotmail.com.br', '45455595000144', 'Soja Hoje LTDA', '2021-02-18', 1, null),
-(NULL, 'Coca Cola', '11954320706', 'contato@cocacola.com.br', '45997418000153', 'COCA COLA INDUSTRIAS LTDA', '2020-12-23', 1, null);
+(NULL, 'Coca Cola', '11954320706', 'contato@cocacola.com.br', '45997418000153', 'COCA COLA INDUSTRIAS LTDA', '2020-12-23', 1, null),
+(NULL, 'Sojão Brandão', '1195485706', 'contato@sojaobrandao.com.br', '84726451000153', 'Sojão Brandão INDUSTRIAS LTDA', '2020-01-27', 1, null),
+(NULL, 'Leo Sojas', '11954958273', 'contato@leosojas.com.br', '95837452000146', 'Leo Sojas Comercio de Graos LTDA', '2020-11-08', 1, null);
+
 
 SELECT * FROM EMPRESA;
 DESC EMPRESA;

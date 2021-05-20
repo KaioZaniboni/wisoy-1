@@ -202,6 +202,19 @@ ul li a:hover {
    
 }
 
+.desing_empresa{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.0vw;
+    height: 25%;
+    width: 80%;
+}
+
+#empresa {
+    height: 25px;
+}
+
 .design_input:not([type="input"]) {
     font-weight: 700;
     font-size: 1.0vw;
