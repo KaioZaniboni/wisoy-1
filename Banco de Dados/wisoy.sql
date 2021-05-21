@@ -5,8 +5,6 @@ CREATE DATABASE wisoy;
 
 USE wisoy;
 
-DROP DATABASE wisoy;
-
 -- -----------------------------------------------------
 -- A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.
 -- -----------------------------------------------------
@@ -97,22 +95,7 @@ CREATE TABLE COLABORADORES (
   PRIMARY KEY (ID_COLABORADORES))auto_increment = 5000;
 
 DESC COLABORADORES;
--- -----------------------------------------------------
--- A tabela OCORRENCIAS tem o propósito de armazenar todas as ocorrências relacionadas ao serviços WiSoy relatadas por clientes.
--- -----------------------------------------------------
-CREATE TABLE OCORRENCIAS (
-  ID_OCORRENCIA INT NOT NULL AUTO_INCREMENT,
-  FK_EMPRESA INT NOT NULL,
-  FK_COLABORADORES INT NOT NULL,
-  RELATO VARCHAR(280),
-  DATA_OCORRENCIA DATE,
-  PRIMARY KEY (ID_OCORRENCIA),
-  FOREIGN KEY (FK_EMPRESA)
-  REFERENCES EMPRESA (ID_EMPRESA),
-  FOREIGN KEY (FK_COLABORADORES)
-  REFERENCES COLABORADORES (ID_COLABORADORES))auto_increment = 7000;
 
-DESC OCORRENCIAS;
 -- -----------------------------------------------------
 -- A tabela HIST_SENSOR tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
 -- -----------------------------------------------------
