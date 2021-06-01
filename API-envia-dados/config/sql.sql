@@ -13,7 +13,7 @@ CREATE TABLE  LEADS (
 	EMAIL VARCHAR(60),
 	TELEFONE VARCHAR(11),
 	CNPJ VARCHAR(23),
-) ;
+);
 
 /*A tabela FUNCIONARIOS contera dados de todo quadro de funcionários WiSoy.*/
 
@@ -76,7 +76,7 @@ CREATE TABLE FAZENDAS (
 /*A tabela SENSORES irá conter todos os sensores que a wisoy já implantou, data de instalação e em qual fazenda se encontram.*/
 
 CREATE TABLE SENSORES (
-  ID_SENSOR INT PRIMARY KEY IDENTITY (1000, 1),
+  ID_SENSOR INT PRIMARY KEY IDENTITY (1, 1),
   FK_FAZENDA INT NOT NULL,
   DATA_INSTALACAO DATE,
   SENSOR_XY VARCHAR (45),
@@ -96,6 +96,10 @@ CREATE TABLE SENSORES (
   );
 
 
+  CREATE TABLE teste_1 (
+  ID_DADO INT PRIMARY KEY;
+  dado int
+  );
 /*=====================================================================================================================*/
 
 

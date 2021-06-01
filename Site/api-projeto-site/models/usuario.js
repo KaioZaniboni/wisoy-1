@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
 			autoIncrement: true
 		},
 		nome: {
-			field: 'NOME',
+			field: 'nome',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
 		login: {
-			field: 'LOGIN',
+			field: 'login',
 			type: DataTypes.STRING,
 			allowNull: false
 		},

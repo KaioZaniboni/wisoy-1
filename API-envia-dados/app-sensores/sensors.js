@@ -1,6 +1,6 @@
 function lm35(min, max) {
-    min = typeof min == 'undefined' ? 18 : min;
-    max = typeof max == 'undefined' ? 25 : max;
+    min = typeof min == 'undefined' ? 1 : min;
+    max = typeof max == 'undefined' ? 11 : max;
     
     let random = Math.random() * (max - min) + min;
 
@@ -37,19 +37,19 @@ function dht11(options){
     minTemperature = options.minTemp;
     maxTemperature = options.maxTemp;
 
-    if (minHumidity < 20 || maxHumidity > 100) {
-        throw new Error('Os valores minímos e máximos para umidade são 20% e 100% respectivamente.')
-    }
+    // if (minHumidity < 20 || maxHumidity > 100) {
+    //     throw new Error('Os valores minímos e máximos para umidade são 20% e 100% respectivamente.')
+    // }
 
-    if (minTemperature < 0 || maxTemperature > 50) {
-        throw new Error('Os valores minímos e máximos para temperatura são 0 e 50 respectivamente.')
-    }
+    // if (minTemperature < 0 || maxTemperature > 50) {
+    //     // throw new Error('Os valores minímos e máximos para temperatura são 0 e 50 respectivamente.')
+    // }
 
-    minTemperature = typeof minTemperature == 'undefined' ? 18 : minTemperature;
-    maxTemperature = typeof maxTemperature == 'undefined' ? 25 : maxTemperature;
+    minTemperature = typeof minTemperature == 'undefined' ? 2 : minTemperature;
+    maxTemperature = typeof maxTemperature == 'undefined' ? 12 : maxTemperature;
 
-    minHumidity = typeof minHumidity == 'undefined' ? 20 : minHumidity;
-    maxHumidity = typeof maxHumidity == 'undefined' ? 80 : maxHumidity;
+    minHumidity = typeof minHumidity == 'undefined' ? 1 : minHumidity;
+    maxHumidity = typeof maxHumidity == 'undefined' ? 11 : maxHumidity;
 
 
     let randomHumidity = Math.floor(Math.random()*(maxHumidity-minHumidity+1)+minHumidity);

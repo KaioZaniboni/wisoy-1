@@ -36,7 +36,7 @@ São os atributos deste objeto:
 Exemplo:
 case1 = {minHum: 20 , maxHum: 80, minTemp: 20, maxTemp: 25}
 */
-dht11 = sensors.dht11({minHum:50, maxHum:100, minTemp: 18, maxTemp: 23})
+dht11 = sensors.dht11({minHum:1, maxHum:11, minTemp: 18, maxTemp: 23})
 
 
 //Exibindo o valor retornado da função na variável.

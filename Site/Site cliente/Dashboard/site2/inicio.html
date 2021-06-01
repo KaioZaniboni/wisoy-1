@@ -44,31 +44,32 @@
     </div>
 
     <div class="geral">
-            <div class="menu">
-                <div><img id="menu-hamb" class="logo_hamb" src="menu_bar.png" onclick="toggleMenu()"></div>
-                <div class="caixa_menu" id="box_menu">
-                    <nav>
-                        <ul>
-                            <div class="itens_hamburguer" id="imagem_itens"><img onclick="closeMenu()"
-                                    src="icone perfil.png">
-                                <li onclick="closeMenu()">Minha Conta</li>
-                            </div>
-                            <div class="itens_hamburguer">
-                                <li onclick="closeMenu()">Minha Plantação</li>
-                            </div>
-                            <div class="itens_hamburguer">
-                                <li onclick="closeMenu()">Histórico</li>
-                            </div>
-                            <div class="itens_hamburguer">
-                                <li onclick="closeMenu()">Notificações</li>
-                            </div>
-                            <div class="itens_hamburguer" id="but_sair">
-                                <li onclick="closeMenu()"><a class="li_sair" href="../../../Site institucional/HTML/home.html">Sair</a></li>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="menu">
+            <div><img id="menu-hamb" class="logo_hamb" src="menu_bar.png" onclick="toggleMenu()"></div>
+            <div class="caixa_menu" id="box_menu">
+                <nav>
+                    <ul>
+                        <div class="itens_hamburguer" id="imagem_itens"><img onclick="closeMenu()"
+                                src="icone perfil.png">
+                            <li onclick="closeMenu()">Minha Conta</li>
+                        </div>
+                        <div class="itens_hamburguer">
+                            <li onclick="closeMenu()">Minha Plantação</li>
+                        </div>
+                        <div class="itens_hamburguer">
+                            <li onclick="closeMenu()">Histórico</li>
+                        </div>
+                        <div class="itens_hamburguer">
+                            <li onclick="closeMenu()">Notificações</li>
+                        </div>
+                        <div class="itens_hamburguer" id="but_sair">
+                            <li onclick="closeMenu()"><a class="li_sair"
+                                    href="../../../Site institucional/HTML/home.html">Sair</a></li>
+                        </div>
+                    </ul>
+                </nav>
             </div>
+        </div>
 
 
         <div class="corpo_but">
@@ -177,7 +178,7 @@
 
     </div>
 
-
+    <div id="email_teste"></div>
     <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
 
 
@@ -192,551 +193,554 @@
 <!--INÍCIO SCRIPT-->
 
 <script>
-    /*INÍCIO GRÁFICO UMIDADE HORA*/
-
-    var ctx = chart_umidade_hora.getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
-            datasets: [{
-                label: '% Umidade',
-                data: [12, 9, 3, 5, 2, 3, 7, 13, 2, 8],
-                backgroundColor: [
-                    'rgba(138, 43, 226)',
-                ],
-                borderColor: [
-                    'rgba(255, 159, 64, 1)',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    /*FIM GRÁFICO UMIDADE HORA*/
-
-
-
-    /*INÍCIO GRÁFICO SEMANAL*/
-
-    var ctx = chart_umidade_semanal.getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
-            datasets: [{
-                label: '% Umidade',
-                data: [12, 19, 3, 5, 2, 3, 7, 13, 4, 8],
-                backgroundColor: [
-                    'rgba(226, 43, 195)',
-                ],
-                borderColor: [
-                    'rgba(255, 159, 64, 1)',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    /*FIM GRÁFICO SEMANAL*/
-
-
-
-    /*INÍCIO GRÁFICO MENSAL*/
-
-    var ctx = chart_umidade_mensal.getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',],
-            datasets: [{
-                label: '% Umidade',
-                data: [12, 9, 3, 5, 2, 3, 7, 13, 24, 8],
-                backgroundColor: [
-                    'rgba(226, 70, 43)',
-                ],
-                borderColor: [
-                    'rgba(255, 159, 64, 1)',
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    /*FIM GRÁFICO MENSAL*/
-
-
-    /*INÍCIO GRÁFICO API*/
-
-    var context = document.getElementById("chart").getContext("2d");
-    context.canvas.width = 1000;
-    context.canvas.height = 300;
-
-    var configuration = {
-        type: 'line',
-        data: {
-            datasets: [{
-                label: "Temperature x Time",
-                type: 'line',
-                borderColor: ['#ff3232'],
-                backgroundColor: ['#ff7f7f']
-            }]
-        },
-        options: {
-            scales: {
-                xAxes: [{
-                    //type: 'value',
-                    distribution: 'series',
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Temperature'
-                    },
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            animation: {
-                duration: 0
-            }
-        }
-    };
-
-    var chart = new Chart(context, configuration);
-
-    //Função para obter os dados de temperatura do server
-    //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-
-    //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-    //hora de montar/atualizar o gráfico
-    this.lastIndexTemp = 0;
-    this.time = 0;
-
-    function get_data() {
-
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3000/api', false);
-        http.send(null);
-
-        var obj = JSON.parse(http.responseText);
-        if (obj.data.length == 0) {
-            return;
-        }
-
-        var _lastIndexTemp = this.lastIndexTemp;
-        this.lastIndexTemp = obj.data.length;
-        listTemp = obj.data.slice(_lastIndexTemp);
-
-        listTemp.forEach(data => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10) {
-                chart.data.labels.shift();
-                chart.data.datasets[0].data.shift();
-            }
-
-            chart.data.labels.push(this.time++);
-            chart.data.datasets[0].data.push(parseFloat(data));
-            chart.update();
-        });
-
-        document.getElementById('average').textContent = obj.average;
-        document.getElementById('averageHour').textContent = obj.averageHour;
-    }
-
-    //Second Graphic
-
-    var context2 = document.getElementById("chart-humidity").getContext("2d");
-    context2.canvas.width = 1000;
-    context2.canvas.height = 300;
-
-    var humidity = {
-        type: 'line',
-        data: {
-            datasets: [{
-                label: "Humidity x Time",
-                type: 'line',
-                borderColor: ['#3232ff'],
-                backgroundColor: ['#9999ff']
-            }]
-        },
-        options: {
-            scales: {
-                xAxes: [{
-                    //type: 'value',
-                    distribution: 'series',
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Humidity'
-                    },
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            animation: {
-                duration: 0
-            }
-        }
-    };
-
-    var chartHumidity = new Chart(context2, humidity);
-
-    //Função para obter os dados de temperatura do server
-    //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-
-    //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-    //hora de montar/atualizar o gráfico
-    this.lastIndexTempHumidity = 0;
-    this.timeHumidity = 0;
-
-    function get_dataHumidity() {
-
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3000/api/humidity', false);
-        http.send(null);
-
-        var obj = JSON.parse(http.responseText);
-        if (obj.data.length == 0) {
-            return;
-        }
-
-        var _lastIndexTemp = this.lastIndexTempHumidity;
-        this.lastIndexTempHumidity = obj.data.length;
-        listTemp = obj.data.slice(_lastIndexTemp);
-
-        listTemp.forEach(data => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (chartHumidity.data.labels.length == 10 && chartHumidity.data.datasets[0].data.length == 10) {
-                chartHumidity.data.labels.shift();
-                chartHumidity.data.datasets[0].data.shift();
-            }
-
-            chartHumidity.data.labels.push(this.time++);
-            chartHumidity.data.datasets[0].data.push(parseFloat(data));
-            chartHumidity.update();
-        });
-
-        document.getElementById('averageHumidity').textContent = obj.average;
-        document.getElementById('averageHourHumidity').textContent = obj.averageHour;
-
-        var media = document.getElementById('averageHumidity');
-        text = (media.innerText || media.textContent);
-        but_sensor_1.innerHTML = `${text} <br><br> Sensor 1`;
-        but_sensor_2.innerHTML = `${text} <br><br> Sensor 2`;
-        but_sensor_3.innerHTML = `${text} <br><br> Sensor 3`;
-        but_sensor_4.innerHTML = `${text} <br><br> Sensor 4`;
-    }
-
-    get_dataHumidity();
-
-    //Thirty Graphic
-
-    var context3 = document.getElementById("chart-switch").getContext("2d");
-    context3.canvas.width = 1000;
-    context3.canvas.height = 300;
-
-    var switch_sensor = {
-        type: 'bar',
-        data: {
-            datasets: [{
-                label: "Switch x Time",
-                borderColor: ['rgba(0, 0, 0, 0.7)'],
-                backgroundColor: ['#c97f7f'],
-                borderWidth: 1.5
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    //type: 'value',
-                    distribution: 'series',
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Switch'
-                    },
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            animation: {
-                duration: 0
-            }
-        }
-    };
-
-    var chartSwitch = new Chart(context3, switch_sensor);
-
-    //Função para obter os dados de temperatura do server
-    //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-
-    //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-    //hora de montar/atualizar o gráfico
-    this.lastIndexTempHumidity = 0;
-    this.timeSwitch = 0;
-
-    function get_switch() {
-
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3000/api/switch', false);
-        http.send(null);
-
-        var obj = JSON.parse(http.responseText);
-        if (obj.data.length == 0) {
-            return;
-        }
-
-        var _lastIndexTemp = this.lastIndexTempSwitch;
-        this.lastIndexTempSwitch = obj.data.length;
-        listTemp = obj.data.slice(_lastIndexTemp);
-
-        listTemp.forEach(data => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (chartSwitch.data.labels.length == 10 && chartSwitch.data.datasets[0].data.length == 10) {
-                chartSwitch.data.labels.shift();
-                chartSwitch.data.datasets[0].data.shift();
-            }
-
-            chartSwitch.data.labels.push(this.time++);
-            chartSwitch.data.datasets[0].data.push(parseFloat(data));
-            chartSwitch.update();
-        });
-
-    }
-
-    get_switch();
-
-    //Fourty Graphic
-
-    var context4 = document.getElementById("chart-lumi").getContext("2d");
-    context4.canvas.width = 1000;
-    context4.canvas.height = 300;
-
-    var lumi_sensor = {
-        type: 'line',
-        data: {
-            datasets: [{
-                label: "Luminosity x Time",
-                type: 'line',
-                borderColor: ['#ffff19'],
-                backgroundColor: ['#ffff7f']
-            }]
-        },
-        options: {
-            scales: {
-                xAxes: [{
-                    //type: 'value',
-                    distribution: 'series',
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }],
-                yAxes: [{
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Luminosity'
-                    },
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            },
-            animation: {
-                duration: 0
-            }
-        }
-    };
-
-    var chartLumi = new Chart(context4, lumi_sensor);
-
-    //Função para obter os dados de temperatura do server
-    //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
-
-    //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
-    //hora de montar/atualizar o gráfico
-    this.lastIndexLumi = 0;
-    this.timeLumi = 0;
-
-    function get_lumi() {
-
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3000/api/luminosity', false);
-        http.send(null);
-
-        var obj = JSON.parse(http.responseText);
-        console.log(obj)
-        if (obj.data.length == 0) {
-            return;
-        }
-
-        var _lastIndexTemp = this.lastIndexLumi;
-        this.lastIndexLumi = obj.data.length;
-        listTemp = obj.data.slice(_lastIndexTemp);
-
-        listTemp.forEach(data => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (chartLumi.data.labels.length == 10 && chartLumi.data.datasets[0].data.length == 10) {
-                chartLumi.data.labels.shift();
-                chartLumi.data.datasets[0].data.shift();
-            }
-
-            chartLumi.data.labels.push(this.time++);
-            chartLumi.data.datasets[0].data.push(parseFloat(data));
-            chartLumi.update();
-        });
-
-        document.getElementById('averageLumi').textContent = obj.average;
-        document.getElementById('averageHourLumi').textContent = obj.averageHour;
-
-    }
-
-    get_lumi();
-
-    setInterval(() => {
-        get_data();
-        get_dataHumidity();
-        get_switch();
-        get_lumi();
-    }, 1000);
-
-
-    /*FIM GRÁFICO API*/
-
-    //  INICIO DA ANIMAÇÃO HAMBURGUER
-
-
-
-    //  INICIO DA ANIMAÇÃO HAMBURGUER
-
-
-
-    function toggleMenu() {
-        document.getElementById('box_menu').style = 'left: 0%;';
-        document.getElementById('menu-hamb').style = 'display: none';
-    }
-
-    function closeMenu() {
-        document.getElementById('box_menu').style = 'left: -100%;';
-        document.getElementById('menu-hamb').style = 'display: block';
-
-    }
-
-    //  FIM DA ANIMAÇÃO HAMBURGUER
-
-
-    /* INÍCIO FUNCTIONS QUE FAZEM A TROCA DOS GRÁFICOS*/
-
-    function trocar_hora() {
-        grafico_umidade_hora.style.display = 'block'
-        grafico_umidade_semanal.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        grafico_api.style.display = 'none'
-
-    }
-
-    function trocar_semanal() {
-
-        grafico_umidade_semanal.style.display = 'block'
-        grafico_umidade_semanal.style.width = '100%'
-        grafico_umidade_hora.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        grafico_api.style.display = 'none'
-
-    }
-
-    function trocar_mensal() {
-
-        grafico_umidade_mensal.style.display = 'block'
-        grafico_umidade_hora.style.display = 'none'
-        grafico_umidade_semanal.style.display = 'none'
-        grafico_api.style.display = 'none'
-
-    }
-
-    function trocar_api() {
-
-        retrato_graficos_id.style.display = 'block'
-        grafico_api.style.display = 'block'
-        grafico_umidade_hora.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        img_tofu_guia.style.display = 'none'
-        fala_tofu.style.display = 'none'
-
-    }
-
-    function trocar_api_2() {
-
-        retrato_graficos_id.style.display = 'block'
-        grafico_api.style.display = 'block'
-        grafico_umidade_hora.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        img_tofu_guia.style.display = 'none'
-        fala_tofu.style.display = 'none'
-
-    }
-
-    function trocar_api_3() {
-
-        retrato_graficos_id.style.display = 'block'
-        grafico_api.style.display = 'block'
-        grafico_umidade_hora.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        img_tofu_guia.style.display = 'none'
-        fala_tofu.style.display = 'none'
-
-    }
-
-    function trocar_api_4() {
-
-        retrato_graficos_id.style.display = 'block'
-        grafico_api.style.display = 'block'
-        grafico_umidade_hora.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        grafico_umidade_mensal.style.display = 'none'
-        img_tofu_guia.style.display = 'none'
-        fala_tofu.style.display = 'none'
-
-    }
+    console.log('qualquer');
+    email_teste.innerHTML = sessionStorage.email_usuario_meuapp;
+
+    // /*INÍCIO GRÁFICO UMIDADE HORA*/
+
+    // var ctx = chart_umidade_hora.getContext('2d');
+    // var myChart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: {
+    //         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
+    //         datasets: [{
+    //             label: '% Umidade',
+    //             data: [12, 9, 3, 5, 2, 3, 7, 13, 2, 8],
+    //             backgroundColor: [
+    //                 'rgba(138, 43, 226)',
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 159, 64, 1)',
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+
+    // /*FIM GRÁFICO UMIDADE HORA*/
+
+
+
+    // /*INÍCIO GRÁFICO SEMANAL*/
+
+    // var ctx = chart_umidade_semanal.getContext('2d');
+    // var myChart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: {
+    //         labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', ],
+    //         datasets: [{
+    //             label: '% Umidade',
+    //             data: [12, 19, 3, 5, 2, 3, 7, 13, 4, 8],
+    //             backgroundColor: [
+    //                 'rgba(226, 43, 195)',
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 159, 64, 1)',
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+
+    // /*FIM GRÁFICO SEMANAL*/
+
+
+
+    // /*INÍCIO GRÁFICO MENSAL*/
+
+    // var ctx = chart_umidade_mensal.getContext('2d');
+    // var myChart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: {
+    //         labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro',],
+    //         datasets: [{
+    //             label: '% Umidade',
+    //             data: [12, 9, 3, 5, 2, 3, 7, 13, 24, 8],
+    //             backgroundColor: [
+    //                 'rgba(226, 70, 43)',
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 159, 64, 1)',
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+
+    // /*FIM GRÁFICO MENSAL*/
+
+
+    // /*INÍCIO GRÁFICO API*/
+
+    // var context = document.getElementById("chart").getContext("2d");
+    // context.canvas.width = 1000;
+    // context.canvas.height = 300;
+
+    // var configuration = {
+    //     type: 'line',
+    //     data: {
+    //         datasets: [{
+    //             label: "Temperature x Time",
+    //             type: 'line',
+    //             borderColor: ['#ff3232'],
+    //             backgroundColor: ['#ff7f7f']
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             xAxes: [{
+    //                 //type: 'value',
+    //                 distribution: 'series',
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 scaleLabel: {
+    //                     display: true,
+    //                     labelString: 'Temperature'
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         },
+    //         animation: {
+    //             duration: 0
+    //         }
+    //     }
+    // };
+
+    // var chart = new Chart(context, configuration);
+
+    // //Função para obter os dados de temperatura do server
+    // //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+
+    // //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+    // //hora de montar/atualizar o gráfico
+    // this.lastIndexTemp = 0;
+    // this.time = 0;
+
+    // function get_data() {
+
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3000/api', false);
+    //     http.send(null);
+
+    //     var obj = JSON.parse(http.responseText);
+    //     if (obj.data.length == 0) {
+    //         return;
+    //     }
+
+    //     var _lastIndexTemp = this.lastIndexTemp;
+    //     this.lastIndexTemp = obj.data.length;
+    //     listTemp = obj.data.slice(_lastIndexTemp);
+
+    //     listTemp.forEach(data => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (chart.data.labels.length == 10 && chart.data.datasets[0].data.length == 10) {
+    //             chart.data.labels.shift();
+    //             chart.data.datasets[0].data.shift();
+    //         }
+
+    //         chart.data.labels.push(this.time++);
+    //         chart.data.datasets[0].data.push(parseFloat(data));
+    //         chart.update();
+    //     });
+
+    //     document.getElementById('average').textContent = obj.average;
+    //     document.getElementById('averageHour').textContent = obj.averageHour;
+    // }
+
+    // //Second Graphic
+
+    // var context2 = document.getElementById("chart-humidity").getContext("2d");
+    // context2.canvas.width = 1000;
+    // context2.canvas.height = 300;
+
+    // var humidity = {
+    //     type: 'line',
+    //     data: {
+    //         datasets: [{
+    //             label: "Humidity x Time",
+    //             type: 'line',
+    //             borderColor: ['#3232ff'],
+    //             backgroundColor: ['#9999ff']
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             xAxes: [{
+    //                 //type: 'value',
+    //                 distribution: 'series',
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 scaleLabel: {
+    //                     display: true,
+    //                     labelString: 'Humidity'
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         },
+    //         animation: {
+    //             duration: 0
+    //         }
+    //     }
+    // };
+
+    // var chartHumidity = new Chart(context2, humidity);
+
+    // //Função para obter os dados de temperatura do server
+    // //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+
+    // //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+    // //hora de montar/atualizar o gráfico
+    // this.lastIndexTempHumidity = 0;
+    // this.timeHumidity = 0;
+
+    // function get_dataHumidity() {
+
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3000/api/humidity', false);
+    //     http.send(null);
+
+    //     var obj = JSON.parse(http.responseText);
+    //     if (obj.data.length == 0) {
+    //         return;
+    //     }
+
+    //     var _lastIndexTemp = this.lastIndexTempHumidity;
+    //     this.lastIndexTempHumidity = obj.data.length;
+    //     listTemp = obj.data.slice(_lastIndexTemp);
+
+    //     listTemp.forEach(data => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (chartHumidity.data.labels.length == 10 && chartHumidity.data.datasets[0].data.length == 10) {
+    //             chartHumidity.data.labels.shift();
+    //             chartHumidity.data.datasets[0].data.shift();
+    //         }
+
+    //         chartHumidity.data.labels.push(this.time++);
+    //         chartHumidity.data.datasets[0].data.push(parseFloat(data));
+    //         chartHumidity.update();
+    //     });
+
+    //     document.getElementById('averageHumidity').textContent = obj.average;
+    //     document.getElementById('averageHourHumidity').textContent = obj.averageHour;
+
+    //     var media = document.getElementById('averageHumidity');
+    //     text = (media.innerText || media.textContent);
+    //     but_sensor_1.innerHTML = `${text} <br><br> Sensor 1`;
+    //     but_sensor_2.innerHTML = `${text} <br><br> Sensor 2`;
+    //     but_sensor_3.innerHTML = `${text} <br><br> Sensor 3`;
+    //     but_sensor_4.innerHTML = `${text} <br><br> Sensor 4`;
+    // }
+
+    // get_dataHumidity();
+
+    // //Thirty Graphic
+
+    // var context3 = document.getElementById("chart-switch").getContext("2d");
+    // context3.canvas.width = 1000;
+    // context3.canvas.height = 300;
+
+    // var switch_sensor = {
+    //     type: 'bar',
+    //     data: {
+    //         datasets: [{
+    //             label: "Switch x Time",
+    //             borderColor: ['rgba(0, 0, 0, 0.7)'],
+    //             backgroundColor: ['#c97f7f'],
+    //             borderWidth: 1.5
+    //         }]
+    //     },
+    //     options: {
+    //         responsive: true,
+    //         scales: {
+    //             xAxes: [{
+    //                 //type: 'value',
+    //                 distribution: 'series',
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 scaleLabel: {
+    //                     display: true,
+    //                     labelString: 'Switch'
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         },
+    //         animation: {
+    //             duration: 0
+    //         }
+    //     }
+    // };
+
+    // var chartSwitch = new Chart(context3, switch_sensor);
+
+    // //Função para obter os dados de temperatura do server
+    // //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+
+    // //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+    // //hora de montar/atualizar o gráfico
+    // this.lastIndexTempHumidity = 0;
+    // this.timeSwitch = 0;
+
+    // function get_switch() {
+
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3000/api/switch', false);
+    //     http.send(null);
+
+    //     var obj = JSON.parse(http.responseText);
+    //     if (obj.data.length == 0) {
+    //         return;
+    //     }
+
+    //     var _lastIndexTemp = this.lastIndexTempSwitch;
+    //     this.lastIndexTempSwitch = obj.data.length;
+    //     listTemp = obj.data.slice(_lastIndexTemp);
+
+    //     listTemp.forEach(data => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (chartSwitch.data.labels.length == 10 && chartSwitch.data.datasets[0].data.length == 10) {
+    //             chartSwitch.data.labels.shift();
+    //             chartSwitch.data.datasets[0].data.shift();
+    //         }
+
+    //         chartSwitch.data.labels.push(this.time++);
+    //         chartSwitch.data.datasets[0].data.push(parseFloat(data));
+    //         chartSwitch.update();
+    //     });
+
+    // }
+
+    // get_switch();
+
+    // //Fourty Graphic
+
+    // var context4 = document.getElementById("chart-lumi").getContext("2d");
+    // context4.canvas.width = 1000;
+    // context4.canvas.height = 300;
+
+    // var lumi_sensor = {
+    //     type: 'line',
+    //     data: {
+    //         datasets: [{
+    //             label: "Luminosity x Time",
+    //             type: 'line',
+    //             borderColor: ['#ffff19'],
+    //             backgroundColor: ['#ffff7f']
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             xAxes: [{
+    //                 //type: 'value',
+    //                 distribution: 'series',
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 scaleLabel: {
+    //                     display: true,
+    //                     labelString: 'Luminosity'
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         },
+    //         animation: {
+    //             duration: 0
+    //         }
+    //     }
+    // };
+
+    // var chartLumi = new Chart(context4, lumi_sensor);
+
+    // //Função para obter os dados de temperatura do server
+    // //Seria mais interessante fazer isso com WebSocket, porém para fins academicos, os dados serão atualizados via HTTP
+
+    // //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
+    // //hora de montar/atualizar o gráfico
+    // this.lastIndexLumi = 0;
+    // this.timeLumi = 0;
+
+    // function get_lumi() {
+
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3000/api/luminosity', false);
+    //     http.send(null);
+
+    //     var obj = JSON.parse(http.responseText);
+    //     console.log(obj)
+    //     if (obj.data.length == 0) {
+    //         return;
+    //     }
+
+    //     var _lastIndexTemp = this.lastIndexLumi;
+    //     this.lastIndexLumi = obj.data.length;
+    //     listTemp = obj.data.slice(_lastIndexTemp);
+
+    //     listTemp.forEach(data => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (chartLumi.data.labels.length == 10 && chartLumi.data.datasets[0].data.length == 10) {
+    //             chartLumi.data.labels.shift();
+    //             chartLumi.data.datasets[0].data.shift();
+    //         }
+
+    //         chartLumi.data.labels.push(this.time++);
+    //         chartLumi.data.datasets[0].data.push(parseFloat(data));
+    //         chartLumi.update();
+    //     });
+
+    //     document.getElementById('averageLumi').textContent = obj.average;
+    //     document.getElementById('averageHourLumi').textContent = obj.averageHour;
+
+    // }
+
+    // get_lumi();
+
+    // setInterval(() => {
+    //     get_data();
+    //     get_dataHumidity();
+    //     get_switch();
+    //     get_lumi();
+    // }, 1000);
+
+
+    // /*FIM GRÁFICO API*/
+
+    // //  INICIO DA ANIMAÇÃO HAMBURGUER
+
+
+
+    // //  INICIO DA ANIMAÇÃO HAMBURGUER
+
+
+
+    // function toggleMenu() {
+    //     document.getElementById('box_menu').style = 'left: 0%;';
+    //     document.getElementById('menu-hamb').style = 'display: none';
+    // }
+
+    // function closeMenu() {
+    //     document.getElementById('box_menu').style = 'left: -100%;';
+    //     document.getElementById('menu-hamb').style = 'display: block';
+
+    // }
+
+    // //  FIM DA ANIMAÇÃO HAMBURGUER
+
+
+    // /* INÍCIO FUNCTIONS QUE FAZEM A TROCA DOS GRÁFICOS*/
+
+    // function trocar_hora() {
+    //     grafico_umidade_hora.style.display = 'block'
+    //     grafico_umidade_semanal.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     grafico_api.style.display = 'none'
+
+    // }
+
+    // function trocar_semanal() {
+
+    //     grafico_umidade_semanal.style.display = 'block'
+    //     grafico_umidade_semanal.style.width = '100%'
+    //     grafico_umidade_hora.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     grafico_api.style.display = 'none'
+
+    // }
+
+    // function trocar_mensal() {
+
+    //     grafico_umidade_mensal.style.display = 'block'
+    //     grafico_umidade_hora.style.display = 'none'
+    //     grafico_umidade_semanal.style.display = 'none'
+    //     grafico_api.style.display = 'none'
+
+    // }
+
+    // function trocar_api() {
+
+    //     retrato_graficos_id.style.display = 'block'
+    //     grafico_api.style.display = 'block'
+    //     grafico_umidade_hora.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     img_tofu_guia.style.display = 'none'
+    //     fala_tofu.style.display = 'none'
+
+    // }
+
+    // function trocar_api_2() {
+
+    //     retrato_graficos_id.style.display = 'block'
+    //     grafico_api.style.display = 'block'
+    //     grafico_umidade_hora.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     img_tofu_guia.style.display = 'none'
+    //     fala_tofu.style.display = 'none'
+
+    // }
+
+    // function trocar_api_3() {
+
+    //     retrato_graficos_id.style.display = 'block'
+    //     grafico_api.style.display = 'block'
+    //     grafico_umidade_hora.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     img_tofu_guia.style.display = 'none'
+    //     fala_tofu.style.display = 'none'
+
+    // }
+
+    // function trocar_api_4() {
+
+    //     retrato_graficos_id.style.display = 'block'
+    //     grafico_api.style.display = 'block'
+    //     grafico_umidade_hora.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     grafico_umidade_mensal.style.display = 'none'
+    //     img_tofu_guia.style.display = 'none'
+    //     fala_tofu.style.display = 'none'
+
+    // }
 
 
 

@@ -27,10 +27,10 @@ module.exports = {
    //Ambiente conectado Localmente
   dev: {
     // altere APENAS username, password e database.
-    username: 'SEU_NOME_DE_USUARIO_DO_BANCO_DE_DADOS -- provavelmente é "root"',
-    password: 'SUA_SENHA_DO_BANCO_DE_DADOS',
-    database: 'SEU DATABASE CRIADO EM "CREATE DATASE"',
-    host: '127.0.0.1',
+    username: 'root',
+    password: 'R@phael1',
+    database: 'wisoy',
+    host: '3306',
     dialect: 'mysql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
