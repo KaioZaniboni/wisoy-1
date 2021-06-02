@@ -89,16 +89,6 @@ router.get("/sendData", (request, response) => {
 		// Na variável abaixo, coloque o Insert que será executado no SQL Server
 		// salvo exceções, é igual a Workbench
 
-<<<<<<< HEAD
-		instrucaoSql = `INSERT into HISTORICO_SENSOR (FK_SENSOR, LEITURA_UMIDADE, LEITURA_DATA_HORA)
-		values (1000, ?, '2021-03-11 14:55'),
-		(1001, ?, '2021-03-17'), 
-		(1002, ?, '2021-01-27'),
-		(1003, ?, '2021-03-14'), 
-		(1004, ?, '2021-03-30'),
-		(1005, ?, '2021-02-28'), 
-		(1006, ?, '2021-01-07')`;
-=======
 		instrucaoSql = `INSERT into dbo.LEADS ( NOME_FANTASIA, EMAIL, TELEFONE, CNPJ)
 		values ('Project Plant', 'contato@projectplant.com', '11987654321', '45433595000134'),
 		('Soja Mais', 'soja_mais@hotmail.com', '11912345678', '55345678000145'),
@@ -152,7 +142,6 @@ router.get("/sendData", (request, response) => {
 		( 1006, '13.57%', '2021-02-28 17:25'), 
 		( 1007, '13.08%', '2021-01-07 17:25')`;
 	}
->>>>>>> 356762a4c303e4cf702f86d0e7ce47a91264146f
 
 
 	}
