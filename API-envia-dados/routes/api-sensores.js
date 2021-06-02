@@ -110,22 +110,7 @@ router.get("/sendData", (request, response) => {
 		( 'Soja Hoje', '11966196606', 'soja_hoje@hotmail.com.br', '45455595000144', 'Soja Hoje LTDA', '2021-02-18', 1, null, 5000),
 		( 'Coca Cola', '11954320706', 'contato@cocacola.com.br', '45997418000153', 'COCA COLA INDUSTRIAS LTDA', '2020-12-23', 1, null, 5003)`;
 
-		instrucaoSql = `INSERT into dbo.USUARIOS_CLIENTES ( LOGIN_USUARIO, SENHA, FK_CLIENTES)
-		values 
-		( 'user1_plant', 'P@3507A', 15000),
-		( 'user2_plant', 'P@5700A', 15000),
-		( 'user3_plant', 'P#5503A', 15000),
-		( 'user1_lever', 'U@4433S', 15001),
-		( 'user2_lever', 'U#3211S', 15001),
-		( 'user3_lever', 'U@6671S', 15001),
-		( 'user1_farm', 'F@3257A', 15002),
-		( 'user2_farm', 'F#7707A', 15002),
-		( 'user1_shoje', 'S@4302H', 15003), 
-		( 'user2_shoje', 'S#2002H', 15003), 
-		( 'user2_shoje', 'S@5552H', 15003),
-		( 'user1_cola', 'C@5504C', 15004),
-		( 'user2_cola', 'C!2505C', 15004)`;
-
+		
 		instrucaoSql = `INSERT into dbo.FAZENDAS ( FK_CLIENTE, HECTARES, NUMERO_SENSORES, ENDERECO_FAZENDA)
 		values 
 		( 15000, 1000, 34, 'Rua Padre André'),
