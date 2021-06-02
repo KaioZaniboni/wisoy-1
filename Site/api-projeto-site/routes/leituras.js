@@ -5,12 +5,12 @@ var Leitura = require('../models').Leitura;
 var env = process.env.NODE_ENV || 'development';
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas/:idcaminhao', function (req, res, next) {
+router.get('/ultimas/:fk_sensor', function (req, res, next) {
 
 	// quantas são as últimas leituras que quer? 7 está bom?
 	const limite_linhas = 7;
 
-	var idcaminhao = req.params.idcaminhao;
+	var fk_sensor = req.params.FK_SENSOR;
 
 	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
 
@@ -24,7 +24,7 @@ router.get('/ultimas/:idcaminhao', function (req, res, next) {
 		momento,
 		DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
 		from leitura
-		where fkcaminhao = ${idcaminhao}
+		where fk_sensor = ${limite_linhas}
 		order by id desc limit ${limite_linhas}`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
@@ -34,7 +34,7 @@ router.get('/ultimas/:idcaminhao', function (req, res, next) {
 		momento,
 		FORMAT(momento,'HH:mm:ss') as momento_grafico
 		from leitura
-		where fkcaminhao = ${idcaminhao}
+		where fk_sensor = ${fk_sensor}
 		order by id desc`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
@@ -54,20 +54,20 @@ router.get('/ultimas/:idcaminhao', function (req, res, next) {
 });
 
 
-router.get('/tempo-real/:idcaminhao', function (req, res, next) {
+router.get('/tempo-real/:fk_sensor', function (req, res, next) {
 	console.log('Recuperando caminhões');
 
 	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idcaminhao = req.params.idcaminhao;
+	var fk_sensor = req.params.FK_SENSOR;
 
 	let instrucaoSql = "";
 
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
-		instrucaoSql = `select temperatura, umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc limit 1`;
+		instrucaoSql = `select temperatura, umidade, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fk_sensor from leitura where fk_sensor = ${ID_SENSOR} order by id desc limit 1`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc`;
+		instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fk_sensor from leitura where fk_sensor = ${ID_SENSOR} order by id desc`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}

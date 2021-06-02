@@ -132,7 +132,7 @@ router.get("/sendData", (request, response) => {
 		( 6, '2021-02-28', '-34.8391, 157.6925'),
 		( 7, '2021-01-02', '22.5029, 136.9261')`;
 
-		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR (FK_SENSOR, LEITURA_UMIDADE, LEITURA_DATA_HORA)
+		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR ( FK_SENSOR, LEITURA_UMIDADE, LEITURA_DATA_HORA)
 		values 
 		( 1001, '13.47%', '2021-03-11 14:55'),
 		( 1002, '13.39%', '2021-03-17 14:55'), 
