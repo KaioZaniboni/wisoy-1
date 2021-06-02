@@ -89,6 +89,7 @@ router.get("/sendData", (request, response) => {
 		// Na variável abaixo, coloque o Insert que será executado no SQL Server
 		// salvo exceções, é igual a Workbench
 
+<<<<<<< HEAD
 		instrucaoSql = `INSERT into HISTORICO_SENSOR (FK_SENSOR, LEITURA_UMIDADE, LEITURA_DATA_HORA)
 		values (1000, ?, '2021-03-11 14:55'),
 		(1001, ?, '2021-03-17'), 
@@ -97,6 +98,61 @@ router.get("/sendData", (request, response) => {
 		(1004, ?, '2021-03-30'),
 		(1005, ?, '2021-02-28'), 
 		(1006, ?, '2021-01-07')`;
+=======
+		instrucaoSql = `INSERT into dbo.LEADS ( NOME_FANTASIA, EMAIL, TELEFONE, CNPJ)
+		values ('Project Plant', 'contato@projectplant.com', '11987654321', '45433595000134'),
+		('Soja Mais', 'soja_mais@hotmail.com', '11912345678', '55345678000145'),
+		('Edinaldo Soja', 'edinal.soja@outlook.com.br', '11987774571', '98765432100015'),
+		('Agro Soja', 'contato@agrosoja.com.br', '11995154321', '45433984534143'),
+		('Agro Farm', 'agro_farm@gmail.com.br', '11955774205', '12345678000164')`;
+
+		instrucaoSql =` INSERT into dbo.COLABORADORES ( NOME, SEXO, DATA_NASCIMENTO, EMAIL, LOGIN_COLABORADORES, SENHA, TELEFONE, RG, CPF, ENDERECO, CARTEIRA_TRABALHO, DATA_ADMISSAO, FK_CHEFE)
+		values 
+		( 'Jonas Florencio', 'M', '2002-03-30', 'jonas_florencio@wisoy.com.br', 'jonas_wisoy', 'Jo54@p12', '11955250037', '503032217', '33299400574', 'Rua Professor Otavio Fernandes', '88833397', '2021-02-01', 5003),
+		( 'Amanda Fruteiro', 'F', '2002-01-07', 'amanda_fruteiro@wisoy.com.br', 'amanda_wisoy', 'Am01#dsC', '11944064307', '243555719', '46955749916', 'Rua Enfermeira Luiza Alegreti', '77433397', '2021-02-01', 5003),
+		( 'Matheus Vieck', 'M', '1998-02-13', 'matheus_vieck@wisoy.com.br', 'matheus_wisoy','Ma37#f13', '11955250037', '530075995', '46933797734', 'Rua Soldado Peixoto', '74421388', '2021-02-01', 5003),
+		( 'Kaio Zaniboni', 'M', '1992-03-28', 'kaio_zaniboni@wisoy.com.br', 'kaio_wisoy','Ka54@z92', '11950890317', '735407817', '45639877754', 'Rua Professor José Armandoi', '77733344', '2021-02-01', 5003)`;
+
+		instrucaoSql = `INSERT into dbo.clientes ( NOME_FANTASIA, TELEFONE, EMAIL, CPNJ, RAZAO_SOCIAL, DATA_CONTRATO, CHECK_TERMOS, FK_LEAD, FK_COLABORADORES)
+		values 
+		( 'Project Plant', '11987654321', 'contato@projectplant.com', '45433595000134', 'João Plantação Agro', '2021-03-08', 1, 100, 5000),
+		( 'Unilever', '11987880572', 'contato@projectplant.com', '61068276000104', 'Unilever LTDA', '2021-01-15', 1, null, 5002),
+		( 'Agro Farm', '11955774205', 'agro_farm@gmail.com.br', '12345678000164', 'Agro Farms Comercio de Graos Eireli', '2021-04-08', 1, 104, 5001),
+		( 'Soja Hoje', '11966196606', 'soja_hoje@hotmail.com.br', '45455595000144', 'Soja Hoje LTDA', '2021-02-18', 1, null, 5000),
+		( 'Coca Cola', '11954320706', 'contato@cocacola.com.br', '45997418000153', 'COCA COLA INDUSTRIAS LTDA', '2020-12-23', 1, null, 5003)`;
+
+		
+		instrucaoSql = `INSERT into dbo.FAZENDAS ( FK_CLIENTE, HECTARES, NUMERO_SENSORES, ENDERECO_FAZENDA)
+		values 
+		( 15000, 1000, 34, 'Rua Padre André'),
+		( 15000, 90, 3, 'Rua Andrade Lopes'),
+		( 15001, 1500, 50 , 'Rua Fernando Moreira'),
+		( 15002, 400, 14, 'Rua Cornelius Frederick'),
+		( 15002, 700, 24, 'Avenida Sapopemba'),
+		( 15003, 630, 21, 'Rua Engenheiro Alberto Nilman'),
+		( 15004, 10000, 334, 'Rua Coronel Armando')`;
+
+		instrucaoSql = `INSERT into dbo.SENSORES ( FK_FAZENDA, DATA_INSTALACAO, SENSOR_XY)
+		values 
+		( 1, '2021-03-11', '86.1638, -80.4437'), 
+		( 2, '2021-03-16', '-57.0430, -157.2459'),
+		( 3, '2021-01-25', '42.1108, 7.6416'), 
+		( 4, '2021-03-11', '70.2003, -165.4415'),
+		( 5, '2021-03-11', '-75.3722, -176.6609'), 
+		( 6, '2021-02-28', '-34.8391, 157.6925'),
+		( 7, '2021-01-02', '22.5029, 136.9261')`;
+
+		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR (FK_SENSOR, LEITURA_UMIDADE, LEITURA_DATA_HORA)
+		values 
+		( 1001, '13.47%', '2021-03-11 14:55'),
+		( 1002, '13.39%', '2021-03-17 14:55'), 
+		( 1003, '14.98%', '2021-01-27 14:55'),
+		( 1004, '13.09%', '2021-03-14 16:33'), 
+		( 1005, '14.01%', '2021-03-30 16:33'),
+		( 1006, '13.57%', '2021-02-28 17:25'), 
+		( 1007, '13.08%', '2021-01-07 17:25')`;
+	}
+>>>>>>> 356762a4c303e4cf702f86d0e7ce47a91264146f
 
 
 	}
