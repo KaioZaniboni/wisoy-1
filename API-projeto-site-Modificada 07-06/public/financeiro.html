@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"
+        integrity="sha512-dnUg2JxjlVoXHVdSMWDYm2Y5xcIrJg1N+juOuRi0yLVkku/g26rwHwysJDAMwahaDfRpr1AxFz43ktuMPr/l1A=="
+        crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="../CSS/financeiro.css">
+    <title>Financeiro</title>
+</head>
+
+<body>
+
+    <!-- INICÍO DO HEADER -->
+
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <a href="home.html"><img src="../IMG/wisoy.png" alt="logo WiSoy">
+                    <span>WiSoy</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li class="li_sobre"><a href="sobre.html">Sobre</a></li>
+                    <li><a href="portfólio.html">Portfolio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- FIM DO HEADER -->
+
+
+    <!-- INICÍO DO SIMULADOR -->
+
+    <div class="corpo_colunas">
+        <div class="colunas">
+            <div class="coluna_esquerda">
+                <div class="corpo_simulador">
+                    <img id="imgWiSoy" src="../IMG/wisoy.png" alt="Logo WiSoy">
+                    <div class="formulario">
+                        <div class="inputs">
+                            Área de cultivo em hectares: <br>
+                            <input type="text" id="inpt_area" placeholder="Área de cultivo em hectares">
+                        </div>
+                        <div class="inputs">
+                            Quantidade de safras: <br>
+                            <input type="text" id="inpt_colheita" placeholder="Número de colheitas">
+                        </div>
+
+                        <div class="div_select inputs">Selecione abaixo o estado da safra:
+
+                            <select id="sel_estado" onchange="selecionar()">
+                                <option value="0">-- Selecione o seu estado (UF): --</option>
+                                <option value="161">AC</option>
+                                <option value="158">AL</option>
+                                <option value="159">AP</option>
+                                <option value="174">AM</option>
+                                <option value="162">BA</option>
+                                <option value="172">CE</option>
+                                <option value="164">DF</option>
+                                <option value="175">ES</option>
+                                <option value="161">GO</option>
+                                <option value="168">MA</option>
+                                <option value="165">MT</option>
+                                <option value="159">MS</option>
+                                <option value="162">MG</option>
+                                <option value="172">PA</option>
+                                <option value="166">PB</option>
+                                <option value="173">PR</option>
+                                <option value="174">PE</option>
+                                <option value="164">PI</option>
+                                <option value="166">RJ</option>
+                                <option value="175">RN</option>
+                                <option value="165">RS</option>
+                                <option value="173">RO</option>
+                                <option value="170">RR</option>
+                                <option value="162">SC</option>
+                                <option value="160">SP</option>
+                                <option value="165">SE</option>
+                                <option value="167">TO</option>
+                            </select>
+                        </div>
+                        <div class="div_select" id="mensagem_valor_safra"></div>
+                        <button onclick="calculo()">Simular Rendimento</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div style="display: none; float: right;" class="coluna_direita" id="coluna_direita_id">
+                <div class="caixa_direita">
+                    <div class="caixa_superior">
+                        <div id="div_resultado" class="resultado">Ganho estimado em R$</div>
+                    </div>
+                    <div class="caixa_inferior">
+                        <div class="grafico">
+                            <canvas id="chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIM DO SIMULADOR -->
+
+
+    <!-- INICÍO DO RODAPÉ -->
+    <div class="rodape">Copyright &copy 2021 - Todos os direitos reservados - WiSoy</div>
+    <!-- FIM DO RODAPÉ-->
+
+
+</body>
+
+</html>
+
+<script>
+    function calculo() {
+        
+        /*Função do alerta*/
+        var area_inpt = inpt_area.value;
+        var safras_inpt = inpt_colheita.value;
+        var select_est = sel_estado.value;
+
+        if (area_inpt.length <= 0 && safras_inpt.length <= 0 && select_est <= 0 || area_inpt.length <= 0 && safras_inpt.length <= 0 || area_inpt.length <= 0 && select_est <= 0 || safras_inpt.length <= 0 && select_est <= 0) {
+            alert('Preencha todos os campos!')
+        }
+        else if (area_inpt.length <= 0) {
+            alert('Preencha o campo da área!')
+        }
+        else if (safras_inpt.length <= 0) {
+            alert('Preencha o campo da quantidade de safras!')
+        }
+        else if (select_est <= 0) {
+            alert('Selecione seu estado!')
+        } 
+        else {
+
+        let safrasRelatorio = [];
+
+        coluna_direita_id.style.display = 'block'
+        coluna_direita_id.style.float = 'left'
+
+        // Recebe o valor que o usuário insere em inpt_area(hectares).
+        var area = Number(inpt_area.value);
+
+        // Recebe o valor que o usuário insere em inpt_colhe.
+        var safras = Number(inpt_colheita.value);
+        for (let i = 0; i <= safras; i++) {
+            safrasRelatorio.push(i);
+        }
+
+        // O valor da saca de soja 
+        var valor_da_saca = Number(sel_estado.value);
+
+        /*Este sel_estado está no select de cada estado com seu respectivo preço da saca*/
+
+        // Recebe o número de sensores necessários para o tamanho do plantio descrito, sendo 1 sensor para cada 30 hectares.
+        var sensores = area / 30;
+        sensores = Math.ceil(sensores); /*Arredonda o número de sensores para cima independendo do valor depois da ','*/
+
+        // Recebe o custo cobrado pela mão de obra WiSoy para implementar a solução por sensor.
+        const implantacao = 500;
+
+        // Recebe o valor do investimento inicial, sendo o número de sensores multiplicados por valor da mão de obra.
+        var investimento_inicial = implantacao * sensores;
+
+        // Valor da assinatura para 1 sensor
+        const assinatura = 300;
+
+        /* Recebe o custo mensal da assinatura que cobre manutenções futuras e quaisquer tipos de ocorrência relacionadas aos serviços WiSoy. Sendo o custo baseado na
+        quantidade de sensores que o cliente possui em seu plantio */
+
+        var custo_mensal = sensores * assinatura;
+
+        // Tempo para a colheita da safra em meses
+        const ciclo_safra = 4;
+
+        // Uma safra é igual a 55 sacas por hectar
+        const safra_sacas = 55;
+
+        // Logo o valor de uma safra valor inserido de sacas x valor inserido da saca;
+        var ganho_hectare_safra = Number(sel_estado.value) * safra_sacas;
+
+        /* Portanto, o rendimento do cliente sem o uso de sensores será o número número de safras multiplicado pelo valor de cada safra multiplicado pelo número de
+        hectares */
+        var rendimento_comum = safras * ganho_hectare_safra * area;
+
+        var rendimento_comum_fixo = ganho_hectare_safra * area;
+
+
+        /* Rendimento com serviços WiSoy */
+
+        //R$495 Reais em cada safra por hectare é o que a WiSoy estima em ganhos para o cliente.
+        // Segundo o "Institute of Agriculture and Natural Resources" na universidade de Nebraska-Lincoln, otimizar a umidade do solo no
+        // cultivo de soja pode levar a um aumento de até 5,43% no rendimento. A linha abaixo subtrai do rendimento total wisoy os custos 
+        // considerando uma safra = 120 dias = 4 meses 
+
+        var rendimento_wisoy = (safras * ganho_hectare_safra * 1.0543 * area) -
+            (investimento_inicial + (custo_mensal * (safras * ciclo_safra)));
+
+        var rendimento_wisoy_safra_fixo = (1 * ganho_hectare_safra * 1.0543 * area) -
+            (investimento_inicial + (custo_mensal * (1 * ciclo_safra)));
+
+        var rendimento_wisoy_sem_implantacao = (1 * ganho_hectare_safra * 1.0543 * area) -
+            (custo_mensal * (1 * ciclo_safra));
+
+
+        /* Diferença de rendimento comum e Wisoy*/
+
+        var diferenca_rendimento = (Number(rendimento_wisoy) - Number(rendimento_comum));
+
+        var diferenca_rendimento_safra_fixo = rendimento_wisoy_safra_fixo - rendimento_comum_fixo;
+
+        var diferenca_rendimento_sem_implantacao = rendimento_wisoy_sem_implantacao - rendimento_comum_fixo;
+
+
+        var diferenca2 = Number(rendimento_wisoy_safra_fixo + diferenca_rendimento_sem_implantacao) - Number(rendimento_comum_fixo);
+        var diferenca3 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 2)) - Number(rendimento_comum_fixo);
+        var diferenca4 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 3)) - Number(rendimento_comum_fixo);
+        var diferenca5 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 4)) - Number(rendimento_comum_fixo);
+        var diferenca6 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 5)) - Number(rendimento_comum_fixo);
+        var diferenca7 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 6)) - Number(rendimento_comum_fixo);
+        var diferenca8 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 7)) - Number(rendimento_comum_fixo);
+        var diferenca9 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 8)) - Number(rendimento_comum_fixo);
+        var diferenca10 = Number(rendimento_wisoy_safra_fixo + (diferenca_rendimento_sem_implantacao * 9)) - Number(rendimento_comum_fixo);
+
+        /*Número que irá aparecer no quadrado do simulador*/
+
+        var valorFormatado = diferenca_rendimento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        div_resultado.innerHTML = `Ganho estimado de ${valorFormatado} em ${safras} safras.`;
+    
+        /*INÍCIO GRÁFICOS*/
+
+        setTimeout(() => {
+
+            myChart.destroy();
+            myChart = new Chart(
+                document.getElementById('chart'),
+                config
+            );
+        }, 500);
+
+
+        data = {
+            labels: safrasRelatorio,
+            datasets: [{
+                label: 'Histórico de safras realizadas',
+                data: [0, diferenca_rendimento_safra_fixo, diferenca2, diferenca3, diferenca4, diferenca5, diferenca6,
+                    diferenca7, diferenca8, diferenca9, diferenca10],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1,
+                backgroundColor: 'rgba(255, 159, 64, 1)',
+            }]
+
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+        };
+
+        var myChart = new Chart(
+            document.getElementById('chart'),
+            config
+        );
+    }
+    }
+
+
+    function selecionar() {
+
+        var valor_saca = sel_estado.value;
+
+        if (valor_saca == 161) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 161,00`;
+        } else if (valor_saca == 158) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 158,00`;
+        } else if (valor_saca == 159) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 159,00`;
+        } else if (valor_saca == 174) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 174,00`;
+        } else if (valor_saca == 162) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 162,00`;
+        } else if (valor_saca == 172) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 172,00`;
+        } else if (valor_saca == 164) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 164,00`;
+        } else if (valor_saca == 175) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 175,00`;
+        } else if (valor_saca == 161) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 161,00`;
+        } else if (valor_saca == 168) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 168,00`;
+        } else if (valor_saca == 165) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,00`;
+        } else if (valor_saca == 159) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 159,00`;
+        } else if (valor_saca == 162) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 162,00`;
+        } else if (valor_saca == 172) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 172,00`;
+        } else if (valor_saca == 166) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 166,00`;
+        } else if (valor_saca == 173) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 173,00`;
+        } else if (valor_saca == 174) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 174,00`;
+        } else if (valor_saca == 164) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 164,00`;
+        } else if (valor_saca == 166) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 166,00`;
+        } else if (valor_saca == 175) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 175,00`;
+        } else if (valor_saca == 165) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,00`;
+        } else if (valor_saca == 173) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 173,00`;
+        } else if (valor_saca == 170) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 170,00`;
+        } else if (valor_saca == 162) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 162,00`;
+        } else if (valor_saca == 160) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 160,00`;
+        } else if (valor_saca == 165) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 165,00`;
+        } else if (valor_saca == 167) {
+            mensagem_valor_safra.innerHTML = `Valor da saca: R$ 167,00`;
+        }
+    }
+</script>
