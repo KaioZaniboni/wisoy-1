@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto IoT - Gráficos</title>
     <link rel="stylesheet" href="css/dashboards.css">
-    <link rel="stylesheet" href="css/dashboard_wisoy.css">
 
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    
-
     <!-- scripts do Chart.js -->
     <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
     <!-- <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script> -->
@@ -35,55 +33,32 @@
 </head>
 
 <body onload=obterDadosGraficoPrimeiraVez>
+    <!--header inicio-->
 
-    <div class="cabecalho">
-        <div class="caixa">
-            <h3 id="nome_titulo" style="display: none; position: absolute; color: white; left: 300px;">Olá, <b id="b_usuario"></b></h3>
-            <div class="logo">
-                <span>WiSoy</span>
-                <img src="img/wisoy.png" alt="logo WiSoy">
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"><span class="highlight">Projeto</span> IoT Revolucionário</h1>
+            <div class="usuario">
+                <h3>Olá, <b id="b_usuario"></b></h3>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li> <a href="tempo-real.html">Tempo Real</a></li>
+                    <li><a href="#" class="highlight" onclick="logoff()">LOGOUT</a></li>
+                    <li><a href="pagina-estatica-chartsjs.html">
+                        <i class="show-on-hover">IR PARA PÁGINA GRÁFICO ESTÁTICO</i>
+                    </a></li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <div class="geral">
-        <div class="menu">
-            <div><img id="menu-hamb" class="logo_hamb" src="img/menu_bar.png" onclick="toggleMenu()"></div>
-            <div class="caixa_menu" id="box_menu">
-                <nav>
-                    <ul>
-                        <div class="itens_hamburguer" id="imagem_itens"><img onclick="closeMenu()"
-                                src="img/icone perfil.png">
-                            <li onclick="closeMenu()">Minha Conta</li>
-                        </div>
-                        <div class="itens_hamburguer">
-                            <li onclick="closeMenu()">Minha Plantação</li>
-                        </div>
-                        <div class="itens_hamburguer">
-                            <li> <a href="tempo-real.html">Tempo Real</a></li>
-                        </div>
-                        <div class="itens_hamburguer">
-                            <li onclick="closeMenu()">Notificações</li>
-                        </div>
-                        <div class="itens_hamburguer" id="but_sair">
-                            <li onclick="logoff()">Sair</li>
-                        </div>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-
-
-
-
-    <!--FIM CABECALHO-->
-
+    <!--header fim-->
 
     <div class="dashboard">
-        <button id="botaoSensor1" class="btn" onclick="chamargraficos(1000)">Sensor 1</button>
-        <button id="botaoSensor2" class="btn" onclick="chamargraficos(1001)">Sensor 2</button>
-        <button id="botaoSensor3" class="btn" onclick="chamargraficos(1002)">Sensor 3</button>
-        <button id="botaoSensor4" class="btn" onclick="chamargraficos(1003)">Sensor 4</button>
+        <button id="botaoCaminhao1" class="btn" onclick="chamargraficos(1000)">Caminhão 1</button>
+        <button id="botaoCaminhao2" class="btn" onclick="chamargraficos(1001)">Caminhão 2</button>
+        <button id="botaoCaminhao3" class="btn" onclick="chamargraficos(1002)">Caminhão 3</button>
+        <button id="botaoCaminhao4" class="btn" onclick="chamargraficos(1003)">Caminhão 4</button>
         <div style="width:75%; margin: auto">
             <div id="div_aguarde">Dados sendo obtidos...</div>
             <canvas id="canvas_grafico"></canvas>
@@ -95,56 +70,35 @@
 </html>
 <script>
 
-    let usuario;
-    verificar_autenticacao();
-
-     // //  INICIO DA ANIMAÇÃO HAMBURGUER
-
-
-
-    function toggleMenu() {
-        document.getElementById('box_menu').style = 'left: 0%;';
-        document.getElementById('menu-hamb').style = 'display: none';
-    }
-
-    function closeMenu() {
-        document.getElementById('box_menu').style = 'left: -100%;';
-        document.getElementById('menu-hamb').style = 'display: block';
-
-    }
-
-    // //  FIM DA ANIMAÇÃO HAMBURGUER
-
-
     let proximaAtualizacao;
 
     window.onload = obterDadosGraficoPrimeiraVez(1000);
 
-    function alterarCoresBotoes(idsensor) {
+    function alterarCoresBotoes(idcaminhao) {
         console.log("executei alterarCoresBotoes")
-        botaoSensor1.className = "btn"
-        botaoSensor2.className = "btn"
-        botaoSensor3.className = "btn"
-        botaoSensor4.className = "btn"
+        botaoCaminhao1.className = "btn"
+        botaoCaminhao2.className = "btn"
+        botaoCaminhao3.className = "btn"
+        botaoCaminhao4.className = "btn"
 
-        if (idsensor == "1000") {
-            botaoSensor1.className += " btn-now"
-        } else if (idsensor == "1001") {
-            botaoSensor2.className += " btn-now"
-        } else if (idsensor == "1002") {
-            botaoSensor3.className += " btn-now"
-        } else if (idsensor == "1003") {
-            botaoSensor4.className += " btn-now"
+        if (idcaminhao == "1000") {
+            botaoCaminhao1.className += " btn-now"
+        } else if (idcaminhao == "1001") {
+            botaoCaminhao2.className += " btn-now"
+        } else if (idcaminhao == "1002") {
+            botaoCaminhao3.className += " btn-now"
+        } else if (idcaminhao == "1003") {
+            botaoCaminhao4.className += " btn-now"
         }
     }
 
 
-    function chamargraficos(idsensor) {
+    function chamargraficos(idcaminhao) {
         console.log("executei chamargraficos")
-        obterDadosGraficoPrimeiraVez(idsensor)
-        //atualizarGrafico(idsensor)
+        obterDadosGraficoPrimeiraVez(idcaminhao)
+        //atualizarGrafico(idcaminhao)
 
-        alterarCoresBotoes(idsensor);
+        alterarCoresBotoes(idcaminhao);
 
     }
 
@@ -193,15 +147,15 @@
 
     // altere aqui como os dados serão exibidos
     // e como são recuperados do BackEnd
-    function obterDadosGraficoPrimeiraVez(idsensor) {
+    function obterDadosGraficoPrimeiraVez(idcaminhao) {
         console.log("executei obterDadosGraficoPrimeiraVez")
-        alterarCoresBotoes(idsensor);
+        alterarCoresBotoes(idcaminhao);
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/leituras/ultimas/${idsensor}`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/leituras/ultimas/${idcaminhao}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -231,13 +185,13 @@
                     for (i = 0; i < resposta.length; i++) {
                         var registro = resposta[i];
                         dados.labels.push(registro.momento_grafico);
-                        dados.datasets[0].data.push(registro.temperatura);
+                        // dados.datasets[0].data.push(registro.temperatura);
                         dados.datasets[1].data.push(registro.umidade);
 
                     }
                     console.log(JSON.stringify(dados));
                     div_aguarde.style.display = 'none';
-                    plotarGrafico(dados, idsensor);
+                    plotarGrafico(dados, idcaminhao);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -253,10 +207,10 @@
 
     // só mexer se quiser alterar o tempo de atualização
     // ou se souber o que está fazendo!
-    function atualizarGrafico(idsensor, dados) {
+    function atualizarGrafico(idcaminhao, dados) {
         console.log("executei atualizarGrafico")
-        fetch(`/leituras/tempo-real/${idsensor}`, { cache: 'no-store' }).then(function (response) {
-            console.log("Estou tentando pegar idsensor = ", idsensor)
+        fetch(`/leituras/tempo-real/${idcaminhao}`, { cache: 'no-store' }).then(function (response) {
+            console.log("Estou tentando pegar idcaminhao = ", idcaminhao)
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
@@ -266,21 +220,21 @@
                     // tirando e colocando valores no gráfico
                     dados.labels.shift(); // apagar o primeiro
                     dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                    // dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[1].data.shift();  // apagar o primeiro de umidade
-                    dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
-                    dados.datasets[1].data.push(novoRegistro.umidade); // incluir uma nova leitura de umidade
+                    // dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
+                    dados.datasets[1].data.push(novoRegistro.LEITURA_UMIDADE); // incluir uma nova leitura de umidade
 
-                    console.log("meu sensor é o " + idsensor)
+                    console.log("meu caminhão é o " + idcaminhao)
 
                     window.grafico_linha.update();
 
 
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idcaminhao, dados), 5000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idcaminhao, dados), 5000);
             }
         })
             .catch(function (error) {
@@ -290,7 +244,7 @@
     }
 
     // só altere aqui se souber o que está fazendo!
-    function plotarGrafico(dados, idsensor) {
+    function plotarGrafico(dados, idcaminhao) {
         console.log("executei plotarGrafico")
         console.log('iniciando plotagem do gráfico...');
 
@@ -300,14 +254,14 @@
             options: configurarGrafico()
         });
 
-        setTimeout(() => atualizarGrafico(idsensor, dados), 2000);
+        setTimeout(() => atualizarGrafico(idcaminhao, dados), 2000);
     }
 
 
     function sendData() {
         var http = new XMLHttpRequest();
         http.open('GET', 'http://localhost:9001/api/sendData', false);
-        http.send(null);    
+        http.send(null);
     }
     
     // Descomente abaixo se quiser inserir dados a cada X segundos
