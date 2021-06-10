@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
+var Leads = require('../models').Leads;
 
 let sessoes = [];
 
@@ -52,6 +53,27 @@ router.post('/cadastrar', function(req, res, next) {
 		res.status(500).send(erro.message);
   	});
 });
+
+
+
+/* Cadastrar LEADS */
+router.post('/cadastrar_leads', function(req, res, next) {
+	console.log('Cadastrando um LEAD');
+	
+	Leads.create({
+		nome_fantasia : req.body.nome_fantasia,
+		email : req.body.email,
+		telefone: req.body.telefone,
+		cnpj : req.body.cnpj
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
+
 
 
 /* Verificação de usuário */
