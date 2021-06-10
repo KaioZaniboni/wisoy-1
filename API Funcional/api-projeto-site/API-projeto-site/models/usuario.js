@@ -28,11 +28,11 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		check_termos: {
-			field: 'CHECK_TERMOS',
-			type: DataTypes.BOOLEAN,
-			allowNull: true
-		},
+		// check_termos: {
+		// 	field: 'CHECK_TERMOS',
+		// 	type: DataTypes.BOOLEAN,
+		// 	allowNull: false
+		// },
 		fk_empresa: {
 			field: 'FK_EMPRESA',
 			type: DataTypes.INTEGER,

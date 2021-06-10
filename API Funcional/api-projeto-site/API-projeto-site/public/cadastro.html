@@ -1,109 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto IoT - Sobre</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contato-e-login.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../CSS/cadastro.css">
+
 </head>
-<body>
-    <!--header inicio-->
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo"><span class="highlight">Projeto</span> IoT Revolucionário</h1>
-            <div class="nav">
+
+<body class="body_img">
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <a href="home.html"><img src="../IMG/wisoy.png" alt="Logo da WiSoy">
+                    <span>WiSoy</span></a>
+            </div>
+            <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href=""class="current">Cadastro</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="portfólio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a id="idlogin" href="login.html">Login</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-    <!--header fim-->
-
-    <div class="contato">
-        <div class="container">
-            <h1>Faça aqui seu cadastro!</h1>
-            <div class="formulario">
-                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                    Nome completo
-                    <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Nome e sobrenome" required minlength="4">
-                    
-                    Login
-                    <input type="text" name="login" class="input-padrao" placeholder="seu nome de usuário" required minlength="4">
-                    
-                    Senha
-                    <input type="password" name="senha" class="input-padrao" placeholder="***************" required minlength="4">
-                    
-                        
-                    <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green">
-                </form>
-
-                <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
-    
-    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-        Erro no cadastro
-    </div>
-
-            </div>
-            <div class="imagem-lateral">
-                <img src="img/side-img-contato_orange.jpg">
-            </div>
+            </nav>
         </div>
     </div>
 
-    
+    <div class="corpo_cadastro">
+        <h2>Crie sua conta na WiSoy.com!</h2>
+        <p>Criando sua conta na WiSoy.com você terá acesso a conteúdo exclusivo.</p>
+        <br> <br>
 
-     <!--footer inicio-->
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com carinho por um aluno BandTec. Copyright © 2021</h4>
-        </div>
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <div class="caixa_cadastro">
+                <div class="conteudo_cadastro">
+
+                    <div class="design_input">Nome:
+                        <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário" name="nome" required autofocus>
+                    </div>
+
+                    <div class="design_input">E-mail
+                        <input id="inpt_email" type="email" placeholder="nome@example.com" name="login" required>
+                    </div>
+
+                    <div class="design_input">Senha:
+                        <input id="inpt_senha" type="password" placeholder="********" name="senha" required>
+                    </div>
+
+                    <div class="design_input">Confirme a senha:
+                        <input id="inpt_conf_senha" type="password" placeholder="********" required>
+                    </div>
+
+                    <div class="desing_empresa">Empresa:
+                        <select id="empresa" name="fk_empresa">
+                            <option value="">Selecione uma empresa</option>
+                            <option value="15000">Project Plant</option>
+                            <option value="15001">Unilever</option>
+                            <option value="15002">Agro Farm</option>
+                            <option value="15003">Soja Hoje</option>
+                            <option value="15004">Coca Cola</option>
+                            <option value="15005">Sojão Brandão</option>
+                            <option value="15006">Leo Sojas</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox_termo">
+                        <input type="checkbox"> Concordo com os
+                        <a href="termos.html">termos de serviço</a>
+                        do WiSoy.com
+                    </div>
+
+                    <button id="but_cadastro" class="button_cadastro">
+                        Criar Conta
+                    </button>
+                </div>
+            </div>
     </div>
-    <!--footer fim-->
+
+    </div>
+    </form>
+
+
+    <div class="rodape">Copyright &copy2021 - Todos os direitos reservados - WiSoy</div>
+
 </body>
+
 </html>
 
 <script>
-
     function cadastrar() {
-        aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
             method: "POST",
             body: formulario
         }).then(function (response) {
-            
-            if (response.ok) {
 
-                window.location.href='login.html';
+            if (response.ok) {
+                alert("Cadastro reazliado com sucesso :D")
+                window.location.href = 'login.html';
 
             } else {
 
-                console.log('Erro de cadastro!');
+                alert('Erro de cadastro! :/');
                 response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
+
                 });
-                finalizar_aguardar();
+
             }
         });
 
         return false;
     }
-
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
-    }
-
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
-    }
-
 </script>

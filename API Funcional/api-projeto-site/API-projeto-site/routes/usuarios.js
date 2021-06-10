@@ -44,7 +44,8 @@ router.post('/cadastrar', function(req, res, next) {
 	Usuario.create({
 		nome : req.body.nome,
 		login : req.body.login,
-		senha: req.body.senha
+		senha: req.body.senha,
+		fk_empresa: req.body.fk_empresa
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);
@@ -77,8 +78,8 @@ router.post('/cadastrar_leads', function(req, res, next) {
 
 
 /* Verificação de usuário */
-router.get('/sessao/:login', function(req, res, next) {
-	let login = req.params.login;
+router.get('/sessao/:LOGIN', function(req, res, next) {
+	let login = req.params.LOGIN;
 	console.log(`Verificando se o usuário ${login} tem sessão`);
 	
 	let tem_sessao = false;
