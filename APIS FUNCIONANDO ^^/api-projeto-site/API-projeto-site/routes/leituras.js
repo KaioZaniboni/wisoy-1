@@ -21,14 +21,8 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit ${limite_linhas}`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select top ${limite_linhas} 
-		temperatura, 
-		umidade, 
-		momento,
-		FORMAT(momento,'HH:mm:ss') as momento_grafico
-		from leitura
-		where fkcaminhao = ${idcaminhao}
-		order by id desc`;
+		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit ${limite_linhas}`;
+		//não sei se tem q ter o dbo e se pode o limite de linhas;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}
@@ -60,7 +54,8 @@ router.get('/tempo-real/:idcaminhao', function(req, res, next) {
 		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico, FK_SENSOR from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit 1`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkcaminhao from leitura where fkcaminhao = ${idcaminhao} order by id desc`;
+		instrucaoSql =`select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico, FK_SENSOR from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit 1`;
+		//n sei se tem q ter dbo ou limit 1
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}
@@ -82,6 +77,7 @@ router.get('/estatisticas', function (req, res, next) {
 	console.log(`Recuperando as estatísticas atuais`);
 
 	const instrucaoSql = `select max(LEITURA_UMIDADE) as umidade_maxima, min(LEITURA_UMIDADE) as umidade_minima, avg(LEITURA_UMIDADE) as umidade_media from HISTORICO_SENSOR`;
+	//NÃO SEI SE TEM Q SER DBO>LEITURA_UMIDADE;
 					
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
