@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto IoT - Tempo Real</title>
-    <link rel="stylesheet" href="css/dashboards.css">
-
+    <link rel="stylesheet" href="css/Dashboard.css">
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="funcoes.js"></script>
@@ -33,77 +32,69 @@
 <body onload="atualizacaoPeriodica()">
     <!--header inicio-->
 
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo"><span class="highlight">Projeto</span> IoT Revolucionário</h1>
-            <div class="usuario">
-                <h3>Olá, <b id="b_usuario"></b></h3>
-            </div>
-            <div class="nav">
+    <main class="main">
+        <aside class="sidebar">
+            <nav class="nav">
                 <ul>
-                    <li><a href="grafico-chartjs.html">Gráfico de histórico recente</a></li>
-                    <li><a href="#" class="highlight" onclick="logoff()">LOGOUT</a></li>
-                    <li><a href="pagina-estatica-chartsjs.html">
-                            <i class="show-on-hover">IR PARA PÁGINA GRÁFICO ESTÁTICO</i>
-                        </a></li>
-
+                    <li class="active"><a href="#">OLÁ, USUÁRIO</a></li>
+                    <li class="active"><a href="Relatórios.html">MEUS RELATÓRIOS</a></li>
+                    <li class="active"><a href="Sensores_Cliente/site2/inicio.html"> MEUS SENSORES</a></li>
+                    <li class="active"><a href="#">TEORES DE UMIDADE</a></li>
+                    <li class="active logout"><a href="#">LOGOUT</a></li>
                 </ul>
+            </nav>
+        </aside>
+        <!--header fim-->
+
+        <div class="dashboard">
+            <div class="container">
+
+                <div class="caminhao">
+                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1000">1000</span></h4>
+                    <div class="valores">
+                        <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
+                    </div>
+                    <div class="alertas">
+                        <div class="alerta_umidd" id="div_alerta_umidade"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1001">1001</span></h4>
+                    <div class="valores">
+                        <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1002">1002</span></h4>
+                    <div class="valores">
+                        <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
+                    </div>
+                    <div class="alertas">
+                        <div class="alerta_umidd" id="div_alerta_umidade3"></div>
+                    </div>
+                </div>
+
+                <div class="caminhao">
+                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1003">1003</span></h4>
+                    <div class="valores">
+                        <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
+                    </div>
+
+                    <div class="alertas">
+                        <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
-    </div>
-    <!--header fim-->
-
-    <div class="dashboard">
-        <div class="container">
-
-
-
-            <div class="caminhao">
-                <h4>Caminhão <span name="namecaminhao" id="idcaminhao" value="1000">1000</span></h4>
-                <div class="valores">
-                    <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
-                </div>
-                <div class="alertas">
-                    <div class="alerta_umidd" id="div_alerta_umidade"></div>
-                </div>
-            </div>
-
-            <div class="caminhao">
-                <h4>Caminhão <span name="namecaminhao" id="idcaminhao" value="1001">1001</span></h4>
-                <div class="valores">
-                    <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
-                </div>
-
-                <div class="alertas">
-                    <div class="alerta_umidd" id="div_alerta_umidade2"></div>
-                </div>
-            </div>
-
-            <div class="caminhao">
-                <h4>Caminhão <span name="namecaminhao" id="idcaminhao" value="1002">1002</span></h4>
-                <div class="valores">
-                    <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
-                </div>
-                <div class="alertas">
-                    <div class="alerta_umidd" id="div_alerta_umidade3"></div>
-                </div>
-            </div>
-
-            <div class="caminhao">
-                <h4>Caminhão <span name="namecaminhao" id="idcaminhao" value="1003">1003</span></h4>
-                <div class="valores">
-                    <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
-                </div>
-
-                <div class="alertas">
-                    <div class="alerta_umidd" id="div_alerta_umidade4"></div>
-                </div>
-            </div>
-
-
-
-        </div>
-    </div>
 
 
 
