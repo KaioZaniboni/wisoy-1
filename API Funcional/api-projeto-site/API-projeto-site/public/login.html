@@ -98,8 +98,8 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.LOGIN;
-                    sessionStorage.nome_usuario_meuapp = json.NOME;
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
                     
                     alert("Login feito com sucesso!");
                     window.location.href = 'tempo-real.html';
