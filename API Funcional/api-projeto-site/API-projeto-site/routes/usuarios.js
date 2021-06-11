@@ -78,11 +78,12 @@ router.post('/cadastrar_leads', function(req, res, next) {
 
 
 /* Verificação de usuário */
-router.get('/sessao/:login', function(req, res, next) {
-	let login = req.params.login;
+router.get('/sessao/:LOGIN', function(req, res, next) {
+	let login = req.params.LOGIN;
 	console.log(`Verificando se o usuário ${login} tem sessão`);
 	
 	let tem_sessao = false;
+
 	for (let u=0; u<sessoes.length; u++) {
 		if (sessoes[u] == login) {
 			tem_sessao = true;
@@ -102,8 +103,8 @@ router.get('/sessao/:login', function(req, res, next) {
 
 
 /* Logoff de usuário */
-router.get('/sair/:login', function(req, res, next) {
-	let login = req.params.login;
+router.get('/sair/:LOGIN', function(req, res, next) {
+	let login = req.params.LOGIN;
 	console.log(`Finalizando a sessão do usuário ${login}`);
 	let nova_sessoes = []
 	for (let u=0; u<sessoes.length; u++) {
