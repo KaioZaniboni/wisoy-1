@@ -12,9 +12,9 @@ function verificar_autenticacao() {
     if (login_usuario == undefined)  {
         redirecionar_login();
     } else {
-        span_usuario.style.display = 'block';
         b_usuario.innerHTML = nome_usuario;
         validar_sessao();
+        span_usuario.style.display = 'block';
     }
     
 }
