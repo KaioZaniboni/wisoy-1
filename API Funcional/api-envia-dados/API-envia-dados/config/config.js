@@ -2,10 +2,10 @@ module.exports = {
   // Insira aqui seus dados do banco NA NUVEM AZURE
   production: {
     // altere APENAS username, password, database e host.
-    username: 'SEU_USUARIO_DO_BANCO_DE_DADOS',
-    password: 'SUA_SENHA_DO_BANCO_DE_DADOS',
-    database: 'NOME_DO_SEU_DATABASE',
-    host: 'LINK_DO_SEU_DATABASE_ deve ser algo como "MEUPROJETO.database.windows.net"',
+    username: 'grupo11',
+    password: 'GPO011@#',
+    database: 'WiSoy',
+    host: 'wisoy3.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
@@ -26,7 +26,7 @@ module.exports = {
   dev: {
     // altere APENAS username, password e database.
     username: 'root',
-    password: '24685111aA#',
+    password: 'badboy17',
     database: 'jesus',
     host: '127.0.0.1',
     dialect: 'mysql',

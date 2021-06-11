@@ -21,7 +21,7 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit ${limite_linhas}`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit ${limite_linhas}`;
+		instrucaoSql = `select TOP (${limite_linhas}) LEITURA_UMIDADE, LEITURA_DATA_HORA,CONVERT(varchar(12),LEITURA_DATA_HORA) as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc;`;
 		//não sei se tem q ter o dbo e se pode o limite de linhas;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
@@ -54,7 +54,7 @@ router.get('/tempo-real/:idcaminhao', function(req, res, next) {
 		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico, FK_SENSOR from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit 1`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql =`select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico, FK_SENSOR from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit 1`;
+		instrucaoSql =`select LEITURA_UMIDADE, LEITURA_DATA_HORA, CONVERT(varchar(12),LEITURA_DATA_HORA) as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc;`;
 		//n sei se tem q ter dbo ou limit 1
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")

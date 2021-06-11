@@ -36,11 +36,11 @@
         <aside class="sidebar">
             <nav class="nav">
                 <ul>
-                    <li class="active"><a href="#">OLÁ, USUÁRIO</a></li>
+                    <li class="active"><a href="grafico-chartjs.html">OLÁ,<span id="span_usuario" style="display: none;"> <b id="b_usuario"></b></span></a></li>
                     <li class="active"><a href="Relatórios.html">MEUS RELATÓRIOS</a></li>
                     <li class="active"><a href="Sensores_Cliente/site2/inicio.html"> MEUS SENSORES</a></li>
                     <li class="active"><a href="#">TEORES DE UMIDADE</a></li>
-                    <li class="active logout"><a href="#">LOGOUT</a></li>
+                    <li class="active logout" onclick="logoff()" style="color: wheat;">LOGOUT</li>
                 </ul>
             </nav>
         </aside>
@@ -104,7 +104,6 @@
 <script>
 
     let usuario;
-
     verificar_autenticacao();
 
     // só mexer se quiser alterar o tempo de atualização
