@@ -22,13 +22,13 @@ router.get("/sendData", (request, response) => {
 		// Na variável abaixo, coloque o Insert que será executado no Workbench
 		// salvo exceções, é igual a SQL Server
 
-		instrucaoSql = `INSERT into HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity + 20},'${agora()}', 1000), (${Humidity + 20}, '${agora()}', 1001), (${Humidity - 20}, '${agora()}', 1002), (${Humidity - 20}, '${agora()}',1003);`;
+		instrucaoSql = `INSERT into HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity + 20},'${agora()}', 1000), (${Humidity + 10}, '${agora()}', 1001), (${Humidity - 15}, '${agora()}', 1002), (${Humidity - 5}, '${agora()}',1003);`;
 	} else {
 
 		// Na variável abaixo, coloque o Insert que será executado no SQL Server
 		// salvo exceções, é igual a Workbench
 
-		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity + 20},'${agora()}', 1000), (${Humidity + 20}, '${agora()}', 1001), (${Humidity - 20}, '${agora()}', 1002), (${Humidity - 20}, '${agora()}',1003);`;
+		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity + 20},'${agora()}', 1000), (${Humidity + 10}, '${agora()}', 1001), (${Humidity - 15}, '${agora()}', 1002), (${Humidity - 5}, '${agora()}',1003);`;
 	}
 
 	sequelize.query(instrucaoSql, {
