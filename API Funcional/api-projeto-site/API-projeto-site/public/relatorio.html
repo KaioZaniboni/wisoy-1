@@ -87,8 +87,8 @@
         console.log("entrei!")
         
         var formulario = new URLSearchParams(new FormData(form_publicar));
-        var idUsuario = sessionStorage.id_usuario_meuapp;
-        fetch(`/publicacoes/publicar/${idUsuario}`, {
+        var idcaminhao = sessionStorage.id_usuario_meuapp;
+        fetch(`/publicacoes/publicar/${idcaminhao}`, {
             method: "POST",
             body: formulario
         }).then(resposta => {
@@ -155,8 +155,8 @@
         });
     }
 
-    function obterPublicacoesPorUsuario(idUsuario) {
-        fetch(`/publicacoes/${idUsuario}`)
+    function obterPublicacoesPorUsuario(idcaminhao) {
+        fetch(`/publicacoes/${idcaminhao}`)
         .then(resposta => {
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {
