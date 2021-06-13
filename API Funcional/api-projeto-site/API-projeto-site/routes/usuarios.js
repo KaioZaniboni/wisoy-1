@@ -13,7 +13,7 @@ router.post('/autenticar', function(req, res, next) {
 	var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
-	let instrucaoSql = `select * from USUARIOS where LOGIN='${login}' and SENHA ='${senha}'`;
+	let instrucaoSql = `select * from usuarios where login='${login}' and senha ='${senha}'`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -22,7 +22,7 @@ router.post('/autenticar', function(req, res, next) {
 		console.log(`Encontrados: ${resultado.length}`);
 
 		if (resultado.length == 1) {
-			sessoes.push(resultado[0].dataValues.LOGIN);
+			sessoes.push(resultado[0].dataValues.login);
 			console.log('sessoes: ',sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
@@ -78,8 +78,8 @@ router.post('/cadastrar_leads', function(req, res, next) {
 
 
 /* Verificação de usuário */
-router.get('/sessao/:LOGIN', function(req, res, next) {
-	let login = req.params.LOGIN;
+router.get('/sessao/:login', function(req, res, next) {
+	let login = req.params.login;
 	console.log(`Verificando se o usuário ${login} tem sessão`);
 	
 	let tem_sessao = false;
@@ -103,8 +103,8 @@ router.get('/sessao/:LOGIN', function(req, res, next) {
 
 
 /* Logoff de usuário */
-router.get('/sair/:LOGIN', function(req, res, next) {
-	let login = req.params.LOGIN;
+router.get('/sair/:login', function(req, res, next) {
+	let login = req.params.login;
 	console.log(`Finalizando a sessão do usuário ${login}`);
 	let nova_sessoes = []
 	for (let u=0; u<sessoes.length; u++) {

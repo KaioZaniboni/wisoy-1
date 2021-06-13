@@ -29,9 +29,7 @@ CREATE TABLE EMPRESA (
   RAZAO_SOCIAL VARCHAR(50),
   DATA_CONTRATO DATE,
   FK_LEAD INT,
-  FOREIGN KEY (FK_LEAD) REFERENCES LEADS (ID_LEAD),
-  FK_COLABORADORES INT,
-  FOREIGN KEY (FK_COLABORADORES) REFERENCES COLABORADORES(ID_COLABORADORES) 
+  FK_COLABORADORES INT
 )auto_increment = 15000;
 
 DESC CLIENTES;
@@ -40,15 +38,15 @@ DESC CLIENTES;
 -- A tabela USUARIOS é responsável pelos login no sistema para demais verificações
 --------------------------------------------------------
 
-CREATE TABLE USUARIOS(
-ID_USUARIOS INT PRIMARY KEY AUTO_INCREMENT,
-NOME VARCHAR(45),
-LOGIN VARCHAR (35),
-SENHA VARCHAR (20),
-CHECK_TERMOS TINYINT,
-FK_EMPRESA INT,
-FOREIGN KEY (FK_EMPRESA) REFERENCES EMPRESA (ID_EMPRESA))auto_increment= 500;
+CREATE TABLE usuarios(
+id_usuarios INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45),
+login VARCHAR (35),
+senha VARCHAR (20),
+fk_empresa int
+)auto_increment= 500;
 
+drop table USUARIOS;
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
 -- -----------------------------------------------------
@@ -100,14 +98,32 @@ DESC COLABORADORES;
 -- -----------------------------------------------------
 -- A tabela HIST_SENSOR tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
 -- -----------------------------------------------------
-CREATE TABLE HIST_SENSOR (
-  ID_HISTORICO INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  LEITURA_UMIDADE DOUBLE(10,2),
-  LEITURA_DATA_HORA DATETIME,
-  FK_SENSOR INT,
-  FOREIGN KEY (FK_SENSOR)
-  REFERENCES SENSORES (ID_SENSOR))auto_increment = 1;
+CREATE TABLE historico_sensor(
+  id_historico INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  leitura_umidade DOUBLE(10,2),
+  leitura_data_hora DATETIME,
+  fk_sensor INT
+ )auto_increment = 1;
+ 
+ CREATE TABLE publicacao (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(100),
+    fkUsuario INT
+);
   
+  
+  select * from publicacao;
+  select * from  HISTORICO_SENSOR;
+  
+  select leitura_data_hora,
+  round(avg(leitura_umidade),2) as MEDIA, max(leitura_umidade) as MAXIMO, min(leitura_umidade) as MINIMO
+  from historico_sensor group by (unix_timestamp(leitura_data_hora) / 300);
+  
+ SELECT 
+fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media, max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
+DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), '%Y-%m-%d %H:%i:00') as cinco_min
+from historico_sensor where fk_sensor = 1001 group by cinco_min;
+
   DESC HIST_SENSOR;  
  
 -- -----------------------------------------------------

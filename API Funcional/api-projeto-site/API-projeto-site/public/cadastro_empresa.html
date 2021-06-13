@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../CSS/cadastro.css">
+
+</head>
+
+<body class="body_img">
+    <div class="cabecalho">
+        <div class="caixa">
+            <div class="logo">
+                <a href="home.html"><img src="../IMG/wisoy.png" alt="Logo da WiSoy">
+                    <span>WiSoy</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="portfólio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a id="idlogin" href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="corpo_cadastro">
+        <h2>Crie sua conta na WiSoy.com!</h2>
+        <p>Criando sua conta na WiSoy.com você terá acesso a conteúdo exclusivo.</p>
+        <br> <br>
+
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <div class="caixa_cadastro">
+                <div class="conteudo_cadastro">
+
+                    <div class="design_input">Nome:
+                        <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário" name="nome" required autofocus>
+                    </div>
+
+                    <div class="design_input">E-mail
+                        <input id="inpt_email" type="email" placeholder="nome@example.com" name="login" required>
+                    </div>
+
+                    <div class="design_input">Senha:
+                        <input id="inpt_senha" type="password" placeholder="********" name="senha" required>
+                    </div>
+
+                    <div class="design_input">Confirme a senha:
+                        <input id="inpt_conf_senha" type="password" placeholder="********" required>
+                    </div>
+
+                    <div class="desing_empresa">Empresa:
+                        <select id="empresa" name="fk_empresa">
+                            <option value="">Selecione uma empresa</option>
+                            <option value="15000">Project Plant</option>
+                            <option value="15001">Unilever</option>
+                            <option value="15002">Agro Farm</option>
+                            <option value="15003">Soja Hoje</option>
+                            <option value="15004">Coca Cola</option>
+                            <option value="15005">Sojão Brandão</option>
+                            <option value="15006">Leo Sojas</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox_termo">
+                        <input type="checkbox"> Concordo com os
+                        <a href="termos.html">termos de serviço</a>
+                        do WiSoy.com
+                    </div>
+
+                    <button id="but_cadastro" class="button_cadastro">
+                        Criar Conta
+                    </button>
+                </div>
+            </div>
+    </div>
+
+    </div>
+    </form>
+
+
+    <div class="rodape">Copyright &copy2021 - Todos os direitos reservados - WiSoy</div>
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                alert("Cadastro reazliado com sucesso :D")
+                window.location.href = 'login.html';
+
+            } else {
+
+                alert('Erro de cadastro! :/');
+                response.text().then(function (resposta) {
+
+                });
+
+            }
+        });
+
+        return false;
+    }
+</script>
