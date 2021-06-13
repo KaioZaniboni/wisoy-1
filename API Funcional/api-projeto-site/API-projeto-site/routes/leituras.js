@@ -86,6 +86,11 @@ router.get('/estatisticas', function (req, res, next) {
 	console.log(`Recuperando as estatísticas atuais`);
 
 	const instrucaoSql = `select max(LEITURA_UMIDADE) as umidade_maxima, min(LEITURA_UMIDADE) as umidade_minima, avg(LEITURA_UMIDADE) as umidade_media from HISTORICO_SENSOR`;
+
+	// const instrucaoSql = `fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media,
+    //  max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
+    // DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), '%Y-%m-%d %H:%i:00') as cinco_min
+    // from historico_sensor where fk_sensor = 1001 group by cinco_min;`;
 					
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
@@ -98,5 +103,3 @@ router.get('/estatisticas', function (req, res, next) {
   
 });
 
-
-module.exports = router;
