@@ -1,30 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html {
-    font-family: Arial;
     font-size: 16px;
-    background: #b4b4b4;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    background: #3d413b;
+    overflow-y: hidden; 
 }
 
 .sidebar {
     position: fixed;
     width: 25%;
-    height: 100vh;
+    height: 97vh;
     background: black;
     font-size: 0.65em;
 }
 
 .nav {
     position: relative;
-    margin: -15% 15% 15% 0;
+    margin: 0 15%;
     text-align: right;
-    top: 50%;
+    top: 43%;
     transform: translateY(-50%);
     font-weight: bold;
 }
@@ -43,22 +37,18 @@ a {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.4em;
+    color: rgba(#FFF, 0.35);
     display: block;
     transition: all ease-out 300ms;
 }
 
 .active a {
     color: white;
-
-    font-size: 0.9vw;
+    font-size: 10px;
 }
 
 .active a:hover {
-    color: rgb(53, 196, 25);
-}
-
-.logout {
-    margin-top: 60%;
+    color: rgb(102, 226, 44);
 }
 
 :not(.active)::after {
@@ -74,25 +64,56 @@ a {
     position: absolute;
     width: 100%;
     height: 0.2em;
+    background: black;
     left: 0;
-    bottom: 0;
-    background-image: linear-gradient(to right, #5e42a6, #b74e91)
+    bottom: 6px;
+    background-image: linear-gradient(to right, #6f9172, #38b000);
 }
-
-
 
 .wisoyzinho {
-    position: relative;
-    width: 75%;
-    float: right;
-    height: 100vh;
+    position: fixed;
+    width: 74%;
+    left: 25.8%;
+    height: 10vh;
 }
-.dashboard {
-    text-align: center;
-    width: 75%;
-    height: 650px;
+
+.container {
+    height: 97%;
+    width: 98.7%;
+    top: 1.4%;
+    left: 0.6%;
+}
+
+a {
     position: relative;
-    float: right;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+
+p {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* dashboard */
+
+.dashboard {
+    background-color: #0f0f0f;
+    text-align: center;
+    padding: 165px 0;
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    /* overflow-y: scroll; */
+    height: 221px;
 }
 
 .dashboard h1 {
@@ -103,37 +124,6 @@ a {
     width: 50%;
     display: inline-block;
 }
-
-
-.container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 80%;
-    margin: auto;
-    margin-top: 10%;
-}
-
-a {
-    position: relative;
-}
-
-img {
-    width: 48px;
-    height: 48px;
-}
-
-
-p {
-    text-transform: uppercase;
-    font-size: 1em;
-    letter-spacing: 0.1em;
-    color: #FFF;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
 
 .box-login {
     display: inline-block;
@@ -174,6 +164,8 @@ p {
     background-color: orangered;
 }
 
+/* EXTRA */
+
 .extra {
     margin: 10px;
 }
@@ -189,20 +181,30 @@ p {
     visibility: hidden;
 }
 
+.linha1 {
+    width: 90%;
+    position: fixed;
+    top: 17%;
+    left: 27%;
+}
+
+.linha2 {
+    width: 90%;
+    position: fixed;
+    top: 53%;
+    left: 27%;
+}
+
 .caminhao {
-    border: 1px solid red;
-    border-radius: 10px;
-    display: block;
-    width: 43%;
-    margin: 3% 3%;
+    border: 2px solid #38b000;
+    width: 35%;
+    margin: 10px 2%;
     height: 160px;
     float: left;
-    text-align: center;
-
     background-color: white;
-    box-shadow: 3px 3px 5px 2px #ccc;
-
+    box-shadow: 3px 3px 5px 2px #1b1b1b;
 }
+
 
 .caminhao .valores {
     margin: auto;
@@ -210,7 +212,8 @@ p {
 }
 
 .caminhao .valores .valor {
-    margin-left: 13%;
+    margin-left: 35%;
+    margin-top: 5%;
     width: 30%;
     float: left;
 }

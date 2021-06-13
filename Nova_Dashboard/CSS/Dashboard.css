@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html {
-    font-family: Arial;
     font-size: 16px;
-    background: #38b000;
+    background: #3d413b;
+    overflow-y: hidden; 
 }
 
 .sidebar {
     position: fixed;
     width: 25%;
-    height: 100vh;
+    height: 97vh;
     background: black;
     font-size: 0.65em;
 }
@@ -18,7 +18,7 @@ html {
     position: relative;
     margin: 0 15%;
     text-align: right;
-    top: 50%;
+    top: 43%;
     transform: translateY(-50%);
     font-weight: bold;
 }
@@ -27,74 +27,212 @@ html {
     list-style: none;
 }
 
-    li {
-        position: relative;
-        margin: 3.2em 0;
-    }
-        a {
-            line-height: 5em;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 0.4em;
-            color: rgba(#FFF, 0.35);
-            display: block;
-            transition: all ease-out 300ms;
-        }
+li {
+    position: relative;
+    margin: 3.2em 0;
+}
 
-        .active a {
-            color: white;
-            font-size: 10px;
-        }
+a {
+    line-height: 5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.4em;
+    color: rgba(#FFF, 0.35);
+    display: block;
+    transition: all ease-out 300ms;
+}
 
-        :not(.active)::after {
-            opacity: 0.2;
-        }
+.active a {
+    color: white;
+    font-size: 10px;
+}
 
-        :not(.active):hover a {
-            color: rgba(#FFF, 0.75);
-        }
+.active a:hover {
+    color: rgb(102, 226, 44);
+}
 
-        ::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 0.2em;
-            background: black;
-            left: 0;
-            bottom: 0;
-            background-image: linear-gradient(to right, #5e42a6, #b74e91)
-        }
-    
+:not(.active)::after {
+    opacity: -0.8;
+}
 
+:not(.active):hover a {
+    color: rgba(#FFF, 0.75);
+}
+
+::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.2em;
+    background: black;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to right, #6f9172, #38b000);
+}
 
 .wisoyzinho {
-    position: relative;
-    width: 75%;
-    float: right;
-    height: 100vh;
+    position: fixed;
+    width: 74%;
+    left: 25.8%;
+    height: 10vh;
 }
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
 
-    a {
-        position: relative;}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300%;
+}
 
-        img {
-            width: 48px;
-            height: 48px;
-        }
-    
+a {
+    position: relative;
+}
 
-    p {
-        text-transform: uppercase;
-        font-size: 1em;
-        letter-spacing: 0.1em;
-        color: #FFF;
-        font-weight: bold;
-        margin-top: 20px;
-    }
+img {
+    width: 100px;
+    height: 100px;
+}
+
+
+p {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 0.1em;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* dashboard */
+
+.dashboard {
+    background-color: #0f0f0f;
+    text-align: center;
+    padding: 165px 0;
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    overflow-y: scroll;
+    height: 221px;
+}
+
+.dashboard h1 {
+    margin-bottom: 40px;
+}
+
+.dashboard .input-padrao {
+    width: 50%;
+    display: inline-block;
+}
+
+.box-login {
+    display: inline-block;
+    background-color: white;
+    box-shadow: 3px 3px 5px 2px #ccc;
+    padding: 60px 20px 0px 20px;
+    border-radius: 20px;
+    width: 400px;
+}
+
+.dashboard .btn-green {
+    display: block;
+    float: none;
+    margin: auto;
+}
+
+.botoes {
+    margin: auto;
+    margin-bottom: 40px;
+    display: block;
+    /* Default de botão é inline-block. Com block, margin auto funciona*/
+}
+
+.btn {
+    color: white;
+    text-transform: uppercase;
+    width: 180px;
+    margin: 0 1%;
+    border: 5px solid #ecf0f1;
+    height: 38px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgb(255, 164, 131);
+}
+
+.btn-now {
+    border: 3px solid #232323;
+    background-color: orangered;
+}
+
+/* EXTRA */
+
+.extra {
+    margin: 10px;
+}
+
+.extra img {
+    height: 50px;
+    visibility: hidden;
+}
+
+.extra .msg_erro {
+    background-color: sandybrown;
+    color: black;
+    visibility: hidden;
+}
+
+.caminhao {
+    border: 1px solid red;
+    border-radius: 10px;
+    display: block;
+    width: 35%;
+    margin: 10px 7%;
+    height: 160px;
+    float: left;
+    text-align: center;
+
+    background-color: white;
+    box-shadow: 3px 3px 5px 2px #ccc;
+
+}
+
+.caminhao .valores {
+    margin: auto;
+    overflow: auto;
+}
+
+.caminhao .valores .valor {
+    margin-left: 13%;
+    width: 30%;
+    float: left;
+}
+
+.caminhao .alertas {
+    width: 100%;
+    margin: auto;
+    margin-top: 5px;
+    overflow: auto;
+}
+
+.caminhao .alertas .alerta {
+    margin-left: 13%;
+    width: 30%;
+    float: left;
+}
+
+.caminhao .alertas .alerta_umidd {
+    margin-right: 13%;
+    width: 30%;
+    float: right;
+}
+
+/* extra */
+
+.show-on-hover {
+    color: #232323
+}
+
+.show-on-hover:hover {
+    color: white
+}

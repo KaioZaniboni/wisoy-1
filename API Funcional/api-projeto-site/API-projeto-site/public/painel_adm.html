@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto IoT - Tempo Real</title>
-    <link rel="stylesheet" href="css/Dashboard.css">
-    <!-- script do google charts -->
-    <!-- <script type="text/javascript" src="funcoes.js"></script> -->
+    <link rel="stylesheet" href="../public/css/Dashboard.css">
+    <script type="text/javascript" src="funcoes.js"></script>
 
-    <style>
+    <!-- <style>
         /* Classes CSS para exemplos de alertas */
 
         .normal {
@@ -25,21 +24,28 @@
             color: rgb(38, 0, 255);
 
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
-    <!--header inicio-->
 
+    <!--header inicio-->
     <main class="main">
         <aside class="sidebar">
             <nav class="nav">
                 <ul>
-                    <li class="active"><a href="grafico-chartjs.html">OLÁ,<span id="span_usuario" style="display: none;"> <b id="b_usuario"></b></span></a></li>
-                    <li class="active"><a href="cadastro_pj.html">Cadastrar PJ</a></li>
-                    <li class="active"><a href="Sensores_Cliente/site2/inicio.html"> MEUS SENSORES</a></li>
-                    <li class="active"><a href="#">TEORES DE UMIDADE</a></li>
-                    <li class="active logout" onclick="logoff()" style="color: wheat;">LOGOUT</li>
+                    <li class="active">
+                        <a href="grafico-chartjs.html">OLÁ,
+                            <span id="span_usuario" style="display: none;">
+                                <b id="b_usuario"></b>
+                            </span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="../public/painel_adm.html">Cadastrar PJ</a></li>
+                    <li class="active"><a href="../public/cadastro_pj.html">MEUS SENSORES</a></li>
+                    <li class="active"><a href="">TEORES DE UMIDADE</a></li>
+                    <li class="active"><a href="">SUPORTE</a></li>
+                    <li class="active logout" onclick="logoff()"><a href="">LOGOUT</li></a>
                 </ul>
             </nav>
         </aside>
@@ -48,60 +54,63 @@
         <div class="dashboard">
             <div class="container">
 
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1000">1000</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
+                <div class="linha1">
+
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1000">1000</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
+                        </div>
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade"></div>
+                        </div>
                     </div>
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade"></div>
+
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1001">1001</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
+                        </div>
+
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                        </div>
                     </div>
+
                 </div>
 
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1001">1001</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
+                <div class="linha2">
+
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1002">1002</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
+                        </div>
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade3"></div>
+                        </div>
                     </div>
 
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1003">1003</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
+                        </div>
+
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                        </div>
                     </div>
+
                 </div>
-
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1002">1002</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
-                    </div>
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade3"></div>
-                    </div>
-                </div>
-
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1003">1003</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
-                    </div>
-
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade4"></div>
-                    </div>
-                </div>
-
-
 
             </div>
         </div>
-
-
 
 </body>
 
 
 <script>
-//  let usuario;
-// verificar_autenticacao();
-
+    //  let usuario;
+    // verificar_autenticacao();
 </script>
