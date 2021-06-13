@@ -20,19 +20,20 @@ DESC LEADS;
 -- -----------------------------------------------------
 -- A tabela CLIENTES será responsável por armazenar todos os dados referentes ao cadastro de cada cliente.
 -- -----------------------------------------------------
-CREATE TABLE EMPRESA (
-  ID_EMPRESA INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  NOME_FANTASIA VARCHAR(60),
-  TELEFONE VARCHAR(11),
-  EMAIL VARCHAR (50),
-  CPNJ VARCHAR(23),
-  RAZAO_SOCIAL VARCHAR(50),
-  DATA_CONTRATO DATE,
-  FK_LEAD INT,
-  FK_COLABORADORES INT
+CREATE TABLE empresa (
+  id_empresa INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  razao_social VARCHAR(50),
+  nome_fantasia VARCHAR(60),
+  cnpj VARCHAR(23),
+  telefone VARCHAR(15),
+  email VARCHAR (50),
+  data_contrato DATE,
+  fk_lead INT,
+  chave_autenticação varchar(20)
 )auto_increment = 15000;
 
-DESC CLIENTES;
+drop table empresa;
+select * from empresa;
   
 --------------------------------------------------------
 -- A tabela USUARIOS é responsável pelos login no sistema para demais verificações

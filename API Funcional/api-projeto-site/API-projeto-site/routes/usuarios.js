@@ -3,6 +3,7 @@ var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
 var Leads = require('../models').Leads;
+var Cadastrar_PJ = require('../models').Cadastrar_PJ;
 
 let sessoes = [];
 
@@ -75,6 +76,28 @@ router.post('/cadastrar_leads', function(req, res, next) {
   	});
 });
 
+/* Cadastrar PJ */
+router.post('/cadastrar_pj', function(req, res, next) {
+	console.log('Cadastrando um PJ');
+
+	Cadastrar_PJ.create({
+		razao_social : req.body.razao_social,
+		nome_fantasia : req.body.nome_fantasia,
+		cnpj : req.body.cnpj,
+		telefone : req.body.telefone,
+		email : req.body.email,
+		data_contrato: agora(),
+		// fk_lead: req.body.fk_lead,
+		chave_autenticação : req.body.chave_autenticação
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
+
 
 
 /* Verificação de usuário */
@@ -129,5 +152,10 @@ router.get('/', function(req, res, next) {
 		res.status(500).send(erro.message);
   	});
 });
+
+function agora() {
+	const agora_d = new Date();
+	return `${agora_d.getFullYear()}-${agora_d.getMonth() + 1}-${agora_d.getDate()} ${agora_d.getHours()}:${agora_d.getMinutes()}:${agora_d.getSeconds()}`;
+}
 
 module.exports = router;
