@@ -14,7 +14,6 @@ function verificar_autenticacao() {
     } else {
         b_usuario.innerHTML = nome_usuario;
         validar_sessao();
-       
     }
     
 }
