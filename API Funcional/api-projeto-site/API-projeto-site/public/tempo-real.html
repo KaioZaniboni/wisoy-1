@@ -8,29 +8,11 @@
     <link rel="stylesheet" href="css/Dashboard.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="funcoes.js"></script>
-
-    <style>
-        /* Classes CSS para exemplos de alertas */
-
-        .normal {
-            background-color: white;
-        }
-
-        .alerta-alto {
-            color: tomato;
-
-        }
-
-        .alerta-baixo {
-            color: rgb(38, 0, 255);
-
-        }
-    </style>
 </head>
 
 <body onload="atualizacaoPeriodica()">
-    <!--header inicio-->
 
+    <!--header inicio-->
     <main class="main">
         <aside class="sidebar">
             <nav class="nav">
@@ -48,54 +30,57 @@
         <div class="dashboard">
             <div class="container">
 
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1000">1000</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
+                <h1 class="titulo_selecao">TEORES DE UMIDADE</h1>
+                <div class="linha1">
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1000">1000</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
+                        </div>
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade"></div>
+                        </div>
                     </div>
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade"></div>
+
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1001">1001</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
+                        </div>
+
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                        </div>
                     </div>
+
                 </div>
 
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1001">1001</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
+                <div class="linha2">
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1002">1002</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
+                        </div>
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade3"></div>
+                        </div>
                     </div>
 
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                    <div class="caminhao">
+                        <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1003">1003</span></h4>
+                        <div class="valores">
+                            <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
+                        </div>
+
+                        <div class="alertas">
+                            <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                        </div>
                     </div>
+
                 </div>
-
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1002">1002</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
-                    </div>
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade3"></div>
-                    </div>
-                </div>
-
-                <div class="caminhao">
-                    <h4>Sensor <span name="namecaminhao" id="idcaminhao" value="1003">1003</span></h4>
-                    <div class="valores">
-                        <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
-                    </div>
-
-                    <div class="alertas">
-                        <div class="alerta_umidd" id="div_alerta_umidade4"></div>
-                    </div>
-                </div>
-
-
 
             </div>
         </div>
-
-
 
 </body>
 
@@ -114,7 +99,6 @@
         obterdadosporcaminhao(1003);
         setTimeout(atualizacaoPeriodica, 5000);
     }
-
 
     function obterdadosporcaminhao(idcaminhao) {
         //aguardar();
@@ -225,11 +209,7 @@
         // div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
 
         div_umidade_alterar.innerHTML = `Umidade: ${dados.umidade}%`;
-
-
-
     }
-
 
     function sendData() {
         var http = new XMLHttpRequest();
