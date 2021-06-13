@@ -37,15 +37,11 @@ router.post('/autenticar', function(req, res, next) {
   	});
 });
 
-
 /* Cadastrar usuário */
-router.patch('/cadastrar', function(req, res, next) {
+router.post('/cadastrar', function(req, res, next) {
 	console.log('Criando um usuário');
-
-	// let id = req.params.id_usuarios;
 	
-	Usuario.update({
-		id: 500,
+	Usuario.create({
 		nome : req.body.nome,
 		login : req.body.login,
 		senha: req.body.senha,

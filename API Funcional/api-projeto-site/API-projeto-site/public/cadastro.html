@@ -34,7 +34,7 @@
         <p>Criando sua conta na WiSoy.com você terá acesso a conteúdo exclusivo.</p>
         <br> <br>
 
-        <form id="form_cadastro" method="patch" onsubmit="return cadastrar()">
+        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
             <div class="caixa_cadastro">
                 <div class="conteudo_cadastro">
 
@@ -82,6 +82,10 @@
         </form>
     </div>
 
+
+
+
+
     <div class="rodape">Copyright &copy2021 - Todos os direitos reservados - WiSoy</div>
 
 </body>
@@ -92,7 +96,7 @@
     function cadastrar() {
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
-            method: "PATCH",
+            method: "POST",
             body: formulario
         }).then(function (response) {
 
