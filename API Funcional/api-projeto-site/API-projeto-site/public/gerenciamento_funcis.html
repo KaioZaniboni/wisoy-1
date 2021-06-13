@@ -8,6 +8,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/publicacoes.css">
     <link rel="stylesheet" href="../CSS/cadastro.css">
+    <script type="text/javascript" src="funcoes.js"></script>
 
 </head>
 
@@ -63,6 +64,7 @@
             </div>
         </form>
     </div>
+    <b id="b_usuario"></b>
 
     <div class="dashboard">
         <div class="container">
@@ -149,18 +151,18 @@
         return false;
     }
 
-    function atualizarFeed(leituras) {
+    function atualizarFeed(publicacoes) {
         var feed = document.getElementById("feed_container");
         feed.innerHTML = "";
-        for (let i = 0; i < 7; i++) {
-            var publicacao = leituras[i];
+        for (let i = 0; i < publicacoes.length; i++) {
+            var publicacao = publicacoes[i];
 
             var divPublicacao = document.createElement("div")
             var divNome = document.createElement("div")
             var divDescricao = document.createElement("div")
 
-            divNome.innerHTML = `${leituras.fk_sensor}:`;
-            divDescricao.innerHTML = leituras.media;
+            divNome.innerHTML = `${publicacao.nome}:`;
+            divDescricao.innerHTML = publicacao.login;
 
             divPublicacao.className = "publicacao"
             divNome.className = "nome";
@@ -174,7 +176,7 @@
     }
 
     function obterPublicacoes() {
-        fetch("/leituras/estatisticas")
+        fetch("/publicacoes/:fk_empresa")
         .then(resposta => {
             if (resposta.ok) {
                 resposta.json().then(function (resposta) {

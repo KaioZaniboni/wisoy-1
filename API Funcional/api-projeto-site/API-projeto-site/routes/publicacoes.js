@@ -24,13 +24,14 @@ router.post('/publicar/:idcaminhao', function(req, res, next) {
 })
 
 /* ROTA QUE RECUPERA TODAS AS PUBLICAÇÕES */
-router.get('/', function(req, res, next) {
+router.get('/:fk_empresa', function(req, res, next) {
 	console.log('Recuperando todas as publicações');
+
+    // let fk_empresa = req.params.fk_empresa;
 	
-    let instrucaoSql = `fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media,
-     max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
-    DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), '%Y-%m-%d %H:%i:00') as cinco_min
-    from historico_sensor where fk_sensor = 1001 group by cinco_min;`;
+    let instrucaoSql = `SELECT * FROM usuarios 
+    where fk_empresa = 15005
+    ORDER BY usuarios.id_usuarios DESC`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
@@ -52,19 +53,14 @@ router.get('/', function(req, res, next) {
 	
 	var idcaminhao = req.params.idcaminhao;
 
-    let instrucaoSql = `fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media,
-    max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
-   DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), '%Y-%m-%d %H:%i:00') as cinco_min
-   from historico_sensor where fk_sensor = 1001 group by cinco_min;`;
-
-    // let instrucaoSql = `SELECT 
-    // usuarios.nome,
-    // descricao
-    // FROM publicacao
-    // INNER JOIN usuarios
-    // ON Publicacao.fkUsuario = Usuarios.id_usuarios
-    // WHERE fkUsuario = ${idcaminhao}
-    // ORDER BY publicacao.id DESC`;
+    let instrucaoSql = `SELECT 
+    usuarios.nome,
+    descricao
+    FROM publicacao
+    INNER JOIN usuarios
+    ON Publicacao.fkUsuario = Usuarios.id_usuarios
+    WHERE fkUsuario = ${idcaminhao}
+    ORDER BY publicacao.id DESC`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
