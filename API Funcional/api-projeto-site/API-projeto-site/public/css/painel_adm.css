@@ -3,7 +3,7 @@
 html {
     font-size: 16px;
     background: #3d413b;
-    overflow-y: hidden;
+    overflow-y: hidden; 
 }
 
 .sidebar {
@@ -203,7 +203,6 @@ p {
     float: left;
     background-color: white;
     box-shadow: 3px 3px 5px 2px #1b1b1b;
-    font-size: 20px;
 }
 
 
@@ -214,6 +213,7 @@ p {
 
 .caminhao .valores .valor {
     margin-left: 35%;
+    margin-top: 5%;
     width: 30%;
     float: left;
 }
@@ -237,7 +237,7 @@ p {
     float: right;
 }
 
-/* EXTRA */
+/* extra */
 
 .show-on-hover {
     color: #232323
@@ -245,37 +245,4 @@ p {
 
 .show-on-hover:hover {
     color: white
-}
-
-.normal {
-    background-color: white;
-}
-
-.alerta-alto {
-    color: tomato;
-}
-
-.alerta-baixo {
-    color: rgb(38, 0, 255);
-}
-
-#b_usuario {
-    color: tomato;
-}
-
-#b_usuario:hover {
-    color: rgb(251, 38, 0);
-}
-
-.titulo_selecao {
-    position: absolute;
-    top: 1%;
-    left: 46%;
-    color: #38b000;
-    font-family: sans-serif;
-    font-size: 40px;
-}
-
-h4 {
-    color: #ff5c00;
 }
