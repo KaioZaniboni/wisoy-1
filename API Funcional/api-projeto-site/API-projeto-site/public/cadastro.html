@@ -30,7 +30,7 @@
     </div>
 
     <div class="corpo_cadastro">
-        <h2>Crie sua conta na WiSoy.com!</h2>
+        <h2>Conclua seu cadastro na WiSoy.com!</h2>
         <p>Criando sua conta na WiSoy.com você terá acesso a conteúdo exclusivo.</p>
         <br> <br>
 
@@ -55,17 +55,8 @@
                         <input id="inpt_conf_senha" type="password" placeholder="********" required>
                     </div>
 
-                    <div class="desing_empresa">Empresa:
-                        <select id="empresa" name="fk_empresa">
-                            <option value="">Selecione uma empresa</option>
-                            <option value="15000">Project Plant</option>
-                            <option value="15001">Unilever</option>
-                            <option value="15002">Agro Farm</option>
-                            <option value="15003">Soja Hoje</option>
-                            <option value="15004">Coca Cola</option>
-                            <option value="15005">Sojão Brandão</option>
-                            <option value="15006">Leo Sojas</option>
-                        </select>
+                    <div class="design_input">Insira sua chave de autenticação:
+                        <input id="chave_aut" id="inpt_conf_senha" type="text" name="serial" placeholder="********" required>
                     </div>
 
                     <div class="checkbox_termo">
@@ -82,10 +73,6 @@
         </form>
     </div>
 
-
-
-
-
     <div class="rodape">Copyright &copy2021 - Todos os direitos reservados - WiSoy</div>
 
 </body>
@@ -93,15 +80,16 @@
 </html>
 
 <script>
+
     function cadastrar() {
         var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
+        fetch(`/usuarios/cadastrar/`, {
             method: "POST",
             body: formulario
         }).then(function (response) {
 
             if (response.ok) {
-                alert("Cadastro reazliado com sucesso :D")
+                alert("Cadastro realizado com sucesso :D")
                 window.location.href = 'login.html';
 
             } else {

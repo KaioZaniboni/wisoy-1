@@ -84,7 +84,7 @@ router.get('/estatisticas', function (req, res, next) {
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
 		.then(resultado => {
-			res.json(resultado[0]);
+			res.json(resultado);
 		}).catch(erro => {
 			console.error(erro);
 			res.status(500).send(erro.message);

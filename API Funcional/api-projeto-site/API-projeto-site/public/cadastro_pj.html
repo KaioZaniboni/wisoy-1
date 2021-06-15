@@ -6,43 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="../CSS/cadastro.css">
+    <link rel="stylesheet" href="../css/painel_adm.css">
+    <link rel="stylesheet" href="../css/cadastro_pj.css">
+    <script type="text/javascript" src="funcoes.js"></script>
 
 </head>
 
-<body class="body_img">
-    <div class="cabecalho">
-        <div class="caixa">
-            <div class="logo">
-                <a href="home.html"><img src="../IMG/wisoy.png" alt="Logo da WiSoy">
-                    <span>WiSoy</span></a>
-            </div>
-            <nav>
+<body>
+
+    <!--header inicio-->
+    <main class="main">
+        <aside class="sidebar">
+            <nav class="nav">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="portfólio.html">Portfólio</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a id="idlogin" href="login.html">Login</a></li>
+                    <li class="active">
+                        <a href="grafico-chartjs.html">OLÁ,
+                            <b id="b_usuario"></b>
+                        </a>
+                    </li>
+                    <li class="active"><a href="cadastro_pj.html">Cadastrar PJ</a></li>
+                    <li class="active"><a href="">MEUS SENSORES</a></li>
+                    <li class="active"><a href="">TEORES DE UMIDADE</a></li>
+                    <li class="active"><a href="">SUPORTE</a></li>
+                    <li class="active logout" onclick="logoff()"><a href="">LOGOUT</li></a>
                 </ul>
             </nav>
-        </div>
-    </div>
+        </aside>
+    </main>
+    <!--header fim-->
 
     <div class="corpo_cadastro">
-        <h2>Crie sua conta na WiSoy.com!</h2>
-        <p>Criando sua conta na WiSoy.com você terá acesso a conteúdo exclusivo.</p>
-        <br> <br>
+        <h2>Cadastro PJ</h2>
+        <br>
 
         <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
             <div class="caixa_cadastro">
                 <div class="conteudo_cadastro">
 
                     <div class="design_input">Razao Social:
-                        <input id="inpt_conf_senha" type="text" placeholder="Digite aqui a razao social" name="razao_social" required>
+                        <input id="inpt_conf_senha" type="text" placeholder="Digite aqui a razao social"
+                            name="razao_social" required>
                     </div>
                     <div class="design_input">Nome Fantasia:
-                        <input id="inpt_usuario" type="text" placeholder="Nome Fantasia" name="nome_fantasia" required autofocus>
+                        <input id="inpt_usuario" type="text" placeholder="Nome Fantasia" name="nome_fantasia" required
+                            autofocus>
                     </div>
                     <div class="design_input">CNPJ:
                         <input id="inpt_conf_senha" type="text" placeholder="Digite aqui o CNPJ" name="cnpj" required>
@@ -53,38 +60,26 @@
                     <div class="design_input">E-mail:
                         <input id="inpt_senha" type="text" placeholder="Digite aqui o e-mail" name="email" required>
                     </div>
-
-                    <div class="checkbox_termo">
-                        <input type="checkbox"> Concordo com os
-                        <a href="termos.html">termos de serviço</a>
-                        do WiSoy.com
+                    <div class="design_input"> Chave Autenticação:
+                        <input id="crack" type="text" name="chave_autenticação" placeholder="Chave gerada" required>
+                        <button class="" onclick="gerar_serial()">
+                            Gerar chave
+                        </button>
                     </div>
 
+
                     <button id="but_cadastro" class="button_cadastro">
-                        Criar Conta
+                        Criar Cadastro
                     </button>
                 </div>
             </div>
-            <input id="crack" type="text" name="chave_autenticação">
-        </form>
-        <form name='frm'>
-            <input id="keygen" type='text' name='txtSerial' value=''>
-            <input type='button' name='btnGerarSerial' onClick='document.frm.txtSerial.value = gerar_serial();'>
         </form>
     </div>
-
-
-
-
-
-    <div class="rodape">Copyright &copy2021 - Todos os direitos reservados - WiSoy</div>
-
 </body>
 
 </html>
 
 <script>
-
     function cadastrar() {
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar_pj", {
@@ -94,6 +89,7 @@
 
             if (response.ok) {
                 alert("Cadastro realizado com sucesso :D");
+
                 alert(`Guarde bem essa senha: <b>${crack.value}</b>, <br>
                 informe o cliente sera necessario ulitiza-la em seu cadastro PF`);
                 window.location.href = 'cadastro.html';
@@ -117,7 +113,7 @@
         for (var i = 0; i < tam; i++)
             serial += charset.charAt(Math.floor(Math.random() * charset.length));
 
-            crack.value = 'ADMIN' + serial;
+        crack.value = 'ADMIN' + serial;
 
         return serial;
     }
@@ -126,4 +122,6 @@
         return 'ADMIN' + gerar_string_aleatoria(6, "0123456789abc#!@dehgvdfs");
 
     }
+
+    verificar_autenticacao();
 </script>
