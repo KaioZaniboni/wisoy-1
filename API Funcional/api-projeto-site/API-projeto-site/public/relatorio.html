@@ -29,28 +29,23 @@
 </head>
 
 <body onload="obterPublicacoes()">
-    <!--header inicio-->
-
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo"><span class="highlight">Projeto</span> IoT Revolucionário</h1>
-            <div class="usuario">
-                <h3>Olá, <b id="b_usuario"></b></h3>
-            </div>
-            <div class="nav">
+    <!--inicio do cabecalho-->
+    <main class="main">
+        <aside class="sidebar">
+            <nav class="nav">
                 <ul>
-                    <li><a href="tempo-real.html">Tempo Real</a></li>
+                    <li class="active"><a href="tempo-real.html">OLÁ,<b id="b_usuario"></b></a></li>
                     <li class="active"><a href="relatorio.html">MEUS RELATÓRIOS</a></li>
-                    <li><a href="grafico-chartjs.html">Gráfico de histórico recente</a></li>
-                    <li><a href="#" class="highlight" onclick="logoff()">LOGOUT</a></li>
-                    </a></li>
-
+                    <li class="active"><a href="grafico-chartjs.html">MEUS SENSORES</a></li>
+                    <li class="active"><a href="gerenciamento_funcis.html"> GERENCIAMENTO DE FUNCIONÁRIOS</a></li>
+                    <li class="active"><a href="tempo-real.html">TEORES DE UMIDADE</a></li>
+                    <li class="active logout" onclick="logoff()"><a href="">LOGOUT</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-    <!--header fim-->
+            </nav>
+        </aside>
+        <!--fim do cabecalho-->
 
+        
     <div class="dashboard">
         <div class="container">
             <div class="post">

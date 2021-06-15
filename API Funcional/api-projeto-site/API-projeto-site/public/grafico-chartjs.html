@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto IoT - Gráficos</title>
-    <link rel="stylesheet" href="css/dashboard-jesus.css">
+    <link rel="stylesheet" href="css/dashboard_grafico_wisoy.css">
+
 
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,26 +34,21 @@
 </head>
 
 <body onload=obterDadosGraficoPrimeiraVez>
-    <!--header inicio-->
-
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo"><span class="highlight">Projeto</span> IoT Revolucionário</h1>
-            <div class="usuario">
-                <h3 id="span_usuario" style="display: none;">Olá, <b id="b_usuario"></b></h3>
-            </div>
-            <div class="nav">
+     <!--inicio do cabecalho-->
+     <main class="main">
+        <aside class="sidebar">
+            <nav class="nav">
                 <ul>
-                    <li> <a href="tempo-real.html">Tempo Real</a></li>
-                    <li><a href="#" class="highlight" onclick="logoff()">LOGOUT</a></li>
-                    <li><a href="pagina-estatica-chartsjs.html">
-                            <i class="show-on-hover">IR PARA PÁGINA GRÁFICO ESTÁTICO</i>
-                        </a></li>
+                    <li class="active"><a href="tempo-real.html">OLÁ,<b id="b_usuario"></b></a></li>
+                    <li class="active"><a href="relatorio.html">MEUS RELATÓRIOS</a></li>
+                    <li class="active"><a href="grafico-chartjs.html">MEUS SENSORES</a></li>
+                    <li class="active"><a href="gerenciamento_funcis.html"> GERENCIAMENTO DE FUNCIONÁRIOS</a></li>
+                    <li class="active"><a href="tempo-real.html">TEORES DE UMIDADE</a></li>
+                    <li class="active logout" onclick="logoff()"><a href="">LOGOUT</a></li>
                 </ul>
-            </div>
-        </div>
-    </div>
-    <!--header fim-->
+            </nav>
+        </aside>
+        <!--fim do cabecalho-->
 
     <div class="dashboard">
         <button id="botaoCaminhao1" class="btn" onclick="chamargraficos(1000)">Sensor 1</button>
@@ -121,7 +117,7 @@
             stacked: false,
             title: {
                 display: true,
-                text: 'Histórico recente de temperatura e umidade'
+                text: 'Histórico recente da umidade'
             },
             scales: {
                 yAxes: [{
