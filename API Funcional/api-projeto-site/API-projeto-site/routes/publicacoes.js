@@ -24,13 +24,13 @@ router.post('/publicar/:idcaminhao', function(req, res, next) {
 })
 
 /* ROTA QUE RECUPERA TODAS AS PUBLICAÇÕES */
-router.get('/:fk_empresa', function(req, res, next) {
+router.get('/a/:fkempresa', function(req, res, next) {
 	console.log('Recuperando todas as publicações');
 
-    // let fk_empresa = req.params.fk_empresa;
+	var fkEmp = req.params.fkempresa;
 	
     let instrucaoSql = `SELECT * FROM usuarios 
-    where fk_empresa = 15005
+    where fk_empresa = ${fkEmp}
     ORDER BY usuarios.id_usuarios DESC`;
 
 	sequelize.query(instrucaoSql, {
@@ -51,7 +51,7 @@ router.get('/:fk_empresa', function(req, res, next) {
 router.get('/', function(req, res, next) {
 	console.log('Recuperando todas as publicações');
 	
-	var idcaminhao = req.params.idcaminhao;
+	var idusuario = req.params.idusuario;
 
     let instrucaoSql = `SELECT 
     usuarios.nome,

@@ -14,7 +14,7 @@
         <div class="caixa">
             <div class="logo">
                 <a href="home.html"><img src="../IMG/wisoy.png" alt="logo WiSoy">
-                    <span>WiSoy</span></a>
+                    <span>WiSoy - ADM</span></a>
             </div>
             <nav>
                 <ul>
@@ -35,9 +35,9 @@
                     <img src="../IMG/wisoy.png" alt="Logo WiSoy">
                 </div>
 
-                <span>E-mail</span>
+                <span>Login</span>
                 <div>
-                    <input id="inpt_email" class="inp_padrao" type="email" placeholder="Digite aqui seu e-mail"
+                    <input id="inpt_email" class="inp_padrao" type="text" placeholder="Digite aqui seu e-mail"
                         autofocus name="login">
                 </div>
                 <br>
@@ -71,8 +71,6 @@
                 <br>
 
                 <div class="rodape_caixa">
-                    <p><a class="desing_p" href="Senha.html">Esqueceu a sua senha?</a></p>
-                    <p><a class="desing_p" href="login_adm.html">Acesso administrativo</a></p>
                 </div>
             </div>
         </div>
@@ -87,9 +85,10 @@
 </html>
 
 <script>
+
     function entrar() {
         var formulario = new URLSearchParams(new FormData(form_login));
-        fetch("/usuarios/autenticar", {
+        fetch("/usuarios/autenticar-adm", {
             method: "POST",
             body: formulario
         }).then(resposta => {
@@ -100,11 +99,9 @@
 
                     sessionStorage.login_usuario_meuapp = json.login;
                     sessionStorage.nome_usuario_meuapp = json.nome;
-                    sessionStorage.id_usuario_meuapp = json.id_usuarios;
-                    sessionStorage.fk_empresa_meuapp = json.fk_empresa;
                     
-                    // alert("Login feito com sucesso!");
-                    window.location.href = 'tempo-real.html';
+                    alert("Login feito com sucesso!");
+                    window.location.href = 'painel_adm.html';
                 });
 
             } else {

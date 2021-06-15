@@ -47,6 +47,9 @@ senha VARCHAR (20),
 fk_empresa int
 )auto_increment= 500;
 
+select * from usuarios;
+
+
 drop table USUARIOS;
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
@@ -76,25 +79,24 @@ DESC SENSORES;
 -- -----------------------------------------------------
 -- A tabela FUNCIONARIOS contera dados de todo quadro de funcionários WiSoy.
 -- -----------------------------------------------------
-CREATE TABLE COLABORADORES (
-  ID_COLABORADORES INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  NOME VARCHAR(60),
-  SEXO CHAR(1),
-  DATA_NASCIMENTO DATE,
-  EMAIL VARCHAR(60),
-  LOGIN_COLABORADORES VARCHAR(20),
-  SENHA VARCHAR(20),
-  TELEFONE VARCHAR(11),
-  RG CHAR(9),
-  CPF CHAR(11),
-  ENDERECO VARCHAR(100) ,
-  CARTEIRA_TRABALHO CHAR(8),
-  DATA_ADMISSAO DATE,
-  FK_CHEFE INT, 
-  FOREIGN KEY (FK_CHEFE) REFERENCES COLABORADORES(ID_COLABORADORES)
+CREATE TABLE colaboradores (
+  id_colaboradores INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(60),
+  sexo CHAR(1),
+  data_nascimento DATE,
+  email VARCHAR(60),
+  login VARCHAR(20),
+  senha VARCHAR(20),
+  telefone VARCHAR(11),
+  rg CHAR(9),
+  cpf CHAR(11),
+  endereco VARCHAR(100) ,
+  carteira_trabalho CHAR(8),
+  data_admissao DATE
   )auto_increment = 5000;
 
 DESC COLABORADORES;
+  select * from COLABORADORES;
 
 -- -----------------------------------------------------
 -- A tabela HIST_SENSOR tem a função de armazenar todos os dados coletados pelos sensores com a finalidade de utiliza-los na construção de gráficos, históricos, e outros serviços que serão oferecidos aos clientes.
@@ -212,7 +214,7 @@ INSERT INTO HIST_SENSOR VALUES
 
 SELECT * FROM HIST_SENSOR;
 
-INSERT INTO COLABORADORES VALUES
+INSERT INTO colaboradores VALUES
 (NULL, 'Jonas Florencio', 'M', '2002-03-30', 'jonas_florencio@wisoy.com.br', 'jonas_wisoy', 'Jo54@p12', '11955250037', '503032217', '33299400574', 'Rua Professor Otavio Fernandes', '88833397', '2021-02-01'),
 (NULL, 'Amanda Fruteiro', 'F', '2002-01-07', 'amanda_fruteiro@wisoy.com.br', 'amanda_wisoy', 'Am01#dsC', '11944064307', '243555719', '46955749916', 'Rua Enfermeira Luiza Alegreti', '77433397', '2021-02-01'),
 (NULL, 'Matheus Vieck', 'M', '1998-02-13', 'matheus_vieck@wisoy.com.br', 'matheus_wisoy','Ma37#f13', '11955250037', '530075995', '46933797734', 'Rua Soldado Peixoto', '74421388', '2021-02-01');

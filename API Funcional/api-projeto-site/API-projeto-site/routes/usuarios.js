@@ -4,16 +4,18 @@ var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
 var Leads = require('../models').Leads;
 var Cadastrar_PJ = require('../models').Cadastrar_PJ;
+var Colaboradores = require('../models').Colaboradores;
 
 let sessoes = [];
+var idempresa = [];
 
 /* Recuperar usuário por login e senha */
-router.post('/autenticar', function(req, res, next) {
+router.post('/autenticar', function (req, res, next) {
 	console.log('Recuperando usuário por login e senha');
 
 	var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
-	
+	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
+
 	let instrucaoSql = `select * from usuarios where login='${login}' and senha ='${senha}'`;
 	console.log(instrucaoSql);
 
@@ -24,7 +26,7 @@ router.post('/autenticar', function(req, res, next) {
 
 		if (resultado.length == 1) {
 			sessoes.push(resultado[0].dataValues.login);
-			console.log('sessoes: ',sessoes);
+			console.log('sessoes: ', sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
 			res.status(403).send('Login e/ou senha inválido(s)');
@@ -35,79 +37,179 @@ router.post('/autenticar', function(req, res, next) {
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
 
-/* Cadastrar usuário */
-router.post('/cadastrar', function(req, res, next) {
-	console.log('Criando um usuário');
-	
-	Usuario.create({
-		nome : req.body.nome,
-		login : req.body.login,
-		senha: req.body.senha,
-		fk_empresa: req.body.fk_empresa
+/* Recuperar colaborador por login e senha */
+router.post('/autenticar-adm', function (req, res, next) {
+	console.log('Recuperando usuário por login e senha');
+
+	var login = req.body.login; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login
+
+	let instrucaoSql = `select * from colaboradores where login='${login}' and senha ='${senha}'`;
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, {
+		model: Colaboradores
 	}).then(resultado => {
-		console.log(`Registro criado: ${resultado}`)
-        res.send(resultado);
-    }).catch(erro => {
+		console.log(`Encontrados: ${resultado.length}`);
+
+		if (resultado.length == 1) {
+			sessoes.push(resultado[0].dataValues.login);
+			console.log('sessoes: ', sessoes);
+			res.json(resultado[0]);
+		} else if (resultado.length == 0) {
+			res.status(403).send('Login e/ou senha inválido(s)');
+		} else {
+			res.status(403).send('Mais de um usuário com o mesmo login e senha!');
+		}
+
+	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
+});
+
+/* Cadastrar usuário principal */
+router.post('/cadastrar/', function (req, res, next) {
+	console.log('Criando um usuário');
+
+	var keygen = req.body.serial;
+
+	let instrucaoSql = `select * from empresa where chave_autenticação='${keygen}'`;
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, {
+		model: Cadastrar_PJ
+	}).then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+
+
+		if (resultado.length == 1) {
+			idempresa.push(resultado[0].dataValues.id_empresa);
+
+			Usuario.create({
+				nome: req.body.nome,
+				login: req.body.login,
+				senha: req.body.senha,
+				fk_empresa: idempresa
+			}).then(resultado => {
+				console.log(`Registro criado: ${resultado}`)
+				res.send(resultado);
+			}).catch(erro => {
+				console.error(erro);
+				res.status(500).send(erro.message);
+			});
+
+		} else if (resultado.length == 0) {
+			res.status(403).send('Chave inválida');
+		} else {
+			res.status(403).send('Mais de um usuário com o mesmo login e senha!');
+		}
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
 });
 
 
 
 /* Cadastrar LEADS */
-router.post('/cadastrar_leads', function(req, res, next) {
+router.post('/cadastrar_leads', function (req, res, next) {
 	console.log('Cadastrando um LEAD');
-	
-	Leads.create({
-		nome_fantasia : req.body.nome_fantasia,
-		email : req.body.email,
+
+	Leads.uptade({
+		nome_fantasia: req.body.nome_fantasia,
+		email: req.body.email,
 		telefone: req.body.telefone,
-		cnpj : req.body.cnpj
+		cnpj: req.body.cnpj
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
-        res.send(resultado);
-    }).catch(erro => {
+		res.send(resultado);
+	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
 
 /* Cadastrar PJ */
-router.post('/cadastrar_pj', function(req, res, next) {
+router.post('/cadastrar_pj', function (req, res, next) {
 	console.log('Cadastrando um PJ');
 
 	Cadastrar_PJ.create({
-		razao_social : req.body.razao_social,
-		nome_fantasia : req.body.nome_fantasia,
-		cnpj : req.body.cnpj,
-		telefone : req.body.telefone,
-		email : req.body.email,
+		razao_social: req.body.razao_social,
+		nome_fantasia: req.body.nome_fantasia,
+		cnpj: req.body.cnpj,
+		telefone: req.body.telefone,
+		email: req.body.email,
 		data_contrato: agora(),
 		// fk_lead: req.body.fk_lead,
-		chave_autenticação : req.body.chave_autenticação
+		chave_autenticação: req.body.chave_autenticação
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
-        res.send(resultado);
-    }).catch(erro => {
+		res.send(resultado);
+	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
+
+// /* Cadastrar usuarios secundários */
+// router.post('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
+// 	console.log('Criando um usuário');
+
+// 	var fkEmp = req.params.fkempresa;
+
+// 	Usuario.create({
+// 		nome: req.body.nome,
+// 		login: req.body.login,
+// 		senha: req.body.senha,
+// 		fk_empresa: fkEmp
+// 	}).then(resultado => {
+// 		console.log(`Registro criado: ${resultado}`)
+// 		res.send(resultado);
+// 	}).catch(erro => {
+// 		console.error(erro);
+// 		res.status(500).send(erro.message);
+// 	});
+// });
+
+/* Alterar usuarios secundários */
+router.put('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
+	console.log('Alterando um usuário');
+
+	var fkEmp = req.params.fkempresa;
+
+	Usuario.uptade({
+		id: 501,
+		nome: req.body.nome,
+		login: req.body.login,
+		senha: req.body.senha,
+		fk_empresa: fkEmp
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+		res.send(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+
+
+
 
 
 
 /* Verificação de usuário */
-router.get('/sessao/:login', function(req, res, next) {
+router.get('/sessao/:login', function (req, res, next) {
 	let login = req.params.login;
 	console.log(`Verificando se o usuário ${login} tem sessão`);
-	
+
 	let tem_sessao = false;
 
-	for (let u=0; u<sessoes.length; u++) {
+	for (let u = 0; u < sessoes.length; u++) {
 		if (sessoes[u] == login) {
 			tem_sessao = true;
 			break;
@@ -121,16 +223,15 @@ router.get('/sessao/:login', function(req, res, next) {
 	} else {
 		res.sendStatus(403);
 	}
-	
+
 });
 
-
 /* Logoff de usuário */
-router.get('/sair/:login', function(req, res, next) {
+router.get('/sair/:login', function (req, res, next) {
 	let login = req.params.login;
 	console.log(`Finalizando a sessão do usuário ${login}`);
 	let nova_sessoes = []
-	for (let u=0; u<sessoes.length; u++) {
+	for (let u = 0; u < sessoes.length; u++) {
 		if (sessoes[u] != login) {
 			nova_sessoes.push(sessoes[u]);
 		}
@@ -141,7 +242,7 @@ router.get('/sair/:login', function(req, res, next) {
 
 
 /* Recuperar todos os usuários */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
 	console.log('Recuperando todos os usuários');
 	Usuario.findAndCountAll().then(resultado => {
 		console.log(`${resultado.count} registros`);
@@ -150,7 +251,7 @@ router.get('/', function(req, res, next) {
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
 
 function agora() {

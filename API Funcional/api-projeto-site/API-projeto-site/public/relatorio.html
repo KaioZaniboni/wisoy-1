@@ -107,25 +107,38 @@
         return false;
     }
 
-    function atualizarFeed(leituras) {
+    function atualizarFeed(leitura_resultado) { // leitura_resultado é o nome dado para a resposta ao finalizar o atualizarFeed(resposta); do obter publicacoes
+        console.log(leitura_resultado);
         var feed = document.getElementById("feed_container");
         feed.innerHTML = "";
-        for (let i = 0; i < 7; i++) {
-            var publicacao = leituras[i];
+        for (let i = 0; i < leitura_resultado.length; i++) {
+            var publicacao = leitura_resultado[i];
 
             var divPublicacao = document.createElement("div")
             var divNome = document.createElement("div")
             var divDescricao = document.createElement("div")
+            var divDescricao_2 = document.createElement("div")
+            var divDescricao_3 = document.createElement("div")
+            var divDescricao_4 = document.createElement("div")
 
-            divNome.innerHTML = `${leituras.fk_sensor}:`;
-            divDescricao.innerHTML = leituras.media;
+            divNome.innerHTML = `${publicacao.fk_sensor}:`; // 1° item é a lista e o 2° um elemento da lista
+            divDescricao.innerHTML = publicacao.media;
+            divDescricao_2.innerHTML = publicacao.maximo;
+            divDescricao_3.innerHTML = publicacao.minimo;
+            divDescricao_4.innerHTML = publicacao.cinco_min;
 
             divPublicacao.className = "publicacao"
             divNome.className = "nome";
             divDescricao.className = "descricao";
+            divDescricao_2.className = "descricao_2";
+            divDescricao_3.className = "descricao_3";
+            divDescricao_4.className = "descricao_4";
 
             divPublicacao.appendChild(divNome);
             divPublicacao.appendChild(divDescricao);
+            divPublicacao.appendChild(divDescricao_2);
+            divPublicacao.appendChild(divDescricao_3);
+            divPublicacao.appendChild(divDescricao_4);
 
             feed.appendChild(divPublicacao);
         }
