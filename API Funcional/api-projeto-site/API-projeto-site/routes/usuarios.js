@@ -155,34 +155,13 @@ router.post('/cadastrar_pj', function (req, res, next) {
 	});
 });
 
-// /* Cadastrar usuarios secundários */
-// router.post('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
-// 	console.log('Criando um usuário');
-
-// 	var fkEmp = req.params.fkempresa;
-
-// 	Usuario.create({
-// 		nome: req.body.nome,
-// 		login: req.body.login,
-// 		senha: req.body.senha,
-// 		fk_empresa: fkEmp
-// 	}).then(resultado => {
-// 		console.log(`Registro criado: ${resultado}`)
-// 		res.send(resultado);
-// 	}).catch(erro => {
-// 		console.error(erro);
-// 		res.status(500).send(erro.message);
-// 	});
-// });
-
-/* Alterar usuarios secundários */
-router.put('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
-	console.log('Alterando um usuário');
+/* Cadastrar usuarios secundários */
+router.post('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
+	console.log('Criando um usuário');
 
 	var fkEmp = req.params.fkempresa;
 
-	Usuario.uptade({
-		id: 501,
+	Usuario.create({
 		nome: req.body.nome,
 		login: req.body.login,
 		senha: req.body.senha,
@@ -195,6 +174,27 @@ router.put('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
 		res.status(500).send(erro.message);
 	});
 });
+
+// /* Alterar usuarios secundários */
+// router.put('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
+// 	console.log('Alterando um usuário');
+
+// 	var fkEmp = req.params.fkempresa;
+
+// 	Usuario.update({
+// 		id: 501,
+// 		nome: req.body.nome,
+// 		login: req.body.login,
+// 		senha: req.body.senha,
+// 		fk_empresa: fkEmp
+// 	}).then(resultado => {
+// 		console.log(`Registro criado: ${resultado}`)
+// 		res.send(resultado);
+// 	}).catch(erro => {
+// 		console.error(erro);
+// 		res.status(500).send(erro.message);
+// 	});
+// });
 
 
 
