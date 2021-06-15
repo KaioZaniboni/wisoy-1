@@ -49,7 +49,7 @@
                 <span>Senha</span>
                 <div>
                     <input type="password" id="inpt_senha" placeholder="********" name="senha">
-                    <input type="checkbox">Mostrar Senha
+                    <input type="checkbox" onclick="mostrarOcultarSenha()">Mostrar Senha
                 </div>
                 <br>
 
@@ -87,6 +87,15 @@
 </html>
 
 <script>
+
+    function mostrarOcultarSenha() {
+        var senha_2 = document.getElementById("inpt_senha")
+        if (senha_2.type == "password") {
+            senha_2.type = "text";
+        } else {
+            senha_2.type = "password";
+        }
+    }
     function entrar() {
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {
@@ -102,7 +111,7 @@
                     sessionStorage.nome_usuario_meuapp = json.nome;
                     sessionStorage.id_usuario_meuapp = json.id_usuarios;
                     sessionStorage.fk_empresa_meuapp = json.fk_empresa;
-                    
+
                     alert("Login feito com sucesso!");
                     window.location.href = 'tempo-real.html';
                 });
