@@ -1,0 +1,17 @@
+Criar um jogo de RPG (Magos - Grupo 11)
+-Inserir Tabelas
+-Inserções de Dados
+-Modelo Lógico e todos os dados
+-(Mínimo 5 desafios ou mais)
+-Criar Regra de Negócio
+-Criar Desafios (3 fáceis, 3 médias e 3 díficeis e 1 curinga)
+-Testar os Dasafios criados
+-Os desafios devem ter pesos
+-Cartas de Ataque durante a guerra de selects
+
+Fazer Inner Join, Right Join...
+
+Entregável:
+
+
+
