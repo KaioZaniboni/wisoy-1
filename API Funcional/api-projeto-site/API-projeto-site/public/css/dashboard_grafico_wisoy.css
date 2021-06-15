@@ -104,18 +104,15 @@ p {
     margin-top: 20px;
 }
 
-/*INICIO TEMPO REAL*/
+/*INÍCIO DASHBOARD*/
 
 .dashboard {
-    background-color: #0f0f0f;
+    background-color: #ecf0f1;
     text-align: center;
-    padding: 165px 0;
-    width: 100%;
+    padding: 105px 0;
+    width: 80%;
     height: 100%;
     margin-left: auto;
-    /* overflow-y: scroll; */
-    height: 221px;
-    
 }
 
 .dashboard h1 {
@@ -130,7 +127,7 @@ p {
 .box-login {
     display: inline-block;
     background-color: white;
-    box-shadow: 3px 3px 5px 2px #ccc;
+    box-shadow:  3px 3px 5px 2px #ccc;
     padding: 60px 20px 0px 20px;
     border-radius: 20px;
     width: 400px;
@@ -145,11 +142,11 @@ p {
 .botoes {
     margin: auto;
     margin-bottom: 40px;
-    display: block;
-    /* Default de botão é inline-block. Com block, margin auto funciona*/
+    display: block; /* Default de botão é inline-block. Com block, margin auto funciona*/
 }
 
 .btn {
+    border-radius: 10px;
     color: white;
     text-transform: uppercase;
     width: 180px;
@@ -158,12 +155,13 @@ p {
     height: 38px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: rgb(255, 164, 131);
+    background-color: rgba(102, 226, 44, 0.61);
 }
 
 .btn-now {
-    border: 3px solid #232323;
-    background-color: orangered;
+    border-radius: 10px;
+    border: 3px solid #d8d8d8;
+    background-color: rgb(102, 226, 44);
 }
 
 /* EXTRA */
@@ -173,119 +171,66 @@ p {
 }
 
 .extra img {
-    height: 50px;
-    visibility: hidden;
+  height: 50px;
+   visibility: hidden;
 }
 
 .extra .msg_erro {
-    background-color: sandybrown;
-    color: black;
+    background-color: sandybrown; 
+    color: black; 
     visibility: hidden;
 }
 
-.linha1 {
-    width: 90%;
-    position: fixed;
-    top: 17%;
-    left: 27%;
-}
-
-.linha2 {
-    width: 90%;
-    position: fixed;
-    top: 53%;
-    left: 27%;
-}
-
-<<<<<<< HEAD
-.sensor {
-    border: 2px solid #38b000;
-=======
 .caminhao {
-    border-radius: 30px;
-    border: 2px solid #7c148a;
->>>>>>> 6e6df0a9b6b9dc2dc39ad29aacd58a20b24bcffe
+    border: 1px solid red;
+    border-radius: 10px;
+    display: block;
     width: 35%;
-    margin: 10px 2%;
+    margin: 10px 7%;
     height: 160px;
     float: left;
+    text-align: center;
+
     background-color: white;
-    box-shadow: 3px 3px 5px 2px #1b1b1b;
-    font-size: 20px;
+    box-shadow:  3px 3px 5px 2px #ccc;
+    
 }
 
-
-.sensor .valores {
-    margin: auto;
+.caminhao .valores {
+    margin:auto;
     overflow: auto;
 }
 
-.sensor .valores .valor {
-    margin-left: 35%;
-    width: 30%;
-    float: left;
-}
-
-.sensor .alertas {
-    width: 100%;
-    margin: auto;
-    margin-top: 5px;
-    overflow: auto;
-}
-
-.sensor .alertas .alerta {
+.caminhao .valores .valor {
     margin-left: 13%;
     width: 30%;
     float: left;
 }
 
-.sensor .alertas .alerta_umidd {
+.caminhao .alertas {
+    width:100%;
+    margin:auto;
+    margin-top: 5px;
+    overflow: auto;
+}
+
+.caminhao .alertas .alerta {
+    margin-left: 13%;
+    width: 30%;
+    float: left;
+}
+.caminhao .alertas .alerta_umidd {
     margin-right: 13%;
     width: 30%;
     float: right;
 }
 
-/* EXTRA */
+/* extra */
 
 .show-on-hover {
-    color: #232323
+    color:#232323
 }
 
 .show-on-hover:hover {
-    color: white
+    color:white
 }
-
-.normal {
-    background-color: white;
-}
-
-.alerta-alto {
-    color: tomato;
-}
-
-.alerta-baixo {
-    color: rgb(38, 0, 255);
-}
-
-#b_usuario {
-    color: tomato;
-}
-
-#b_usuario:hover {
-    color: rgb(251, 38, 0);
-}
-
-.titulo_selecao {
-    position: absolute;
-    top: 1%;
-    left: 46%;
-    color: #38b000;
-    font-family: sans-serif;
-    font-size: 40px;
-}
-
-h4 {
-    color: #38b000;
-}
-
-
