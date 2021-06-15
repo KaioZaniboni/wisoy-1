@@ -56,7 +56,8 @@
                     </div>
 
                     <div class="design_input">Insira sua chave de autenticação:
-                        <input id="chave_aut" id="inpt_conf_senha" type="text" name="serial" placeholder="********" required>
+                        <input id="chave_aut" id="inpt_conf_senha" type="text" name="serial" placeholder="********"
+                            required>
                     </div>
 
                     <div class="checkbox_termo">
@@ -82,26 +83,40 @@
 <script>
 
     function cadastrar() {
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch(`/usuarios/cadastrar/`, {
-            method: "POST",
-            body: formulario
-        }).then(function (response) {
+        var senha = inpt_senha.value;
+        var char_minus = senha.match(/[a-z]+/);
+        var char_maius = senha.match(/[A-Z]+/);
+        var char_esp = senha.match(/[!-@]+/)
 
-            if (response.ok) {
-                alert("Cadastro realizado com sucesso :D")
-                window.location.href = 'login.html';
 
-            } else {
+        if (char_maius && char_minus && char_esp) {
+            alert("Senha válida")
+            var formulario = new URLSearchParams(new FormData(form_cadastro));
+            fetch(`/usuarios/cadastrar/`, {
+                method: "POST",
+                body: formulario
+            }).then(function (response) {
 
-                alert('Erro de cadastro! :/');
-                response.text().then(function (resposta) {
+                if (response.ok) {
+                    alert("Cadastro realizado com sucesso :D")
+                    window.location.href = 'login.html';
 
-                });
+                } else {
 
-            }
-        });
+                    alert('Erro de cadastro! :/');
+                    response.text().then(function (resposta) {
 
-        return false;
+                    });
+
+                }
+            });
+
+            return false;
+        }
+        else {
+           alert("Senha inválida!")
+           return false;
+        }
+
     }
 </script>

@@ -192,7 +192,7 @@ p {
     left: 27%;
 }
 
-.caminhao {
+.sensor {
     border: 2px solid #38b000;
     width: 35%;
     margin: 10px 2%;
@@ -203,32 +203,32 @@ p {
 }
 
 
-.caminhao .valores {
+.sensor .valores {
     margin: auto;
     overflow: auto;
 }
 
-.caminhao .valores .valor {
+.sensor .valores .valor {
     margin-left: 35%;
     margin-top: 5%;
     width: 30%;
     float: left;
 }
 
-.caminhao .alertas {
+.sensor .alertas {
     width: 100%;
     margin: auto;
     margin-top: 5px;
     overflow: auto;
 }
 
-.caminhao .alertas .alerta {
+.sensor .alertas .alerta {
     margin-left: 13%;
     width: 30%;
     float: left;
 }
 
-.caminhao .alertas .alerta_umidd {
+.sensor .alertas .alerta_umidd {
     margin-right: 13%;
     width: 30%;
     float: right;

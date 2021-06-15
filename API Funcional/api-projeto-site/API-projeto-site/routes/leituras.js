@@ -7,12 +7,12 @@ var env = process.env.NODE_ENV || 'development';
 
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas/:idcaminhao', function (req, res, next) {
+router.get('/ultimas/:idsensor', function (req, res, next) {
 
 	// quantas são as últimas leituras que quer? 7 está bom?
 	const limite_linhas = 7;
 
-	var idcaminhao = req.params.idcaminhao;
+	var idsensor = req.params.idsensor;
 
 	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
 
@@ -20,10 +20,10 @@ router.get('/ultimas/:idcaminhao', function (req, res, next) {
 
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
-		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit ${limite_linhas}`;
+		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idsensor} order by ID_HISTORICO desc limit ${limite_linhas}`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select TOP (${limite_linhas}) LEITURA_UMIDADE, LEITURA_DATA_HORA,CONVERT(varchar(12),LEITURA_DATA_HORA) as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc;`;
+		instrucaoSql = `select TOP (${limite_linhas}) LEITURA_UMIDADE, LEITURA_DATA_HORA,CONVERT(varchar(12),LEITURA_DATA_HORA) as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idsensor} order by ID_HISTORICO desc;`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}
@@ -42,20 +42,20 @@ router.get('/ultimas/:idcaminhao', function (req, res, next) {
 });
 
 
-router.get('/tempo-real/:idcaminhao', function (req, res, next) {
+router.get('/tempo-real/:idsensor', function (req, res, next) {
 	console.log('Recuperando caminhões');
 
-	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idcaminhao = req.params.idcaminhao;
+	//var idsensor = req.body.idsensor; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var idsensor = req.params.idsensor;
 
 	let instrucaoSql = "";
 
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
-		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico, FK_SENSOR from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc limit 1`;
+		instrucaoSql = `select LEITURA_UMIDADE, LEITURA_DATA_HORA, DATE_FORMAT(LEITURA_DATA_HORA,'%H:%i:%s') as momento_grafico, FK_SENSOR from HISTORICO_SENSOR where FK_SENSOR = ${idsensor} order by ID_HISTORICO desc limit 1`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select TOP (1) LEITURA_UMIDADE, LEITURA_DATA_HORA, CONVERT(varchar(12),LEITURA_DATA_HORA) as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idcaminhao} order by ID_HISTORICO desc;`;
+		instrucaoSql = `select TOP (1) LEITURA_UMIDADE, LEITURA_DATA_HORA, CONVERT(varchar(12),LEITURA_DATA_HORA) as momento_grafico from HISTORICO_SENSOR where FK_SENSOR = ${idsensor} order by ID_HISTORICO desc;`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}

@@ -5,6 +5,7 @@ CREATE DATABASE wisoy;
 
 USE wisoy;
 
+drop database wisoy;
 -- -----------------------------------------------------
 -- A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.
 -- -----------------------------------------------------
@@ -220,6 +221,8 @@ INSERT INTO colaboradores VALUES
 (NULL, 'Matheus Vieck', 'M', '1998-02-13', 'matheus_vieck@wisoy.com.br', 'matheus_wisoy','Ma37#f13', '11955250037', '530075995', '46933797734', 'Rua Soldado Peixoto', '74421388', '2021-02-01');
 
 SELECT * FROM COLABORADORES;
+
+select * from empresa;
 
 INSERT INTO OCORRENCIAS VALUES
 (NULL, 15000, 5000, 'Fazenda da Rua Andrade Lopes problema no sensor.', '2021-03-27'),

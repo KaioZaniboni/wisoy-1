@@ -5,14 +5,14 @@ var Publicacao = require('../models').Publicacao;
 var Leitura = require('../models').Leitura;
 
 /* ROTA QUE RECUPERA CRIA UMA PUBLICAÇÃO */
-router.post('/publicar/:idcaminhao', function(req, res, next) {
+router.post('/publicar/:idsensor', function(req, res, next) {
     console.log("Iniciando Publicação...")
     
-	let idcaminhao = req.params.idcaminhao;
+	let idsensor = req.params.idsensor;
 
     Publicacao.create({
         descricao: req.body.descricao,
-        fkUsuario: idcaminhao
+        fkUsuario: idsensor
     }).then(resultado => {
         console.log("Post realizado com sucesso!!");
         res.send(resultado);
@@ -59,7 +59,7 @@ router.get('/', function(req, res, next) {
     FROM publicacao
     INNER JOIN usuarios
     ON Publicacao.fkUsuario = Usuarios.id_usuarios
-    WHERE fkUsuario = ${idcaminhao}
+    WHERE fkUsuario = ${idsensor}
     ORDER BY publicacao.id DESC`;
 
 	sequelize.query(instrucaoSql, {

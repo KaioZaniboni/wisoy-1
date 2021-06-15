@@ -55,10 +55,10 @@
     <!--header fim-->
 
     <div class="dashboard">
-        <button id="botaoCaminhao1" class="btn" onclick="chamargraficos(1000)">Sensor 1</button>
-        <button id="botaoCaminhao2" class="btn" onclick="chamargraficos(1001)">Sensor 2</button>
-        <button id="botaoCaminhao3" class="btn" onclick="chamargraficos(1002)">Sensor 3</button>
-        <button id="botaoCaminhao4" class="btn" onclick="chamargraficos(1003)">Sensor 4</button>
+        <button id="botaosensor1" class="btn" onclick="chamargraficos(1000)">Sensor 1</button>
+        <button id="botaosensor2" class="btn" onclick="chamargraficos(1001)">Sensor 2</button>
+        <button id="botaosensor3" class="btn" onclick="chamargraficos(1002)">Sensor 3</button>
+        <button id="botaosensor4" class="btn" onclick="chamargraficos(1003)">Sensor 4</button>
         <div style="width:75%; margin: auto">
             <div id="div_aguarde">Dados sendo obtidos...</div>
             <canvas id="canvas_grafico"></canvas>
@@ -73,31 +73,31 @@
 
     window.onload = obterDadosGraficoPrimeiraVez(1000);
 
-    function alterarCoresBotoes(idcaminhao) {
+    function alterarCoresBotoes(idsensor) {
         console.log("executei alterarCoresBotoes")
-        botaoCaminhao1.className = "btn"
-        botaoCaminhao2.className = "btn"
-        botaoCaminhao3.className = "btn"
-        botaoCaminhao4.className = "btn"
+        botaosensor1.className = "btn"
+        botaosensor2.className = "btn"
+        botaosensor3.className = "btn"
+        botaosensor4.className = "btn"
 
-        if (idcaminhao == "1000") {
-            botaoCaminhao1.className += " btn-now"
-        } else if (idcaminhao == "1001") {
-            botaoCaminhao2.className += " btn-now"
-        } else if (idcaminhao == "1002") {
-            botaoCaminhao3.className += " btn-now"
-        } else if (idcaminhao == "1003") {
-            botaoCaminhao4.className += " btn-now"
+        if (idsensor == "1000") {
+            botaosensor1.className += " btn-now"
+        } else if (idsensor == "1001") {
+            botaosensor2.className += " btn-now"
+        } else if (idsensor == "1002") {
+            botaosensor3.className += " btn-now"
+        } else if (idsensor == "1003") {
+            botaosensor4.className += " btn-now"
         }
     }
 
 
-    function chamargraficos(idcaminhao) {
+    function chamargraficos(idsensor) {
         console.log("executei chamargraficos")
-        obterDadosGraficoPrimeiraVez(idcaminhao)
-        //atualizarGrafico(idcaminhao)
+        obterDadosGraficoPrimeiraVez(idsensor)
+        //atualizarGrafico(idsensor)
 
-        alterarCoresBotoes(idcaminhao);
+        alterarCoresBotoes(idsensor);
 
     }
 
@@ -148,15 +148,15 @@
 
     // altere aqui como os dados serão exibidos
     // e como são recuperados do BackEnd
-    function obterDadosGraficoPrimeiraVez(idcaminhao) {
+    function obterDadosGraficoPrimeiraVez(idsensor) {
         console.log("executei obterDadosGraficoPrimeiraVez")
-        alterarCoresBotoes(idcaminhao);
+        alterarCoresBotoes(idsensor);
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
-        fetch(`/leituras/ultimas/${idcaminhao}`, {
+        fetch(`/leituras/ultimas/${idsensor}`, {
                 cache: 'no-store'
             })
             .then(function (response) {
@@ -194,7 +194,7 @@
                         }
                         console.log(JSON.stringify(dados));
                         div_aguarde.style.display = 'none';
-                        plotarGrafico(dados, idcaminhao);
+                        plotarGrafico(dados, idsensor);
                     });
                 } else {
                     console.error('Nenhum dado encontrado ou erro na API');
@@ -210,12 +210,12 @@
 
     // só mexer se quiser alterar o tempo de atualização
     // ou se souber o que está fazendo!
-    function atualizarGrafico(idcaminhao, dados) {
+    function atualizarGrafico(idsensor, dados) {
         console.log("executei atualizarGrafico")
-        fetch(`/leituras/tempo-real/${idcaminhao}`, {
+        fetch(`/leituras/tempo-real/${idsensor}`, {
                 cache: 'no-store'
             }).then(function (response) {
-                console.log("Estou tentando pegar idcaminhao = ", idcaminhao)
+                console.log("Estou tentando pegar idsensor = ", idsensor)
                 if (response.ok) {
                     response.json().then(function (novoRegistro) {
 
@@ -231,16 +231,16 @@
                         dados.datasets[1].data.push(novoRegistro
                         .LEITURA_UMIDADE); // incluir uma nova leitura de umidade
 
-                        console.log("meu caminhão é o " + idcaminhao)
+                        console.log("meu caminhão é o " + idsensor)
 
                         window.grafico_linha.update();
 
 
-                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idcaminhao, dados), 5000);
+                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
                     });
                 } else {
                     console.error('Nenhum dado encontrado ou erro na API');
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idcaminhao, dados), 5000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
                 }
             })
             .catch(function (error) {
@@ -250,7 +250,7 @@
     }
 
     // só altere aqui se souber o que está fazendo!
-    function plotarGrafico(dados, idcaminhao) {
+    function plotarGrafico(dados, idsensor) {
         console.log("executei plotarGrafico")
         console.log('iniciando plotagem do gráfico...');
 
@@ -260,7 +260,7 @@
             options: configurarGrafico()
         });
 
-        setTimeout(() => atualizarGrafico(idcaminhao, dados), 2000);
+        setTimeout(() => atualizarGrafico(idsensor, dados), 2000);
     }
 
 
