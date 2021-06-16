@@ -12,7 +12,7 @@
 
 </head>
 
-<body onload="obterPublicacoes()">
+<body>
     <!--inicio do cabecalho-->
     <main class="main">
         <aside class="sidebar no-print">
@@ -36,8 +36,8 @@
             <div class="titulo">Relatórios</div>
             <div class="text">Selecione o periodo e o sensor de sua escolha</div>
             <div class="buttons">
-                <button id="botaosensor1" class="button_2" onclick="">Semanal</button>
-                <button id="botaosensor1" class="button_2" onclick="">Mensal</button>
+                <button id="botaosensor5" class="button_2" onclick="alterarCoresBotoes_2(300)">Semanal</button>
+                <button id="botaosensor6" class="button_2" onclick="alterarCoresBotoes_2(1300)">Mensal</button>
             </div>
 
             <div class="buttons">
@@ -63,48 +63,35 @@
 </html>
 
 <script>
-    function alterarCoresBotoes(idsensor) {
+    function alterarCoresBotoes(chart) {
         console.log("executei alterarCoresBotoes")
         botaosensor1.className = "button"
         botaosensor2.className = "button"
         botaosensor3.className = "button"
         botaosensor4.className = "button"
 
-        if (idsensor == "1000") {
+        if (chart == "1000") {
             botaosensor1.className += " btn-now"
-        } else if (idsensor == "1001") {
+        } else if (chart == "1001") {
             botaosensor2.className += " btn-now"
-        } else if (idsensor == "1002") {
+        } else if (chart == "1002") {
             botaosensor3.className += " btn-now"
-        } else if (idsensor == "1003") {
+        } else if (chart == "1003") {
             botaosensor4.className += " btn-now"
         }
+        obterPublicacoes(chart)
     }
 
+    function alterarCoresBotoes_2(period) {
+        console.log("executei alterarCoresBotoes")
+        botaosensor5.className = "button_2"
+        botaosensor6.className = "button_2"
 
-    function publicar() {
-        console.log("entrei!")
-        var formulario = new URLSearchParams(new FormData(form_publicar));
-        var idUsuario = sessionStorage.id_usuario_meuapp;
-        fetch(`/publicacoes/publicar/${idUsuario}`, {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
-
-            if (resposta.ok) {
-                obterPublicacoes();
-
-                finalizarAguardar();
-            } else {
-                console.log('Erro ao publicar!');
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-        });
-
-        return false;
+        if (periodo == "1004") {
+            botaosensor5.className += " btn-now"
+        } else if (periodo == "1005") {
+            botaosensor6.className += " btn-now"
+        }
     }
 
     function atualizarFeed(
@@ -145,9 +132,13 @@
             feed.appendChild(divPublicacao);
         }
     }
+    function temp(period) {
+        var periodo = periodo.value;
+    }
 
-    function obterPublicacoes() {
-        fetch("/leituras/estatisticas")
+    function obterPublicacoes(chart, period) {
+        // alterarCoresBotoes_2(period);
+        fetch(`/leituras/estatisticas/${chart, period}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
