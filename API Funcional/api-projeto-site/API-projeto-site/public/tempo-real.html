@@ -124,10 +124,10 @@
                         // aqui, após registro. use os nomes 
                         // dos atributos que vem no JSON 
                         var dados = {
-                            umidade: resposta.LEITURA_UMIDADE
+                            umidade: resposta.leitura_umidade
                         }
 
-                        alertar(resposta.LEITURA_UMIDADE, idsensor);
+                        alertar(resposta.leitura_umidade, idsensor);
                         atualizarTela(dados, idsensor);
                     });
                 } else {

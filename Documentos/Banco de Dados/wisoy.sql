@@ -123,7 +123,7 @@ CREATE TABLE historico_sensor(
   round(avg(leitura_umidade),2) as MEDIA, max(leitura_umidade) as MAXIMO, min(leitura_umidade) as MINIMO
   from historico_sensor group by (unix_timestamp(leitura_data_hora) / 300);
   
- SELECT 
+SELECT 
 fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media, max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
 DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), '%Y-%m-%d %H:%i:00') as cinco_min
 from historico_sensor where fk_sensor = 1001 group by cinco_min;
