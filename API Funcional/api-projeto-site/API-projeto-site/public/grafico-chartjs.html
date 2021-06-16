@@ -7,7 +7,6 @@
     <title>Projeto IoT - Gráficos</title>
     <link rel="stylesheet" href="css/dashboard_grafico_wisoy.css">
 
-
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -109,8 +108,6 @@
             },
             scales: {
                 yAxes: [{
-                    
-                }, {
                     type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                     display: true,
                     position: 'right',
@@ -148,15 +145,13 @@
 
                         var dados = {
                             labels: [],
-                            datasets: [{
-
-                                },
+                            datasets: [
                                 {
                                     yAxisID: 'y-umidade',
                                     label: 'Umidade',
-                                    borderColor: 'rgba(255,0,255,1)',
-                                    backgroundColor: 'rgba(255,0,255,1)',
-                                    fill: false,
+                                    borderColor: 'rgb(50, 126, 0)',
+                                    backgroundColor: 'rgb(102, 226, 44)',
+                                    fill: true,
                                     data: []
                                 }
                             ]
@@ -164,8 +159,7 @@
                         for (i = 0; i < resposta.length; i++) {
                             var registro = resposta[i];
                             dados.labels.push(registro.momento_grafico);
-                            // dados.datasets[0].data.push(registro.temperatura);
-                            dados.datasets[1].data.push(registro.umidade);
+                            dados.datasets[0].data.push(registro.umidade);
 
                         }
                         console.log(JSON.stringify(dados));
@@ -201,10 +195,9 @@
                         // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
-                        // dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[1].data.shift(); // apagar o primeiro de umidade
-                        // dados.datasets[0].data.push(novoRegistro.temperatura); // incluir uma nova leitura de temperatura
-                        dados.datasets[1].data.push(novoRegistro
+
+                        dados.datasets[0].data.shift(); // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro
                             .leitura_umidade); // incluir uma nova leitura de umidade
 
                         console.log("meu caminhão é o " + idsensor)

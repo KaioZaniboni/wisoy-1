@@ -76,10 +76,20 @@ router.get('/estatisticas', function (req, res, next) {
 
 	console.log(`Recuperando as estatísticas atuais`);
 
-	let instrucaoSql = `SELECT fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media,
-    max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
-   DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), 
-   '%Y-%m-%d %H:%i:00') as cinco_min from historico_sensor where fk_sensor = 1001 group by cinco_min`;
+	let instrucaoSql = `SELECT 
+	fk_sensor,count(fk_sensor) AS inseridos, 
+	round(avg(leitura_umidade),2) AS media, 
+	max(leitura_umidade) AS maximo,  
+	min(leitura_umidade) AS minimo,
+	cinco_min
+from (
+	SELECT *,
+	dateadd(
+    S,
+    (DATEDIFF(s, {d '1970-01-01'}, leitura_data_hora) / 300),
+    '1970-01-01') AS cinco_min
+	FROM historico_sensor
+) tabela where fk_sensor = 1001 group by fk_sensor, cinco_min;`;
 
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })

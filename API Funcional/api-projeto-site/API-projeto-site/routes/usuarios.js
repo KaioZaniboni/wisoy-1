@@ -175,6 +175,29 @@ router.post('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
 	});
 });
 
+/* Alterar Usuários */
+// router.post('/autenticar-adm', function (req, res, next) {
+// 	console.log('Recuperando usuário por login e senha');
+
+// 	var login = req.body.login; 
+// 	var senha = req.body.senha; 
+
+// 	console.log(instrucaoSql);
+
+// 	sequelize.query(instrucaoSql, {
+// 		model: Colaboradores
+// 	}).then(resultado => {
+// 		console.log(`Encontrados: ${resultado.length}`);
+
+// 		let instrucaoSql = `select * from colaboradores where login='${login}' and senha ='${senha}'`;
+
+// 	}).catch(erro => {
+// 		console.error(erro);
+// 		res.status(500).send(erro.message);
+// 	});
+// });
+
+
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function (req, res, next) {

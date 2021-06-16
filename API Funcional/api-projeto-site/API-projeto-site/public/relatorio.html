@@ -27,36 +27,36 @@
                 </ul>
             </nav>
         </aside>
+        <!--fim do cabecalho-->
+
+
+
+        <div class="feed">
+            <div class="titulo">Relatórios</div>
+            <div class="text">Selecione o periodo e o sensor de sua escolha</div>
+            <div class="buttons">
+                <button id="botaosensor1" class="button_2" onclick="">Semanal</button>
+                <button id="botaosensor1" class="button_2" onclick="">Mensal</button>
+            </div>
+
+            <div class="buttons">
+                <button id="botaosensor1" class="button" onclick="alterarCoresBotoes(1000)">Sensor 1</button>
+                <button id="botaosensor2" class="button" onclick="alterarCoresBotoes(1001)">Sensor 2</button>
+                <button id="botaosensor3" class="button" onclick="alterarCoresBotoes(1002)">Sensor 3</button>
+                <button id="botaosensor4" class="button" onclick="alterarCoresBotoes(1003)">Sensor 4</button>
+            </div>
+
+            <div class="legenda">
+                <div class="info_1">Sensor</div>
+                <div class="info_2">Média</div>
+                <div class="info_3">Máxima</div>
+                <div class="info_4">Mínima</div>
+                <div class="info_5">Data</div>
+            </div>
+            <div id="feed_container" class="container">
+            </div>
+        </div>
     </main>
-    <!--fim do cabecalho-->
-
-
-
-    <div class="feed">
-        <div class="titulo">Relatórios</div>
-        <div class="text">Selecione o periodo e o sensor de sua escolha</div>
-        <div class="buttons">
-            <button id="botaosensor1" class="button_2" onclick="">Semanal</button>
-            <button id="botaosensor1" class="button_2" onclick="">Mensal</button>
-        </div>
-
-        <div class="buttons">
-            <button id="botaosensor1" class="button" onclick="alterarCoresBotoes()">Sensor 1</button>
-            <button id="botaosensor2" class="button" onclick="alterarCoresBotoes()">Sensor 2</button>
-            <button id="botaosensor3" class="button" onclick="alterarCoresBotoes()">Sensor 3</button>
-            <button id="botaosensor4" class="button" onclick="alterarCoresBotoes()">Sensor 4</button>
-        </div>
-
-        <div class="legenda">
-            <div class="info_1">Sensor</div>
-            <div class="info_2">Média</div>
-            <div class="info_3">Máxima</div>
-            <div class="info_4">Mínima</div>
-            <div class="info_5">Data</div>
-        </div>
-        <div id="feed_container" class="container">
-        </div>
-    </div>
 </body>
 
 </html>
@@ -108,7 +108,7 @@
 
     function atualizarFeed(
         leitura_resultado
-        ) { // leitura_resultado é o nome dado para a resposta ao finalizar o atualizarFeed(resposta); do obter publicacoes
+    ) { // leitura_resultado é o nome dado para a resposta ao finalizar o atualizarFeed(resposta); do obter publicacoes
         console.log(leitura_resultado);
         var feed = document.getElementById("feed_container");
         feed.innerHTML = "";

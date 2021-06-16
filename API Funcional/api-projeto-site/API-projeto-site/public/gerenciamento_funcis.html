@@ -14,66 +14,68 @@
 
 <body class="body_img" onload="obterPublicacoes()">
 
-        <!--inicio do cabecalho-->
-        <main class="main">
-            <aside class="sidebar">
-                <nav class="nav">
-                    <ul>
-                        <li class="active"><a href="">OLÁ, <b id="b_usuario"></b></a></li>
-                        <li class="active"><a href="tempo-real.html">Tempo Real</a></li>
-                        <li class="active"><a href="relatorio.html">RELATÓRIOS</a></li>
-                        <li class="active"><a href="grafico-chartjs.html">GRÁFICOS</a></li>
-                        <li class="active"><a href="gerenciamento_funcis.html">COLABOLADORES</a></li>
-                        <li class="active"><a href="Humidity_Teste.html">TABELA COMPARATIVA</a></li>
-                        <li class="active logout" onclick="logoff()"><a href="">SAIR</a></li>
-                    </ul>
-                </nav>
-            </aside>
-            <!--fim do cabecalho-->
-    </main>
+    <!--inicio do cabecalho-->
+    <main class="main">
+        <aside class="sidebar">
+            <nav class="nav">
+                <ul>
+                    <li class="active"><a href="">OLÁ, <b id="b_usuario"></b></a></li>
+                    <li class="active"><a href="tempo-real.html">Tempo Real</a></li>
+                    <li class="active"><a href="relatorio.html">RELATÓRIOS</a></li>
+                    <li class="active"><a href="grafico-chartjs.html">GRÁFICOS</a></li>
+                    <li class="active"><a href="gerenciamento_funcis.html">COLABOLADORES</a></li>
+                    <li class="active"><a href="Humidity_Teste.html">TABELA COMPARATIVA</a></li>
+                    <li class="active logout" onclick="logoff()"><a href="">SAIR</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!--fim do cabecalho-->
 
-    <div class="dashboard">
-        <div class="container">
             <div class="feed">
-                <h1>Lista de Usuários</h1>
+                <h1 class="titulo">Lista de Usuários</h1>
+                <div class="legenda">
+                    <div class="info_1">Nome</div>
+                    <div class="info_2">E-mail</div>
+                    <div class="info_3">Senha</div>
+                </div>
                 <div id="feed_container" class="container">
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="corpo_cadastro">
-        <h2>Cadastrar novo usuário</h2>
-        <br> 
 
-        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-            <div class="caixa_cadastro">
-                <div class="conteudo_cadastro">
 
-                    <div class="design_input">Nome:
-                        <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário" name="nome" required
-                            autofocus>
+        <div class="corpo_cadastro">
+            <h2 class="titulo_2">Cadastrar novo usuário</h2>
+
+            <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <div class="caixa_cadastro">
+                    <div class="conteudo_cadastro">
+
+                        <div class="design_input">Nome:
+                            <input id="inpt_usuario" type="text" placeholder="Digite aqui o usuário" name="nome"
+                                required autofocus>
+                        </div>
+
+                        <div class="design_input">E-mail
+                            <input id="inpt_email" type="text" placeholder="nome@example.com" name="login" required>
+                        </div>
+
+                        <div class="design_input">Senha:
+                            <input id="inpt_senha" type="password" placeholder="********" name="senha" required>
+                        </div>
+
+                        <div class="design_input">Confirme a senha:
+                            <input id="inpt_conf_senha" type="password" placeholder="********" required>
+                        </div>
+
+                        <button id="but_cadastro" class="button_cadastro">
+                            Criar usuário
+                        </button>
                     </div>
-
-                    <div class="design_input">E-mail
-                        <input id="inpt_email" type="text" placeholder="nome@example.com" name="login" required>
-                    </div>
-
-                    <div class="design_input">Senha:
-                        <input id="inpt_senha" type="password" placeholder="********" name="senha" required>
-                    </div>
-
-                    <div class="design_input">Confirme a senha:
-                        <input id="inpt_conf_senha" type="password" placeholder="********" required>
-                    </div>
-
-                    <button id="but_cadastro" class="button_cadastro">
-                        Criar usuário
-                    </button>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
+    </main>
 
 </body>
 
