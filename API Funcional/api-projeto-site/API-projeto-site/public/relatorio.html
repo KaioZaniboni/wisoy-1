@@ -7,6 +7,7 @@
     <title>Fórum do meu Site</title>
     <link rel="stylesheet" href="css/Dashboard.css">
     <link rel="stylesheet" href="css/publicacoes.css">
+    <link rel="stylesheet" href="css/print_relatorio.css">
     <script type="text/javascript" src="funcoes.js"></script>
 
 </head>
@@ -14,7 +15,7 @@
 <body onload="obterPublicacoes()">
     <!--inicio do cabecalho-->
     <main class="main">
-        <aside class="sidebar">
+        <aside class="sidebar no-print">
             <nav class="nav">
                 <ul>
                     <li class="active"><a href="">OLÁ, <b id="b_usuario"></b></a></li>
@@ -34,13 +35,14 @@
 
     <div class="feed">
         <div class="titulo">Relatórios</div>
-        <div class="text">Selecione o periodo e o sensor de sua escolha</div>
-        <div class="buttons">
+        <div class="text no-print">Selecione o periodo e o sensor de sua escolha</div>
+        <div class="buttons no-print">
             <button id="botaosensor1" class="button_2" onclick="">Semanal</button>
             <button id="botaosensor1" class="button_2" onclick="">Mensal</button>
+            <button  id="gerarrelatorio" class="button_2" onclick="window.print()">Gerar Relatório</button>
         </div>
 
-        <div class="buttons">
+        <div class="buttons no-print">
             <button id="botaosensor1" class="button" onclick="alterarCoresBotoes()">Sensor 1</button>
             <button id="botaosensor2" class="button" onclick="alterarCoresBotoes()">Sensor 2</button>
             <button id="botaosensor3" class="button" onclick="alterarCoresBotoes()">Sensor 3</button>
