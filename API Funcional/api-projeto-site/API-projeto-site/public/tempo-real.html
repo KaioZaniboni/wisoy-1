@@ -36,26 +36,26 @@
                 <div class="linha1">
                     <div class="sensor">
                         <div id="hover_sensor_1" class="">
-                        <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1000">1000</span></div>
-                        <div class="valores">
-                            <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
-                        </div>
-                        <div class="alertas">
-                            <div class="alerta_umidd" id="div_alerta_umidade"></div>
-                        </div>
+                            <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1000">1000</span></div>
+                            <div class="valores">
+                                <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
+                            </div>
+                            <div class="alertas">
+                                <div class="alerta_umidd" id="div_alerta_umidade"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="sensor">
                         <div id="hover_sensor_2" class="">
-                        <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1001">1001</span></div>
-                        <div class="valores">
-                            <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
-                        </div>
+                            <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1001">1001</span></div>
+                            <div class="valores">
+                                <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
+                            </div>
 
-                        <div class="alertas">
-                            <div class="alerta_umidd" id="div_alerta_umidade2"></div>
-                        </div>
+                            <div class="alertas">
+                                <div class="alerta_umidd" id="div_alerta_umidade2"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -64,27 +64,27 @@
                 <div class="linha2">
                     <div class="sensor">
                         <div id="hover_sensor_3" class="">
-                        <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1002">1002</span></div>
-                        <div class="valores">
-                            <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
-                        </div>
-                        <div class="alertas">
-                            <div class="alerta_umidd" id="div_alerta_umidade3"></div>
-                        </div>
+                            <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1002">1002</span></div>
+                            <div class="valores">
+                                <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
+                            </div>
+                            <div class="alertas">
+                                <div class="alerta_umidd" id="div_alerta_umidade3"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="sensor">
                         <div id="hover_sensor_4" class="">
-                        <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1003">1003</span></div>
-                        <div class="valores">
-                            <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
-                        </div>
+                            <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1003">1003</span></div>
+                            <div class="valores">
+                                <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
+                            </div>
 
 
-                        <div class="alertas">
-                            <div class="alerta_umidd" id="div_alerta_umidade4"></div>
-                        </div>
+                            <div class="alertas">
+                                <div class="alerta_umidd" id="div_alerta_umidade4"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -161,32 +161,50 @@
         if (umidade > limites.max_umidade) {
             mensagem_umidade += 'Umidade alta demais! <br>';
             classe_umidade = 'alerta_umidd alerta-alto';
+
+            if (idsensor == 1000) {
+                hover_sensor_1.className = "alerta";
+            } else if (idsensor == 1001) {
+                hover_sensor_2.className = "alerta";
+            } else if (idsensor == 1002) {
+                hover_sensor_3.className = "alerta";
+            } else if (idsensor == 1003) {
+                hover_sensor_4.className = "alerta";
+            }
         }
-        // if (temperatura < limites.min_temperatura) {
-        //     mensagem_temperatura = 'Temperatura baixa demais! <br>';
-        //     classe_temperatura = 'alerta alerta-baixo';
-        // }
-        if (umidade < limites.min_umidade) {
+        else if (umidade < limites.min_umidade) {
             mensagem_umidade = 'Umidade baixa demais! <br>';
             classe_umidade = 'alerta_umidd alerta-baixo';
+
+            if (idsensor == 1000) {
+                hover_sensor_1.className = "alerta";
+            } else if (idsensor == 1001) {
+                hover_sensor_2.className = "alerta";
+            } else if (idsensor == 1002) {
+                hover_sensor_3.className = "alerta";
+            } else if (idsensor == 1003) {
+                hover_sensor_4.className = "alerta";
+            }
+        } 
+        else {
+            hover_sensor_1.className = '';
+            hover_sensor_2.className = '';
+            hover_sensor_3.className = '';
+            hover_sensor_4.className = '';
         }
 
+
         // escolhendo qual alterar
-        // var div_temperatura_alterar
         var div_umidade_alterar;
 
 
         if (idsensor == 1000) {
-            // div_temperatura_alterar = div_alerta_temperatura
             div_umidade_alterar = div_alerta_umidade;
         } else if (idsensor == 1001) {
-            // div_temperatura_alterar = div_alerta_temperatura2
             div_umidade_alterar = div_alerta_umidade2;
         } else if (idsensor == 1002) {
-            // div_temperatura_alterar = div_alerta_temperatura3
             div_umidade_alterar = div_alerta_umidade3;
         } else if (idsensor == 1003) {
-            // div_temperatura_alterar = div_alerta_temperatura4
             div_umidade_alterar = div_alerta_umidade4;
         }
 
@@ -205,24 +223,19 @@
         // escolhendo qual alterar
         // var div_temperatura_alterar
         var div_umidade_alterar;
-        var hover_sensor_alterar;
 
         if (idsensor == 1000) {
             // div_temperatura_alterar = div_temperatura
             div_umidade_alterar = div_umidade
-            hover_sensor_alterar = hover_sensor_1
         } else if (idsensor == 1001) {
             // div_temperatura_alterar = div_temperatura2
             div_umidade_alterar = div_umidade2
-            hover_sensor_alterar = hover_sensor_2
         } else if (idsensor == 1002) {
             // div_temperatura_alterar = div_temperatura3
             div_umidade_alterar = div_umidade3
-            hover_sensor_alterar = hover_sensor_3
         } else if (idsensor == 1003) {
             // div_temperatura_alterar = div_temperatura4
             div_umidade_alterar = div_umidade4
-            hover_sensor_alterar = hover_sensor_4
         }
 
         // div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
