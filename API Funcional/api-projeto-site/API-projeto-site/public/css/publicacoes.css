@@ -1,7 +1,3 @@
-
-
-
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
@@ -10,190 +6,46 @@ body {
 }
 
 
-h1 {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-/* CABEÇALHO */
-
-
-
-body{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    background-color: #0f0f0f;
-}
-
-.sidebar {
-    position: fixed;
-    width: 25%;
-    height: 100%;
-    background: black;
-    font-size: 1em;
-}
-
-.nav {
-    position: relative;
-    margin: 0 15%;
-    text-align: right;
-    top: 43%;
-    transform: translateY(-50%);
-    font-weight: bold;
-}
-
-.nav ul {
-    list-style: none;
-}
-
-li {
-    position: relative;
-    margin: 3.2em 0;
-}
-
-a {
-    line-height: 5em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.4em;
-    color: rgba(#FFF, 0.35);
-    display: block;
-    transition: all ease-out 300ms;
-}
-
-.active a {
-    color: white;
-    font-size: 10px;
-}
-
-.active a:hover {
-    color: rgb(102, 226, 44);
-}
-
-:not(.active)::after {
-    opacity: -0.8;
-}
-
-:not(.active):hover a {
-    color: rgba(#FFF, 0.75);
-}
-
-::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0.2em;
-    background: black;
-    left: 0;
-    bottom: 6px;
-    background-image: linear-gradient(to right, #490a52, #ad1ac0);
-}
-
-.wisoyzinho {
-    position: fixed;
-    width: 74%;
-    left: 25.8%;
-    height: 10vh;
-}
-
-.container {
-    height: 97%;
-    width: 98.7%;
-    top: 1.4%;
-    left: 0.6%;
-}
-
-a {
-    position: relative;
-}
-
-img {
-    width: 100px;
-    height: 100px;
-}
-
-
-p {
-    text-transform: uppercase;
-    font-size: 1.4em;
-    letter-spacing: 0.1em;
-    color: #FFF;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-
-/* FOOTER */
-
-.footer {
-    background-color: rgb(255, 95, 37);
-    text-align: center;
-    height: 100px;
-}
-
-.footer h4 {
-    color: white;
-    font-weight: 100;
-    margin: 0;
-    padding-top: 40px;
-}
-
-
-
-/* dashboard */
-
-.dashboard {
-    text-align: center;
-    padding: 50px 0;
-    width: 80%;
-    height: 100%;
-    margin-left: auto;
-}
-
-.dashboard h1 {
-    margin-bottom: 40px;
-}
-
-.dashboard .textarea-padrao {
-    resize: none;
-    display: inline-block;
-}
-
-.box-login {
-    display: inline-block;
+/*INICIO FUNCTION CREATE*/
+.publicacao {
+    display: flex;
+    justify-content: space-between;
     background-color: white;
-    box-shadow:  3px 3px 5px 2px #ccc;
-    padding: 60px 20px 0px 20px;
-    border-radius: 20px;
-    width: 400px;
-}
-
-.dashboard .btn-green {
-    display: block;
-    float: none;
-    margin: 20px auto;
-
-    color: white;
-    background-color: green;
-    border: 0;
-    padding: 10px 20px;
-
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid rgb(255, 95, 37);
     border-radius: 5px;
-    cursor: pointer;
+    padding: 0px 15px 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.nome {
+    text-align: center;
+    width: 80px;
+    float:left;
+    color:rgb(255, 95, 37);
+    font-weight: bold;
+    padding-top: 10px;
+    /* border: 1px solid rgb(255, 95, 37); */
+}
+.descricao {
+    text-align: center;
+    width: 90px;
+    padding-top: 10px;
 }
 
-.botoes {
+/*FIM FUNCTION CREATE*/
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
     margin: auto;
-    margin-bottom: 40px;
-    display: block; /* Default de botão é inline-block. Com block, margin auto funciona*/
+    margin-bottom: 60px;
+    /* Default de botão é inline-block. Com block, margin auto funciona*/
 }
-
-.btn {
+.button {
+    border-radius: 10px;
     color: white;
     text-transform: uppercase;
     width: 180px;
@@ -202,77 +54,55 @@ p {
     height: 38px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: rgb(255, 164, 131);
+    background-color: rgba(102, 226, 44, 0.61);
 }
-
-.btn-now {
-    border: 3px solid #232323;
-    background-color: orangered;
-}
-
-/* EXTRA */
-
-.extra {
-    margin: 10px;
-}
-
-.extra img {
-  height: 50px;
-   visibility: hidden;
-}
-
-.extra .msg_erro {
-    background-color: sandybrown; 
-    color: black; 
-    visibility: hidden;
-}
-
-.card {
-    border: 1px solid red;
+.button_2 {
     border-radius: 10px;
-    display: block;
-    width: 35%;
-    margin: 10px 7%;
-    height: 160px;
-    float: left;
+    color: white;
+    text-transform: uppercase;
+    width: 240px;
+    margin: 0 1%;
+    border: 5px solid #ecf0f1;
+    height: 60px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgba(102, 226, 44, 0.61);
+}
+.btn-now {
+    border-radius: 10px;
+    border: 3px solid #d8d8d8;
+    background-color: rgb(102, 226, 44);
+}
+
+.feed {
+    float: right;
+    width: 75%;
+}
+.titulo {
     text-align: center;
-
-    background-color: white;
-    box-shadow:  3px 3px 5px 2px #ccc;
-    
+    font-size: 3vw;
+    font-weight: 900;
+    padding: 4vw 0;
 }
-
-/* extra */
-
-.show-on-hover {
-    color:#232323
+.text {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 900;
+    padding: 4vw 0;
 }
-
-.show-on-hover:hover {
-    color:white
+.legenda {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0.5vw;
+    font-size: 2vw;
+    color: rgb(255, 95, 37);
+    font-weight: 700;
 }
-
-.publicacao {
-    background-color: white;
-    margin: 0 auto;
-    width: 50%;
-    display: block;
-    border: 1px solid rgb(255, 95, 37);
-    border-radius: 5px;
-    padding: 5px;
-    text-align: left;
-    margin-bottom: 10px;
+.info_4 {
+    margin-right: 2%;
 }
-
-.nome {
-    float:left;
-    color:rgb(255, 95, 37);
-    font-weight: bold;
-    /* border: 1px solid rgb(255, 95, 37); */
-}
-
-.descricao {
-    height: auto;
-    width: auto;
-    margin-left: 13%;
+.info_5 {
+    margin-right: 2%;
 }

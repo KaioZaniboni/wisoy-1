@@ -5,7 +5,6 @@ CREATE DATABASE wisoy;
 
 USE wisoy;
 
-drop database wisoy;
 -- -----------------------------------------------------
 -- A tabela LEADS sera responsável por armazenar as informações referentes as pessoas que acessaram o site e se cadastraram nesse campo, são os interessados.
 -- -----------------------------------------------------
@@ -33,7 +32,7 @@ CREATE TABLE empresa (
   chave_autenticação varchar(20)
 )auto_increment = 15000;
 
-drop table empresa;
+
 select * from empresa;
   
 --------------------------------------------------------
@@ -51,7 +50,6 @@ fk_empresa int
 select * from usuarios;
 
 
-drop table USUARIOS;
 -- -----------------------------------------------------
 -- A tabela FAZENDAS será responsável por armazenar os dados referentes às fazendas dos clientes.
 -- -----------------------------------------------------
@@ -125,7 +123,7 @@ CREATE TABLE historico_sensor(
   
 SELECT 
 fk_sensor , count(fk_sensor) as inseridos, round(avg(leitura_umidade),2) as media, max(leitura_umidade) as maximo,  min(leitura_umidade) as minimo,
-DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 300), '%Y-%m-%d %H:%i:00') as cinco_min
+DATE_FORMAT(from_unixtime(unix_timestamp(leitura_data_hora) - unix_timestamp(leitura_data_hora) mod 180), '%Y-%m-%d %H:%i:00') as cinco_min
 from historico_sensor where fk_sensor = 1001 group by cinco_min;
 
   DESC HIST_SENSOR;  
@@ -234,15 +232,15 @@ SELECT * FROM OCORRENCIAS;
 INSERT INTO COLABORADORES VALUES (NULL, 'Kaio Zaniboni', 'M', '1992-03-28', 'kaio_zaniboni@wisoy.com.br', 'kaio_wisoy', 
 'Ka54@z92', '11950890317', '735407817', '45639877754', 'Rua Professor José Armandoi', '77733344', '2021-02-01', null);
 
-ALTER TABLE COLABORADORES ADD COLUMN FK_CHEFE INT;
+-- ALTER TABLE COLABORADORES ADD COLUMN FK_CHEFE INT;
 
-ALTER TABLE COLABORADORES ADD FOREIGN KEY (FK_CHEFE) REFERENCES COLABORADORES(ID_COLABORADORES);
+-- ALTER TABLE COLABORADORES ADD FOREIGN KEY (FK_CHEFE) REFERENCES COLABORADORES(ID_COLABORADORES);
 
 DESC COLABORADORES;
 
-UPDATE COLABORADORES SET FK_CHEFE = 5003 WHERE ID_COLABORADORES IN (5000, 5001, 5002);
+-- UPDATE COLABORADORES SET FK_CHEFE = 5003 WHERE ID_COLABORADORES IN (5000, 5001, 5002);
 
-UPDATE COLABORADORES SET FK_CHEFE = NULL WHERE ID_COLABORADORES = 5003;
+-- UPDATE COLABORADORES SET FK_CHEFE = NULL WHERE ID_COLABORADORES = 5003;
 
 SELECT * FROM LEADS;
 

@@ -19,7 +19,7 @@ body{
     position: relative;
     margin: 0 15%;
     text-align: right;
-    top: 43%;
+    top: 40%;
     transform: translateY(-50%);
     font-weight: bold;
 }
@@ -76,13 +76,6 @@ a {
     width: 74%;
     left: 25.8%;
     height: 10vh;
-}
-
-.container {
-    height: 97%;
-    width: 98.7%;
-    top: 1.4%;
-    left: 0.6%;
 }
 
 a {
@@ -142,29 +135,6 @@ p {
     margin: auto;
 }
 
-.botoes {
-    margin: auto;
-    margin-bottom: 40px;
-    display: block;
-    /* Default de botão é inline-block. Com block, margin auto funciona*/
-}
-
-.btn {
-    color: white;
-    text-transform: uppercase;
-    width: 180px;
-    margin: 0 1%;
-    border: 5px solid #ecf0f1;
-    height: 38px;
-    padding: 0 20px;
-    cursor: pointer;
-    background-color: rgb(255, 164, 131);
-}
-
-.btn-now {
-    border: 3px solid #232323;
-    background-color: orangered;
-}
 
 /* EXTRA */
 
@@ -278,7 +248,7 @@ p {
     color: #38b000;
 }
 
-.hover:hover {
+.alerta {
     height: 100%;
     width: 100%;
     border-radius: 30px;

@@ -1,253 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-html {
-    font-size: 16px;
-    background-color: #3d413b;
-}
-
-.sidebar {
-    position: fixed;
-    width: 25%;
-    height: 97vh;
-    background: black;
-    font-size: 0.65em;
-}
-
-.nav {
-    position: relative;
-    margin: 0 15%;
-    text-align: right;
-    top: 43%;
-    transform: translateY(-50%);
-    font-weight: bold;
-}
-
-.nav ul {
-    list-style: none;
-}
-
-li {
-    position: relative;
-    margin: 3.2em 0;
-}
-
-a {
-    line-height: 5em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.4em;
-    color: rgba(#FFF, 0.35);
-    display: block;
-    transition: all ease-out 300ms;
-}
-
-.active a {
-    color: white;
-    font-size: 10px;
-}
-
-.active a:hover {
-    color: rgb(102, 226, 44);
-}
-
-:not(.active)::after {
-    opacity: -0.8;
-}
-
-:not(.active):hover a {
-    color: rgba(#FFF, 0.75);
-}
-
-::after {
-    content: '';
-    position: absolute;
-    height: 0.2em;
-    background: black;
-    bottom: 6px;
-    background-image: linear-gradient(to right, #6f9172, #38b000);
-}
-
-.wisoyzinho {
-    position: fixed;
-    width: 74%;
-    left: 25.8%;
-    height: 10vh;
-}
-
-.container {
-    height: 97%;
-    width: 98.7%;
-    top: 1.4%;
-    left: 0.6%;
-}
-
-a {
-    position: relative;
-}
-
-img {
-    width: 100px;
-    height: 100px;
-}
-
-
-p {
-    text-transform: uppercase;
-    font-size: 1.4em;
-    letter-spacing: 0.1em;
-    color: #FFF;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-/* dashboard */
-
-.dashboard {
-    background-color: #0f0f0f;
-    text-align: center;
-    padding: 165px 0;
-    width: 80%;
-    height: 100%;
-    margin-left: auto;
-    /* overflow-y: scroll; */
-    height: 221px;
-}
-
-.dashboard h1 {
-    margin-bottom: 40px;
-}
-
-.dashboard .input-padrao {
-    width: 50%;
-    display: inline-block;
-}
-
-.box-login {
-    display: inline-block;
-    background-color: white;
-    box-shadow: 3px 3px 5px 2px #ccc;
-    padding: 60px 20px 0px 20px;
-    border-radius: 20px;
-    width: 400px;
-}
-
-.dashboard .btn-green {
-    display: block;
-    float: none;
-    margin: auto;
-}
-
-.botoes {
-    margin: auto;
-    margin-bottom: 40px;
-    display: block;
-    /* Default de botão é inline-block. Com block, margin auto funciona*/
-}
-
-.btn {
-    color: white;
-    text-transform: uppercase;
-    width: 180px;
-    margin: 0 1%;
-    border: 5px solid #ecf0f1;
-    height: 38px;
-    padding: 0 20px;
-    cursor: pointer;
-    background-color: rgb(255, 164, 131);
-}
-
-.btn-now {
-    border: 3px solid #232323;
-    background-color: orangered;
-}
-
-/* EXTRA */
-
-.extra {
-    margin: 10px;
-}
-
-.extra img {
-    height: 50px;
-    visibility: hidden;
-}
-
-.extra .msg_erro {
-    background-color: sandybrown;
-    color: black;
-    visibility: hidden;
-}
-
-.linha1 {
-    width: 90%;
-    position: fixed;
-    top: 17%;
-    left: 27%;
-}
-
-.linha2 {
-    width: 90%;
-    position: fixed;
-    top: 53%;
-    left: 27%;
-}
-
-.sensor {
-    border: 2px solid #38b000;
-    width: 35%;
-    margin: 10px 2%;
-    height: 160px;
-    float: left;
-    background-color: white;
-    box-shadow: 3px 3px 5px 2px #1b1b1b;
-}
-
-
-.sensor .valores {
-    margin: auto;
-    overflow: auto;
-}
-
-.sensor .valores .valor {
-    margin-left: 35%;
-    margin-top: 5%;
-    width: 30%;
-    float: left;
-}
-
-.sensor .alertas {
-    width: 100%;
-    margin: auto;
-    margin-top: 5px;
-    overflow: auto;
-}
-
-.sensor .alertas .alerta {
-    margin-left: 13%;
-    width: 30%;
-    float: left;
-}
-
-.sensor .alertas .alerta_umidd {
-    margin-right: 13%;
-    width: 30%;
-    float: right;
-}
-
-/* extra */
-
-.show-on-hover {
-    color: #232323
-}
-
-.show-on-hover:hover {
-    color: white
-}
-
-
-
-
-
 /* CSS Geral */
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -434,10 +184,71 @@ ul li a {
     border-radius: 15px;
     border: 0;
     color: white;
-    
 }
-
 .link_login{
     color: white;
     text-decoration: none;
+}
+
+/*INICIO FUNCTION CREATE*/
+.publicacao {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid rgb(255, 95, 37);
+    border-radius: 5px;
+    padding: 0px 15px 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.nome {
+    text-align: center;
+    width: 80px;
+    float:left;
+    color:rgb(255, 95, 37);
+    font-weight: bold;
+    padding-top: 10px;
+    /* border: 1px solid rgb(255, 95, 37); */
+}
+.descricao {
+    text-align: center;
+    width: 90px;
+    padding-top: 10px;
+}
+
+/*FIM FUNCTION CREATE*/
+
+.feed {
+    float: right;
+    width: 75%;
+}
+.titulo {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 900;
+    padding: 4vw 0;
+}
+.text {
+    text-align: center;
+    font-size: 1.5vw;
+    font-weight: 900;
+    padding: 4vw 0;
+}
+.legenda {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0.5vw;
+    font-size: 2vw;
+    color: rgb(255, 95, 37);
+    font-weight: 700;
+}
+.info_4 {
+    margin-right: 2%;
+}
+.info_5 {
+    margin-right: 2%;
 }

@@ -17,7 +17,8 @@
         <aside class="sidebar">
             <nav class="nav">
                 <ul>
-                    <li class="active"><a href="tempo-real.html">OLÁ, <b id="b_usuario"></b></a></li>
+                    <li class="active"><a href="">OLÁ, <b id="b_usuario"></b></a></li>
+                    <li class="active"><a href="tempo-real.html">Tempo Real</a></li>
                     <li class="active"><a href="relatorio.html">RELATÓRIOS</a></li>
                     <li class="active"><a href="grafico-chartjs.html">GRÁFICOS</a></li>
                     <li class="active"><a href="gerenciamento_funcis.html">COLABOLADORES</a></li>
@@ -31,10 +32,10 @@
         <div class="dashboard">
             <div class="container">
 
-                <h1 class="titulo_selecao">TEORES DE UMIDADE</h1>
+                <h1 class="titulo_selecao">ÍNDICE DE UMIDADE</h1>
                 <div class="linha1">
                     <div class="sensor">
-                        <div class="hover">
+                        <div id="hover_sensor_1" class="">
                         <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1000">1000</span></div>
                         <div class="valores">
                             <div class="valor" id="div_umidade">Umidade sendo obtida...</div>
@@ -46,7 +47,7 @@
                     </div>
 
                     <div class="sensor">
-                        <div class="hover">
+                        <div id="hover_sensor_2" class="">
                         <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1001">1001</span></div>
                         <div class="valores">
                             <div class="valor" id="div_umidade2">Umidade sendo obtida...</div>
@@ -62,7 +63,7 @@
 
                 <div class="linha2">
                     <div class="sensor">
-                        <div class="hover">
+                        <div id="hover_sensor_3" class="">
                         <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1002">1002</span></div>
                         <div class="valores">
                             <div class="valor" id="div_umidade3">Umidade sendo obtida...</div>
@@ -74,7 +75,7 @@
                     </div>
 
                     <div class="sensor">
-                        <div class="hover">
+                        <div id="hover_sensor_4" class="">
                         <div class="h4">Sensor <span name="namesensor" id="idsensor" value="1003">1003</span></div>
                         <div class="valores">
                             <div class="valor" id="div_umidade4">Umidade sendo obtida...</div>
@@ -151,6 +152,7 @@
         var mensagem_umidade = '';
         var classe_umidade = 'alerta_umidd';
 
+
         // comparando
         // if (temperatura > limites.max_temperatura) {
         //     mensagem_temperatura += 'Temperatura alta demais! <br>';
@@ -159,8 +161,6 @@
         if (umidade > limites.max_umidade) {
             mensagem_umidade += 'Umidade alta demais! <br>';
             classe_umidade = 'alerta_umidd alerta-alto';
-            
-
         }
         // if (temperatura < limites.min_temperatura) {
         //     mensagem_temperatura = 'Temperatura baixa demais! <br>';
@@ -173,20 +173,21 @@
 
         // escolhendo qual alterar
         // var div_temperatura_alterar
-        var div_umidade_alterar
+        var div_umidade_alterar;
+
 
         if (idsensor == 1000) {
             // div_temperatura_alterar = div_alerta_temperatura
-            div_umidade_alterar = div_alerta_umidade
+            div_umidade_alterar = div_alerta_umidade;
         } else if (idsensor == 1001) {
             // div_temperatura_alterar = div_alerta_temperatura2
-            div_umidade_alterar = div_alerta_umidade2
+            div_umidade_alterar = div_alerta_umidade2;
         } else if (idsensor == 1002) {
             // div_temperatura_alterar = div_alerta_temperatura3
-            div_umidade_alterar = div_alerta_umidade3
+            div_umidade_alterar = div_alerta_umidade3;
         } else if (idsensor == 1003) {
             // div_temperatura_alterar = div_alerta_temperatura4
-            div_umidade_alterar = div_alerta_umidade4
+            div_umidade_alterar = div_alerta_umidade4;
         }
 
         // alterando
@@ -203,20 +204,25 @@
 
         // escolhendo qual alterar
         // var div_temperatura_alterar
-        var div_umidade_alterar
+        var div_umidade_alterar;
+        var hover_sensor_alterar;
 
         if (idsensor == 1000) {
             // div_temperatura_alterar = div_temperatura
             div_umidade_alterar = div_umidade
+            hover_sensor_alterar = hover_sensor_1
         } else if (idsensor == 1001) {
             // div_temperatura_alterar = div_temperatura2
             div_umidade_alterar = div_umidade2
+            hover_sensor_alterar = hover_sensor_2
         } else if (idsensor == 1002) {
             // div_temperatura_alterar = div_temperatura3
             div_umidade_alterar = div_umidade3
+            hover_sensor_alterar = hover_sensor_3
         } else if (idsensor == 1003) {
             // div_temperatura_alterar = div_temperatura4
             div_umidade_alterar = div_umidade4
+            hover_sensor_alterar = hover_sensor_4
         }
 
         // div_temperatura_alterar.innerHTML = `Temperatura: ${dados.temperatura}º`;
