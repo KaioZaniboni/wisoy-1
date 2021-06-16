@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'fk_empresa',
 			type: DataTypes.INTEGER,
 			allowNull: false
+		},
+		data_cadastro: {
+			field: 'data_cadastro',
+			type: DataTypes.DATEONLY,
+			allowNull: false
 		}
 	}, 
 	{

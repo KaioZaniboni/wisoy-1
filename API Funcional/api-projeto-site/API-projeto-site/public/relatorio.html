@@ -63,6 +63,8 @@
 </html>
 
 <script>
+    var chart = 0;
+    var period = 0;
     function alterarCoresBotoes(chart) {
         console.log("executei alterarCoresBotoes")
         botaosensor1.className = "button"
@@ -79,19 +81,33 @@
         } else if (chart == "1003") {
             botaosensor4.className += " btn-now"
         }
-        obterPublicacoes(chart)
+
+        if (period == 300 || period == 1300) {
+            obterPublicacoes(chart, period)
+        } else {
+            period = 300;
+            obterPublicacoes(chart, period)
+        }
     }
 
     function alterarCoresBotoes_2(period) {
-        console.log("executei alterarCoresBotoes")
+        console.log("executei alterarCoresBotoes_2")
         botaosensor5.className = "button_2"
         botaosensor6.className = "button_2"
 
-        if (periodo == "1004") {
+        if (period == "300") {
             botaosensor5.className += " btn-now"
-        } else if (periodo == "1005") {
+        } else if (period == "1300") {
             botaosensor6.className += " btn-now"
         }
+
+        if (chart == 1000 || chart == 1001 || chart == 1002 || chart == 1003) {
+            obterPublicacoes(chart, period)
+        } else {
+            chart = 1000;
+            obterPublicacoes(chart, period)
+        }
+
     }
 
     function atualizarFeed(
@@ -132,13 +148,10 @@
             feed.appendChild(divPublicacao);
         }
     }
-    function temp(period) {
-        var periodo = periodo.value;
-    }
 
     function obterPublicacoes(chart, period) {
         // alterarCoresBotoes_2(period);
-        fetch(`/leituras/estatisticas/${chart, period}`)
+        fetch(`/leituras/estatisticas/${chart}/${period}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {

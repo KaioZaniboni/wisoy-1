@@ -93,7 +93,8 @@ router.post('/cadastrar/', function (req, res, next) {
 				nome: req.body.nome,
 				login: req.body.login,
 				senha: req.body.senha,
-				fk_empresa: idempresa
+				fk_empresa: idempresa,
+				data_cadastro: agora()
 			}).then(resultado => {
 				console.log(`Registro criado: ${resultado}`)
 				res.send(resultado);
@@ -165,7 +166,8 @@ router.post('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
 		nome: req.body.nome,
 		login: req.body.login,
 		senha: req.body.senha,
-		fk_empresa: fkEmp
+		fk_empresa: fkEmp,
+		data_cadastro: agora()
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
 		res.send(resultado);

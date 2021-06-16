@@ -72,7 +72,7 @@ router.get('/tempo-real/:idsensor', function (req, res, next) {
 });
 
 // estatísticas (max, min, média, mediana, quartis, etc)
-router.get('/estatisticas/:chart, period', function (req, res, next) {
+router.get('/estatisticas/:chart/:period', function (req, res, next) {
 
 	let idsensor = req.params.chart;
 	let periodo = req.params.period;
@@ -89,7 +89,7 @@ from (
 	SELECT *,
 	dateadd(
     S,
-    (DATEDIFF(s, {d '1970-01-01'}, leitura_data_hora) / 300),
+    (DATEDIFF(s, {d '1970-01-01'}, leitura_data_hora) / ${periodo}),
     '1970-01-01') AS cinco_min
 	FROM historico_sensor
 ) tabela where fk_sensor = ${idsensor} group by fk_sensor, cinco_min;`;
