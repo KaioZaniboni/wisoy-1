@@ -27,7 +27,8 @@ CREATE TABLE usuarios (
 	nome VARCHAR(50),
 	login VARCHAR(50),
 	senha VARCHAR(50),
-	fk_empresa INT
+	fk_empresa INT,
+  data_cadastro DATE,
 );
 
 CREATE TABLE fazendas(
@@ -51,15 +52,14 @@ CREATE TABLE colaboradores (
   sexo CHAR(1),
   data_nascimento DATE,
   email VARCHAR(60),
-  login_colaboradores VARCHAR(20),
+  login VARCHAR(20),
   senha VARCHAR(20),
   telefone VARCHAR(11),
   rg CHAR(9),
   cpf CHAR(11),
   endereco VARCHAR(100) ,
   carteira_trabalho CHAR(8),
-  data_admissao DATE,
-  fk_chefe INT, 
+  data_admissao DATE
 );
 
 CREATE TABLE historico_sensor (

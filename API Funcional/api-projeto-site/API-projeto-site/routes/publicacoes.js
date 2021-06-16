@@ -31,7 +31,7 @@ router.get('/a/:fkempresa', function(req, res, next) {
 	
     let instrucaoSql = `SELECT * FROM usuarios 
     where fk_empresa = ${fkEmp}
-    ORDER BY usuarios.id_usuarios DESC`;
+    ORDER BY usuarios.id_usuarios`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,

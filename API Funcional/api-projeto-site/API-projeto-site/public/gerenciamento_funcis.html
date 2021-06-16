@@ -37,7 +37,7 @@
                 <div class="legenda">
                     <div class="info_1">Nome</div>
                     <div class="info_2">E-mail</div>
-                    <div class="info_3">Senha</div>
+                    <div class="info_3">Data Cadastro</div>
                 </div>
                 <div id="feed_container" class="container">
                 </div>
@@ -94,7 +94,7 @@
         }).then(function (response) {
 
             if (response.ok) {
-                alert("Cadastro reazliado com sucesso :D")
+                alert("Cadastro realizado com sucesso :D")
                 window.location.href = 'gerenciamento_funcis.html';
 
             } else {
@@ -121,14 +121,14 @@
             var divDescricao = document.createElement("div")
             var divDescricao_2 = document.createElement("div")
 
-            divNome.innerHTML = `${publicacao.nome}:`;
+            divNome.innerHTML = `${publicacao.nome}`;
             divDescricao.innerHTML = publicacao.login;
-            divDescricao_2.innerHTML = publicacao.senha;
+            divDescricao_2.innerHTML = publicacao.data_cadastro;
 
             divPublicacao.className = "publicacao"
             divNome.className = "nome";
             divDescricao.className = "descricao";
-            divDescricao_2.className = "descricao2";
+            divDescricao_2.className = "descricao";
 
             divPublicacao.appendChild(divNome);
             divPublicacao.appendChild(divDescricao);

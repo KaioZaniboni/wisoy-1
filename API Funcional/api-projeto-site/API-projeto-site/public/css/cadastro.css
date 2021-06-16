@@ -88,23 +88,8 @@ ul li {
     display: inline;
     margin-left: 30px;
     font-size: 1.5vw;
-  
-
 }
 
-/* .li_sobre {
-    position: relative;
-}
-
-.li_sobre:hover .dropdown_sobre {
-    display: block !important;   
-    top: 60px;
-    position: absolute;
-}
-
-.dropdown_sobre {
-    display: none;
-} */
 
 ul li a {
     color: white;
