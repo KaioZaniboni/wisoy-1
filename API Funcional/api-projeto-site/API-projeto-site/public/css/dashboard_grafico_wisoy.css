@@ -5,6 +5,7 @@ body{
     padding: 0px;
     border: 0px;
     background-color: #0f0f0f;
+    overflow-y: hidden;
 }
 
 .sidebar {
@@ -109,9 +110,9 @@ p {
 .dashboard {
     background-color: #ecf0f1;
     text-align: center;
-    padding: 105px 0;
-    width: 80%;
-    height: 100%;
+    padding: 2% 0;
+    width: 75%;
+    height: 700px;
     margin-left: auto;
 }
 
@@ -234,3 +235,4 @@ p {
 .show-on-hover:hover {
     color:white
 }
+

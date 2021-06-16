@@ -11,8 +11,11 @@ const { ArduinoDataSwitch } = require("../app-sensores/serialSwitch");
 const { ArduinoDataLuminosity } = require("../app-sensores/serialLuminosidity");
 
 router.get("/sendData", (request, response) => {
-	const temperature = ArduinoDataTemp.List[ArduinoDataTemp.List.length - 1];
-	const Humidity = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
+	// const temperature = ArduinoDataTemp.List[ArduinoDataTemp.List.length - 1];
+	const Humidity1 = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
+	const Humidity2 = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
+	const Humidity3 = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
+	const Humidity4 = ArduinoDataHumidity.List[ArduinoDataHumidity.List.length - 1];
 	//luminosidade = ArduinoDataLuminosity.List[ArduinoDataLuminosity.List.length -1]
 
 	var instrucaoSql = ""
@@ -22,13 +25,13 @@ router.get("/sendData", (request, response) => {
 		// Na variável abaixo, coloque o Insert que será executado no Workbench
 		// salvo exceções, é igual a SQL Server
 
-		instrucaoSql = `INSERT into HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity + 20},'${agora()}', 1000), (${Humidity + 10}, '${agora()}', 1001), (${Humidity - 15}, '${agora()}', 1002), (${Humidity - 5}, '${agora()}',1003);`;
+		instrucaoSql = `INSERT into HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity1 + 2},'${agora()}', 1000), (${Humidity2 + 1}, '${agora()}', 1001), (${Humidity3 - 1.5}, '${agora()}', 1002), (${Humidity4 - 0.5}, '${agora()}',1003);`;
 	} else {
 
 		// Na variável abaixo, coloque o Insert que será executado no SQL Server
 		// salvo exceções, é igual a Workbench
 
-		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity + 20},'${agora()}', 1000), (${Humidity + 10}, '${agora()}', 1001), (${Humidity - 15}, '${agora()}', 1002), (${Humidity - 5}, '${agora()}',1003);`;
+		instrucaoSql = `INSERT into dbo.HISTORICO_SENSOR (LEITURA_UMIDADE, LEITURA_DATA_HORA, FK_SENSOR) values (${Humidity1 + 1},'${agora()}', 1000), (${Humidity2 + 2}, '${agora()}', 1001), (${Humidity3 - 2.5}, '${agora()}', 1002), (${Humidity4 - 1.5}, '${agora()}',1003);`;
 	}
 
 	sequelize.query(instrucaoSql, {

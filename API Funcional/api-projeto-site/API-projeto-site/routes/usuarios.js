@@ -175,32 +175,6 @@ router.post('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
 	});
 });
 
-// /* Alterar usuarios secundários */
-// router.put('/cadastrar_subordinados/:fkempresa', function (req, res, next) {
-// 	console.log('Alterando um usuário');
-
-// 	var fkEmp = req.params.fkempresa;
-
-// 	Usuario.update({
-// 		id: 501,
-// 		nome: req.body.nome,
-// 		login: req.body.login,
-// 		senha: req.body.senha,
-// 		fk_empresa: fkEmp
-// 	}).then(resultado => {
-// 		console.log(`Registro criado: ${resultado}`)
-// 		res.send(resultado);
-// 	}).catch(erro => {
-// 		console.error(erro);
-// 		res.status(500).send(erro.message);
-// 	});
-// });
-
-
-
-
-
-
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function (req, res, next) {

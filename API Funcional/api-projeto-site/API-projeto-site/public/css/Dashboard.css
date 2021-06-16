@@ -197,29 +197,22 @@ p {
     left: 27%;
 }
 
-<<<<<<< HEAD
 .sensor {
-    border: 2px solid #38b000;
-=======
-.caminhao {
     border-radius: 30px;
     border: 2px solid #7c148a;
->>>>>>> 6e6df0a9b6b9dc2dc39ad29aacd58a20b24bcffe
     width: 35%;
     margin: 10px 2%;
-    height: 160px;
+    height: 190px;
     float: left;
     background-color: white;
     box-shadow: 3px 3px 5px 2px #1b1b1b;
     font-size: 20px;
 }
-
-
 .sensor .valores {
     margin: auto;
     overflow: auto;
+    font-size: 2vw;
 }
-
 .sensor .valores .valor {
     margin-left: 35%;
     width: 30%;
@@ -237,13 +230,9 @@ p {
     margin-left: 13%;
     width: 30%;
     float: left;
+
 }
 
-.sensor .alertas .alerta_umidd {
-    margin-right: 13%;
-    width: 30%;
-    float: right;
-}
 
 /* EXTRA */
 
@@ -284,8 +273,22 @@ p {
     font-size: 40px;
 }
 
-h4 {
+.h4 {
+    padding: 26px;
     color: #38b000;
 }
 
-
+.hover:hover {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #FFF842;
+    box-shadow: 3px 3px 5px 2px #1b1b1b;
+    color: red;
+    font-weight: bold;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}
