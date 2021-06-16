@@ -1,26 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-
-body{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    background-color: #0f0f0f;
-    overflow-y: hidden;
+html {
+    font-size: 16px;
+    background: #3d413b;
+    overflow-y: hidden; 
 }
 
 .sidebar {
     position: fixed;
     width: 25%;
-    height: 100%;
+    height: 97vh;
     background: black;
-    font-size: 1em;
+    font-size: 0.65em;
 }
 
 .nav {
     position: relative;
     margin: 0 15%;
     text-align: right;
-    top: 43%;
+    top: 46%;
     transform: translateY(-50%);
     font-weight: bold;
 }
@@ -31,7 +29,7 @@ body{
 
 li {
     position: relative;
-    margin: 3.2em 0;
+    margin: 1.2em 0;
 }
 
 a {
@@ -46,7 +44,7 @@ a {
 
 .active a {
     color: white;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .active a:hover {
@@ -68,8 +66,8 @@ a {
     height: 0.2em;
     background: black;
     left: 0;
-    bottom: 6px;
-    background-image: linear-gradient(to right, #490a52, #ad1ac0);
+    bottom: 0;
+    background-image: linear-gradient(to right, #6f9172, #38b000);
 }
 
 .wisoyzinho {
@@ -77,13 +75,6 @@ a {
     width: 74%;
     left: 25.8%;
     height: 10vh;
-}
-
-.container {
-    height: 97%;
-    width: 98.7%;
-    top: 1.4%;
-    left: 0.6%;
 }
 
 a {
@@ -108,12 +99,13 @@ p {
 /*INÍCIO DASHBOARD*/
 
 .dashboard {
-    background-color: #ecf0f1;
+    background-color: #0f0f0f;
     text-align: center;
-    padding: 2% 0;
-    width: 75%;
-    height: 700px;
+    padding: 165px 0;
+    width: 80%;
+    height: 100%;
     margin-left: auto;
+    height: 221px;
 }
 
 .dashboard h1 {
@@ -163,6 +155,13 @@ p {
     border-radius: 10px;
     border: 3px solid #d8d8d8;
     background-color: rgb(102, 226, 44);
+}
+
+#canvas_grafico {
+    display: block;
+    height: 362px;
+    width: 724px;
+    margin-top: -140px; 
 }
 
 /* EXTRA */
