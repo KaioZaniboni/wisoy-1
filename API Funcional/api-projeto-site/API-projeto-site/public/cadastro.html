@@ -91,7 +91,6 @@
 
 
         if (char_maius && char_minus && char_esp) {
-            alert("Senha válida")
             var formulario = new URLSearchParams(new FormData(form_cadastro));
             fetch(`/usuarios/cadastrar/`, {
                 method: "POST",
@@ -99,12 +98,12 @@
             }).then(function (response) {
 
                 if (response.ok) {
-                    alert("Cadastro realizado com sucesso :D")
+                    alert("Cadastro realizado com sucesso!")
                     window.location.href = 'login.html';
 
                 } else {
 
-                    alert('Erro de cadastro! :/');
+                    alert('Erro de cadastro!');
                     response.text().then(function (resposta) {
 
                     });
@@ -115,7 +114,7 @@
             return false;
         }
         else {
-           alert("Senha inválida!")
+           alert("Senha inválida! A senha deve conter um caracter minúsculo, um maiúsculo e um especial!");
            return false;
         }
 
