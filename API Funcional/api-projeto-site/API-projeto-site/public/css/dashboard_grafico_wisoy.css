@@ -10,7 +10,7 @@ html {
 
 .titulo_gráfico {
     position: absolute;
-    color: rgb(34, 172, 0);
+    color: #ac00f3;
     left: 43%;
 }
 
@@ -56,7 +56,7 @@ a {
 }
 
 .active a:hover {
-    color: rgb(102, 226, 44);
+    color: #f7ef21;
 }
 
 :not(.active)::after {
@@ -156,13 +156,13 @@ p {
     height: 38px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: rgba(102, 226, 44, 0.61);
+    background-color: #2d0028;
 }
 
 .btn-now {
     border-radius: 10px;
     border: 3px solid #d8d8d8;
-    background-color: rgb(102, 226, 44);
+    background-color: #613268;
 }
 
 #canvas_grafico {
@@ -198,10 +198,8 @@ p {
     height: 160px;
     float: left;
     text-align: center;
-
     background-color: white;
     box-shadow:  3px 3px 5px 2px #ccc;
-    
 }
 
 .caminhao .valores {

@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum do meu Site</title>
+    <title>Relatório</title>
     <link rel="stylesheet" href="css/Dashboard.css">
     <link rel="stylesheet" href="css/publicacoes.css">
     <link rel="stylesheet" href="css/print_relatorio.css">
+    <link rel="shortcut icon" href="../public/img/wisoy.png">
     <script type="text/javascript" src="funcoes.js"></script>
 
 </head>
@@ -31,30 +32,31 @@
         <!--fim do cabecalho-->
 
 
+        <div class="fundo_feed">
+            <div class="feed">
+                <div class="titulo">Relatórios</div>
+                <div class="text">Selecione o periodo e o sensor de sua escolha</div>
+                <div class="buttons">
+                    <button id="botaosensor5" class="button_2" onclick="alterarCoresBotoes_2(300)">Semanal</button>
+                    <button id="botaosensor6" class="button_2" onclick="alterarCoresBotoes_2(1300)">Mensal</button>
+                </div>
 
-        <div class="feed">
-            <div class="titulo">Relatórios</div>
-            <div class="text">Selecione o periodo e o sensor de sua escolha</div>
-            <div class="buttons">
-                <button id="botaosensor5" class="button_2" onclick="alterarCoresBotoes_2(300)">Semanal</button>
-                <button id="botaosensor6" class="button_2" onclick="alterarCoresBotoes_2(1300)">Mensal</button>
-            </div>
+                <div class="buttons">
+                    <button id="botaosensor1" class="button" onclick="alterarCoresBotoes(1000)">Sensor 1</button>
+                    <button id="botaosensor2" class="button" onclick="alterarCoresBotoes(1001)">Sensor 2</button>
+                    <button id="botaosensor3" class="button" onclick="alterarCoresBotoes(1002)">Sensor 3</button>
+                    <button id="botaosensor4" class="button" onclick="alterarCoresBotoes(1003)">Sensor 4</button>
+                </div>
 
-            <div class="buttons">
-                <button id="botaosensor1" class="button" onclick="alterarCoresBotoes(1000)">Sensor 1</button>
-                <button id="botaosensor2" class="button" onclick="alterarCoresBotoes(1001)">Sensor 2</button>
-                <button id="botaosensor3" class="button" onclick="alterarCoresBotoes(1002)">Sensor 3</button>
-                <button id="botaosensor4" class="button" onclick="alterarCoresBotoes(1003)">Sensor 4</button>
-            </div>
-
-            <div class="legenda">
-                <div class="info_1">Sensor</div>
-                <div class="info_2">Média</div>
-                <div class="info_3">Máxima</div>
-                <div class="info_4">Mínima</div>
-                <div class="info_5">Data</div>
-            </div>
-            <div id="feed_container" class="container">
+                <div class="legenda">
+                    <div class="info_1">Sensor</div>
+                    <div class="info_2">Média</div>
+                    <div class="info_3">Máxima</div>
+                    <div class="info_4">Mínima</div>
+                    <div class="info_5">Data</div>
+                </div>
+                <div id="feed_container" class="container">
+                </div>
             </div>
         </div>
     </main>
@@ -65,6 +67,7 @@
 <script>
     var chart = 0;
     var period = 0;
+
     function alterarCoresBotoes(chart) {
         console.log("executei alterarCoresBotoes")
         botaosensor1.className = "button"
