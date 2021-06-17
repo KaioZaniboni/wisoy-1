@@ -145,10 +145,11 @@ select NomePersonagem ,round(avg(Valor_Venda)) as 'Média do valor das armas' fr
 
 -- ----------------------------------------
 -- Coringa
-/* Selecione Nome do personagemm, o item e o nome da criatura cujo o personagem 'Mago Merlin' enfrentou*/ 
+/* Selecione Nome do personagem, o item e o nome da criatura cujo o personagem 'Mago Merlin' enfrentou ***UTILIZE JOINS E SUBQUERYS*** */ 
 -- ----------------------------------------
-select  NomePersonagem, NomeCriatura 
+select  NomePersonagem, NomeCriatura, Nomeitem 
 from Batalhas
 join Personagens on fk_personagens = idpersonagem 
 join Boss_Criaturas on fk_boss_criaturas = idboss
+join itens on fk_itens = iditem
 where fk_personagens = (select idPersonagem from personagens where nomePersonagem = 'Mago Merlin');

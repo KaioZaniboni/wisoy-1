@@ -109,4 +109,4 @@ insert into Batalhas values
  
  /* 9- Selecione o nome do personagem e a média do valor das armas arredondando o resultado por personagem, - dificil*/
  
- /* CORINGA- Selecione Nome do personagemm, o item e o nome da criatura cujo o personagem 'Mago Merlin' enfrentou, usando ***SUBSELECT*** */ 
+ /* CORINGA-Selecione Nome do personagem, o item e o nome da criatura cujo o personagem 'Mago Merlin' enfrentou ***UTILIZE JOINS E SUBQUERYS*** */ 
