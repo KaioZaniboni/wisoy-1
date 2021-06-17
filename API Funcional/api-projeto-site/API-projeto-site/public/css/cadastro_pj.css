@@ -176,7 +176,6 @@ ul li a {
 }
 
 #resetar {
-
     background-color: green;
     font-size: 1.4vw;
     transition: 0.5s;
@@ -185,10 +184,24 @@ ul li a {
     border-radius: 15px;
     border: 0;
     color: white;
-    
 }
 
 .link_login{
     color: white;
     text-decoration: none;
+}
+#serial {
+    text-align: center;
+    background-color: rgb(58, 184, 0);
+    border: 0;
+    cursor: pointer;
+    margin: 20px 50px;
+    width: 50%;
+}
+.msg_hidden {
+    display: none;
+}
+.msg {
+    display: block;
+    color: tomato;
 }

@@ -92,12 +92,12 @@
         }).then(function (response) {
 
             if (response.ok) {
-                alert("Cadastro realizado com sucesso :D")
+                alert("Cadastro realizado com sucesso!")
                 window.location.href = 'gerenciamento_funcis.html';
 
             } else {
 
-                alert('Erro de cadastro! :/');
+                alert('Erro de cadastro!');
                 response.text().then(function (resposta) {
 
                 });

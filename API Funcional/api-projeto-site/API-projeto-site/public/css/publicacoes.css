@@ -68,6 +68,26 @@ body {
     cursor: pointer;
     background-color: rgba(102, 226, 44, 0.61);
 }
+.button_3 {
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    width: 180px;
+    margin: 0 1%;
+    border: 5px solid #ecf0f1;
+    height: 38px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgba(102, 226, 44, 0.61);
+    left: 33%;
+    position: relative;
+    margin: 60px;
+}
+
+.button_3:hover {
+    background-color: rgb(102, 226, 44);
+}
+
 .btn-now {
     border-radius: 10px;
     border: 3px solid #d8d8d8;

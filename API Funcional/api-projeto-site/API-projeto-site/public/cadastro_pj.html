@@ -25,9 +25,7 @@
                         </a>
                     </li>
                     <li class="active"><a href="cadastro_pj.html">Cadastrar PJ</a></li>
-                    <li class="active"><a href=""></a></li>
-                    <li class="active"><a href="">TABELA COMPARATIVA</a></li>
-                    <li class="active"><a href=""></a></li>
+                    <li class="active"><a href="Humidity_Teste_2.html">TABELA COMPARATIVA</a></li>
                     <li class="active logout" onclick="logoff()"><a href="">SAIR</li></a>
                 </ul>
             </nav>
@@ -62,11 +60,9 @@
                     </div>
                     <div class="design_input"> Chave Autenticação:
                         <input id="crack" type="text" name="chave_autenticação" placeholder="Chave gerada" required>
-                        <input class="" value="Gerar Chave" onclick="gerar_serial()">
-
-
                     </div>
-
+                    <div class="msg_hidden" id="msg">* Guarde essa chave, será necessária a sua utilização para a conclusão do cadastro PF</div>
+                    <input id="serial" type="button" value="Gerar Chave" onclick="gerar_serial()">
 
                     <button id="but_cadastro" class="button_cadastro">
                         Criar Cadastro
@@ -88,15 +84,15 @@
         }).then(function (response) {
 
             if (response.ok) {
-                alert("Cadastro realizado com sucesso :D");
+                alert("Cadastro realizado com sucesso!");
 
-                alert(`Guarde bem essa senha: <b>${crack.value}</b>, <br>
-                informe o cliente sera necessario ulitiza-la em seu cadastro PF`);
+                alert(`Guarde bem essa senha: ${crack.value}, 
+                informe o cliente será necessario ulitizá-la em seu cadastro PF`);
                 window.location.href = 'cadastro.html';
 
             } else {
 
-                alert('Erro de cadastro! :/');
+                alert('Erro de cadastro!');
                 response.text().then(function (resposta) {
 
                 });
@@ -112,13 +108,14 @@
 
         for (var i = 0; i < tam; i++)
             serial += charset.charAt(Math.floor(Math.random() * charset.length));
-
         crack.value = 'ADMIN' + serial;
 
         return serial;
     }
 
     function gerar_serial() {
+        msg.className = 'msg';
+
         return 'ADMIN' + gerar_string_aleatoria(6, "0123456789abc#!@dehgvdfs");
 
     }
