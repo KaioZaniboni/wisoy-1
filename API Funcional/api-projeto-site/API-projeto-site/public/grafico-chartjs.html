@@ -7,6 +7,7 @@
     <title>Gráficos</title>
     <link rel="stylesheet" href="css/dashboard_grafico_wisoy.css">
     <link rel="shortcut icon" href="../public/img/wisoy.png">
+    
 
     <!-- script do google charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -29,7 +30,7 @@
                     <li class="active"><a href="tempo-real.html">Tempo Real</a></li>
                     <li class="active"><a href="relatorio.html">RELATÓRIOS</a></li>
                     <li class="active"><a href="grafico-chartjs.html">GRÁFICOS</a></li>
-                    <li class="active"><a href="gerenciamento_funcis.html">COLABOLADORES</a></li>
+                    <li class="active" id="block"><a href="gerenciamento_funcis.html">COLABOLADORES</a></li>
                     <li class="active"><a href="Humidity_Teste.html">TABELA COMPARATIVA</a></li>
                     <li class="active logout" onclick="logoff()"><a href="">SAIR</a></li>
                 </ul>
@@ -42,7 +43,7 @@
     <h1 class="titulo_gráfico">GRÁFICO EM TEMPO REAL</h1>
 
     <div class="dashboard">
-        <div style="width:85%; margin: 120px auto">
+        <div style="width:60%; margin: 120px auto">
             <div id="div_aguarde">Dados sendo obtidos...</div>
             <canvas id="canvas_grafico"></canvas>
         </div>
@@ -197,10 +198,8 @@
                         // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
-
                         dados.datasets[0].data.shift(); // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro
-                            .leitura_umidade); // incluir uma nova leitura de umidade
+                        dados.datasets[0].data.push(novoRegistro.leitura_umidade); // incluir uma nova leitura de umidade
 
                         console.log("meu caminhão é o " + idsensor)
 
@@ -241,7 +240,7 @@
         http.send(null);
     }
 
-    // Descomente abaixo se quiser inserir dados a cada X segundos
+    // Descomente abaixo se quiser inserir dados a cada X segundos  
     setInterval(() => {
         sendData();
     }, 2000);

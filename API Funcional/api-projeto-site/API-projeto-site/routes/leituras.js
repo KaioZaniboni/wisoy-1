@@ -55,7 +55,7 @@ router.get('/tempo-real/:idsensor', function (req, res, next) {
 		instrucaoSql = `select leitura_umidade, leitura_data_hora, DATE_FORMAT(leitura_data_hora,'%H:%i:%s') as momento_grafico, fk_sensor from historico_sensor where fk_sensor = ${idsensor} order by id_historico desc limit 1`;
 	} else if (env == 'production') {
 		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select TOP (1) leitura_umidade, leitura_data_hora, CONVERT(varchar(12),leitura_data_hora) as momento_grafico from historico_sensor where fk_sensor = ${idsensor} order by id_historico desc;`;
+		instrucaoSql = `select TOP (1) leitura_umidade, leitura_data_hora, CONVERT(varchar(12),leitura_data_hora) as momento_grafico from historico_sensor where fk_sensor = ${idsensor} order by id_historico desc`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
 	}
