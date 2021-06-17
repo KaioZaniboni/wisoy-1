@@ -72,10 +72,10 @@ router.get('/tempo-real/:idsensor', function (req, res, next) {
 });
 
 // estatísticas (max, min, média, mediana, quartis, etc)
-router.get('/estatisticas/:chart/:period', function (req, res, next) {
+router.get('/estatisticas/:graf/:temp', function (req, res, next) {
 
-	let idsensor = req.params.chart;
-	let periodo = req.params.period;
+	let idsensor = req.params.graf;
+	let periodo = req.params.temp;
 
 	console.log(`Recuperando as estatísticas atuais`);
 
@@ -104,7 +104,5 @@ from (
 		});
 
 });
-
-
 
 module.exports = router;

@@ -38,7 +38,7 @@
                 <div class="text">Selecione o periodo e o sensor de sua escolha</div>
                 <div class="buttons">
                     <button id="botaosensor5" class="button_2" onclick="alterarCoresBotoes_2(300)">Semanal</button>
-                    <button id="botaosensor6" class="button_2" onclick="alterarCoresBotoes_2(1300)">Mensal</button>
+                    <button id="botaosensor6" class="button_2" onclick="alterarCoresBotoes_2(1275)">Mensal</button>
                 </div>
 
                 <div class="buttons">
@@ -68,8 +68,8 @@
 </html>
 
 <script>
-    var chart = 0;
-    var period = 0;
+    var graf = 0;
+    var temp = 0;
 
     function alterarCoresBotoes(chart) {
         console.log("executei alterarCoresBotoes")
@@ -87,13 +87,8 @@
         } else if (chart == "1003") {
             botaosensor4.className += " btn-now"
         }
-
-        if (period == 300 || period == 1300) {
-            obterPublicacoes(chart, period)
-        } else {
-            period = 300;
-            obterPublicacoes(chart, period)
-        }
+        graf = chart
+        obterPublicacoes(graf, temp)
     }
 
     function alterarCoresBotoes_2(period) {
@@ -103,18 +98,13 @@
 
         if (period == "300") {
             botaosensor5.className += " btn-now"
-        } else if (period == "1300") {
+        } else if (period == "1275") {
             botaosensor6.className += " btn-now"
         }
-
-        if (chart == 1000 || chart == 1001 || chart == 1002 || chart == 1003) {
-            obterPublicacoes(chart, period)
-        } else {
-            chart = 1000;
-            obterPublicacoes(chart, period)
-        }
-
+        temp = period
+        obterPublicacoes(graf, temp)
     }
+
 
     function atualizarFeed(
         leitura_resultado
@@ -122,6 +112,7 @@
         console.log(leitura_resultado);
         var feed = document.getElementById("feed_container");
         feed.innerHTML = "";
+        var contador = 0;
         for (let i = 0; i < leitura_resultado.length; i++) {
             var publicacao = leitura_resultado[i];
 
@@ -136,7 +127,7 @@
             divDescricao.innerHTML = publicacao.media;
             divDescricao_2.innerHTML = publicacao.maximo;
             divDescricao_3.innerHTML = publicacao.minimo;
-            divDescricao_4.innerHTML = publicacao.cinco_min;
+            divDescricao_4.innerHTML = `${agora()}`;
 
             divPublicacao.className = "publicacao"
             divNome.className = "nome";
@@ -152,12 +143,13 @@
             divPublicacao.appendChild(divDescricao_4);
 
             feed.appendChild(divPublicacao);
+            contador ++
         }
+        
     }
 
-    function obterPublicacoes(chart, period) {
-        // alterarCoresBotoes_2(period);
-        fetch(`/leituras/estatisticas/${chart}/${period}`)
+    function obterPublicacoes(graf, temp) {
+        fetch(`/leituras/estatisticas/${graf}/${temp}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
@@ -165,7 +157,6 @@
 
                         atualizarFeed(resposta);
 
-                        finalizarAguardar();
                     });
                 } else {
                     console.error('Nenhum dado encontrado ou erro na API');
@@ -177,29 +168,10 @@
             });
     }
 
-    function obterPublicacoesPorUsuario(idUsuario) {
-        fetch(`/publicacoes/${idUsuario}`)
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        // alert(JSON.stringify(resposta))
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
-            });
-    }
-
-    function finalizarAguardar(resposta) {
-        if (resposta) {
-            div_erro.style.visibility = 'visible';
-            div_erro.innerHTML = resposta;
-        }
-    }
+    function agora() {
+	const agora_d = new Date();
+	return `${agora_d.getFullYear()}-${agora_d.getMonth() + 1}-${agora_d.getDate()} ${agora_d.getHours()}:${agora_d.getMinutes()}:${agora_d.getSeconds()}`;
+}
 
     verificar_autenticacao();
 </script>
