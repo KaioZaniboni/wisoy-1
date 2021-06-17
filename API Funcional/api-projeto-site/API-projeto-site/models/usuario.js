@@ -37,6 +37,11 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'data_cadastro',
 			type: DataTypes.DATEONLY,
 			allowNull: false
+		},
+		usuario_principal: {
+			field: 'usuario_principal',
+			type: DataTypes.STRING,
+			allowNull: true
 		}
 	}, 
 	{

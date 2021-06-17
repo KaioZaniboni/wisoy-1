@@ -144,8 +144,10 @@
     function alertar(umidade, idsensor) {
         // padrão para meu alerta
         var limites = {
-            max_umidade: 80,
-            min_umidade: 55,
+            max_umidade: 85,
+            min_umidade: 50,
+            max_alert: 81,
+            min_alert: 54,
         };
 
         // zerar aviso de mensagem
@@ -155,40 +157,78 @@
 
         // comparando
 
+        if (umidade >= limites.max_alert) {
 
-        if (umidade > limites.max_umidade) {
-            mensagem_umidade += 'Umidade alta demais! <br>';
-            classe_umidade = 'alerta_umidd alerta-alto';
-            if (idsensor == 1000) {
-                hover_sensor_1.className = "alerta1";
-            }
-            if (idsensor == 1001) {
-                hover_sensor_2.className = "alerta1";
-            }
-            if (idsensor == 1002) {
-                hover_sensor_3.className = "alerta1";
-            }
-            if (idsensor == 1003) {
-                hover_sensor_4.className = "alerta1";
+            if (umidade >= limites.max_umidade) {
+                mensagem_umidade += 'Umidade alta demais! <br>';
+                classe_umidade = 'alerta_umidd alerta-alto';
+                if (idsensor == 1000) {
+                    hover_sensor_1.className = "alerta1";
+                }
+                if (idsensor == 1001) {
+                    hover_sensor_2.className = "alerta1";
+                }
+                if (idsensor == 1002) {
+                    hover_sensor_3.className = "alerta1";
+                }
+                if (idsensor == 1003) {
+                    hover_sensor_4.className = "alerta1";
+                }
+            } else {
+                mensagem_umidade += 'Umidade esta alta! <br>';
+                classe_umidade = 'alerta_umidd alerta-alto';
+                if (idsensor == 1000) {
+                    hover_sensor_1.className = "alerta3";
+                }
+                if (idsensor == 1001) {
+                    hover_sensor_2.className = "alerta3";
+                }
+                if (idsensor == 1002) {
+                    hover_sensor_3.className = "alerta3";
+                }
+                if (idsensor == 1003) {
+                    hover_sensor_4.className = "alerta3";
+                }
             }
         }
-        if (umidade < limites.min_umidade) {
-            mensagem_umidade = 'Umidade baixa demais! <br>';
-            classe_umidade = 'alerta_umidd alerta-baixo';
-            if (idsensor == 1000) {
-                hover_sensor_1.className = "alerta2";
-            }
-            if (idsensor == 1001) {
-                hover_sensor_2.className = "alerta2";
-            }
-            if (idsensor == 1002) {
-                hover_sensor_3.className = "alerta2";
-            }
-            if (idsensor == 1003) {
-                hover_sensor_4.className = "alerta2";
+
+        if (umidade <= limites.min_alert) {
+
+            if (umidade <= limites.min_umidade) {
+                mensagem_umidade = 'Umidade baixa demais! <br>';
+                classe_umidade = 'alerta_umidd alerta-baixo';
+                if (idsensor == 1000) {
+                    hover_sensor_1.className = "alerta2";
+                }
+                if (idsensor == 1001) {
+                    hover_sensor_2.className = "alerta2";
+                }
+                if (idsensor == 1002) {
+                    hover_sensor_3.className = "alerta2";
+                }
+                if (idsensor == 1003) {
+                    hover_sensor_4.className = "alerta2";
+                }
+            } else {
+                mensagem_umidade = 'Umidade esta baixa! <br>';
+                classe_umidade = 'alerta_umidd alerta-baixo';
+                if (idsensor == 1000) {
+                    hover_sensor_1.className = "alerta3";
+                }
+                if (idsensor == 1001) {
+                    hover_sensor_2.className = "alerta3";
+                }
+                if (idsensor == 1002) {
+                    hover_sensor_3.className = "alerta3";
+                }
+                if (idsensor == 1003) {
+                    hover_sensor_4.className = "alerta3";
+                }
             }
         }
-        if (umidade >= limites.min_umidade && umidade <= limites.max_umidade) {
+
+
+        if (umidade >= limites.min_alert && umidade <= limites.max_alert) {
             if (idsensor == 1000) {
                 hover_sensor_1.className = "";
             }

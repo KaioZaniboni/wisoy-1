@@ -299,3 +299,18 @@ p {
     transition-property: all;
     transition-timing-function: line;
 }
+
+.alerta3 {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ffee00a2;
+    box-shadow: 3px 3px 5px 2px #1b1b1b;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}

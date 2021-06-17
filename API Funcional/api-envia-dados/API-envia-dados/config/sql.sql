@@ -29,6 +29,7 @@ CREATE TABLE usuarios (
 	senha VARCHAR(50),
 	fk_empresa INT,
   data_cadastro DATE,
+  usuario_principal varchar
 );
 
 CREATE TABLE fazendas(

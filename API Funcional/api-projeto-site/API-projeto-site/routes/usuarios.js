@@ -8,6 +8,7 @@ var Colaboradores = require('../models').Colaboradores;
 
 let sessoes = [];
 var idempresa = [];
+var user_principal = 'sim';
 
 /* Recuperar usuário por login e senha */
 router.post('/autenticar', function (req, res, next) {
@@ -94,7 +95,8 @@ router.post('/cadastrar/', function (req, res, next) {
 				login: req.body.login,
 				senha: req.body.senha,
 				fk_empresa: idempresa,
-				data_cadastro: agora()
+				data_cadastro: agora(),
+				usuario_principal: user_principal
 			}).then(resultado => {
 				console.log(`Registro criado: ${resultado}`)
 				res.send(resultado);
