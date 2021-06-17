@@ -112,7 +112,10 @@
         console.log(leitura_resultado);
         var feed = document.getElementById("feed_container");
         feed.innerHTML = "";
-        var contador = 0;
+        var dia = 17;
+        var mes = 06;
+        var ano = 2021;
+        var dia_descontado = 0;
         for (let i = 0; i < leitura_resultado.length; i++) {
             var publicacao = leitura_resultado[i];
 
@@ -127,7 +130,7 @@
             divDescricao.innerHTML = publicacao.media;
             divDescricao_2.innerHTML = publicacao.maximo;
             divDescricao_3.innerHTML = publicacao.minimo;
-            divDescricao_4.innerHTML = `${agora()}`;
+            divDescricao_4.innerHTML = `${dia}-${mes}-${ano}`;
 
             divPublicacao.className = "publicacao"
             divNome.className = "nome";
@@ -143,10 +146,33 @@
             divPublicacao.appendChild(divDescricao_4);
 
             feed.appendChild(divPublicacao);
-            contador ++
+
+            if (temp == 300) {
+                var desconto = 7;
+                dia_descontado = dia - desconto;
+                dia = dia_descontado;
+
+                if (dia < 1) {
+                    dia = (30 + dia_descontado);
+                    mes--
+                    if (mes < 1) {
+                        mes = 12;
+                        ano--
+                    }
+                }
+            } else {
+                var desconto = 1;
+                mes_descontado = mes - desconto;
+                mes = mes_descontado;
+
+                if (mes < 1) {
+                    mes = 12;
+                    ano--
+                }
+            }
         }
-        
     }
+
 
     function obterPublicacoes(graf, temp) {
         fetch(`/leituras/estatisticas/${graf}/${temp}`)
@@ -167,11 +193,6 @@
                 console.error(`Erro na obtenção das publicações: ${error.message}`);
             });
     }
-
-    function agora() {
-	const agora_d = new Date();
-	return `${agora_d.getFullYear()}-${agora_d.getMonth() + 1}-${agora_d.getDate()} ${agora_d.getHours()}:${agora_d.getMinutes()}:${agora_d.getSeconds()}`;
-}
 
     verificar_autenticacao();
 </script>
