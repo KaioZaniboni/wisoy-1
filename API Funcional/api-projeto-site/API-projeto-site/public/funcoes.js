@@ -1,5 +1,6 @@
 let login_usuario;
 let nome_usuario;
+let user;
 
 function redirecionar_login() {
     window.location.href = 'login.html';
@@ -8,6 +9,7 @@ function redirecionar_login() {
 function verificar_autenticacao() {
     login_usuario = sessionStorage.login_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
+    user = sessionStorage.user_meuapp;
     
     if (login_usuario == undefined)  {
         redirecionar_login();
@@ -15,7 +17,12 @@ function verificar_autenticacao() {
         b_usuario.innerHTML = nome_usuario;
         validar_sessao();
     }
-    
+    if (user == 'null')  {
+    block.style = 'display: none';
+    }
+    else {
+    block.style = 'display: block';
+    }
 }
 
 function logoff() {

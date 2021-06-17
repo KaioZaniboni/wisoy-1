@@ -284,7 +284,6 @@ p {
     transition-property: all;
     transition-timing-function: line;
 }
-
 .alerta2 {
     height: 100%;
     width: 100%;
@@ -299,7 +298,6 @@ p {
     transition-property: all;
     transition-timing-function: line;
 }
-
 .alerta3 {
     height: 100%;
     width: 100%;
@@ -313,4 +311,8 @@ p {
     transition-duration: 0.4s;
     transition-property: all;
     transition-timing-function: line;
+}
+
+#block {
+    display: block;
 }

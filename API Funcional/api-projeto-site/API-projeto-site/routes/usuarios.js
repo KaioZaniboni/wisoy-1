@@ -8,7 +8,7 @@ var Colaboradores = require('../models').Colaboradores;
 
 let sessoes = [];
 var idempresa = [];
-var user_principal = 'sim';
+var user_principal = 'Sim';
 
 /* Recuperar usuário por login e senha */
 router.post('/autenticar', function (req, res, next) {
