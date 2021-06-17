@@ -1,26 +1,24 @@
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-body{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
-    background-color: #0f0f0f;
+html {
+    font-size: 16px;
+    background: #3d413b;
+    overflow-y: hidden; 
 }
 
 .sidebar {
     position: fixed;
     width: 25%;
-    height: 100%;
+    height: 97vh;
     background: black;
-    font-size: 1em;
+    font-size: 0.65em;
 }
 
 .nav {
     position: relative;
     margin: 0 15%;
     text-align: right;
-    top: 40%;
+    top: 46%;
     transform: translateY(-50%);
     font-weight: bold;
 }
@@ -31,7 +29,7 @@ body{
 
 li {
     position: relative;
-    margin: 3.2em 0;
+    margin: 1.2em 0;
 }
 
 a {
@@ -46,7 +44,7 @@ a {
 
 .active a {
     color: white;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .active a:hover {
@@ -68,8 +66,8 @@ a {
     height: 0.2em;
     background: black;
     left: 0;
-    bottom: 6px;
-    background-image: linear-gradient(to right, #490a52, #ad1ac0);
+    bottom: 0;
+    background-image: linear-gradient(to right, #6f9172, #38b000);
 }
 
 .wisoyzinho {
@@ -104,12 +102,11 @@ p {
     background-color: #0f0f0f;
     text-align: center;
     padding: 165px 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
     margin-left: auto;
-    /* overflow-y: scroll; */
+    overflow-y: scroll;
     height: 221px;
-    
 }
 
 .dashboard h1 {
@@ -136,6 +133,30 @@ p {
     margin: auto;
 }
 
+.botoes {
+    margin: auto;
+    margin-bottom: 40px;
+    display: block;
+    /* Default de botão é inline-block. Com block, margin auto funciona*/
+}
+
+
+.btn {
+    color: white;
+    text-transform: uppercase;
+    width: 180px;
+    margin: 0 1%;
+    border: 5px solid #ecf0f1;
+    height: 38px;
+    padding: 0 20px;
+    cursor: pointer;
+    background-color: rgb(255, 164, 131);
+}
+
+.btn-now {
+    border: 3px solid #232323;
+    background-color: orangered;
+}
 
 /* EXTRA */
 
