@@ -1,15 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 html {
     font-size: 16px;
-    background: #3d413b;
     overflow-y: hidden;
+}
+body{
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .sidebar {
     position: fixed;
     width: 25%;
-    height: 97vh;
+    height: 100vh;
     background: black;
     font-size: 0.65em;
 }
@@ -44,11 +50,11 @@ a {
 
 .active a {
     color: white;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .active a:hover {
-    color: #f7ef21;
+    color: rgb(2, 255, 2);
 }
 
 :not(.active)::after {
@@ -99,14 +105,12 @@ p {
 /*INICIO TEMPO REAL*/
 
 .dashboard {
-    background-color: #0f0f0f;
+    background-color: rgb(229, 252, 215);
     text-align: center;
     padding: 165px 0;
-    width: 80%;
-    height: 100%;
+    width: 100%;
     margin-left: auto;
-    overflow-y: scroll;
-    height: 221px;
+    height: 650px;
 }
 
 .dashboard h1 {
@@ -178,14 +182,14 @@ p {
 .linha1 {
     width: 90%;
     position: fixed;
-    top: 17%;
+    top: 21%;
     left: 27%;
 }
 
 .linha2 {
     width: 90%;
     position: fixed;
-    top: 53%;
+    top: 57%;
     left: 27%;
 }
 
@@ -242,40 +246,50 @@ p {
 }
 
 .alerta-alto {
-    color: red;
+    color: white;
 }
 
 .alerta-baixo {
-    color: blue;
+    color: white;
 }
 
 #b_usuario {
-    color: tomato;
-}
-
-#b_usuario:hover {
-    color: rgb(251, 38, 0);
+    color: rgb(2, 255, 2);
 }
 
 .titulo_selecao {
     position: absolute;
-    top: 1%;
-    left: 46%;
-    color: #ac00f3;
-    font-family: sans-serif;
-    font-size: 40px;
+    top: 3%;
+    left: 47%;
+    color: #000000;
+    font-size: 60px;
 }
 
 .h4 {
     padding: 26px;
-    color: #f7ef21;
+    color: #7c148a;
 }
 
-.alerta {
+.alerta1 {
     height: 100%;
     width: 100%;
     border-radius: 30px;
     background-color: #ff0000a2;
+    box-shadow: 3px 3px 5px 2px #1b1b1b;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transform: translate3d(6px, -6px, 0);
+    transition-delay: 0s;
+    transition-duration: 0.4s;
+    transition-property: all;
+    transition-timing-function: line;
+}
+
+.alerta2 {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #1900ffa2;
     box-shadow: 3px 3px 5px 2px #1b1b1b;
     color: rgb(0, 0, 0);
     font-weight: bold;

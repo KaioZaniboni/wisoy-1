@@ -1,17 +1,20 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html {
-    font-size: 16px;
-    background: #3d413b;
-    overflow-y: hidden; 
+    font-size: 16px; 
+}
+body{
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /* CSS Cadastro */
 
 .corpo_cadastro {
-    color: white;
+    color: black;
     text-align: center;
     font-size: 1.3vw;
     width: 100%;
@@ -62,11 +65,10 @@ html {
     font-size: 2vw;
     border: none;
     margin-top: 7%;
+    transition: 0.5s;
 }
 .button_cadastro:hover {
     background-color: green;
-    font-size: 2.5vw;
-    transition: 0.5s;
     cursor: pointer;
 }
 .design_input {
@@ -108,13 +110,42 @@ html {
     padding: 10vw 0 1vw;
 }
 /*INICIO FUNCTION CREATE*/
+.publicacao1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: 0 auto;
+    width: 60%;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 0px 15px 5px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.nome1 {
+    text-align: center;
+    width: 80px;
+    float:left;
+    color: red;
+    font-weight: bold;
+    padding-top: 10px;
+    /* border: 1px solid rgb(255, 95, 37); */
+}
+.descricao1 {
+    text-align: center;
+    padding-top: 10px;
+    text-align: left;
+    margin: 0 4vw 0 0;
+}
+
+
 .publicacao {
     display: flex;
     justify-content: space-between;
     background-color: white;
     margin: 0 auto;
     width: 60%;
-    border: 1px solid #f7ef21;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 0px 15px 5px;
     text-align: left;
@@ -124,7 +155,7 @@ html {
     text-align: center;
     width: 80px;
     float:left;
-    color: #9e9900;
+    color: black;
     font-weight: bold;
     padding-top: 10px;
     /* border: 1px solid rgb(255, 95, 37); */
@@ -147,7 +178,7 @@ html {
     font-size: 3vw;
     font-weight: 900;
     padding: 4vw 0;
-    color: #ac00f3;
+    color: black;
 }
 .text {
     text-align: center;
@@ -162,7 +193,7 @@ html {
     margin: auto;
     padding: 0.5vw;
     font-size: 2vw;
-    color: #ac00f3;
+    color: black;
     font-weight: 700;
 }
 .info_4 {
@@ -173,9 +204,9 @@ html {
 }
 
 .fundo_feed {
-    background-color: #0f0f0f;
-    height: 97%;
-    width: 73.5%;
+    background-color:rgb(229, 252, 215);
+    height: 100%;
+    width: 75%;
     margin-left: 25%;
     overflow-y: scroll;
     position: absolute;

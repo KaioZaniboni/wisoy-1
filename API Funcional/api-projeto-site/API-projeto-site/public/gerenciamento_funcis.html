@@ -125,18 +125,28 @@
             divNome.innerHTML = `${publicacao.nome}`;
             divDescricao.innerHTML = publicacao.login;
             divDescricao_2.innerHTML = publicacao.data_cadastro;
+            if (publicacoes[0] == publicacoes[i]) {
 
-            divPublicacao.className = "publicacao"
-            divNome.className = "nome";
-            divDescricao.className = "descricao";
-            divDescricao_2.className = "descricao";
+                divPublicacao.className = "publicacao1"
+                divNome.className = "nome1";
+                divDescricao.className = "descricao1";
+                divDescricao_2.className = "descricao1";
+
+
+            } else {
+                
+                divPublicacao.className = "publicacao"
+                divNome.className = "nome";
+                divDescricao.className = "descricao";
+                divDescricao_2.className = "descricao";
+            }
 
             divPublicacao.appendChild(divNome);
             divPublicacao.appendChild(divDescricao);
             divPublicacao.appendChild(divDescricao_2);
 
-
             feed.appendChild(divPublicacao);
+
         }
     }
 
