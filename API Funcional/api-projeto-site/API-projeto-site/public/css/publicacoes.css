@@ -1,10 +1,9 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html {
     font-size: 16px;
-    background: #3d413b;
     overflow-y: hidden; 
 }
 
@@ -13,10 +12,10 @@ html {
 .publicacao {
     display: flex;
     justify-content: space-between;
-    background-color: white;
+    background-color: rgb(240, 240, 240);
     margin: 0 auto;
     width: 80%;
-    border: 1px solid #f7ef21;
+    border: 1px solid black;
     border-radius: 5px;
     padding: 0px 15px 5px;
     text-align: left;
@@ -53,11 +52,11 @@ html {
     text-transform: uppercase;
     width: 180px;
     margin: 0 1%;
-    border: 5px solid #ecf0f1;
+    border: 5px solid black;
     height: 38px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: #2d0028;
+    background-color: #096900;
 }
 .button_2 {
     border-radius: 10px;
@@ -65,11 +64,11 @@ html {
     text-transform: uppercase;
     width: 240px;
     margin: 0 1%;
-    border: 5px solid #ecf0f1;
+    border: 5px solid black;
     height: 60px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: #2d0028;
+    background-color: #096900;
 }
 .button_3 {
     border-radius: 10px;
@@ -77,12 +76,12 @@ html {
     text-transform: uppercase;
     width: 180px;
     margin: 0 1%;
-    border: 5px solid #ecf0f1;
-    height: 38px;
+    border: 5px solid black;
+    height: 60px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: rgba(102, 226, 44, 0.61);
-    left: 33%;
+    background-color: #096900;
+    left: 40%;
     position: relative;
     margin: 60px;
 }
@@ -93,27 +92,27 @@ html {
 
 .btn-now {
     border-radius: 10px;
-    border: 3px solid #d8d8d8;
-    background-color: #613268;
+    border: 3px solid black;
+    background-color: rgb(102, 226, 44);
 }
 
 .feed {
     float: right;
     width: 100%;
-    color: #ac00f3;
+    color: #000000;
 }
 .titulo {
     text-align: center;
     font-size: 3vw;
-    font-weight: 900;
+    font-weight: 700;
     padding: 2vw 0;
 }
 .text {
     text-align: center;
     font-size: 1.5vw;
-    font-weight: 900;
+    font-weight: 700;
     padding: 4vw 0;
-    color: #ac00f3;
+    color: #08000c;
 }
 .legenda {
     width: 80%;
@@ -122,7 +121,7 @@ html {
     margin: auto;
     padding: 0.5vw;
     font-size: 2vw;
-    color: #f7ef21;
+    color: black;
     font-weight: 700;
 }
 .info_4 {
@@ -133,12 +132,12 @@ html {
 }
 
 .fundo_feed {
-    background-color: #0f0f0f;
-    overflow-y: scroll;
+    background: rgb(229, 252, 215);;
     position: absolute;
-    height: 97%;
-    width: 73%;
-    left: 25.6%;
+    overflow-y: scroll;
+    height: 100%;
+    width: 76.4%;
+    left: 23.6%;
 }
 
 #feed_container {

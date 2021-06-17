@@ -1,23 +1,29 @@
-* {
-    font-family: Arial, Helvetica, sans-serif;
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html {
     font-size: 16px;
-    background: #3d413b;
-    overflow-y: hidden; 
+    overflow-y: hidden;
+}
+body{
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .titulo_gráfico {
     position: absolute;
-    color: #ac00f3;
-    left: 43%;
+    top: 3%;
+    left: 47%;
+    color: #000000;
+    font-size: 50px;
 }
 
 .sidebar {
     position: fixed;
     width: 25%;
-    height: 97vh;
+    height: 100vh;
     background: black;
     font-size: 0.65em;
 }
@@ -52,11 +58,11 @@ a {
 
 .active a {
     color: white;
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .active a:hover {
-    color: #f7ef21;
+    color: rgb(2, 255, 2);
 }
 
 :not(.active)::after {
@@ -107,13 +113,12 @@ p {
 /*INÍCIO DASHBOARD*/
 
 .dashboard {
-    background-color: #0f0f0f;
+    background-color: rgb(229, 252, 215);
     text-align: center;
     padding: 165px 0;
-    width: 80%;
-    height: 100%;
+    width: 75%;
     margin-left: auto;
-    height: 221px;
+    height: 650px;
 }
 
 .dashboard h1 {
@@ -152,17 +157,18 @@ p {
     text-transform: uppercase;
     width: 180px;
     margin: 0 1%;
-    border: 5px solid #ecf0f1;
+    border: 3px solid black;
     height: 38px;
     padding: 0 20px;
     cursor: pointer;
-    background-color: #2d0028;
+    background-color: #613268;
 }
 
 .btn-now {
     border-radius: 10px;
-    border: 3px solid #d8d8d8;
-    background-color: #613268;
+    border: 3px solid #613268;
+    color: black;
+    background-color: white;
 }
 
 #canvas_grafico {
@@ -242,5 +248,5 @@ p {
 }
 
 #b_usuario {
-    color: tomato;
+    color: rgb(2, 255, 2);
 }

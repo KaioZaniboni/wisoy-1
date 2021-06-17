@@ -1,4 +1,8 @@
-body,
+body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 html {
   font-family: 'Roboto', sans-serif;
   padding: 0;
